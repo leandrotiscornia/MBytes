@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{3B6D2E7E-20CC-4EF3-8AE8-FE23712A6E45}</ProjectGuid>
+    <ProjectGuid>{7EC5955C-1161-4E87-8F5D-AE8DE746B65A}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>Inicio</RootNamespace>
-    <AssemblyName>Inicio</AssemblyName>
+    <RootNamespace>Agenda</RootNamespace>
+    <AssemblyName>Agenda</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -54,9 +54,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
