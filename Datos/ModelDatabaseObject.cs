@@ -7,7 +7,7 @@ using System.Data;
 
 namespace Datos
 {
-    class ModelDataBaseObject : ModelConnection
+    public class ModelDataBaseObject : ModelConnection
     {
 
         private string _tableName;
@@ -57,6 +57,7 @@ namespace Datos
         {
             string commandString;
             commandString = "DELETE FROM " + tableName + " WHERE id=@objectId;";
+            command.CommandText = commandString;
             command.Parameters.AddWithValue("@objectId", objectId);
             command.Prepare();
             command.ExecuteNonQuery();
@@ -70,6 +71,7 @@ namespace Datos
                 commandString += index.Column + "=" + index.Value + "," ;
             commandString = commandString.Remove(commandString.Length - 1, 1);
             commandString = "WHERE id= @objectId";
+            command.CommandText = commandString;
             command.Parameters.AddWithValue("objectId", objectId);
             command.Prepare();
             openConnection();

@@ -8,7 +8,7 @@ using System.Drawing;
 
 namespace Datos
 {
-    class ModelPerson : ModelDataBaseObject
+    public class ModelPerson : ModelDataBaseObject
     {
         private int _personId;
         private string _ci;
@@ -87,6 +87,8 @@ namespace Datos
                 permissions.Add(reader.GetInt32(0));
             return permissions;
         }
+
+       
 
     }
 }
