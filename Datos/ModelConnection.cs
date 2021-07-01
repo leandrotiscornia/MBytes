@@ -61,6 +61,7 @@ namespace Datos
 
         public MySqlConnection openConnection()
         {
+            command.Connection = connection;
             connection.ConnectionString =
                 "server=" + dbServer + "; " +
                 "port=" + dbPort + "; " +
