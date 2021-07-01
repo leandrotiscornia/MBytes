@@ -14,55 +14,74 @@ namespace Datos
         private string _dbPassword;
         private string _dbPort;
         private string _dbServer;
-        private MySqlCommand _command = new MySqlCommand();
-        private MySqlDataReader _reader = new MySqlDataReader();
-        private MySqlConnection _connection = new MySqlConnection();
+        private MySqlCommand _command;
+        private MySqlDataReader _reader;
+        private MySqlConnection _connection;
 
-        public string dbName 
+        public string dbName
         {
-            get {return _dbName;}
-            set {_dbName = value;}
+            get { return _dbName; }
+            set { _dbName = value; }
         }
         public string dbUser
         {
-            get {return _dbUser;}
-            set {_dbUser = value;}
+            get { return _dbUser; }
+            set { _dbUser = value; }
         }
-        public string dbPassword 
+        public string dbPassword
         {
-            get {return _dbPassword;}
-            set {_dbPassword = value;}
+            get { return _dbPassword; }
+            set { _dbPassword = value; }
         }
-        public string dbPort 
+        public string dbPort
         {
-            get {return _dbPassword;}
-            set {_dbPassword = value;}
+            get { return _dbPort; }
+            set { _dbPort = value; }
         }
         public string dbServer
         {
-            get {return _dbServer;}
-            set {_dbSerber = value;}
+            get { return _dbServer; }
+            set { _dbServer = value; }
         }
-        public MySqlCommand command 
+        public MySqlCommand command
         {
-            get {return _command;}
-            set {_command = value;}
+            get { return _command; }
+            set { _command = value; }
         }
-        public MySqlDataReader reader 
+        public MySqlDataReader reader
         {
-            get {return _reader;}
-            set {_reader = value;}
+            get { return _reader; }
+            set { _reader = value; }
         }
-        public MySqlConnection connection 
+        public MySqlConnection connection
         {
-            get {return _connection;}
-            set {_connection = value;}
+            get { return _connection; }
+            set { _connection = value; }
         }
 
-        public void openConnecion()
+        public MySqlConnection openConnection()
         {
+            connection.ConnectionString =
+                "server=" + dbServer + "; " +
+                "port=" + dbPort + "; " +
+                "userid=" + dbUser + "; " +
+                "password=" + dbPassword + "; " +
+                "database=" + dbName + ";";
+            try
+            {
+                connection.Open();
+                return connection;
+            }
+            catch (MySqlException exception)
+            {
+                Console.WriteLine("" + exception);
+                return null;
+            }
 
         }
-
+        public void closeConnection()
+        {
+            connection.Close();
+        }
     }
 }
