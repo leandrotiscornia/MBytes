@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace Datos
 {
-    class ModelGrade
+    class ModelGrade : ModelDataBaseObject
     {
         private int _gradeId;
         private string _gradeName;
         private string _courseName;
-        private string [] _gradeSubject;
+        private List<string> _gradeSubject;
 
         public int gradeId
         {
@@ -48,7 +48,7 @@ namespace Datos
                 _courseName = value;
             }
         }
-        public string [] gradeSubject
+        public List<string> gradeSubject
         {
             get
             {
@@ -64,25 +64,36 @@ namespace Datos
         {
             string commandString = 
                 "INSERT INTO SubjectInGrade" +
-                "(GradeID,SubjectID) " +
+                "(Grade_ID,Subject_ID) " +
                 "VALUES(@GradeID,@SubjectID";
             command.CommandText = commandString;
             command.Parameters.AddWithValue("@GradeID", gradeId);
             command.Parameters.AddWithValue("@SubjectID", subjectId);
             command.Prapare();
+            openConnection();
             command.ExecuteNonQuery();
+            closeConnection();
         }
 
-        public string [] getSubjects (int gradeId)
+        public List <string> getSubjects (int gradeId)
         {
+            List <string> subjects = new List<string> ();
             string commandString =
                 "SELECT SubjectName" +
-                "FROM SubjectInGrade" +
-                "RIGHTJOIN Subjects.SubjectsName" +
-                "WHERE Grades.GradeID=Subjects.SubjectID ";
-
+                " FROM Subjects" +
+                " JOIN SubjectsInGrades ON Subject" +
+                " WHERE SubjectInGrades.Subject_ID = Subjects.ID" +
+                " AND SubjectInGrades.Grade_ID = @GradeID";
             command.CommandText = commandString;
-            
+            command.Parameters.AddWithValue("@GradeID", gradeId);
+            command.Prepare();
+            openConnection();
+            reader = command.ExecuteReader();
+            closeConnection();
+            while (reader.Read())
+                subjects.Add(reader.GetString(0));
+            return subjects;
+                
         }
        
         

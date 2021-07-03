@@ -44,6 +44,7 @@
   <ItemGroup>
     <Compile Include="ModelGrade.cs" />
     <Compile Include="ModelCourse.cs" />
+    <Compile Include="ModelWatches.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
