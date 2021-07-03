@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Datos
 {
-    class ModelSubject
+    class ModelSubject : ModelDataBaseObject
     {
         private int _subjectId;
         private string _subjectName;
