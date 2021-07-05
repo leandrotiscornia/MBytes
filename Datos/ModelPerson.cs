@@ -10,63 +10,16 @@ namespace Datos
 {
     public class ModelPerson : ModelDataBaseObject
     {
-        private int _personId;
-        private string _ci;
-        private string _firstName;
-        private string _secondName;
-        private string _firstSurname;
-        private string _secondSurname;
-        private string _nickName;
-        private string _avatarPicture;
-        private List<int> _userPermissions;
-        
+        public int personId { get; set; }
+        public string ci { get; set; }
+        public string firstName { get; set; }
+        public string secondName { get; set; }
+        public string firstSurname { get; set; }
+        public string secondSurname { get; set; }
+        public string nickName { get; set; }
+        public string avatarPicture { get; set; }
+        public List<int> userPermissions { get; set; }
 
-        public int personId
-        {
-            get { return _personId; }
-            set { _personId = value; }
-        }
-        public string ci
-        {
-            get { return _ci; }
-            set { _ci = value; }
-        }
-        public string firstName
-        {
-            get { return _firstName; }
-            set { _firstName = value; }
-        }
-        public string secondName
-        {
-            get { return _secondName; }
-            set { _secondName = value; }
-        }
-        public string firstSurname
-        {
-            get { return _firstSurname; }
-            set { _firstSurname = value; }
-        }
-        public string secondSurname
-        {
-            get { return _secondSurname; }
-            set { _secondSurname = value; }
-        }
-        public string nickName
-        {
-            get { return _nickName; }
-            set { _nickName = value; }
-        }
-        public string avatarPicture
-        {
-            get { return _avatarPicture; }
-            set { _avatarPicture = value; }
-        }
-        public List<int> userPermissions
-        {
-            get { return _userPermissions; }
-            set { _userPermissions = value; }
-        }
-        
 
         public List<int> getPermissions(int userId)
         {

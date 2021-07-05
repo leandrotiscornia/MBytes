@@ -8,8 +8,7 @@ namespace Datos
 {
     class ModelStudent : ModelPerson
     {
-        private List<string>[] _subjectsCoursing;
-        public List<string>[] subjectsCoursing;
+        public List<string>[] subjectsCoursing { get; set; }
 
         public List<string>[] getSubjectsCoursing(int studentId)
         {

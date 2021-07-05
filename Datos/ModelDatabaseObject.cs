@@ -9,28 +9,12 @@ namespace Datos
 {
     public class ModelDataBaseObject : ModelConnection
     {
+        public string tableName { get; set; }
+        public string[] columnNames { get; set; }
+        public string[] objectValues { get; set; }
+        public string objectKey { get; set; }
 
-        private string _tableName;
-        private string[] _columnNames;
-        private string[] _objectValues;
-
-        public string tableName
-        {
-            get { return _tableName; }
-            set { _tableName = value; }
-        }
-        public string[] columnNames
-        {
-            get { return _columnNames; }
-            set { _columnNames = value; }
-        }
-        public string[] objectValues
-        {
-            get { return _objectValues; }
-            set { _objectValues = value; }
-        }
-        
-        public void insertObject(string tableName, string[] columnNames, string[] objectValues)
+        public void insertObject()
         {
             string commandString;
             commandString = "INSERT INTO " + tableName + "("; // INSERT INTO tableName (
@@ -53,16 +37,16 @@ namespace Datos
             command.ExecuteNonQuery();
             closeConnection();
         }
-        public void deleteObject(string objectId, string tableName)
+        public void deleteObject()
         {
             string commandString;
             commandString = "DELETE FROM " + tableName + " WHERE id=@objectId;";
             command.CommandText = commandString;
-            command.Parameters.AddWithValue("@objectId", objectId);
+            command.Parameters.AddWithValue("@objectId", objectKey);
             command.Prepare();
             command.ExecuteNonQuery();
         }
-        public void modifyObject(string objectId, string tableName, string[] columnNames, string[] objectValues)
+        public void modifyObject()
         {
             string commandString;
             var columnsAndValues = columnNames.Zip(objectValues, (c, v) => new { Column = c, Value = v });
@@ -72,7 +56,7 @@ namespace Datos
             commandString = commandString.Remove(commandString.Length - 1, 1);
             commandString = "WHERE id= @objectId";
             command.CommandText = commandString;
-            command.Parameters.AddWithValue("objectId", objectId);
+            command.Parameters.AddWithValue("objectId", objectKey);
             command.Prepare();
             openConnection();
             command.ExecuteNonQuery();
@@ -80,7 +64,7 @@ namespace Datos
             
 
         }
-        public DataTable listObjects (string tableName, string[] columnNames)
+        public DataTable listObjects ()
         {
             DataTable objectsData = new DataTable();
             //builds SQL SELECT command

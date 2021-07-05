@@ -8,19 +8,8 @@ namespace Datos
 {
     public class ModelTeacher : ModelPerson
     {
-        private List<string> _availableSubjects;
-        private List<string>[] _impartingSubjects;
-        
-        public List<string> availableSubjects
-        {
-            get { return _availableSubjects; }
-            set { _availableSubjects = value; }
-        }
-        public List<string>[] impartingSubjects
-        {
-            get { return _impartingSubjects; }
-            set { _impartingSubjects = value; }
-        }
+        public List<string> availableSubjects { get; set; }
+        public List<string>[] impartingSubjects { get; set; }
         public List<string> getAvalilableSubjects(int teacherId)
         {
             List<string> availableSubjects = new List<string>();
