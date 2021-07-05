@@ -9,36 +9,11 @@ namespace Datos
     class ModelGroup : ModelDataBaseObject
 
     {
-        private int _groupId;
-        private string _groupName;
-        private string _groupGrade;
-        private string _shift;
+        public int groupId { get; set; }
+        public string groupName { get; set; }
 
-        public int groupId
-        {
-            get { return _groupId; }
-            set { _groupId = value; }
+        public string groupGrade { get; set; }
 
-        }
-        public string groupName
-        {
-            get { return _groupName; }
-            set { _groupName = value; }
-
-        }
-
-        public string groupGrade
-        {
-            get { return _groupGrade; }
-            set { _groupGrade = value; }
-
-        }
-
-        public string shift
-        {
-            get { return _shift; }
-            set { _shift = value; }
-
-        }
+        public string shift { get; set; }
     }
 }

@@ -10,31 +10,10 @@ namespace Datos
     
     class ModelConsultMessage : ModelDataBaseObject
     {
-        private int _consultId;
-        private int _senderId;
-        private string _message;
-        private DateTime _date;
-       
-        public int consultId
-        {
-            get { return _consultId; }
-            set { _consultId = value; }
-        }
-        public int senderId
-        {
-            get { return _senderId; }
-            set { _senderId = value; }
-        }
-        public string message
-        {
-            get { return _message; }
-            set { _message = value; }
-        }
-        public DateTime date
-        {
-            get { return _date; }
-            set { _date = value; }
-        }
+        public int consultId { get; set; }
+        public int senderId { get; set; }
+        public string message { get; set; }
+        public DateTime date { get; set; }
 
         public void sendConsultMessage()
         {
@@ -44,13 +23,13 @@ namespace Datos
                 "(Sender_ID, Consult_ID, Message, Date) " +
                 "VALUES(@senderId, @consultId, @message, @date);";
             command.CommandText = commandString;
-            command.Parameters.AddWithValue("@senderId", _senderId);
-            command.Parameters.AddWithValue("@consultId", _consultId);
-            commandString.Parameters.AddWithValue("@message", _message);
-            commandString.AsParallel.AddWithValue("@date", _date);
+            command.Parameters.AddWithValue("@senderId", senderId);
+            command.Parameters.AddWithValue("@consultId", consultId);
+            command.Parameters.AddWithValue("@message", message);
+            command.Parameters.AddWithValue("@date", date);
             command.Prepare();
             openConnection();
-            commandString.ExecuteNonQuery();
+            command.ExecuteNonQuery();
             closeConnection();
         }
 
@@ -67,7 +46,7 @@ namespace Datos
             command.Parameters.AddWithValue("@consultId", consultId);
             command.Prepare();
             openConnection();
-            reader = command.ExecuteNonQuery();
+            reader = command.ExecuteReader();
             closeConnection();
             messages.Load(reader);
 

@@ -9,30 +9,7 @@ namespace Datos
 {
     class ModelCourse : ModelDataBaseObject 
     {
-        private int _courseId;
-        private String _courseName;
-        
-        public int courseId 
-        {
-            get
-            {
-                return _courseId;
-            }
-            set
-            {
-                _courseId = value;
-            }
-        } 
-        public String courseName
-        {
-            get
-            {
-                return _courseName;
-            }
-            set
-            {
-                _courseName = value;
-            }
-        }
+        public int courseId { get; set; }
+        public String courseName { get; set; }
     }
 }

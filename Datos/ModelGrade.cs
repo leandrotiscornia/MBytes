@@ -8,57 +8,12 @@ namespace Datos
 {
     class ModelGrade : ModelDataBaseObject
     {
-        private int _gradeId;
-        private string _gradeName;
-        private string _courseName;
-        private List<string> _gradeSubject;
+        public int gradeId { get; set; }
 
-        public int gradeId
-        {
-            get
-            {
-                return _gradeId;
-            }
-            set
-            {
-                _gradeId = value;
-            }
-        }
+        public string gradeName { get; set; }
 
-        public string gradeName
-        {
-            get
-            {
-                return _gradeName;
-            }
-            set
-            {
-                _gradeName = value;
-            }
-        }
-
-        public string courseName
-        {
-            get
-            {
-                return _courseName;
-            }
-            set
-            {
-                _courseName = value;
-            }
-        }
-        public List<string> gradeSubject
-        {
-            get
-            {
-                return _gradeSubject;
-            }
-            set
-            {
-                _gradeSubject = value;
-            }
-        }
+        public string courseName { get; set; }
+        public List<string> gradeSubject { get; set; }
 
         public void addSubject(int subjectId,int gradeId )
         {

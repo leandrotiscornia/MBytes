@@ -8,22 +8,9 @@ namespace Datos
 {
     class ModelSubject : ModelDataBaseObject
     {
-        private int _subjectId;
-        private string _subjectName;
+        public int subjectId { get; set; }
 
-
-        public int subjectId
-        {
-            get { return _subjectId; }
-            set { _subjectId = value; }
-
-        }
-
-        public string subjectName
-        {
-            get { return _subjectName; }
-            set { _subjectName = value; }
-        }
+        public string subjectName { get; set; }
     }
 
 }
