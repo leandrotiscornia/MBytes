@@ -1,10 +1,10 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>df697e70-b8cb-4948-9f51-204f4ac48bad</ProjectGuid>
+    <ProjectGuid>{DF697E70-B8CB-4948-9F51-204F4AC48BAD}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>Negocio</RootNamespace>
@@ -31,24 +31,47 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="System"/>
-    
-    <Reference Include="System.Core"/>
-    <Reference Include="System.Xml.Linq"/>
-    <Reference Include="System.Data.DataSetExtensions"/>
-    
-    
-    <Reference Include="Microsoft.CSharp"/>
-    
-    <Reference Include="System.Data"/>
-    
-    <Reference Include="System.Net.Http"/>
-    
-    <Reference Include="System.Xml"/>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="ControllerDeleteCourse.cs" />
+    <Compile Include="ControllerDeleteGrade.cs" />
+    <Compile Include="ControllerDeleteGroup.cs" />
+    <Compile Include="ControllerDeleteStudent.cs" />
+    <Compile Include="ControllerDeleteSubject.cs" />
+    <Compile Include="ControllerDeleteTeacher.cs" />
+    <Compile Include="ControllerInsertCourse.cs" />
+    <Compile Include="ControllerInsertGrade.cs" />
+    <Compile Include="ControllerInsertGroup.cs" />
+    <Compile Include="ControllerInsertStudent.cs" />
+    <Compile Include="ControllerInsertTeacher.cs" />
+    <Compile Include="ControllerInsertSubject.cs" />
+    <Compile Include="ControllerListCourse.cs" />
+    <Compile Include="ControllerListGrade.cs" />
+    <Compile Include="ControllerListGroup.cs" />
+    <Compile Include="ControllerListStudent.cs" />
+    <Compile Include="ControllerListSubject.cs" />
+    <Compile Include="ControllerListTeacher.cs" />
+    <Compile Include="ControllerModifyCourse.cs" />
+    <Compile Include="ControllerModifyGrade.cs" />
+    <Compile Include="ControllerModifyGroup.cs" />
+    <Compile Include="ControllerModifyStudent.cs" />
+    <Compile Include="ControllerModifySubject.cs" />
+    <Compile Include="ControllerModifyTeacher.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Datos\Datos.csproj">
+      <Project>{e7a25795-9c3c-449a-8ee9-2ae252fa5fc4}</Project>
+      <Name>Datos</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
- </Project>
+</Project>

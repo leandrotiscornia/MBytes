@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Datos
 {
-    class ModelGrade : ModelDataBaseObject
+   public class ModelGrade : ModelDataBaseObject
     {
         public int gradeId { get; set; }
 
@@ -24,7 +24,7 @@ namespace Datos
             command.CommandText = commandString;
             command.Parameters.AddWithValue("@GradeID", gradeId);
             command.Parameters.AddWithValue("@SubjectID", subjectId);
-            command.Prapare();
+            command.Prepare();
             openConnection();
             command.ExecuteNonQuery();
             closeConnection();
