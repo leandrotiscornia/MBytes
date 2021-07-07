@@ -8,7 +8,7 @@ namespace Datos
 {
     
     
-    class ModelConsult : ModelDataBaseObject
+   public class ModelConsult : ModelDataBaseObject
     {
         public int consultId { get; set; }
         public int senderId { get; set; }

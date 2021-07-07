@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Datos
 {
-    class ModelGrade : ModelDataBaseObject
+   public class ModelGrade : ModelDataBaseObject
     {
         public int gradeId { get; set; }
 
