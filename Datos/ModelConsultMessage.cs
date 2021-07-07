@@ -8,7 +8,7 @@ using System.Data;
 namespace Datos
 {
     
-    class ModelConsultMessage : ModelDataBaseObject
+  public class ModelConsultMessage : ModelDataBaseObject
     {
         public int consultId { get; set; }
         public int senderId { get; set; }

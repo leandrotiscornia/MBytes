@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Datos
 {
-    class ModelStudent : ModelPerson
+   public class ModelStudent : ModelPerson
     {
         public List<string>[] subjectsCoursing { get; set; }
 

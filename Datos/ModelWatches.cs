@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Datos
 {
-    class ModelWatches : ModelDataBaseObject
+  public class ModelWatches : ModelDataBaseObject
     {
         public int TeacherId { get; set; }
 

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Datos
 {
-    class ModelGroup : ModelDataBaseObject
+   public class ModelGroup : ModelDataBaseObject
 
     {
         public int groupId { get; set; }
