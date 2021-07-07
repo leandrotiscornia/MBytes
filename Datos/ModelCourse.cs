@@ -7,7 +7,7 @@ using MySql.Data.MySqlClient;
 
 namespace Datos
 {
-    class ModelCourse : ModelDataBaseObject 
+   public class ModelCourse : ModelDataBaseObject 
     {
         public int courseId { get; set; }
         public String courseName { get; set; }
