@@ -10,22 +10,29 @@ namespace Datos
     public class ModelDataBaseObject : ModelConnection
     {
         public string tableName { get; set; }
+        public string objectKey { get; set; }
         public string[] columnNames { get; set; }
         public string[] objectValues { get; set; }
-        public string objectKey { get; set; }
+        
+
+
+
+
+        
+
 
         public void insertObject()
         {
             string commandString;
-            commandString = "INSERT INTO " + tableName + "("; // INSERT INTO tableName (
-            foreach (string column in columnNames) // INSERT INTO tablename (column1, column2, ...columnN,
+            commandString = "INSERT INTO " + tableName + "("; 
+            foreach (string column in columnNames) 
                 commandString += column + ",";
-            commandString = commandString.Remove(commandString.Length - 1, 1); // INSERT INTO tablename (column1, column2, ...columnN
-            commandString += ") VALUES ("; //INSERT INTO tablename (column1, column2, ...columnN) VALUES (
-            foreach (string column in objectValues) //INSERT INTO tablename (column1, column2, ...columnN) VALUES (@column1, column2, ...columnN,
+            commandString = commandString.Remove(commandString.Length - 1, 1); 
+            commandString += ") VALUES ("; 
+            foreach (string column in objectValues) 
                 commandString += "@" + column + ",";
-            commandString = commandString.Remove(commandString.Length - 1, 1); //INSERT INTO tablename (column1, column2, ...columnN) VALUES (@column1, column2, ...columnN
-            commandString += ");"; //INSERT INTO tablename (column1, column2, ...columnN) VALUES (@column1, column2, ...columnN);
+            commandString = commandString.Remove(commandString.Length - 1, 1); 
+            commandString += ");"; 
 
             command.CommandText = commandString;
             var columnsAndValues = columnNames.Zip(objectValues, (c, v) => new {Column = c, Value = v} );
@@ -40,7 +47,7 @@ namespace Datos
         public void deleteObject()
         {
             string commandString;
-            commandString = "DELETE FROM " + tableName + " WHERE id=@objectId;";
+            commandString = "DELETE FROM " + tableName + " WHERE ID=@objectId;";
             command.CommandText = commandString;
             command.Parameters.AddWithValue("@objectId", objectKey);
             command.Prepare();

@@ -9,7 +9,7 @@ namespace Datos
     public class ModelTeacher : ModelPerson
     {
         public List<string> availableSubjects { get; set; }
-        public List<string>[] impartingSubjects { get; set; }
+        public List<List<string>> impartingSubjects { get; set; }
         public List<string> getAvalilableSubjects(int teacherId)
         {
             List<string> availableSubjects = new List<string>();
@@ -29,9 +29,9 @@ namespace Datos
             return availableSubjects;
         }
         
-        public List<string>[] getImpartingSubjects(int teacherId)
+        public List<List<string>> getImpartingSubjects(int teacherId)
         {
-            List<string>[] impartingSubjects = new List<string>[1];
+            List<List<string>> impartingSubjects = new List<List<string>>();
             List <string> groups = new List<string>();
             List <string> subjects = new List<string>();
             string commandString;
@@ -116,7 +116,6 @@ namespace Datos
             command.ExecuteNonQuery();
         }
     }
-
 
 
     
