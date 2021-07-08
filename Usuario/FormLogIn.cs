@@ -41,7 +41,8 @@ namespace Usuario
 
         }
 
-        private void closeBtn_Click(object sender, EventArgs e)
+   
+        private void pictureBox2_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }

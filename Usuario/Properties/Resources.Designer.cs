@@ -63,29 +63,9 @@ namespace Usuario.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap close_button {
-            get {
-                object obj = ResourceManager.GetObject("close button", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap closebtn {
             get {
                 object obj = ResourceManager.GetObject("closebtn", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap min_button {
-            get {
-                object obj = ResourceManager.GetObject("min button", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
