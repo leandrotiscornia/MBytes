@@ -41,35 +41,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ControllerCreateConsult.cs" />
-    <Compile Include="ControllerDeleteCourse.cs" />
-    <Compile Include="ControllerDeleteGrade.cs" />
-    <Compile Include="ControllerDeleteGroup.cs" />
-    <Compile Include="ControllerDeleteStudent.cs" />
-    <Compile Include="ControllerDeleteSubject.cs" />
-    <Compile Include="ControllerDeleteTeacher.cs" />
-    <Compile Include="ControllerInsertCourse.cs" />
-    <Compile Include="ControllerInsertGrade.cs" />
-    <Compile Include="ControllerInsertGroup.cs" />
-    <Compile Include="ControllerInsertStudent.cs" />
-    <Compile Include="ControllerInsertTeacher.cs" />
-    <Compile Include="ControllerInsertSubject.cs" />
-    <Compile Include="ControllerListCourse.cs" />
-    <Compile Include="ControllerListGrade.cs" />
-    <Compile Include="ControllerListGroup.cs" />
-    <Compile Include="ControllerListStudent.cs" />
-    <Compile Include="ControllerListSubject.cs" />
-    <Compile Include="ControllerListTeacher.cs" />
-    <Compile Include="ControllerModifyCourse.cs" />
-    <Compile Include="ControllerModifyGrade.cs" />
-    <Compile Include="ControllerModifyGroup.cs" />
-    <Compile Include="ControllerModifyStudent.cs" />
-    <Compile Include="ControllerModifySubject.cs" />
-    <Compile Include="ControllerModifyTeacher.cs" />
-    <Compile Include="ControllerOpenConsult.cs" />
-    <Compile Include="ControllerSendConsult.cs" />
-    <Compile Include="ControllerStateConsult.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Session.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Datos\Datos.csproj">
+      <Project>{e7a25795-9c3c-449a-8ee9-2ae252fa5fc4}</Project>
+      <Name>Datos</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Datos\Datos.csproj">

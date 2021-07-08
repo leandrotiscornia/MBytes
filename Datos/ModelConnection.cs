@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MySql.Data.MySqlClient;
+using System.Configuration;
 
 namespace Datos
 {
@@ -18,7 +19,32 @@ namespace Datos
         public MySqlDataReader reader { get; set; }
         public MySqlConnection connection { get; set; }
 
-        public MySqlConnection openConnection()
+        private DataBase connectionConfigFile = new DataBase();
+        
+        public ModelConnection()
+        {
+            
+            command = new MySqlCommand();
+            connection = new MySqlConnection();
+            dbServer = DataBase.Default.dbServer;
+            dbPort = DataBase.Default.dbPort;
+            dbName = DataBase.Default.dbName;
+            dbUser = DataBase.Default.dbUser;
+            dbPassword = DataBase.Default.dbPassword;
+            
+        }
+        public void setConnectionUser()
+        {
+            DataBase.Default.dbUser = dbName;
+            DataBase.Default.dbPassword = dbPassword;
+        }
+        public void setConnectionData()
+        {
+            DataBase.Default.dbName = dbName;
+            DataBase.Default.dbServer = dbServer;
+            DataBase.Default.dbPort = dbPort;
+        }
+        public void openConnection()
         {
             command.Connection = connection;
             connection.ConnectionString =
@@ -30,18 +56,19 @@ namespace Datos
             try
             {
                 connection.Open();
-                return connection;
+                Console.WriteLine("Conexión abierta");
             }
             catch (MySqlException exception)
             {
                 Console.WriteLine("" + exception);
-                return null;
+                
             }
 
         }
         public void closeConnection()
         {
             connection.Close();
+            Console.WriteLine("Conexión cerrada");
         }
     }
 }
