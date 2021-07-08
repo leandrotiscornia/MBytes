@@ -7,7 +7,7 @@ using Datos;
 
 namespace Negocio
 {
-    class ControllerListGroup
+    public class ControllerListGroup
     {
         public void listGroup ( string [] groupData)
         {

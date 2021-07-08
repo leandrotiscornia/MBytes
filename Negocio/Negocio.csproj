@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ControllerCreateConsult.cs" />
     <Compile Include="ControllerDeleteCourse.cs" />
     <Compile Include="ControllerDeleteGrade.cs" />
     <Compile Include="ControllerDeleteGroup.cs" />
@@ -65,6 +66,9 @@
     <Compile Include="ControllerModifyStudent.cs" />
     <Compile Include="ControllerModifySubject.cs" />
     <Compile Include="ControllerModifyTeacher.cs" />
+    <Compile Include="ControllerOpenConsult.cs" />
+    <Compile Include="ControllerSendConsult.cs" />
+    <Compile Include="ControllerStateConsult.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

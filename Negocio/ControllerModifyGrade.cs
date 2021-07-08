@@ -7,7 +7,7 @@ using Datos;
 
 namespace Negocio
 {
-    class ControllerModifyGrade
+    public class ControllerModifyGrade
     {
         public void modifyGrade (string [] gradeData)
         {
