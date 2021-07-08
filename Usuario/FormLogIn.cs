@@ -40,5 +40,18 @@ namespace Usuario
             }
 
         }
+
+        private void btnRegister_Click(object sender, EventArgs e)
+        {
+            FormRegisterPerson registerForm = new FormRegisterPerson();
+            registerForm.Show();
+           
+
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

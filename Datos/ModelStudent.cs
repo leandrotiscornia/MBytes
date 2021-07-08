@@ -8,11 +8,11 @@ namespace Datos
 {
    public class ModelStudent : ModelPerson
     {
-        public List<string>[] subjectsCoursing { get; set; }
+        public List<List<string>> subjectsCoursing { get; set; }
 
-        public List<string>[] getSubjectsCoursing(int studentId)
+        public List<List<string>> getSubjectsCoursing(int studentId)
         {
-            List<string>[] subjectsCoursing = new List<string>[1];
+            List<List<string>> subjectsCoursing = new List<List<string>>();
             List<string> subjects = new List<string>();
             List<string> groups = new List<string>();
             string commandString;
@@ -31,8 +31,8 @@ namespace Datos
                 groups.Add(reader.GetString(0));
                 subjects.Add(reader.GetString(1));
             }
-            subjectsCoursing[0] = groups;
-            subjectsCoursing[1] = subjects;
+            subjectsCoursing.Add(groups);
+            subjectsCoursing.Add(subjects);
 
             return subjectsCoursing;
         }
