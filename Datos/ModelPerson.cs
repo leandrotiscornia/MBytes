@@ -20,7 +20,21 @@ namespace Datos
         public string avatarPicture { get; set; }
         public List<int> userPermissions { get; set; }
 
-
+        public void registerUser(string userName, string userPassword)
+        {
+            string commandString =
+                "INSERT INTO users " +
+                "(User_Login, User_Password) " +
+                "VALUES (@userName, @userPassword);";
+            command.CommandText = commandString;
+            command.Parameters.AddWithValue("@userName", userName);
+            command.Parameters.AddWithValue("@userPassword", userPassword);
+            openConnection();
+            command.Prepare();
+            command.ExecuteNonQuery();
+            command.Parameters.Clear();
+            closeConnection();
+        }
         public void createObjectPerson()
         {
             objectKey = personId.ToString();
@@ -28,7 +42,7 @@ namespace Datos
             columnNames = new string[]
             {
                 "CI",
-                "User_ID",
+                "ID",
                 "First_Name",
                 "Second_Name",
                 "First_Surname",
@@ -71,6 +85,7 @@ namespace Datos
             
             return userRole;
         }
+
         public int getUserId(string userName)
         {
             string commandString;
@@ -86,6 +101,7 @@ namespace Datos
 
             reader.Read();
             this.personId = this.reader.GetInt32(0);
+            command.Parameters.Clear();
             this.closeConnection();
             return this.personId;
         }
@@ -108,7 +124,22 @@ namespace Datos
                 permissions.Add(reader.GetInt32(0));
             return permissions;
         }
+        public void assignUserRole(int roleId)
+        {
+            string commandString;
+            commandString =
+                "INSERT INTO personIs " +
+                "(Role_ID, Person_CI) " +
+                "VALUES(@roleId, @ci);";
+            command.CommandText = commandString;
+            command.Parameters.AddWithValue("@ci", ci);
+            command.Parameters.AddWithValue("@roleId", roleId);
+            openConnection();
+            command.ExecuteNonQuery();
+            command.Parameters.Clear();
+            closeConnection();
 
+        }
        public List<string> getLogInData(string userLogin, string userPassword)
         {
             DataTable table = new DataTable();

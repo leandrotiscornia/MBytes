@@ -29,7 +29,7 @@ namespace Datos
                 commandString += column + ",";
             commandString = commandString.Remove(commandString.Length - 1, 1); 
             commandString += ") VALUES ("; 
-            foreach (string column in objectValues) 
+            foreach (string column in columnNames) 
                 commandString += "@" + column + ",";
             commandString = commandString.Remove(commandString.Length - 1, 1); 
             commandString += ");"; 
@@ -39,9 +39,14 @@ namespace Datos
             
             foreach (var index in columnsAndValues)
                 command.Parameters.AddWithValue("@" + index.Column, index.Value);
-            command.Prepare();
+            Console.WriteLine(""+commandString);
+            foreach (string value in objectValues)
+                Console.WriteLine("" + value);
+            
             openConnection();
+            command.Prepare();
             command.ExecuteNonQuery();
+            command.Parameters.Clear();
             closeConnection();
         }
         public void deleteObject()

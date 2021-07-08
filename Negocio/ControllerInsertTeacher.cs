@@ -7,18 +7,24 @@ using Datos;
 
 namespace Negocio
 {
-    public class ControllerInsertTeacher 
+    public static class ControllerInsertTeacher 
     {
-        public void insertTeacher(string [] teacherData)
+        public static void insertTeacher(string[] teacherData, string username, string password)
         {
-            ModelPerson teacherToInsert = new ModelPerson();
+            ModelTeacher teacherToInsert = new ModelTeacher();
+
             teacherToInsert.ci = teacherData[0];
             teacherToInsert.firstName = teacherData[1];
             teacherToInsert.secondName = teacherData[2];
             teacherToInsert.firstSurname = teacherData[3];
             teacherToInsert.secondSurname = teacherData[4];
+
+            teacherToInsert.registerUser(username, password);
+            teacherToInsert.personId = teacherToInsert.getUserId(username);
             teacherToInsert.createObjectPerson();
             teacherToInsert.insertObject();
+            teacherToInsert.assignUserRole(1); //roles.ID {1=Teacher, 2=Student}
+            
         }
 
         
