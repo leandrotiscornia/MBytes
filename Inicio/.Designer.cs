@@ -81,6 +81,7 @@
             this.btnConsulta.TabIndex = 2;
             this.btnConsulta.Text = "Consulta";
             this.btnConsulta.UseVisualStyleBackColor = false;
+            this.btnConsulta.Click += new System.EventHandler(this.btnConsulta_Click);
             // 
             // btnAgenda
             // 
@@ -95,6 +96,7 @@
             this.btnAgenda.TabIndex = 3;
             this.btnAgenda.Text = "Agenda";
             this.btnAgenda.UseVisualStyleBackColor = false;
+            this.btnAgenda.Click += new System.EventHandler(this.btnAgenda_Click);
             // 
             // label1
             // 
@@ -136,6 +138,7 @@
             this.pictureBox4.Size = new System.Drawing.Size(40, 40);
             this.pictureBox4.TabIndex = 0;
             this.pictureBox4.TabStop = false;
+            this.pictureBox4.Click += new System.EventHandler(this.btnClosePicture_Click);
             // 
             // pictureBox5
             // 
@@ -176,6 +179,7 @@
             this.pictureBox1.Size = new System.Drawing.Size(40, 40);
             this.pictureBox1.TabIndex = 0;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.btnUserMenuPicture_Click);
             // 
             // pictureBox2
             // 
@@ -219,6 +223,7 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(678, 312);
             this.panel3.TabIndex = 22;
+            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.ELPANEL_Paint);
             // 
             // MainForm
             // 
