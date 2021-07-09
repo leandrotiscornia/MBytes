@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
 
 namespace Datos
 {
@@ -25,6 +26,35 @@ namespace Datos
 
             consultState = states[state];
 
+        }
+
+        public DataTable getConsults(string who)
+        {
+            DataTable consults = new DataTable();
+            string commandString;
+            
+            commandString =
+                "SELECT ID,Sender_ID,Receiver_ID,Topic,State " +
+                "WHERE @ID = @userID AND State = @state";
+                command.CommandText = commandString;
+                command.Parameters.AddWithValue("@state", consultState);
+            if (who == "sender")
+            {
+                command.Parameters.AddWithValue("@ID", "Sender_ID");
+                command.Parameters.AddWithValue("@userID", senderId);
+            }else if (who == "receiver")
+            {
+                command.Parameters.AddWithValue("@ID", "Receiver_ID");
+                command.Parameters.AddWithValue("@userID", receiverId);
+            }
+            openConnection();
+            command.Prepare();
+            reader = command.ExecuteReader();
+            command.Parameters.Clear();
+            consults.Load(reader);
+            closeConnection();
+
+            return consults;
         }
 
 
