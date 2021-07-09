@@ -17,6 +17,9 @@ namespace Inicio
             
         }
 
- 
+        private void MainForm_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }
