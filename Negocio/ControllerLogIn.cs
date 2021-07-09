@@ -9,12 +9,12 @@ namespace Negocio
 {
     public class ControllerLogIn 
     {
-        public string userLogin { get; set; }
+        public string userName { get; set; }
         public string userPassword { get; set; }
 
         public ControllerLogIn(string userLogin, string userPassword)
         {
-            this.userLogin = userLogin;
+            this.userName = userLogin;
             this.userPassword = userPassword;
         }
         
@@ -22,20 +22,19 @@ namespace Negocio
         {
             string result;
             ModelPerson user = new ModelPerson();
-            List<string> logInData = new List<string>();
-            logInData = user.getLogInData(userLogin, userPassword);
-
-
-           // result = "tbUser: " + userLogin + "dbUser: " + logInData[0];
-               
-            if (userLogin != logInData[0])
+            Console.WriteLine("" +user.getUserName(userName));
+            if (userName == "")
+                result = "You need to set an user name";
+            else if (userPassword == "")
+                result = "You need to set your password";
+            else if (userName != user.getUserName(userName))
                 result = "That user does not exist";
-            else if (userPassword != logInData[1])
+            else if (userPassword != user.getUserPassword(userPassword))
                 result = "Incorrect password";
             else
             {
-                user.personId = user.getUserId(userLogin);
-                Session.userLogIn = userLogin;
+                user.personId = user.getUserId(userName);
+                Session.userLogIn = userName;
                 Session.userId = user.personId;
                 Session.userRole = user.getUserRole();
                 Session.userPassword = userPassword;

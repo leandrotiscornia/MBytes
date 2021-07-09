@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="controllerCheckExistence.cs" />
     <Compile Include="ControllerDeleteCourse.cs" />
     <Compile Include="ControllerDeleteGrade.cs" />
     <Compile Include="ControllerDeleteGroup.cs" />

@@ -11,6 +11,7 @@ namespace Datos
     {
         public string tableName { get; set; }
         public string objectKey { get; set; }
+        public string objectKeyValue { get; set; }
         public string[] columnNames { get; set; }
         public string[] objectValues { get; set; }
         
@@ -95,6 +96,27 @@ namespace Datos
             return objectsData;
         }
 
+        public string checkObjectExistence()
+        {
+            string result;
+            string commandString;
+            commandString = 
+                "SELECT "+ this.objectKey+ " "+ 
+                "FROM " + this.tableName + " " +
+                "WHERE " +this.objectKey +"=@objectKeyValue";
+            command.CommandText = commandString;
+            command.Parameters.AddWithValue("objectKeyValue", objectKeyValue);
+            openConnection();
+            reader = command.ExecuteReader();
+            reader.Read();
+            if (reader.HasRows)
+                result = reader.GetString(0);
+            else
+                result = null;
+            command.Parameters.Clear();
+            closeConnection();
+            return result;
+        }
 
         
     }

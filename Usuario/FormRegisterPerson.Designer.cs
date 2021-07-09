@@ -59,7 +59,6 @@
             this.label1.Size = new System.Drawing.Size(20, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "CI:";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // label2
             // 
@@ -69,7 +68,6 @@
             this.label2.Size = new System.Drawing.Size(57, 13);
             this.label2.TabIndex = 1;
             this.label2.Text = "First Name";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label3
             // 
@@ -79,7 +77,6 @@
             this.label3.Size = new System.Drawing.Size(75, 13);
             this.label3.TabIndex = 2;
             this.label3.Text = "Second Name";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label4
             // 
@@ -89,7 +86,6 @@
             this.label4.Size = new System.Drawing.Size(71, 13);
             this.label4.TabIndex = 3;
             this.label4.Text = "First Surname";
-            this.label4.Click += new System.EventHandler(this.label4_Click);
             // 
             // label5
             // 
@@ -99,7 +95,6 @@
             this.label5.Size = new System.Drawing.Size(89, 13);
             this.label5.TabIndex = 4;
             this.label5.Text = "Second Surname";
-            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // tbSecondSurname
             // 
@@ -107,7 +102,6 @@
             this.tbSecondSurname.Name = "tbSecondSurname";
             this.tbSecondSurname.Size = new System.Drawing.Size(100, 20);
             this.tbSecondSurname.TabIndex = 5;
-            this.tbSecondSurname.TextChanged += new System.EventHandler(this.tbSecondSurname_TextChanged);
             // 
             // tbFirstSurname
             // 
@@ -115,7 +109,6 @@
             this.tbFirstSurname.Name = "tbFirstSurname";
             this.tbFirstSurname.Size = new System.Drawing.Size(100, 20);
             this.tbFirstSurname.TabIndex = 6;
-            this.tbFirstSurname.TextChanged += new System.EventHandler(this.tbFirstSurname_TextChanged);
             // 
             // tbSecondName
             // 
@@ -123,7 +116,6 @@
             this.tbSecondName.Name = "tbSecondName";
             this.tbSecondName.Size = new System.Drawing.Size(100, 20);
             this.tbSecondName.TabIndex = 7;
-            this.tbSecondName.TextChanged += new System.EventHandler(this.tbSecondName_TextChanged);
             // 
             // tbFirstName
             // 
@@ -131,7 +123,6 @@
             this.tbFirstName.Name = "tbFirstName";
             this.tbFirstName.Size = new System.Drawing.Size(100, 20);
             this.tbFirstName.TabIndex = 8;
-            this.tbFirstName.TextChanged += new System.EventHandler(this.tbFirstName_TextChanged);
             // 
             // tbCI
             // 
@@ -139,7 +130,6 @@
             this.tbCI.Name = "tbCI";
             this.tbCI.Size = new System.Drawing.Size(100, 20);
             this.tbCI.TabIndex = 9;
-            this.tbCI.TextChanged += new System.EventHandler(this.tbCI_TextChanged);
             // 
             // label6
             // 
@@ -149,7 +139,6 @@
             this.label6.Size = new System.Drawing.Size(64, 13);
             this.label6.TabIndex = 10;
             this.label6.Text = "Register As:";
-            this.label6.Click += new System.EventHandler(this.label6_Click);
             // 
             // pnlUserRoles
             // 
@@ -157,7 +146,6 @@
             this.pnlUserRoles.Name = "pnlUserRoles";
             this.pnlUserRoles.Size = new System.Drawing.Size(202, 100);
             this.pnlUserRoles.TabIndex = 12;
-            this.pnlUserRoles.Paint += new System.Windows.Forms.PaintEventHandler(this.pnlUserRoles_Paint);
             // 
             // btnRegister
             // 
@@ -267,7 +255,6 @@
             this.Controls.Add(this.label1);
             this.Name = "FormRegisterPerson";
             this.Text = "FormRegister";
-            this.Load += new System.EventHandler(this.FormRegisterPerson_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

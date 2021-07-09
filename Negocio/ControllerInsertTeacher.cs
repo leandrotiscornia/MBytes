@@ -9,8 +9,11 @@ namespace Negocio
 {
     public static class ControllerInsertTeacher 
     {
+        
+
         public static void insertTeacher(string[] teacherData, string username, string password)
         {
+            
             ModelTeacher teacherToInsert = new ModelTeacher();
 
             teacherToInsert.ci = teacherData[0];
@@ -26,7 +29,7 @@ namespace Negocio
             teacherToInsert.assignUserRole(1); //roles.ID {1=Teacher, 2=Student}
             
         }
-
+        
         
     }
 }
