@@ -28,16 +28,11 @@ namespace Usuario
 
         private void btnLogIn_Click(object sender, EventArgs e)
         {
-            ControllerLogIn login = new ControllerLogIn(tbUser.Text, tbPassword.Text);
-            string message = login.login();
+            string message = checkLogin();
             if (message != "")
-                MessageBox.Show("" + message,"Error", MessageBoxButtons.OK,MessageBoxIcon.Error);
+                MessageBox.Show("" + message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
-            { 
-            FormMain mainForm = new FormMain();
-            mainForm.Show();
-            this.Hide();
-            }
+                goToMain();
 
         }
 
@@ -52,6 +47,19 @@ namespace Usuario
         private void btnExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void goToMain()
+        {
+            FormMain mainForm = new FormMain();
+            mainForm.Show();
+            this.Hide();
+        }
+        private string checkLogin()
+        {
+            ControllerLogIn login = new ControllerLogIn(tbUser.Text, tbPassword.Text);
+            string message = login.login();
+            return message;
         }
     }
 }

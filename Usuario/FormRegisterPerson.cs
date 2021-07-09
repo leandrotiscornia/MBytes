@@ -25,98 +25,67 @@ namespace Usuario
 
         private void btnRegister_Click(object sender, EventArgs e)
         {
+            string textboxCheckresult = checkTextBoxes();
+            string existenceCheckResult = checkUserExistence();
+
+            if (textboxCheckresult != null)
+                errorMessage(textboxCheckresult);
+            else if (existenceCheckResult != null)
+                errorMessage(existenceCheckResult);
+            else
+                registerUser();
+        }
+        private string checkUserExistence()
+        {
+            if (ControllerCheckExistence.checkExistence("users", "User_Login", tbUserName.Text) == tbUserName.Text)
+                return "That user already exist";
+            else if (ControllerCheckExistence.checkExistence("persons", "CI", tbCI.Text) == tbCI.Text)
+                return "That person already exist";
+            else
+                return null;
+        }
+        private void registerUser()
+        {
             string ci = tbCI.Text;
             string firstName = tbFirstName.Text;
             string secondName = tbSecondName.Text;
             string firstSurname = tbFirstSurname.Text;
             string secondSurname = tbSecondSurname.Text;
-            string[] personData = new string[] { ci,firstName, secondName,firstSurname,secondSurname};
+            string[] personData = new string[] { ci, firstName, secondName, firstSurname, secondSurname };
+
             string userName = tbUserName.Text;
             string password = tbPassword.Text;
-            if (password == tbConfirmPassword.Text) {
+
+            if (password == tbConfirmPassword.Text)
+            {
                 if (cbRole.SelectedItem.ToString() == "Student")
                 {
                     ControllerInsertStudent.insertStudent(personData, userName, password);
-                } else if (cbRole.SelectedItem.ToString() =="Teacher")
-                    ControllerInsertTeacher.insertTeacher(personData,userName, password);
-            } else
-                MessageBox.Show("Passwords does not match","Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            
+                }
+                else if (cbRole.SelectedItem.ToString() == "Teacher")
+                    ControllerInsertTeacher.insertTeacher(personData, userName, password);
+            }
+            else
+                errorMessage("Passwords does not match");
         }
-
-        private void FormRegisterPerson_Load(object sender, EventArgs e)
+       private string checkTextBoxes()
         {
-
+            if (tbUserName.Text == "")
+                return "You need an user name";
+            else if (tbPassword.Text == "" || tbConfirmPassword.Text == "")
+                return "You need a password";
+            else if (tbCI.Text == "")
+                return "You need a CI";
+            else if (tbFirstName.Text == "")
+                return "I'm sure you do have a name";
+            else if (tbFirstSurname.Text == "")
+                return "We don't admit people without surnames";
+            else
+                return null;
         }
-
-        private void pnlUserRoles_Paint(object sender, PaintEventArgs e)
+        private void errorMessage(string message)
         {
-
-        }
-
-        private void cbUserRoles_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tbCI_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tbFirstName_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tbSecondName_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tbFirstSurname_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tbSecondSurname_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
+            MessageBox.Show(message, "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
     }
 }

@@ -140,17 +140,43 @@ namespace Datos
             closeConnection();
 
         }
-       public List<string> getLogInData(string userLogin, string userPassword)
+       public string getUserName(string userName)
         {
-            DataTable table = new DataTable();
-            List<string> logInData = new List<string>();
             string commandString = 
-                "SELECT User_Login, User_Password " +
+                "SELECT User_Login " +
                 "FROM users " +
-                "WHERE User_Login = @userLogin  AND User_Password = @userPassword;";
+                "WHERE User_Login = @userLogin;";
             this.command.CommandText = commandString;
-            this.command.Parameters.AddWithValue("@userLogin", userLogin);
+            this.command.Parameters.AddWithValue("@userLogin", userName);
+            
+
+            
+            this.openConnection();
+            this.command.Prepare();
+            try
+            {
+                this.reader = command.ExecuteReader();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("" + ex);
+            }
+            reader.Read();
+            if (!(reader.HasRows && reader.GetValue(0).ToString() == userName))
+                userName = null;
+            this.command.Parameters.Clear();
+            this.closeConnection();
+            return userName;
+        }
+        public string getUserPassword(string userPassword)
+        {
+            string commandString =
+                "SELECT User_Password " +
+                "FROM users " +
+                "WHERE User_Password = @userPassword;";
+            this.command.CommandText = commandString;
             this.command.Parameters.AddWithValue("@userPassword", userPassword);
+
 
 
             this.openConnection();
@@ -158,21 +184,18 @@ namespace Datos
             try
             {
                 this.reader = command.ExecuteReader();
-                table.Load(reader);
             }
             catch (Exception ex)
             {
                 Console.WriteLine("" + ex);
             }
-
-            
+            reader.Read();
+            if (!(reader.HasRows && reader.GetValue(0).ToString() == userPassword))
+                userPassword = null;
+            this.command.Parameters.Clear();
             this.closeConnection();
-            logInData.Add(table.Rows[0][0].ToString());
-            logInData.Add(table.Rows[0][1].ToString());
-            
-            
-            return logInData;
-        }
+            return userPassword;
 
+        }
     }
 }
