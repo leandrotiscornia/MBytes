@@ -154,5 +154,12 @@ namespace Usuario
             txtNewUserName.Visible = false;
             btnConfirmInfo.Visible = false;
         }
+
+        private void pbCloseButon_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+
     }
 }
