@@ -41,7 +41,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="controllerCheckExistence.cs" />
+    <Compile Include="ControllerChangeConsultState.cs" />
+    <Compile Include="ControllerGetConsultMessages.cs" />
+    <Compile Include="ControllerGetConsults.cs" />
+    <Compile Include="ControllerCheckExistence.cs" />
+    <Compile Include="ControllerGetAgendaUsers.cs" />
     <Compile Include="ControllerDeleteCourse.cs" />
     <Compile Include="ControllerDeleteGrade.cs" />
     <Compile Include="ControllerDeleteGroup.cs" />
@@ -68,6 +72,8 @@
     <Compile Include="ControllerModifyStudent.cs" />
     <Compile Include="ControllerModifySubject.cs" />
     <Compile Include="ControllerModifyTeacher.cs" />
+    <Compile Include="ControllerNewConsult.cs" />
+    <Compile Include="ControllerSendConsultMessage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Session.cs" />
   </ItemGroup>

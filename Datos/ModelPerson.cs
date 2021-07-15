@@ -105,7 +105,7 @@ namespace Datos
             this.closeConnection();
             return this.personId;
         }
-        public List<int> getPermissions()
+        public List<int> getPermissions() 
         {
             List<int> permissions = new List<int>();
             string commandString;
@@ -140,7 +140,7 @@ namespace Datos
             closeConnection();
 
         }
-       public string getUserName(string userName)
+        public string getUserName(string userName)
         {
             string commandString = 
                 "SELECT User_Login " +
@@ -197,5 +197,30 @@ namespace Datos
             return userPassword;
 
         }
+
+        public DataTable getUsersByPermission(int featureId)
+        {
+            DataTable users = new DataTable();
+            string commandString;
+            commandString =
+                "SELECT persons.ID, CI, First_Name, Second_Name, First_Surname, Second_Surname, Nick_Name, Avatar_Picture " +
+                "FROM persons " +
+                "JOIN personis ON persons.CI = personis.Person_CI " +
+                "JOIN roles ON roles.ID = personis.Role_ID " +
+                "JOIN permissions ON roles.ID = permissions.Role_ID " +
+                "WHERE permissions.Feature_ID = @featureId;";
+            this.command.CommandText = commandString;
+            this.command.Parameters.AddWithValue("@featureId", featureId);
+            this.openConnection();
+            this.command.Prepare();
+            this.reader = command.ExecuteReader();
+            this.reader.Read();
+            if (reader.HasRows)
+                users.Load(reader);
+            this.command.Parameters.Clear();
+            this.closeConnection();
+            return users;
+        }
     }
+    
 }
