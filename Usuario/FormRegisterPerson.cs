@@ -92,5 +92,10 @@ namespace Usuario
         {
 
         }
+
+        private void pbCloseButton_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
