@@ -87,5 +87,10 @@ namespace Usuario
         {
             MessageBox.Show(message, "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
+
+        private void FormRegisterPerson_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

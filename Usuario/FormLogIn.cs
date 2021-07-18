@@ -44,10 +44,7 @@ namespace Usuario
 
         }
 
-        private void btnExit_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
+
 
         private void goToMain()
         {
@@ -60,6 +57,16 @@ namespace Usuario
             ControllerLogIn login = new ControllerLogIn(tbUser.Text, tbPassword.Text);
             string message = login.login();
             return message;
+        }
+
+        private void pbCloseButon_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
