@@ -29,6 +29,7 @@ namespace Consultas
         {
             loadMessages();
             loadTopic();
+            ControllerChangeConsultState.changeConsultState(consultId, "Received");
         }
 
         private void btnSend_Click(object sender, EventArgs e)
