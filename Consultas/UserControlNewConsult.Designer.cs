@@ -38,9 +38,9 @@
             // lvNewConsults
             // 
             this.lvNewConsults.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.ID,
-            this.PersonName,
             this.CI,
+            this.PersonName,
+            this.ID,
             this.NickName});
             this.lvNewConsults.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lvNewConsults.HideSelection = false;
@@ -49,7 +49,7 @@
             this.lvNewConsults.Size = new System.Drawing.Size(400, 400);
             this.lvNewConsults.TabIndex = 0;
             this.lvNewConsults.UseCompatibleStateImageBehavior = false;
-            this.lvNewConsults.View = System.Windows.Forms.View.Details;
+            this.lvNewConsults.View = System.Windows.Forms.View.Tile;
             this.lvNewConsults.SelectedIndexChanged += new System.EventHandler(this.lvNewConsults_SelectedIndexChanged);
             // 
             // ID

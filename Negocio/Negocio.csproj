@@ -52,6 +52,8 @@
     <Compile Include="ControllerDeleteStudent.cs" />
     <Compile Include="ControllerDeleteSubject.cs" />
     <Compile Include="ControllerDeleteTeacher.cs" />
+    <Compile Include="ControllerGetPermissions.cs" />
+    <Compile Include="ControllerGetPerson.cs" />
     <Compile Include="ControllerGetUserRole.cs" />
     <Compile Include="ControllerInsertCourse.cs" />
     <Compile Include="ControllerInsertGrade.cs" />

@@ -31,7 +31,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.lbTopic = new System.Windows.Forms.Label();
             this.tbTopic = new System.Windows.Forms.TextBox();
-            this.lbxPreviousMessages = new System.Windows.Forms.ListBox();
+            this.rtbMessages = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -54,24 +54,27 @@
             // 
             // tbTopic
             // 
+            this.tbTopic.Enabled = false;
             this.tbTopic.Location = new System.Drawing.Point(70, 30);
             this.tbTopic.Name = "tbTopic";
+            this.tbTopic.ReadOnly = true;
             this.tbTopic.Size = new System.Drawing.Size(293, 20);
             this.tbTopic.TabIndex = 7;
             // 
-            // lbxPreviousMessages
+            // rtbMessages
             // 
-            this.lbxPreviousMessages.FormattingEnabled = true;
-            this.lbxPreviousMessages.Location = new System.Drawing.Point(70, 59);
-            this.lbxPreviousMessages.Name = "lbxPreviousMessages";
-            this.lbxPreviousMessages.Size = new System.Drawing.Size(293, 290);
-            this.lbxPreviousMessages.TabIndex = 12;
+            this.rtbMessages.Location = new System.Drawing.Point(70, 59);
+            this.rtbMessages.Name = "rtbMessages";
+            this.rtbMessages.ReadOnly = true;
+            this.rtbMessages.Size = new System.Drawing.Size(293, 293);
+            this.rtbMessages.TabIndex = 12;
+            this.rtbMessages.Text = "";
             // 
             // UserControlReadFiledConsult
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.lbxPreviousMessages);
+            this.Controls.Add(this.rtbMessages);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lbTopic);
             this.Controls.Add(this.tbTopic);
@@ -87,6 +90,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lbTopic;
         private System.Windows.Forms.TextBox tbTopic;
-        private System.Windows.Forms.ListBox lbxPreviousMessages;
+        private System.Windows.Forms.RichTextBox rtbMessages;
     }
 }

@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             this.lvConsultsMade = new System.Windows.Forms.ListView();
+            this.ID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Topic = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Person_Name = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.ID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.State = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
@@ -39,8 +39,8 @@
             // 
             this.lvConsultsMade.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.ID,
-            this.Topic,
             this.Person_Name,
+            this.Topic,
             this.State});
             this.lvConsultsMade.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lvConsultsMade.HideSelection = false;
@@ -52,6 +52,11 @@
             this.lvConsultsMade.View = System.Windows.Forms.View.Tile;
             this.lvConsultsMade.SelectedIndexChanged += new System.EventHandler(this.lvConsultsMade_SelectedIndexChanged);
             // 
+            // ID
+            // 
+            this.ID.DisplayIndex = 2;
+            this.ID.Text = "ID";
+            // 
             // Topic
             // 
             this.Topic.DisplayIndex = 0;
@@ -59,13 +64,7 @@
             // 
             // Person_Name
             // 
-            this.Person_Name.DisplayIndex = 1;
             this.Person_Name.Text = "Person_Name";
-            // 
-            // ID
-            // 
-            this.ID.DisplayIndex = 2;
-            this.ID.Text = "ID";
             // 
             // State
             // 
@@ -78,6 +77,7 @@
             this.Controls.Add(this.lvConsultsMade);
             this.Name = "UserControlConsultsMade";
             this.Size = new System.Drawing.Size(400, 400);
+            this.Load += new System.EventHandler(this.UserControlConsultsMade_Load);
             this.ResumeLayout(false);
 
         }

@@ -139,6 +139,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Agenda\Agenda.csproj">
+      <Project>{7ec5955c-1161-4e87-8f5d-ae8de746b65a}</Project>
+      <Name>Agenda</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Consultas\Consultas.csproj">
       <Project>{063985ae-8466-448d-ad47-5e3e47c9c6b7}</Project>
       <Name>Consultas</Name>

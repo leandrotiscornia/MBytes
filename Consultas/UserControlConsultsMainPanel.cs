@@ -17,37 +17,55 @@ namespace Consultas
         UserControlNewConsult users = new UserControlNewConsult();
         UserControlConsultsMade consultsMade = new UserControlConsultsMade();
         UserControlConsultsFiled consultsFiled = new UserControlConsultsFiled();
-        
+
 
         UserControlWriteConsult writeConsult = new UserControlWriteConsult();
         UserControlEditConsult editConsult = new UserControlEditConsult();
         UserControlReadFiledConsult readFiled = new UserControlReadFiledConsult();
+        
+
+
 
 
         public UserControlConsultsMainPanel()
         {
             InitializeComponent();
-        }
 
-        
-
-
-        
-
-
-    private void UserControlConsultsMainPanel_Load(Object sender, EventArgs e)
-        {
             users.Dock = DockStyle.Fill;
             consultsMade.Dock = DockStyle.Fill;
             consultsFiled.Dock = DockStyle.Fill;
             tabPageNewConsult.Controls.Add(users);
             tabPageConsultsMade.Controls.Add(consultsMade);
             tabPageConsultsFiled.Controls.Add(consultsFiled);
-            
-            
-            
+            pnlConsults.Controls.Add(writeConsult);
 
+            
+            users.SelectedIndexChanged += new EventHandler(users_SelectedIndexChanged);
+            consultsMade.SelectedIndexChanged += new EventHandler(consultsMade_SelectedIndexChanged);
+            consultsFiled.SelectedIndexChanged += new EventHandler(consultsFiled_SelectedIndexChanged);
         }
+
+        
+        private void users_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            writeConsult.receiverId = users.userId;
+        }
+        private void consultsMade_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            editConsult.consultId = consultsMade.consultId;
+            editConsult.topic = consultsMade.topic;
+            editConsult.loadMessages();
+            editConsult.loadTopic();
+        }
+        private void consultsFiled_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            readFiled.consultId = consultsFiled.consultId;
+            readFiled.topic = consultsFiled.topic;
+            readFiled.loadMessages();
+            readFiled.loadTopic();
+        }
+
+        
 
         private void tabControlConsults_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -57,6 +75,7 @@ namespace Consultas
 
             if (tabControlConsults.SelectedIndex == 0)
             {
+                users.loadPersons();
                 Console.WriteLine("Selecciono indice 0");
                 writeConsult.Dock = DockStyle.Fill;
                 pnlConsults.Controls.Add(writeConsult);
@@ -64,39 +83,17 @@ namespace Consultas
             else if (tabControlConsults.SelectedIndex == 1)
             {
                 Console.WriteLine("Selecciono indice 1");
-                
+                consultsMade.loadConsults();
                 editConsult.Dock = DockStyle.Fill;
                 pnlConsults.Controls.Add(editConsult);
             }
             else if (tabControlConsults.SelectedIndex == 2)
             {
                 Console.WriteLine("Selecciono indice 2");
-
+                consultsFiled.loadConsults();
                 readFiled.Dock = DockStyle.Fill;
                 pnlConsults.Controls.Add(readFiled);
             }
-        }
-
-        private void tabPageNewConsult_CursorChanged(object sender, EventArgs e)
-        {
-            writeConsult.receiverId = users.receiverId;
-            Console.WriteLine("Usuario: " + users.receiverId);
-        }
-
-        private void tabPageConsultsMade_Click(object sender, EventArgs e)
-        {
-            editConsult.consultId = consultsMade.consultId;
-        }
-
-        private void tabPageConsultsFiled_Click(object sender, EventArgs e)
-        {
-            readFiled.consultId = consultsFiled.consultId;
-        }
-
-        private void tabPageNewConsult_Click(object sender, EventArgs e)
-        {
-            writeConsult.receiverId = users.receiverId;
-            Console.WriteLine("Usuario: " + users.receiverId);
         }
     }
 }

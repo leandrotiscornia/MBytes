@@ -1,4 +1,4 @@
-﻿using System;
+﻿    using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -28,7 +28,7 @@ namespace Datos
             command.Parameters.AddWithValue("@date", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
             openConnection();
             command.Prepare();
-            //command.ExecuteNonQuery();
+            command.ExecuteNonQuery();
             Console.WriteLine("" + commandString);
             closeConnection();
         }
@@ -37,7 +37,7 @@ namespace Datos
         {
             string commandString;
             commandString =
-                "INSERT INTO ConsultMessage " +
+                "INSERT INTO consultmessages " +
                 "(Sender_ID, Consult_ID, ConsultText, Time) " +
                 "VALUES(@senderId, @consultId, @message, @date);";
             command.CommandText = commandString;
@@ -45,8 +45,8 @@ namespace Datos
             command.Parameters.AddWithValue("@consultId", consultId);
             command.Parameters.AddWithValue("@message", message);
             command.Parameters.AddWithValue("@date", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
-            command.Prepare();
             openConnection();
+            command.Prepare();
             command.ExecuteNonQuery();
             closeConnection();
         }
@@ -65,8 +65,8 @@ namespace Datos
             openConnection();
             command.Prepare();
             reader = command.ExecuteReader();
-            closeConnection();
             messages.Load(reader);
+            closeConnection();
             return messages;
         }
 

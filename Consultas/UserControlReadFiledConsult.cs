@@ -15,7 +15,9 @@ namespace Consultas
     {
         public int consultId { get; set; }
 
-        public UserControlReadFiledConsult (int consultId)
+        public string topic { get; set; }
+
+        public UserControlReadFiledConsult(int consultId)
         {
             this.consultId = consultId;
         }
@@ -27,12 +29,32 @@ namespace Consultas
 
         private void UserControlReadFiledConsult_Load(object sender, EventArgs e)
         {
+            loadMessages();
+            loadTopic();
+        }
+        public void loadMessages()
+        {
             DataTable consultMessages = new DataTable();
             consultMessages = ControllerGetConsultMessages.getConsultMessages(consultId);
-            lbxPreviousMessages.DataSource = consultMessages;
-            lbxPreviousMessages.DisplayMember = "ConsultText";
-            lbxPreviousMessages.DisplayMember = "Time";
-            
+            rtbMessages.Clear();
+            foreach (DataRow message in consultMessages.Rows)
+            {
+
+                string personName;
+                personName = ControllerGetPerson.getPersonNick(Int32.Parse(message[0].ToString()));
+                //MessageBox.Show(message[0].ToString());
+
+
+                rtbMessages.AppendText(personName + "\n");
+                rtbMessages.AppendText(message[1].ToString() + "\n");
+                rtbMessages.AppendText(message[2].ToString() + "\n \n \n");
+
+            }
+
+        }
+        public void loadTopic()
+        {
+            tbTopic.Text = this.topic;
         }
     }
 }

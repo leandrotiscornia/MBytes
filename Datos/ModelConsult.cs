@@ -60,15 +60,14 @@ namespace Datos
             commandString =
                 "SELECT consults.ID, persons.First_Name, persons.First_Surname,Topic, State " +
                 "FROM consults " +
-                "JOIN users as sender ON consults.Sender_ID = sender.ID " +
-                "JOIN users as receiver ON consults.Receiver_ID = receiver.ID " +
+                "JOIN users AS sender ON consults.Sender_ID = sender.ID " +
+                "JOIN users AS receiver ON consults.Receiver_ID = receiver.ID " +
                 "JOIN persons ON receiver.ID = persons.ID " +
                 "WHERE sender_ID = @myId;";
             this.command.CommandText = commandString;
             this.command.Parameters.AddWithValue("@myId", senderId);
             this.openConnection();
             this.reader = this.command.ExecuteReader();
-            this.reader.Read();
             consultsReceived.Load(reader);
             this.command.Parameters.Clear();
             this.closeConnection();
@@ -89,11 +88,11 @@ namespace Datos
             this.command.Parameters.AddWithValue("@myId", receiverId);
             this.openConnection();
             this.reader = this.command.ExecuteReader();
-            this.reader.Read();
             consultsReceived.Load(reader);
             this.command.Parameters.Clear();
             this.closeConnection();
             return consultsReceived;
         }
+
     }
 }

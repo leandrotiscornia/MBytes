@@ -14,8 +14,9 @@ namespace Consultas
     public partial class UserControlEditConsult : UserControl
     {
         public int consultId { get; set; }
+        public string topic { get; set; }
 
-        public UserControlEditConsult (int consultId)
+        public UserControlEditConsult(int consultId)
         {
             this.consultId = consultId;
         }
@@ -26,13 +27,8 @@ namespace Consultas
         }
         private void UserControlEditConsult_Load(object sender, EventArgs e)
         {
-            DataTable consultMessages = new DataTable();
-            consultMessages = ControllerGetConsultMessages.getConsultMessages(consultId);
-            
-            lbxPreviousMessages.DataSource = consultMessages;
-            lbxPreviousMessages.DisplayMember = "ConsultText";
-            lbxPreviousMessages.DisplayMember = "Time";
-            
+            loadMessages();
+            loadTopic();
         }
 
         private void btnSend_Click(object sender, EventArgs e)
@@ -44,6 +40,28 @@ namespace Consultas
         private void btnFileConsult_Click(object sender, EventArgs e)
         {
             ControllerChangeConsultState.changeConsultState(consultId, "Filed");
+        }
+        public void loadMessages()
+        {
+            DataTable consultMessages = new DataTable();
+            consultMessages = ControllerGetConsultMessages.getConsultMessages(consultId);
+            rtbMessages.Clear();
+            foreach (DataRow message in consultMessages.Rows)
+            {
+
+                string personName;
+                personName = ControllerGetPerson.getPersonNick(Int32.Parse(message[0].ToString()));
+                                        //MessageBox.Show(message[0].ToString());
+
+
+                rtbMessages.AppendText(personName + "\n");
+                rtbMessages.AppendText(message[1].ToString() + "\n");
+                rtbMessages.AppendText(message[2].ToString() + "\n \n \n");
+            }
+        }
+        public void loadTopic()
+        {
+            tbTopic.Text = this.topic;
         }
     }
 }

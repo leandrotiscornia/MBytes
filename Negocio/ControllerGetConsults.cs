@@ -15,7 +15,10 @@ namespace Negocio
             DataTable consultsDone = new DataTable();
             ModelConsult consult = new ModelConsult();
             consult.senderId = myId;
+            Console.WriteLine("El id del usuario es: " + myId);
             consultsDone = consult.getConsultsDone();
+            
+
             return consultsDone;
         }
         public static DataTable getConsultsReceived(int myId)
@@ -26,8 +29,15 @@ namespace Negocio
             consultsDone = consult.getConsultsReceived();
             return consultsDone;
         }
+        /*public static string getConsultTopic()
+        {
+            string consultTopic;
 
 
+
+            return consultTopic;
+        }
+        */
 
     }
 }

@@ -8,7 +8,7 @@ namespace Negocio
 {
     public class Session
     {
-        public static string userRole, userPassword, userLogIn;
+        public static string userPassword, userLogIn;
         public static int userId;
 
 

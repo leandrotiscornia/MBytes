@@ -36,7 +36,7 @@ namespace Negocio
                 user.personId = user.getUserId(userName);
                 Session.userLogIn = userName;
                 Session.userId = user.personId;
-                Session.userRole = user.getUserRole();
+               // Session.userRole = user.getUserRole();
                 Session.userPassword = userPassword;
                 result = "";
             }

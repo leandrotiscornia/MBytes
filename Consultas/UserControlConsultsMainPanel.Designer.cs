@@ -58,8 +58,6 @@
             this.tabPageNewConsult.TabIndex = 0;
             this.tabPageNewConsult.Text = "New Consult";
             this.tabPageNewConsult.UseVisualStyleBackColor = true;
-            this.tabPageNewConsult.CursorChanged += new System.EventHandler(this.tabPageNewConsult_CursorChanged);
-            this.tabPageNewConsult.Click += new System.EventHandler(this.tabPageNewConsult_Click);
             // 
             // tabPageConsultsMade
             // 
@@ -70,7 +68,6 @@
             this.tabPageConsultsMade.TabIndex = 1;
             this.tabPageConsultsMade.Text = "Consults Done";
             this.tabPageConsultsMade.UseVisualStyleBackColor = true;
-            this.tabPageConsultsMade.Click += new System.EventHandler(this.tabPageConsultsMade_Click);
             // 
             // tabPageConsultsFiled
             // 
@@ -81,7 +78,6 @@
             this.tabPageConsultsFiled.TabIndex = 2;
             this.tabPageConsultsFiled.Text = "Consults Filed";
             this.tabPageConsultsFiled.UseVisualStyleBackColor = true;
-            this.tabPageConsultsFiled.Click += new System.EventHandler(this.tabPageConsultsFiled_Click);
             // 
             // pnlConsults
             // 
@@ -99,7 +95,6 @@
             this.Controls.Add(this.tabControlConsults);
             this.Name = "UserControlConsultsMainPanel";
             this.Size = new System.Drawing.Size(800, 400);
-            this.Load += new System.EventHandler(this.UserControlConsultsMainPanel_Load);
             this.tabControlConsults.ResumeLayout(false);
             this.ResumeLayout(false);
 

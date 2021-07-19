@@ -47,7 +47,7 @@ namespace Datos
             openConnection();
             command.Prepare();
             
-            //.ExecuteNonQuery();
+            command.ExecuteNonQuery();
             command.Parameters.Clear();
             closeConnection();
         }
