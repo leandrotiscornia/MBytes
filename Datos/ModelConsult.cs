@@ -93,6 +93,23 @@ namespace Datos
             this.closeConnection();
             return consultsReceived;
         }
-
+        public string getConsultState()
+        {
+            string consultState = "";
+            string commandString =
+                "SELECT State " +
+                "FROM consults " +
+                "WHERE ID = @consultId;";
+            this.command.CommandText = commandString;
+            this.command.Parameters.AddWithValue("@consultId", consultId);
+            this.openConnection();
+            this.command.Prepare();
+            this.reader = this.command.ExecuteReader();
+            while(this.reader.Read())
+                consultState = reader.GetString(0);
+            this.command.Parameters.Clear();
+            this.closeConnection();
+            return consultState;
+        }
     }
 }

@@ -214,7 +214,6 @@ namespace Datos
             this.openConnection();
             this.command.Prepare();
             this.reader = command.ExecuteReader();
-            this.reader.Read();
             if (reader.HasRows)
                 users.Load(reader);
             this.command.Parameters.Clear();

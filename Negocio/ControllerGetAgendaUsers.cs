@@ -15,6 +15,7 @@ namespace Negocio
             DataTable agendaUsers = new DataTable();
             ModelPerson agendaUser = new ModelPerson();
             agendaUsers = agendaUser.getUsersByPermission(2);
+            Console.WriteLine("" + agendaUsers.Rows[0][2]);
             return agendaUsers;
         }
 

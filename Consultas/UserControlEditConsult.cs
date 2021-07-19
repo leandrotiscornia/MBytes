@@ -29,7 +29,7 @@ namespace Consultas
         {
             loadMessages();
             loadTopic();
-            ControllerChangeConsultState.changeConsultState(consultId, "Received");
+            
         }
 
         private void btnSend_Click(object sender, EventArgs e)
@@ -59,6 +59,8 @@ namespace Consultas
                 rtbMessages.AppendText(message[1].ToString() + "\n");
                 rtbMessages.AppendText(message[2].ToString() + "\n \n \n");
             }
+            if (ControllerGetConsults.getConsultState(consultId) == "Answered")
+                ControllerChangeConsultState.changeConsultState(consultId, "Received");
         }
         public void loadTopic()
         {

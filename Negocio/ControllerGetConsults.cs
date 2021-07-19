@@ -29,15 +29,15 @@ namespace Negocio
             consultsDone = consult.getConsultsReceived();
             return consultsDone;
         }
-        /*public static string getConsultTopic()
+        public static string getConsultState(int consultId)
         {
-            string consultTopic;
-
-
-
-            return consultTopic;
+            string consultState;
+            ModelConsult consult = new ModelConsult();
+            consult.consultId = consultId;
+            consultState = consult.getConsultState();
+            return consultState;
         }
-        */
+        
 
     }
 }

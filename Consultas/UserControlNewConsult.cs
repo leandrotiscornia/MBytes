@@ -46,10 +46,12 @@ namespace Consultas
             personsTable = ControllerGetAgendaUsers.GetAgendaUsers();
             ListViewItem item;
             lvNewConsults.Items.Clear();
+            string xd = "";
             if(personsTable.Rows.Count > 0)
             {
                 foreach (DataRow person in personsTable.Rows)
                 {
+                    xd = xd + person[2].ToString() + " ";
                     Console.WriteLine("" + person[0].ToString());
                     item = new ListViewItem(person[1].ToString());
                     item.SubItems.Add(person[2].ToString() + " " + person[4].ToString());
