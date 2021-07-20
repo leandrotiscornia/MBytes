@@ -10,6 +10,7 @@ namespace Negocio
     {
         public static string userRole, userPassword, userLogIn;
         public static int userId;
+        public static string ci;
 
 
         
