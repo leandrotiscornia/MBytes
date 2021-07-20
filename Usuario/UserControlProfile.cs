@@ -7,159 +7,148 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Negocio;
 
 namespace Usuario
 {
-    public partial class UserControlProfile : UserControl
-    {
-        public UserControlProfile()
+    
+        public partial class UserControlProfile : UserControl
         {
-            InitializeComponent();
-        }
+            
+            public UserControlProfile()
+            {
+                InitializeComponent();
+            }
 
-        private void FormUserProfile_Load(object sender, EventArgs e)
+        private void UserControlProfile_Load(object sender, EventArgs e)
         {
-            lblNewNickName.Visible = false;
-            lblNewFirstName.Visible = false;
-            lblNewSecondName.Visible = false;
-            lblNewFirstSurname.Visible = false;
-            lblNewSecondSurname.Visible = false;
-
-
-            txtNewNickName.Visible = false;
-            txtNewFirstName.Visible = false;
-            txtNewSecondName.Visible = false;
-            txtNewFirstSurname.Visible = false;
-            txtNewSecondSurname.Visible = false;
-
-            btnConfirmInfo.Visible = false;
-
-
+            HideModifyProfileInfo();
         }
 
         private void btnChangePicture_Click(object sender, EventArgs e)
-        {
-            pbUserPicture.Image = Properties.Resources.user;
-        }
-
-        private void btnModifyProfile_Click(object sender, EventArgs e)
-        {
-
-            ModifyProfile();
-        }
-
-        private void btnSetNickName_Click(object sender, EventArgs e)
-        {
-            SetNickName();
-        }
-
-        private void btnChangeUserName_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnConfirmInfo_Click(object sender, EventArgs e)
-        {
-            ConfirmInfo(sender, e);
-        }
-        public void ModifyProfile()
-        {
-            pbModifyUserProfile.Visible = true;
-            lblModifyUserProfile.Visible = true;
-            lblNewFirstName.Visible = true;
-            lblNewSecondName.Visible = true;
-            lblNewFirstSurname.Visible = true;
-            lblNewSecondSurname.Visible = true;
-
-            txtNewFirstName.Visible = true;
-            txtNewSecondName.Visible = true;
-            txtNewFirstSurname.Visible = true;
-            txtNewSecondSurname.Visible = true;
-
-            btnConfirmInfo.Visible = true;
-        }
-
-        public void SetNickName()
-        {
-            pbModifyUserProfile.Visible = true;
-            lblModifyUserProfile.Visible = true;
-            lblNewNickName.Visible = true;
-            txtNewNickName.Visible = true;
-            btnConfirmInfo.Visible = true;
-
-        }
-
-        public void ChangeUserName()
-        {
-            pbModifyUserProfile.Visible = true;
-            lblModifyUserProfile.Visible = true;
-            lblNewUserName.Visible = true;
-            txtNewUserName.Visible = true;
-            btnConfirmInfo.Visible = true;
-
-        }
-        public void ConfirmInfo(object sender, EventArgs e)
-        {
-            lblActualFirstName.Text = txtNewFirstName.ToString();
-            lblActualSecondName.Text = txtNewFirstSurname.ToString();
-            lblActualFirstSurname.Text = txtNewFirstSurname.ToString();
-            lblActualSecondSurname.Text = txtNewSecondSurname.ToString();
-            HideSetProfileInformation();
-            btnConfirmInfo.Visible = false;
-           
-            if (btnConfirmInfo.Visible == false)
             {
+                pbUserPicture.Image = Properties.Resources.user;
+            }
+
+            private void btnModifyProfile_Click(object sender, EventArgs e)
+            {
+               
+                ModifyProfile();
+            }
+
+            private void btnSetNickName_Click(object sender, EventArgs e)
+            {
+               
                 SetNickName();
-                lblActualNickName.Text = txtNewNickName.ToString();
-                lblUserNickName.Text = txtNewNickName.ToString();
-                HideSetNickName();
-
             }
-            btnConfirmInfo.Visible = true;
-            if (btnConfirmInfo.Visible == true) {
+
+            private void btnChangeUserName_Click(object sender, EventArgs e)
+            {
+            
                 ChangeUserName();
-                lblActualUserName.Text = txtNewUserName.ToString();
-                HideChangeUserName();
             }
+
+            private void btnConfirmInfo_Click(object sender, EventArgs e)
+            {
+
+                 modifyData();
+            }
+
+            public void HideModifyProfileInfo()
+            {
+                gbChangeNickName.Hide();
+                gbChangeUserName.Hide();
+                gbModifyProfile.Hide();
+                btnConfirmInfo.Hide();
+            }
+            public void ModifyProfile()
+            {
+                gbPictureModifyUserProfile.Show();
+                gbModifyProfile.Show();
+                btnConfirmInfo.Show();
+            }
+
+            public void SetNickName()
+            {
+                gbChangeNickName.Show();
+                btnConfirmInfo.Show();
+
+            }
+
+            public void ChangeUserName()
+            {
+                gbPictureModifyUserProfile.Show();
+                gbChangeUserName.Show();
+                btnConfirmInfo.Show();
+
+            }
+            
+            public void HideSetProfileInformation()
+            {
+                gbPictureModifyUserProfile.Hide();
+                gbModifyProfile.Hide();
+                btnConfirmInfo.Hide();
+
         }
-        public void HideSetProfileInformation()
+
+        public void modifyData()
         {
-            pbModifyUserProfile.Visible = false;
-            lblModifyUserProfile.Visible = false;
-            lblNewFirstName.Visible = false;
-            lblNewSecondName.Visible = false;
-            lblNewFirstSurname.Visible = false;
-            lblNewSecondSurname.Visible = false;
-            txtNewFirstName.Visible = false;
-            txtNewSecondName.Visible = false;
-            txtNewFirstSurname.Visible = false;
-            txtNewSecondSurname.Visible = false;
-
+            string[] personInfo = new string[5];
+            personInfo[0] = Session.userId.ToString();
+            personInfo[1] = lblCI.Text;
+            personInfo[2] = txtNewFirstName.Text;
+            personInfo[3] = txtNewFirstSurname.Text;
+            personInfo[4] = txtNewSecondName.Text;
+            personInfo[5] = txtNewSecondSurname.Text;
+            ControllerModifyPerson.modifyPerson(personInfo);
         }
 
+        
+          public void modifyUserName()
+            {
+                ControllerModifyUserName.modifyUserName(txtNewUserName.Text,Session.userId);
+            }
+
+            public void modifyNickName()
+            {
+            
+               ControllerModifyNickName.modifyNickName(txtNewNickName.Text, Session.ci);  
+            }
+
+      
+
+        public void personInformationToCharge()
+        {
+            // Aca se cargan los datos de Negocio y que herede ModelPerson 
+
+        }
         public void HideSetNickName()
         {
-            pbModifyUserProfile.Visible = false;
-            lblModifyUserProfile.Visible = false;
-            lblNewNickName.Visible = false;
-            txtNewNickName.Visible = false;
-            btnConfirmInfo.Visible = false;
+              gbPictureModifyUserProfile.Hide();
+              gbChangeNickName.Hide();
+              btnConfirmInfo.Hide();   
         }
 
         public void HideChangeUserName()
         {
-            pbModifyUserProfile.Visible = false;
-            lblModifyUserProfile.Visible = false;
-            lblNewUserName.Visible = false;
-            txtNewUserName.Visible = false;
-            btnConfirmInfo.Visible = false;
+             gbPictureModifyUserProfile.Hide();
+             gbChangeUserName.Hide();
+             btnConfirmInfo.Hide();
         }
 
-        private void pbCloseButon_Click(object sender, EventArgs e)
+            
+
+        private void btnConfirmNickName_Click(object sender, EventArgs e) 
         {
-            Application.Exit();
+            modifyNickName();
         }
 
+        private void btnConfirmUserName_Click(object sender, EventArgs e) 
+        {
+            modifyUserName();
+        }
 
+        
     }
-}
+    }
+

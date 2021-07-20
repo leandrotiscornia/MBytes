@@ -71,11 +71,16 @@
     <Compile Include="ControllerModifyCourse.cs" />
     <Compile Include="ControllerModifyGrade.cs" />
     <Compile Include="ControllerModifyGroup.cs" />
-    <Compile Include="ControllerModifyStudent.cs" />
+    <Compile Include="ControllerModifyNickName.cs" />
+    <Compile Include="ControllerModifyPerson.cs" />
     <Compile Include="ControllerModifySubject.cs" />
+
+    <Compile Include="ControllerModifyUserName.cs" />
+
     <Compile Include="ControllerModifyTeacher.cs" />
     <Compile Include="ControllerNewConsult.cs" />
     <Compile Include="ControllerSendConsultMessage.cs" />
+
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Session.cs" />
   </ItemGroup>

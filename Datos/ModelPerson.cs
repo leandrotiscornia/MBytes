@@ -198,6 +198,44 @@ namespace Datos
 
         }
 
+        public void updateUserName(string updateUserName, int userID)
+        {
+            string commandString = "UPDATE users" +
+            " SET User_Login = @userLogin " +
+            "WHERE ID = @userID;";
+
+
+              this.command.CommandText = commandString;
+            this.command.Parameters.AddWithValue("@userID", userID);
+            this.command.Parameters.AddWithValue("@userLogin", updateUserName);
+            this.openConnection();
+            this.command.Prepare();
+            this.command.ExecuteNonQuery();
+            this.command.Parameters.Clear();
+            this.closeConnection();
+
+
+        }
+        public void updateNickName(string updateNickName, string ci)
+        {
+            string commandString = "UPDATE persons" +
+            "SET Nick_Name = @nickName" +
+            "WHERE CI = @person_CI;";
+
+
+              this.command.CommandText = commandString;
+            this.command.Parameters.AddWithValue("@person_CI", ci);
+            this.command.Parameters.AddWithValue("@nickName", updateNickName);
+            this.openConnection();
+            this.command.Prepare();
+            this.command.ExecuteNonQuery();
+            this.command.Parameters.Clear();
+            this.closeConnection();
+
+
+
+        }
+
         public DataTable getUsersByPermission(int featureId)
         {
             DataTable users = new DataTable();
@@ -288,6 +326,7 @@ namespace Datos
             this.closeConnection();
             return features;
         }
+
 
     }
     
