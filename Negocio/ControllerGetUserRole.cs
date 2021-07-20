@@ -16,7 +16,7 @@ namespace Negocio
             userId = user.getUserId(userName);
             return userId;
         }
-        public string getUserRole(int userId)
+       /* public string getUserRole(int userId)
         {
             string userRole;
             ModelPerson user = new ModelPerson();
@@ -25,6 +25,6 @@ namespace Negocio
             return userRole;
         }
 
-
+    */
     }
 }
