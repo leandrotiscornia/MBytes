@@ -62,7 +62,7 @@ namespace Datos
                 avatarPicture
         };
         }
-        public string getUserRole()
+       /* public string getUserRole()
         {
             string userRole ="";
             string commandString;
@@ -84,7 +84,7 @@ namespace Datos
             closeConnection();
             
             return userRole;
-        }
+        }*/
 
         public int getUserId(string userName)
         {
@@ -105,7 +105,7 @@ namespace Datos
             this.closeConnection();
             return this.personId;
         }
-        public List<int> getPermissions()
+        public List<int> getPermissions() 
         {
             List<int> permissions = new List<int>();
             string commandString;
@@ -140,7 +140,7 @@ namespace Datos
             closeConnection();
 
         }
-       public string getUserName(string userName)
+        public string getUserName(string userName)
         {
             string commandString = 
                 "SELECT User_Login " +
@@ -197,6 +197,7 @@ namespace Datos
             return userPassword;
 
         }
+
         public void updateUserName(string updateUserName, int userID)
         {
             string commandString = "UPDATE users" +
@@ -234,5 +235,99 @@ namespace Datos
 
 
         }
+
+        public DataTable getUsersByPermission(int featureId)
+        {
+            DataTable users = new DataTable();
+            string commandString;
+            commandString =
+                "SELECT persons.ID, CI, First_Name, Second_Name, First_Surname, Second_Surname, Nick_Name, Avatar_Picture " +
+                "FROM persons " +
+                "JOIN personis ON persons.CI = personis.Person_CI " +
+                "JOIN roles ON roles.ID = personis.Role_ID " +
+                "JOIN permissions ON roles.ID = permissions.Role_ID " +
+                "WHERE permissions.Feature_ID = @featureId;";
+            this.command.CommandText = commandString;
+            this.command.Parameters.AddWithValue("@featureId", featureId);
+            this.openConnection();
+            this.command.Prepare();
+            this.reader = command.ExecuteReader();
+            if (reader.HasRows)
+                users.Load(reader);
+            this.command.Parameters.Clear();
+            this.closeConnection();
+            return users;
+        }
+
+        public string getPersonName()
+        {
+            string personName;
+            string commandString;
+            commandString =
+                "SELECT First_Name, First_Surname " +
+                "FROM persons " +
+                "WHERE ID = @userId";
+            this.command.CommandText = commandString;
+            this.command.Parameters.AddWithValue("@userId", personId);
+            this.openConnection();
+            this.command.Prepare();
+            this.reader = command.ExecuteReader();
+            this.reader.Read();
+            if (!reader.IsDBNull(0))
+                personName = reader.GetString(0) + " " + reader.GetString(1);
+            else
+                personName = null;
+            this.command.Parameters.Clear();
+            this.closeConnection();
+            return personName;
+        }
+        public string getPersonNick()
+        {
+            string personNickName;
+            string commandString;
+            commandString =
+                "SELECT Nick_Name " +
+                "FROM persons " +
+                "WHERE ID = @userId";
+            this.command.CommandText = commandString;
+            this.command.Parameters.AddWithValue("@userId", personId);
+            this.openConnection();
+            this.command.Prepare();
+            this.reader = command.ExecuteReader();
+            this.reader.Read();
+            if (!reader.IsDBNull(0))
+                personNickName = reader.GetString(0);
+            else
+                personNickName = null;
+            this.command.Parameters.Clear();
+            this.closeConnection();
+            return personNickName;
+        }
+        public List<string> getFeatures()
+        {
+            List<string> features = new List<string>();
+            string commandString;
+            commandString =
+                "SELECT features.Name " +
+                "FROM features " +
+                "JOIN permissions ON features.ID = permissions.Feature_ID " +
+                "JOIN roles ON roles.ID = permissions.Role_ID " +
+                "JOIN personis ON roles.ID = personis.Role_ID " +
+                "JOIN persons ON persons.CI = personis.Person_CI " +
+                "WHERE persons.ID = @myID;";
+            this.command.CommandText = commandString;
+            this.command.Parameters.AddWithValue("@myId", personId);
+            this.openConnection();
+            this.command.Prepare();
+            this.reader = command.ExecuteReader();
+            while (this.reader.Read())
+                features.Add(reader.GetString(0));
+            this.command.Parameters.Clear();
+            this.closeConnection();
+            return features;
+        }
+
+
     }
+    
 }

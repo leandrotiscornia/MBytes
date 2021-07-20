@@ -1,4 +1,4 @@
-﻿using System;
+﻿    using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,41 +15,58 @@ namespace Datos
         public string message { get; set; }
         public DateTime date { get; set; }
 
+        public void sendFirstMessage()
+        {
+            string commandString;
+            commandString =
+                "INSERT INTO consultmessages " +
+                "(Sender_ID, Consult_ID, ConsultText, Time) " +
+                "VALUES(@senderId, Last_Insert_ID(), @message, @date);";
+            command.CommandText = commandString;
+            command.Parameters.AddWithValue("@senderId", senderId);
+            command.Parameters.AddWithValue("@message", message);
+            command.Parameters.AddWithValue("@date", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+            openConnection();
+            command.Prepare();
+            command.ExecuteNonQuery();
+            Console.WriteLine("" + commandString);
+            closeConnection();
+        }
+
         public void sendConsultMessage()
         {
             string commandString;
             commandString =
-                "INSERT INTO ConsultMessage " +
-                "(Sender_ID, Consult_ID, Message, Date) " +
+                "INSERT INTO consultmessages " +
+                "(Sender_ID, Consult_ID, ConsultText, Time) " +
                 "VALUES(@senderId, @consultId, @message, @date);";
             command.CommandText = commandString;
             command.Parameters.AddWithValue("@senderId", senderId);
             command.Parameters.AddWithValue("@consultId", consultId);
             command.Parameters.AddWithValue("@message", message);
-            command.Parameters.AddWithValue("@date", date);
-            command.Prepare();
+            command.Parameters.AddWithValue("@date", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
             openConnection();
+            command.Prepare();
             command.ExecuteNonQuery();
             closeConnection();
         }
 
-        public DataTable getConsultMessages(int consultId)
+        public DataTable getConsultMessages()
         {
             DataTable messages = new DataTable();
             string commandString;
             commandString =
-                "SELECT Sender_ID, Content, Date " +
-                "FROM ConsultMessage " +
-                "WHERE Consult_ID = @consultId" +
-                "ORDER BY Date";
+                "SELECT Sender_ID, ConsultText, Time " +
+                "FROM consultmessages " +
+                "WHERE Consult_ID = @consultId " +
+                "ORDER BY Time";
             command.CommandText = commandString;
             command.Parameters.AddWithValue("@consultId", consultId);
-            command.Prepare();
             openConnection();
+            command.Prepare();
             reader = command.ExecuteReader();
-            closeConnection();
             messages.Load(reader);
-
+            closeConnection();
             return messages;
         }
 
