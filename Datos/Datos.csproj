@@ -42,8 +42,31 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
+    <Compile Include="DataBase.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>DataBase.settings</DependentUpon>
+    </Compile>
+    <Compile Include="ModelConnection.cs" />
+    <Compile Include="ModelConsult.cs" />
+    <Compile Include="ModelConsultMessage.cs" />
+    <Compile Include="ModelCourse.cs" />
+    <Compile Include="ModelDatabaseObject.cs" />
+    <Compile Include="ModelGrade.cs" />
+    <Compile Include="ModelGroup.cs" />
+    <Compile Include="ModelPerson.cs" />
+    <Compile Include="ModelStudent.cs" />
+    <Compile Include="ModelSubject.cs" />
+    <Compile Include="ModelTeacher.cs" />
+    <Compile Include="ModelWatches.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="DataBase.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>DataBase.Designer.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

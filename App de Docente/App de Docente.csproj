@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{7EC5955C-1161-4E87-8F5D-AE8DE746B65A}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <RootNamespace>Agenda</RootNamespace>
-    <AssemblyName>Agenda</AssemblyName>
+    <ProjectGuid>{A229F0D7-24E9-4CD7-AF20-3ADAA786C094}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>App_de_Docente</RootNamespace>
+    <AssemblyName>App de Docente</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -32,9 +32,6 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  <PropertyGroup>
-    <StartupObject />
-  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
@@ -49,21 +46,40 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FormOpenConsult.cs">
+    <Compile Include="FormLogIn.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormOpenConsult.Designer.cs">
-      <DependentUpon>FormOpenConsult.cs</DependentUpon>
+    <Compile Include="FormLogIn.Designer.cs">
+      <DependentUpon>FormLogIn.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMain.Designer.cs">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormRegisterPerson.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRegisterPerson.Designer.cs">
+      <DependentUpon>FormRegisterPerson.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UserControlSchedule.cs">
+    <Compile Include="UserControlProfile.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UserControlSchedule.Designer.cs">
-      <DependentUpon>UserControlSchedule.cs</DependentUpon>
+    <Compile Include="UserControlProfile.Designer.cs">
+      <DependentUpon>UserControlProfile.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="FormOpenConsult.resx">
-      <DependentUpon>FormOpenConsult.cs</DependentUpon>
+    <EmbeddedResource Include="FormLogIn.resx">
+      <DependentUpon>FormLogIn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMain.resx">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRegisterPerson.resx">
+      <DependentUpon>FormRegisterPerson.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -74,8 +90,8 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="UserControlSchedule.resx">
-      <DependentUpon>UserControlSchedule.cs</DependentUpon>
+    <EmbeddedResource Include="UserControlProfile.resx">
+      <DependentUpon>UserControlProfile.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -91,6 +107,14 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Agenda\Agenda.csproj">
+      <Project>{7ec5955c-1161-4e87-8f5d-ae8de746b65a}</Project>
+      <Name>Agenda</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Chat\Chat.csproj">
+      <Project>{c442810b-a697-40c9-aaca-bef28c3726f6}</Project>
+      <Name>Chat</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Negocio\Negocio.csproj">
       <Project>{df697e70-b8cb-4948-9f51-204f4ac48bad}</Project>
       <Name>Negocio</Name>
