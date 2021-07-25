@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace App_de_Docente.Properties
+namespace App_De_Alumo.Properties
 {
 
 

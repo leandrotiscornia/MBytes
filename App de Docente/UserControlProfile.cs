@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Negocio;
 
-namespace Usuario
+namespace App_de_Docente
 {
 
     public partial class UserControlProfile : UserControl
@@ -23,6 +23,9 @@ namespace Usuario
             hideModifyProfileInfo();
             loadUserData();
         }
+        //TODO Save user picture, file in a folde, directory stored in Database
+        //TODO Load user picture, using directory stored in Database
+
 
         private void loadUserData()
         {

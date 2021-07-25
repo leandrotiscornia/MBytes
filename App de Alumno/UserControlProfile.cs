@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Negocio;
 
-namespace Usuario
+namespace App_De_Alumo
 {
 
     public partial class UserControlProfile : UserControl
@@ -23,7 +23,8 @@ namespace Usuario
             hideModifyProfileInfo();
             loadUserData();
         }
-
+        //TODO Save user picture, file in a folde, directory stored in Database
+        //TODO Load user picture, using directory stored in Database
         private void loadUserData()
         {
             List<string> profileData = ControllerGetProfileData.getProfileData();
