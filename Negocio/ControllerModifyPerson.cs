@@ -18,7 +18,7 @@ namespace Negocio
             personToModify.secondName = personData[3];
             personToModify.firstSurname = personData[4];
             personToModify.secondSurname = personData[5];
-            personToModify.createObjectPerson();
+            personToModify.createObjectPersonToModify();
             personToModify.modifyObject();
         }
     }

@@ -33,7 +33,7 @@
             this.Function = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnProfile = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // pnlFunction
@@ -79,21 +79,22 @@
             this.button2.Text = "Help";
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // btnProfile
             // 
-            this.button3.Location = new System.Drawing.Point(876, 27);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 4;
-            this.button3.Text = "Profile";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnProfile.Location = new System.Drawing.Point(876, 27);
+            this.btnProfile.Name = "btnProfile";
+            this.btnProfile.Size = new System.Drawing.Size(75, 23);
+            this.btnProfile.TabIndex = 4;
+            this.btnProfile.Text = "Profile";
+            this.btnProfile.UseVisualStyleBackColor = true;
+            this.btnProfile.Click += new System.EventHandler(this.btnProfile_Click);
             // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(963, 498);
-            this.Controls.Add(this.button3);
+            this.Controls.Add(this.btnProfile);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.lvNavigation);
@@ -104,7 +105,6 @@
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormMain_FormClosed);
             this.Load += new System.EventHandler(this.FormMain_Load);
             this.ResumeLayout(false);
-
         }
 
         #endregion
@@ -114,6 +114,6 @@
         private System.Windows.Forms.ColumnHeader Function;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnProfile;
     }
 }

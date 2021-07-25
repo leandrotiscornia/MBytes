@@ -63,16 +63,19 @@ namespace Datos
         public void modifyObject()
         {
             string commandString;
-            var columnsAndValues = columnNames.Zip(objectValues, (c, v) => new { Column = c, Value = v });
             commandString = "UPDATE " + tableName + " SET ";
-            foreach (var index in columnsAndValues)
-                commandString += index.Column + "=" + index.Value + "," ;
+            foreach (string column in columnNames)
+                commandString += column + " = @" + column + "," ;
             commandString = commandString.Remove(commandString.Length - 1, 1);
-            commandString = "WHERE id= @objectId";
+            commandString += " WHERE id= @objectId";
             command.CommandText = commandString;
+            var columnsAndValues = columnNames.Zip(objectValues, (c, v) => new { Column = c, Value = v });
+            foreach (var index in columnsAndValues)
+                command.Parameters.AddWithValue("@"+index.Column ,index.Value);
             command.Parameters.AddWithValue("objectId", objectKey);
-            command.Prepare();
+            Console.WriteLine(commandString);
             openConnection();
+            command.Prepare();
             command.ExecuteNonQuery();
             command.Parameters.Clear();
             closeConnection();

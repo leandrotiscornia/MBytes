@@ -93,7 +93,7 @@
             // lblActualSecondSurname
             // 
             this.lblActualSecondSurname.AutoSize = true;
-            this.lblActualSecondSurname.Location = new System.Drawing.Point(107, 394);
+            this.lblActualSecondSurname.Location = new System.Drawing.Point(112, 366);
             this.lblActualSecondSurname.Name = "lblActualSecondSurname";
             this.lblActualSecondSurname.Size = new System.Drawing.Size(13, 13);
             this.lblActualSecondSurname.TabIndex = 62;
@@ -102,7 +102,7 @@
             // lblActualFirstSurname
             // 
             this.lblActualFirstSurname.AutoSize = true;
-            this.lblActualFirstSurname.Location = new System.Drawing.Point(107, 355);
+            this.lblActualFirstSurname.Location = new System.Drawing.Point(112, 327);
             this.lblActualFirstSurname.Name = "lblActualFirstSurname";
             this.lblActualFirstSurname.Size = new System.Drawing.Size(13, 13);
             this.lblActualFirstSurname.TabIndex = 61;
@@ -111,7 +111,7 @@
             // lblActualSecondName
             // 
             this.lblActualSecondName.AutoSize = true;
-            this.lblActualSecondName.Location = new System.Drawing.Point(107, 317);
+            this.lblActualSecondName.Location = new System.Drawing.Point(112, 289);
             this.lblActualSecondName.Name = "lblActualSecondName";
             this.lblActualSecondName.Size = new System.Drawing.Size(13, 13);
             this.lblActualSecondName.TabIndex = 60;
@@ -120,7 +120,7 @@
             // lblActualFirstName
             // 
             this.lblActualFirstName.AutoSize = true;
-            this.lblActualFirstName.Location = new System.Drawing.Point(107, 280);
+            this.lblActualFirstName.Location = new System.Drawing.Point(112, 252);
             this.lblActualFirstName.Name = "lblActualFirstName";
             this.lblActualFirstName.Size = new System.Drawing.Size(13, 13);
             this.lblActualFirstName.TabIndex = 59;
@@ -129,7 +129,7 @@
             // lblActualNickName
             // 
             this.lblActualNickName.AutoSize = true;
-            this.lblActualNickName.Location = new System.Drawing.Point(102, 187);
+            this.lblActualNickName.Location = new System.Drawing.Point(107, 159);
             this.lblActualNickName.Name = "lblActualNickName";
             this.lblActualNickName.Size = new System.Drawing.Size(13, 13);
             this.lblActualNickName.TabIndex = 58;
@@ -138,7 +138,7 @@
             // lblUserNickName
             // 
             this.lblUserNickName.AutoSize = true;
-            this.lblUserNickName.Location = new System.Drawing.Point(385, 75);
+            this.lblUserNickName.Location = new System.Drawing.Point(90, 3);
             this.lblUserNickName.Name = "lblUserNickName";
             this.lblUserNickName.Size = new System.Drawing.Size(13, 13);
             this.lblUserNickName.TabIndex = 57;
@@ -147,7 +147,7 @@
             // pbUserPicture
             // 
             this.pbUserPicture.Image = global::Usuario.Properties.Resources.user;
-            this.pbUserPicture.Location = new System.Drawing.Point(361, 3);
+            this.pbUserPicture.Location = new System.Drawing.Point(8, 3);
             this.pbUserPicture.Name = "pbUserPicture";
             this.pbUserPicture.Size = new System.Drawing.Size(64, 64);
             this.pbUserPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -157,7 +157,7 @@
             // lblUserConfig
             // 
             this.lblUserConfig.AutoSize = true;
-            this.lblUserConfig.Location = new System.Drawing.Point(620, 137);
+            this.lblUserConfig.Location = new System.Drawing.Point(620, 98);
             this.lblUserConfig.Name = "lblUserConfig";
             this.lblUserConfig.Size = new System.Drawing.Size(94, 13);
             this.lblUserConfig.TabIndex = 55;
@@ -166,7 +166,7 @@
             // lblUserInfo
             // 
             this.lblUserInfo.AutoSize = true;
-            this.lblUserInfo.Location = new System.Drawing.Point(73, 137);
+            this.lblUserInfo.Location = new System.Drawing.Point(73, 98);
             this.lblUserInfo.Name = "lblUserInfo";
             this.lblUserInfo.Size = new System.Drawing.Size(116, 13);
             this.lblUserInfo.TabIndex = 54;
@@ -175,7 +175,7 @@
             // lblChangePassword
             // 
             this.lblChangePassword.AutoSize = true;
-            this.lblChangePassword.Location = new System.Drawing.Point(511, 340);
+            this.lblChangePassword.Location = new System.Drawing.Point(516, 312);
             this.lblChangePassword.Name = "lblChangePassword";
             this.lblChangePassword.Size = new System.Drawing.Size(121, 13);
             this.lblChangePassword.TabIndex = 53;
@@ -184,7 +184,7 @@
             // lblChangeUserName
             // 
             this.lblChangeUserName.AutoSize = true;
-            this.lblChangeUserName.Location = new System.Drawing.Point(511, 301);
+            this.lblChangeUserName.Location = new System.Drawing.Point(516, 273);
             this.lblChangeUserName.Name = "lblChangeUserName";
             this.lblChangeUserName.Size = new System.Drawing.Size(128, 13);
             this.lblChangeUserName.TabIndex = 52;
@@ -192,16 +192,17 @@
             // 
             // btnChangePassword
             // 
-            this.btnChangePassword.Location = new System.Drawing.Point(675, 335);
+            this.btnChangePassword.Location = new System.Drawing.Point(680, 307);
             this.btnChangePassword.Name = "btnChangePassword";
             this.btnChangePassword.Size = new System.Drawing.Size(117, 23);
             this.btnChangePassword.TabIndex = 51;
             this.btnChangePassword.Text = "Change Password..";
             this.btnChangePassword.UseVisualStyleBackColor = true;
+            this.btnChangePassword.Click += new System.EventHandler(this.btnChangePassword_Click);
             // 
             // btnChangeUserName
             // 
-            this.btnChangeUserName.Location = new System.Drawing.Point(675, 296);
+            this.btnChangeUserName.Location = new System.Drawing.Point(680, 268);
             this.btnChangeUserName.Name = "btnChangeUserName";
             this.btnChangeUserName.Size = new System.Drawing.Size(117, 23);
             this.btnChangeUserName.TabIndex = 50;
@@ -212,7 +213,7 @@
             // lblSetNickName
             // 
             this.lblSetNickName.AutoSize = true;
-            this.lblSetNickName.Location = new System.Drawing.Point(511, 263);
+            this.lblSetNickName.Location = new System.Drawing.Point(516, 235);
             this.lblSetNickName.Name = "lblSetNickName";
             this.lblSetNickName.Size = new System.Drawing.Size(107, 13);
             this.lblSetNickName.TabIndex = 49;
@@ -221,7 +222,7 @@
             // lblModifyProfile
             // 
             this.lblModifyProfile.AutoSize = true;
-            this.lblModifyProfile.Location = new System.Drawing.Point(511, 226);
+            this.lblModifyProfile.Location = new System.Drawing.Point(516, 198);
             this.lblModifyProfile.Name = "lblModifyProfile";
             this.lblModifyProfile.Size = new System.Drawing.Size(153, 13);
             this.lblModifyProfile.TabIndex = 48;
@@ -230,7 +231,7 @@
             // lblChangePicture
             // 
             this.lblChangePicture.AutoSize = true;
-            this.lblChangePicture.Location = new System.Drawing.Point(511, 188);
+            this.lblChangePicture.Location = new System.Drawing.Point(516, 160);
             this.lblChangePicture.Name = "lblChangePicture";
             this.lblChangePicture.Size = new System.Drawing.Size(140, 13);
             this.lblChangePicture.TabIndex = 47;
@@ -239,7 +240,7 @@
             // lblSecondSurname
             // 
             this.lblSecondSurname.AutoSize = true;
-            this.lblSecondSurname.Location = new System.Drawing.Point(6, 394);
+            this.lblSecondSurname.Location = new System.Drawing.Point(11, 366);
             this.lblSecondSurname.Name = "lblSecondSurname";
             this.lblSecondSurname.Size = new System.Drawing.Size(92, 13);
             this.lblSecondSurname.TabIndex = 46;
@@ -248,7 +249,7 @@
             // lblFirstSurName
             // 
             this.lblFirstSurName.AutoSize = true;
-            this.lblFirstSurName.Location = new System.Drawing.Point(6, 355);
+            this.lblFirstSurName.Location = new System.Drawing.Point(11, 327);
             this.lblFirstSurName.Name = "lblFirstSurName";
             this.lblFirstSurName.Size = new System.Drawing.Size(74, 13);
             this.lblFirstSurName.TabIndex = 45;
@@ -257,7 +258,7 @@
             // lblSecondName
             // 
             this.lblSecondName.AutoSize = true;
-            this.lblSecondName.Location = new System.Drawing.Point(6, 317);
+            this.lblSecondName.Location = new System.Drawing.Point(11, 289);
             this.lblSecondName.Name = "lblSecondName";
             this.lblSecondName.Size = new System.Drawing.Size(78, 13);
             this.lblSecondName.TabIndex = 44;
@@ -266,7 +267,7 @@
             // lblFirstName
             // 
             this.lblFirstName.AutoSize = true;
-            this.lblFirstName.Location = new System.Drawing.Point(6, 280);
+            this.lblFirstName.Location = new System.Drawing.Point(11, 252);
             this.lblFirstName.Name = "lblFirstName";
             this.lblFirstName.Size = new System.Drawing.Size(60, 13);
             this.lblFirstName.TabIndex = 43;
@@ -275,7 +276,7 @@
             // lblNickName
             // 
             this.lblNickName.AutoSize = true;
-            this.lblNickName.Location = new System.Drawing.Point(3, 188);
+            this.lblNickName.Location = new System.Drawing.Point(8, 160);
             this.lblNickName.Name = "lblNickName";
             this.lblNickName.Size = new System.Drawing.Size(63, 13);
             this.lblNickName.TabIndex = 42;
@@ -284,7 +285,7 @@
             // pbUserConfig
             // 
             this.pbUserConfig.Image = ((System.Drawing.Image)(resources.GetObject("pbUserConfig.Image")));
-            this.pbUserConfig.Location = new System.Drawing.Point(720, 113);
+            this.pbUserConfig.Location = new System.Drawing.Point(720, 74);
             this.pbUserConfig.Name = "pbUserConfig";
             this.pbUserConfig.Size = new System.Drawing.Size(64, 64);
             this.pbUserConfig.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -294,7 +295,7 @@
             // pbUserInfo
             // 
             this.pbUserInfo.Image = ((System.Drawing.Image)(resources.GetObject("pbUserInfo.Image")));
-            this.pbUserInfo.Location = new System.Drawing.Point(3, 113);
+            this.pbUserInfo.Location = new System.Drawing.Point(3, 74);
             this.pbUserInfo.Name = "pbUserInfo";
             this.pbUserInfo.Size = new System.Drawing.Size(64, 64);
             this.pbUserInfo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
@@ -303,35 +304,38 @@
             // 
             // btnSetNickName
             // 
-            this.btnSetNickName.Location = new System.Drawing.Point(675, 258);
+            this.btnSetNickName.Location = new System.Drawing.Point(680, 230);
             this.btnSetNickName.Name = "btnSetNickName";
             this.btnSetNickName.Size = new System.Drawing.Size(117, 23);
             this.btnSetNickName.TabIndex = 39;
             this.btnSetNickName.Text = "Set Nick Name..";
             this.btnSetNickName.UseVisualStyleBackColor = true;
+            this.btnSetNickName.Click += new System.EventHandler(this.btnSetNickName_Click);
             // 
             // btnModifyProfile
             // 
-            this.btnModifyProfile.Location = new System.Drawing.Point(675, 221);
+            this.btnModifyProfile.Location = new System.Drawing.Point(680, 193);
             this.btnModifyProfile.Name = "btnModifyProfile";
             this.btnModifyProfile.Size = new System.Drawing.Size(117, 23);
             this.btnModifyProfile.TabIndex = 38;
             this.btnModifyProfile.Text = "Modify Profile..";
             this.btnModifyProfile.UseVisualStyleBackColor = true;
+            this.btnModifyProfile.Click += new System.EventHandler(this.btnModifyProfile_Click);
             // 
             // btnChangePicture
             // 
-            this.btnChangePicture.Location = new System.Drawing.Point(675, 183);
+            this.btnChangePicture.Location = new System.Drawing.Point(680, 155);
             this.btnChangePicture.Name = "btnChangePicture";
             this.btnChangePicture.Size = new System.Drawing.Size(117, 23);
             this.btnChangePicture.TabIndex = 37;
             this.btnChangePicture.Text = "Change Picture..";
             this.btnChangePicture.UseVisualStyleBackColor = true;
+            this.btnChangePicture.Click += new System.EventHandler(this.btnChangePicture_Click_1);
             // 
             // lblActualUserName
             // 
             this.lblActualUserName.AutoSize = true;
-            this.lblActualUserName.Location = new System.Drawing.Point(104, 215);
+            this.lblActualUserName.Location = new System.Drawing.Point(109, 187);
             this.lblActualUserName.Name = "lblActualUserName";
             this.lblActualUserName.Size = new System.Drawing.Size(13, 13);
             this.lblActualUserName.TabIndex = 76;
@@ -340,7 +344,7 @@
             // lblUserName
             // 
             this.lblUserName.AutoSize = true;
-            this.lblUserName.Location = new System.Drawing.Point(3, 218);
+            this.lblUserName.Location = new System.Drawing.Point(8, 190);
             this.lblUserName.Name = "lblUserName";
             this.lblUserName.Size = new System.Drawing.Size(63, 13);
             this.lblUserName.TabIndex = 78;
@@ -349,7 +353,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(6, 252);
+            this.label1.Location = new System.Drawing.Point(11, 224);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(20, 13);
             this.label1.TabIndex = 80;
@@ -358,7 +362,7 @@
             // lblCI
             // 
             this.lblCI.AutoSize = true;
-            this.lblCI.Location = new System.Drawing.Point(107, 252);
+            this.lblCI.Location = new System.Drawing.Point(112, 224);
             this.lblCI.Name = "lblCI";
             this.lblCI.Size = new System.Drawing.Size(13, 13);
             this.lblCI.TabIndex = 81;
@@ -374,7 +378,7 @@
             this.gbModifyProfile.Controls.Add(this.txtNewFirstSurname);
             this.gbModifyProfile.Controls.Add(this.txtNewSecondName);
             this.gbModifyProfile.Controls.Add(this.txtNewFirstName);
-            this.gbModifyProfile.Location = new System.Drawing.Point(240, 285);
+            this.gbModifyProfile.Location = new System.Drawing.Point(237, 146);
             this.gbModifyProfile.Name = "gbModifyProfile";
             this.gbModifyProfile.Size = new System.Drawing.Size(237, 156);
             this.gbModifyProfile.TabIndex = 82;
@@ -392,7 +396,7 @@
             // lblNewFirstSurname
             // 
             this.lblNewFirstSurname.AutoSize = true;
-            this.lblNewFirstSurname.Location = new System.Drawing.Point(4, 88);
+            this.lblNewFirstSurname.Location = new System.Drawing.Point(6, 91);
             this.lblNewFirstSurname.Name = "lblNewFirstSurname";
             this.lblNewFirstSurname.Size = new System.Drawing.Size(99, 13);
             this.lblNewFirstSurname.TabIndex = 94;
@@ -446,16 +450,17 @@
             // 
             // btnConfirmInfo
             // 
-            this.btnConfirmInfo.Location = new System.Drawing.Point(338, 447);
+            this.btnConfirmInfo.Location = new System.Drawing.Point(314, 308);
             this.btnConfirmInfo.Name = "btnConfirmInfo";
             this.btnConfirmInfo.Size = new System.Drawing.Size(68, 23);
             this.btnConfirmInfo.TabIndex = 90;
             this.btnConfirmInfo.Text = "Confirm Information";
             this.btnConfirmInfo.UseVisualStyleBackColor = true;
+            this.btnConfirmInfo.Click += new System.EventHandler(this.btnConfirmInfo_Click);
             // 
             // txtNewUserName
             // 
-            this.txtNewUserName.Location = new System.Drawing.Point(129, 23);
+            this.txtNewUserName.Location = new System.Drawing.Point(129, 13);
             this.txtNewUserName.Name = "txtNewUserName";
             this.txtNewUserName.Size = new System.Drawing.Size(105, 20);
             this.txtNewUserName.TabIndex = 100;
@@ -463,7 +468,7 @@
             // lblNewUserName
             // 
             this.lblNewUserName.AutoSize = true;
-            this.lblNewUserName.Location = new System.Drawing.Point(6, 26);
+            this.lblNewUserName.Location = new System.Drawing.Point(6, 16);
             this.lblNewUserName.Name = "lblNewUserName";
             this.lblNewUserName.Size = new System.Drawing.Size(88, 13);
             this.lblNewUserName.TabIndex = 99;
@@ -508,9 +513,9 @@
             // 
             this.gbChangeUserName.Controls.Add(this.lblNewUserName);
             this.gbChangeUserName.Controls.Add(this.txtNewUserName);
-            this.gbChangeUserName.Location = new System.Drawing.Point(240, 230);
+            this.gbChangeUserName.Location = new System.Drawing.Point(240, 144);
             this.gbChangeUserName.Name = "gbChangeUserName";
-            this.gbChangeUserName.Size = new System.Drawing.Size(237, 53);
+            this.gbChangeUserName.Size = new System.Drawing.Size(237, 40);
             this.gbChangeUserName.TabIndex = 101;
             this.gbChangeUserName.TabStop = false;
             // 
@@ -518,7 +523,7 @@
             // 
             this.gbChangeNickName.Controls.Add(this.lblNewNickName);
             this.gbChangeNickName.Controls.Add(this.txtNewNickName);
-            this.gbChangeNickName.Location = new System.Drawing.Point(240, 183);
+            this.gbChangeNickName.Location = new System.Drawing.Point(242, 144);
             this.gbChangeNickName.Name = "gbChangeNickName";
             this.gbChangeNickName.Size = new System.Drawing.Size(237, 41);
             this.gbChangeNickName.TabIndex = 102;
@@ -528,7 +533,7 @@
             // 
             this.gbPictureModifyUserProfile.Controls.Add(this.pbModifyUserProfile);
             this.gbPictureModifyUserProfile.Controls.Add(this.lblModifyUserProfile);
-            this.gbPictureModifyUserProfile.Location = new System.Drawing.Point(240, 113);
+            this.gbPictureModifyUserProfile.Location = new System.Drawing.Point(240, 74);
             this.gbPictureModifyUserProfile.Name = "gbPictureModifyUserProfile";
             this.gbPictureModifyUserProfile.Size = new System.Drawing.Size(237, 64);
             this.gbPictureModifyUserProfile.TabIndex = 103;
@@ -536,7 +541,7 @@
             // 
             // btnConfirmUserName
             // 
-            this.btnConfirmUserName.Location = new System.Drawing.Point(338, 447);
+            this.btnConfirmUserName.Location = new System.Drawing.Point(314, 308);
             this.btnConfirmUserName.Name = "btnConfirmUserName";
             this.btnConfirmUserName.Size = new System.Drawing.Size(68, 23);
             this.btnConfirmUserName.TabIndex = 104;
@@ -546,7 +551,7 @@
             // 
             // btnConfirmNickName
             // 
-            this.btnConfirmNickName.Location = new System.Drawing.Point(338, 447);
+            this.btnConfirmNickName.Location = new System.Drawing.Point(314, 308);
             this.btnConfirmNickName.Name = "btnConfirmNickName";
             this.btnConfirmNickName.Size = new System.Drawing.Size(68, 23);
             this.btnConfirmNickName.TabIndex = 105;
@@ -560,9 +565,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.btnConfirmNickName);
             this.Controls.Add(this.btnConfirmUserName);
+            this.Controls.Add(this.gbChangeUserName);
             this.Controls.Add(this.gbPictureModifyUserProfile);
             this.Controls.Add(this.gbChangeNickName);
-            this.Controls.Add(this.gbChangeUserName);
             this.Controls.Add(this.lblUserInfo);
             this.Controls.Add(this.gbModifyProfile);
             this.Controls.Add(this.lblCI);
@@ -596,7 +601,7 @@
             this.Controls.Add(this.btnModifyProfile);
             this.Controls.Add(this.btnChangePicture);
             this.Name = "UserControlProfile";
-            this.Size = new System.Drawing.Size(821, 485);
+            this.Size = new System.Drawing.Size(800, 400);
             this.Load += new System.EventHandler(this.UserControlProfile_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pbUserPicture)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbUserConfig)).EndInit();

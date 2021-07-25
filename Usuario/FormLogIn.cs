@@ -18,14 +18,7 @@ namespace Usuario
             InitializeComponent();
         }
 
-        private void tbUser_TextChanged(object sender, EventArgs e)
-        {
-
-
-
-
-        }
-
+       
         private void btnLogIn_Click(object sender, EventArgs e)
         {
             string message = checkLogin();

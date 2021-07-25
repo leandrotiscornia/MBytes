@@ -148,9 +148,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Datos\Datos.csproj">
-      <Project>{e7a25795-9c3c-449a-8ee9-2ae252fa5fc4}</Project>
-      <Name>Datos</Name>
     <ProjectReference Include="..\Agenda\Agenda.csproj">
       <Project>{7ec5955c-1161-4e87-8f5d-ae8de746b65a}</Project>
       <Name>Agenda</Name>

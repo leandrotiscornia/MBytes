@@ -11,89 +11,77 @@ using Negocio;
 
 namespace Usuario
 {
-    
-        public partial class UserControlProfile : UserControl
-        {
-            
-            public UserControlProfile()
-            {
-                InitializeComponent();
-            }
 
+    public partial class UserControlProfile : UserControl
+    {
+        public UserControlProfile()
+        {
+            InitializeComponent();
+        }
         private void UserControlProfile_Load(object sender, EventArgs e)
         {
-            HideModifyProfileInfo();
+            hideModifyProfileInfo();
+            loadUserData();
         }
 
-        private void btnChangePicture_Click(object sender, EventArgs e)
-            {
-                pbUserPicture.Image = Properties.Resources.user;
-            }
-
-            private void btnModifyProfile_Click(object sender, EventArgs e)
-            {
-               
-                ModifyProfile();
-            }
-
-            private void btnSetNickName_Click(object sender, EventArgs e)
-            {
-               
-                SetNickName();
-            }
-
-            private void btnChangeUserName_Click(object sender, EventArgs e)
-            {
-            
-                ChangeUserName();
-            }
-
-            private void btnConfirmInfo_Click(object sender, EventArgs e)
-            {
-
-                 modifyData();
-            }
-
-            public void HideModifyProfileInfo()
-            {
-                gbChangeNickName.Hide();
-                gbChangeUserName.Hide();
-                gbModifyProfile.Hide();
-                btnConfirmInfo.Hide();
-            }
-            public void ModifyProfile()
-            {
-                gbPictureModifyUserProfile.Show();
-                gbModifyProfile.Show();
-                btnConfirmInfo.Show();
-            }
-
-            public void SetNickName()
-            {
-                gbChangeNickName.Show();
-                btnConfirmInfo.Show();
-
-            }
-
-            public void ChangeUserName()
-            {
-                gbPictureModifyUserProfile.Show();
-                gbChangeUserName.Show();
-                btnConfirmInfo.Show();
-
-            }
-            
-            public void HideSetProfileInformation()
-            {
-                gbPictureModifyUserProfile.Hide();
-                gbModifyProfile.Hide();
-                btnConfirmInfo.Hide();
-
+        private void loadUserData()
+        {
+            List<string> profileData = ControllerGetProfileData.getProfileData();
+            lblActualUserName.Text = profileData[0];
+            lblCI.Text = profileData[1];
+            lblActualFirstName.Text = profileData[2];
+            lblActualSecondName.Text = profileData[3];
+            lblActualFirstSurname.Text = profileData[4];
+            lblActualSecondSurname.Text = profileData[5];
+            lblActualNickName.Text = profileData[6];
+            txtNewUserName.Text = profileData[0];
+            txtNewNickName.Text = profileData[6];
+            txtNewFirstName.Text = profileData[2];
+            txtNewSecondName.Text = profileData[3];
+            txtNewFirstSurname.Text = profileData[4];
+            txtNewSecondSurname.Text = profileData[5];
         }
 
+        private void btnChangeUserName_Click(object sender, EventArgs e)
+        {
+            ChangeUserName();
+        }
+        public void hideModifyProfileInfo()
+        {
+            gbChangeNickName.Hide();
+            gbChangeUserName.Hide();
+            gbModifyProfile.Hide();
+            btnConfirmInfo.Hide();
+            btnConfirmNickName.Hide();
+            btnConfirmUserName.Hide();
+            gbPictureModifyUserProfile.Hide();
+        }
+        public void modifyProfile()
+        {
+            hideModifyProfileInfo();
+            gbPictureModifyUserProfile.Show();
+            gbModifyProfile.Show();
+            btnConfirmInfo.Show();
+        }
+
+        public void setNickName()
+        {
+            hideModifyProfileInfo();
+            gbChangeNickName.Show();
+            btnConfirmNickName.Show();
+            gbPictureModifyUserProfile.Show();
+        }
+
+        public void ChangeUserName()
+        {
+            hideModifyProfileInfo();
+            gbPictureModifyUserProfile.Show();
+            gbChangeUserName.Show();
+            btnConfirmUserName.Show();
+        }
         public void modifyData()
         {
-            string[] personInfo = new string[5];
+            string[] personInfo = new string[6];
             personInfo[0] = Session.userId.ToString();
             personInfo[1] = lblCI.Text;
             personInfo[2] = txtNewFirstName.Text;
@@ -101,54 +89,73 @@ namespace Usuario
             personInfo[4] = txtNewSecondName.Text;
             personInfo[5] = txtNewSecondSurname.Text;
             ControllerModifyPerson.modifyPerson(personInfo);
+            hideModifyProfileInfo();
+        }
+        public void modifyUserName()
+        {
+            ControllerModifyUserName.modifyUserName(txtNewUserName.Text, Session.userId);
         }
 
-        
-          public void modifyUserName()
+        public void modifyNickName()
+        {
+            ControllerModifyNickName.modifyNickName(txtNewNickName.Text);
+        }
+        private void btnConfirmNickName_Click(object sender, EventArgs e)
+        {
+            if (txtNewNickName.Text != null)
             {
-                ControllerModifyUserName.modifyUserName(txtNewUserName.Text,Session.userId);
+                modifyNickName();
+                hideModifyProfileInfo();
+                loadUserData();
             }
+            else
+                MessageBox.Show("You need to set a nickname", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
 
-            public void modifyNickName()
+        private void btnConfirmUserName_Click(object sender, EventArgs e)
+        {
+            if (txtNewUserName != null)
             {
-            
-               ControllerModifyNickName.modifyNickName(txtNewNickName.Text, Session.ci);  
+                modifyUserName();
+                hideModifyProfileInfo();
+                loadUserData();
             }
-
-      
-
-        public void personInformationToCharge()
-        {
-            // Aca se cargan los datos de Negocio y que herede ModelPerson 
-
-        }
-        public void HideSetNickName()
-        {
-              gbPictureModifyUserProfile.Hide();
-              gbChangeNickName.Hide();
-              btnConfirmInfo.Hide();   
+            else
+                MessageBox.Show("You need to set a user name", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
-        public void HideChangeUserName()
+        private void btnSetNickName_Click(object sender, EventArgs e)
         {
-             gbPictureModifyUserProfile.Hide();
-             gbChangeUserName.Hide();
-             btnConfirmInfo.Hide();
+            setNickName();
         }
 
-            
-
-        private void btnConfirmNickName_Click(object sender, EventArgs e) 
+        private void btnModifyProfile_Click(object sender, EventArgs e)
         {
-            modifyNickName();
+            modifyProfile();
         }
 
-        private void btnConfirmUserName_Click(object sender, EventArgs e) 
+        private void btnConfirmInfo_Click(object sender, EventArgs e)
         {
-            modifyUserName();
+            if (txtNewFirstName.Text == null)
+                MessageBox.Show("You need to set a name", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            else if (txtNewFirstSurname.Text == null)
+                MessageBox.Show("You need to set a surname", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            else
+            {
+                modifyData();
+                hideModifyProfileInfo();
+                loadUserData();
+            }
+        }
+        private void btnChangePicture_Click_1(object sender, EventArgs e)
+        {
+            MessageBox.Show("Feature not added yet", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+        private void btnChangePassword_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Feature not added yet", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
-        
     }
-    }
+}
 

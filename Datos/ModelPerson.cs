@@ -11,6 +11,7 @@ namespace Datos
     public class ModelPerson : ModelDataBaseObject
     {
         public int personId { get; set; }
+        public string userName { get; set; }
         public string ci { get; set; }
         public string firstName { get; set; }
         public string secondName { get; set; }
@@ -18,7 +19,6 @@ namespace Datos
         public string secondSurname { get; set; }
         public string nickName { get; set; }
         public string avatarPicture { get; set; }
-        public List<int> userPermissions { get; set; }
 
         public void registerUser(string userName, string userPassword)
         {
@@ -60,33 +60,29 @@ namespace Datos
                 secondSurname,
                 nickName,
                 avatarPicture
-        };
+            };
         }
-       /* public string getUserRole()
+        public void createObjectPersonToModify()
         {
-            string userRole ="";
-            string commandString;
-            commandString = 
-                "SELECT Name " +
-                "FROM roles " +
-                "LEFT JOIN personis " +
-                "ON roles.ID = personis.Role_ID " +
-                "LEFT JOIN persons " +
-                "ON personis.Person_CI = persons.CI " +
-                "WHERE persons.ID = @personId";
-            this.command.CommandText = commandString;
-            this.openConnection();
-            this.command.Parameters.AddWithValue("@personId", this.personId);
-            this.command.Prepare();
-            this.reader = this.command.ExecuteReader();
-            while (reader.Read())
-                userRole = reader.GetString(0);
-            closeConnection();
-            
-            return userRole;
-        }*/
+            objectKey = personId.ToString();
+            tableName = "persons";
+            columnNames = new string[]
+            {
+                "First_Name",
+                "Second_Name",
+                "First_Surname",
+                "Second_Surname"
+            };
+            objectValues = new string[]
+            {
+                firstName,
+                secondName,
+                firstSurname,
+                secondSurname,
+            };
+        }
 
-        public int getUserId(string userName)
+            public int getUserId(string userName)
         {
             string commandString;
             commandString =
@@ -216,25 +212,24 @@ namespace Datos
 
 
         }
-        public void updateNickName(string updateNickName, string ci)
+        public void updateNickName()
         {
-            string commandString = "UPDATE persons" +
-            "SET Nick_Name = @nickName" +
-            "WHERE CI = @person_CI;";
+            string commandString = 
+                "UPDATE persons " +
+                "SET Nick_Name = @nickName " +
+                "WHERE ID = @personId;";
 
-
-              this.command.CommandText = commandString;
-            this.command.Parameters.AddWithValue("@person_CI", ci);
-            this.command.Parameters.AddWithValue("@nickName", updateNickName);
+            this.command.CommandText = commandString;
+            this.command.Parameters.AddWithValue("@personId", personId);
+            this.command.Parameters.AddWithValue("@nickName", nickName);
             this.openConnection();
             this.command.Prepare();
             this.command.ExecuteNonQuery();
             this.command.Parameters.Clear();
             this.closeConnection();
-
-
-
         }
+
+
 
         public DataTable getUsersByPermission(int featureId)
         {
@@ -314,7 +309,7 @@ namespace Datos
                 "JOIN roles ON roles.ID = permissions.Role_ID " +
                 "JOIN personis ON roles.ID = personis.Role_ID " +
                 "JOIN persons ON persons.CI = personis.Person_CI " +
-                "WHERE persons.ID = @myID;";
+                "WHERE persons.ID = @myId;";
             this.command.CommandText = commandString;
             this.command.Parameters.AddWithValue("@myId", personId);
             this.openConnection();
@@ -326,8 +321,31 @@ namespace Datos
             this.closeConnection();
             return features;
         }
-
-
+        public void getProfileData()
+        {
+            string commandString;
+            commandString =
+                "SELECT User_Login, CI, First_Name, Second_Name, First_Surname, Second_Surname, Nick_Name " +
+                "FROM persons " +
+                "JOIN users ON persons.ID = users.ID " +
+                "WHERE users.ID = @myId";
+            this.command.CommandText = commandString;
+            this.command.Parameters.AddWithValue("@myId", personId);
+            this.openConnection();
+            this.command.Prepare();
+            this.reader = command.ExecuteReader();
+            while (this.reader.Read())
+            {
+                this.userName = reader.GetString(0);
+                this.ci = reader.GetString(1);
+                this.firstName = reader.GetString(2);
+                this.secondName = reader.GetString(3);
+                this.firstSurname = reader.GetString(4);
+                this.secondSurname = reader.GetString(5);
+                this.nickName = reader.GetString(6);
+            }
+            this.command.Parameters.Clear();
+            this.closeConnection();
+        }
     }
-    
 }

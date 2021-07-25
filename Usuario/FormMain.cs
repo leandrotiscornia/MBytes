@@ -56,5 +56,13 @@ namespace Usuario
         {
             Application.Exit();
         }
+
+        private void btnProfile_Click(object sender, EventArgs e)
+        {
+            pnlFunction.Controls.Clear();
+            UserControlProfile profile = new UserControlProfile();
+            profile.Dock = DockStyle.Fill;
+            pnlFunction.Controls.Add(profile);
+        }
     }
 }

@@ -9,12 +9,12 @@ namespace Negocio
 {
     public static class ControllerModifyNickName
     {
-         public static void modifyNickName(string nickNameData, string ciData)
+         public static void modifyNickName(string nickNameData)
          {
              ModelPerson nickNameToModify = new ModelPerson();
-             nickNameData = nickNameToModify.nickName; 
-             ciData = nickNameToModify.ci;
-             nickNameToModify.updateNickName(nickNameData,ciData);
+            nickNameToModify.personId = Session.userId;
+            nickNameToModify.nickName = nickNameData;
+             nickNameToModify.updateNickName();
          }
          
     }
