@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace Usuario.Properties {
+namespace App_de_Docente.Properties {
     using System;
     
     

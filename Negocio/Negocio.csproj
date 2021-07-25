@@ -45,7 +45,7 @@
     <Compile Include="ControllerGetConsultMessages.cs" />
     <Compile Include="ControllerGetConsults.cs" />
     <Compile Include="ControllerCheckExistence.cs" />
-    <Compile Include="ControllerGetAgendaUsers.cs" />
+    <Compile Include="ControllerGetScheduleUsers.cs" />
     <Compile Include="ControllerDeleteCourse.cs" />
     <Compile Include="ControllerDeleteGrade.cs" />
     <Compile Include="ControllerDeleteGroup.cs" />

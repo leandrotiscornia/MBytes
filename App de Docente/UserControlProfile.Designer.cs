@@ -1,4 +1,4 @@
-﻿namespace Usuario
+﻿namespace App_de_Docente
 {
     partial class UserControlProfile
     {
@@ -146,7 +146,6 @@
             // 
             // pbUserPicture
             // 
-            this.pbUserPicture.Image = global::App_de_Docente.Properties.Resources.user;
             this.pbUserPicture.Location = new System.Drawing.Point(8, 3);
             this.pbUserPicture.Name = "pbUserPicture";
             this.pbUserPicture.Size = new System.Drawing.Size(64, 64);

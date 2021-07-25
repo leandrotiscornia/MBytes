@@ -339,10 +339,13 @@ namespace Datos
                 this.userName = reader.GetString(0);
                 this.ci = reader.GetString(1);
                 this.firstName = reader.GetString(2);
-                this.secondName = reader.GetString(3);
+                if(!reader.IsDBNull(6)) // TODO -> getSafeString();
+                    this.secondName = reader.GetString(3);
                 this.firstSurname = reader.GetString(4);
-                this.secondSurname = reader.GetString(5);
-                this.nickName = reader.GetString(6);
+                if(!reader.IsDBNull(6))
+                    this.secondSurname = reader.GetString(5);
+                if (!reader.IsDBNull(6))
+                    this.nickName = reader.GetString(6);
             }
             this.command.Parameters.Clear();
             this.closeConnection();

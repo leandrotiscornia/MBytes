@@ -1,4 +1,4 @@
-﻿namespace Usuario
+﻿namespace App_De_Alumo
 {
     partial class FormRegisterPerson
     {

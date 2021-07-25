@@ -1,4 +1,4 @@
-﻿namespace Usuario
+﻿namespace App_de_Docente
 {
     partial class FormRegisterPerson
     {
