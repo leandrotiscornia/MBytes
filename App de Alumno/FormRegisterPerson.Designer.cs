@@ -38,8 +38,6 @@
             this.tbSecondName = new System.Windows.Forms.TextBox();
             this.tbFirstName = new System.Windows.Forms.TextBox();
             this.tbCI = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.pnlUserRoles = new System.Windows.Forms.Panel();
             this.btnRegister = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.tbPassword = new System.Windows.Forms.TextBox();
@@ -48,7 +46,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.tbConfirmPassword = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.cbRole = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label1
@@ -151,24 +148,6 @@
             this.tbCI.Size = new System.Drawing.Size(100, 13);
             this.tbCI.TabIndex = 9;
             // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(195)))), ((int)(((byte)(195)))));
-            this.label6.Location = new System.Drawing.Point(12, 431);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(88, 16);
-            this.label6.TabIndex = 10;
-            this.label6.Text = "Register As:";
-            // 
-            // pnlUserRoles
-            // 
-            this.pnlUserRoles.Location = new System.Drawing.Point(25, 476);
-            this.pnlUserRoles.Name = "pnlUserRoles";
-            this.pnlUserRoles.Size = new System.Drawing.Size(254, 100);
-            this.pnlUserRoles.TabIndex = 12;
-            // 
             // btnRegister
             // 
             this.btnRegister.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(194)))), ((int)(((byte)(157)))));
@@ -259,19 +238,6 @@
             this.label9.TabIndex = 20;
             this.label9.Text = "Confirm Password";
             // 
-            // cbRole
-            // 
-            this.cbRole.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(120)))), ((int)(((byte)(130)))));
-            this.cbRole.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbRole.FormattingEnabled = true;
-            this.cbRole.Items.AddRange(new object[] {
-            "Teacher",
-            "Student"});
-            this.cbRole.Location = new System.Drawing.Point(179, 430);
-            this.cbRole.Name = "cbRole";
-            this.cbRole.Size = new System.Drawing.Size(100, 21);
-            this.cbRole.TabIndex = 22;
-            // 
             // FormRegisterPerson
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -279,7 +245,6 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(57)))), ((int)(((byte)(67)))));
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(309, 639);
-            this.Controls.Add(this.cbRole);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.tbConfirmPassword);
             this.Controls.Add(this.label8);
@@ -288,8 +253,6 @@
             this.Controls.Add(this.tbPassword);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnRegister);
-            this.Controls.Add(this.pnlUserRoles);
-            this.Controls.Add(this.label6);
             this.Controls.Add(this.tbCI);
             this.Controls.Add(this.tbFirstName);
             this.Controls.Add(this.tbSecondName);
@@ -319,8 +282,6 @@
         private System.Windows.Forms.TextBox tbSecondName;
         private System.Windows.Forms.TextBox tbFirstName;
         private System.Windows.Forms.TextBox tbCI;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Panel pnlUserRoles;
         private System.Windows.Forms.Button btnRegister;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.TextBox tbPassword;
@@ -329,6 +290,5 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.TextBox tbConfirmPassword;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.ComboBox cbRole;
     }
 }
