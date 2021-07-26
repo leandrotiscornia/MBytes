@@ -15,77 +15,56 @@ namespace Datos {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "15.9.0.0")]
     internal sealed partial class DataBase : global::System.Configuration.ApplicationSettingsBase {
         
-        public static DataBase defaultInstance = ((DataBase)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new DataBase())));
+        private static DataBase defaultInstance = ((DataBase)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new DataBase())));
         
         public static DataBase Default {
             get {
                 return defaultInstance;
             }
-            set
-            {
-                defaultInstance = value;
-            }
         }
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("prueba_proyecto")]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
         public string dbName {
             get {
                 return ((string)(this["dbName"]));
             }
-            set { this["dbName"] = value; }
         }
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("127.0.0.1")]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
         public string dbServer {
             get {
                 return ((string)(this["dbServer"]));
             }
-            set
-            {
-                 this["dbServer"] = value;
-            }
         }
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("3306")]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
         public string dbPort {
             get {
                 return ((string)(this["dbPort"]));
             }
-            set
-            {
-                this["dbPort"] = value;
-            }
         }
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("solarfenrir454")]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
         public string dbPassword {
             get {
                 return ((string)(this["dbPassword"]));
             }
-            set
-            {
-                this["dbPassword"] = value;
-            }
         }
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("root")]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
         public string dbUser {
             get {
                 return ((string)(this["dbUser"]));
-            }
-            set
-            {
-                this["dbUser"] = value;
             }
         }
     }

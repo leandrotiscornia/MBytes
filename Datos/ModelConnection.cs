@@ -33,17 +33,7 @@ namespace Datos
             dbPassword = DataBase.Default.dbPassword;
             
         }
-        public void setConnectionUser()
-        {
-            DataBase.Default.dbUser = dbName;
-            DataBase.Default.dbPassword = dbPassword;
-        }
-        public void setConnectionData()
-        {
-            DataBase.Default.dbName = dbName;
-            DataBase.Default.dbServer = dbServer;
-            DataBase.Default.dbPort = dbPort;
-        }
+        
         public void openConnection()
         {
             command.Connection = connection;
