@@ -33,8 +33,8 @@
             this.pnlFunction = new System.Windows.Forms.Panel();
             this.lvNavigation = new System.Windows.Forms.ListView();
             this.Function = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnConfiguration = new System.Windows.Forms.Button();
+            this.btnHelp = new System.Windows.Forms.Button();
             this.btnProfile = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -66,23 +66,23 @@
             this.Function.Text = "Function";
             this.Function.Width = 124;
             // 
-            // button1
+            // btnConfiguration
             // 
-            this.button1.Location = new System.Drawing.Point(714, 27);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Config";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnConfiguration.Location = new System.Drawing.Point(714, 27);
+            this.btnConfiguration.Name = "btnConfiguration";
+            this.btnConfiguration.Size = new System.Drawing.Size(75, 23);
+            this.btnConfiguration.TabIndex = 2;
+            this.btnConfiguration.Text = "Config";
+            this.btnConfiguration.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btnHelp
             // 
-            this.button2.Location = new System.Drawing.Point(795, 27);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Help";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnHelp.Location = new System.Drawing.Point(795, 27);
+            this.btnHelp.Name = "btnHelp";
+            this.btnHelp.Size = new System.Drawing.Size(75, 23);
+            this.btnHelp.TabIndex = 3;
+            this.btnHelp.Text = "Help";
+            this.btnHelp.UseVisualStyleBackColor = true;
             // 
             // btnProfile
             // 
@@ -100,8 +100,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(963, 498);
             this.Controls.Add(this.btnProfile);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnHelp);
+            this.Controls.Add(this.btnConfiguration);
             this.Controls.Add(this.lvNavigation);
             this.Controls.Add(this.pnlFunction);
             this.Cursor = System.Windows.Forms.Cursors.Default;
@@ -118,8 +118,8 @@
         private System.Windows.Forms.Panel pnlFunction;
         private System.Windows.Forms.ListView lvNavigation;
         private System.Windows.Forms.ColumnHeader Function;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnConfiguration;
+        private System.Windows.Forms.Button btnHelp;
         private System.Windows.Forms.Button btnProfile;
     }
 }

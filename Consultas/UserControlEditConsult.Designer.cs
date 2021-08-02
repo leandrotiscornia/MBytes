@@ -29,10 +29,10 @@
         private void InitializeComponent()
         {
             this.btnSend = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lbMessageEditConsult = new System.Windows.Forms.Label();
+            this.lbPreviousEditConsult = new System.Windows.Forms.Label();
             this.tbNewMessage = new System.Windows.Forms.TextBox();
-            this.lbTopic = new System.Windows.Forms.Label();
+            this.lbTopicEditConsult = new System.Windows.Forms.Label();
             this.tbTopic = new System.Windows.Forms.TextBox();
             this.btnFileConsult = new System.Windows.Forms.Button();
             this.rtbMessages = new System.Windows.Forms.RichTextBox();
@@ -48,23 +48,23 @@
             this.btnSend.UseVisualStyleBackColor = true;
             this.btnSend.Click += new System.EventHandler(this.btnSend_Click);
             // 
-            // label2
+            // lbMessageEditConsult
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(13, 231);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(53, 13);
-            this.label2.TabIndex = 12;
-            this.label2.Text = "Message:";
+            this.lbMessageEditConsult.AutoSize = true;
+            this.lbMessageEditConsult.Location = new System.Drawing.Point(13, 231);
+            this.lbMessageEditConsult.Name = "lbMessageEditConsult";
+            this.lbMessageEditConsult.Size = new System.Drawing.Size(53, 13);
+            this.lbMessageEditConsult.TabIndex = 12;
+            this.lbMessageEditConsult.Text = "Message:";
             // 
-            // label1
+            // lbPreviousEditConsult
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 60);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(48, 13);
-            this.label1.TabIndex = 11;
-            this.label1.Text = "Previous";
+            this.lbPreviousEditConsult.AutoSize = true;
+            this.lbPreviousEditConsult.Location = new System.Drawing.Point(12, 60);
+            this.lbPreviousEditConsult.Name = "lbPreviousEditConsult";
+            this.lbPreviousEditConsult.Size = new System.Drawing.Size(48, 13);
+            this.lbPreviousEditConsult.TabIndex = 11;
+            this.lbPreviousEditConsult.Text = "Previous";
             // 
             // tbNewMessage
             // 
@@ -74,14 +74,14 @@
             this.tbNewMessage.Size = new System.Drawing.Size(293, 93);
             this.tbNewMessage.TabIndex = 10;
             // 
-            // lbTopic
+            // lbTopicEditConsult
             // 
-            this.lbTopic.AutoSize = true;
-            this.lbTopic.Location = new System.Drawing.Point(29, 34);
-            this.lbTopic.Name = "lbTopic";
-            this.lbTopic.Size = new System.Drawing.Size(37, 13);
-            this.lbTopic.TabIndex = 8;
-            this.lbTopic.Text = "Topic:";
+            this.lbTopicEditConsult.AutoSize = true;
+            this.lbTopicEditConsult.Location = new System.Drawing.Point(29, 34);
+            this.lbTopicEditConsult.Name = "lbTopicEditConsult";
+            this.lbTopicEditConsult.Size = new System.Drawing.Size(37, 13);
+            this.lbTopicEditConsult.TabIndex = 8;
+            this.lbTopicEditConsult.Text = "Topic:";
             // 
             // tbTopic
             // 
@@ -118,10 +118,10 @@
             this.Controls.Add(this.rtbMessages);
             this.Controls.Add(this.btnFileConsult);
             this.Controls.Add(this.btnSend);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lbMessageEditConsult);
+            this.Controls.Add(this.lbPreviousEditConsult);
             this.Controls.Add(this.tbNewMessage);
-            this.Controls.Add(this.lbTopic);
+            this.Controls.Add(this.lbTopicEditConsult);
             this.Controls.Add(this.tbTopic);
             this.Name = "UserControlEditConsult";
             this.Size = new System.Drawing.Size(400, 400);
@@ -134,10 +134,10 @@
         #endregion
 
         private System.Windows.Forms.Button btnSend;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbMessageEditConsult;
+        private System.Windows.Forms.Label lbPreviousEditConsult;
         private System.Windows.Forms.TextBox tbNewMessage;
-        private System.Windows.Forms.Label lbTopic;
+        private System.Windows.Forms.Label lbTopicEditConsult;
         private System.Windows.Forms.TextBox tbTopic;
         private System.Windows.Forms.Button btnFileConsult;
         private System.Windows.Forms.RichTextBox rtbMessages;

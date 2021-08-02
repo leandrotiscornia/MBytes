@@ -28,13 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("Consults");
-            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem("Chat");
+            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem("Consults");
+            System.Windows.Forms.ListViewItem listViewItem4 = new System.Windows.Forms.ListViewItem("Chat");
             this.pnlFunction = new System.Windows.Forms.Panel();
             this.lvNavigation = new System.Windows.Forms.ListView();
             this.Function = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnConfiguaration = new System.Windows.Forms.Button();
+            this.btHelp = new System.Windows.Forms.Button();
             this.btnProfile = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -51,8 +51,8 @@
             this.Function});
             this.lvNavigation.HideSelection = false;
             this.lvNavigation.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem1,
-            listViewItem2});
+            listViewItem3,
+            listViewItem4});
             this.lvNavigation.Location = new System.Drawing.Point(12, 70);
             this.lvNavigation.Name = "lvNavigation";
             this.lvNavigation.Size = new System.Drawing.Size(121, 400);
@@ -66,23 +66,23 @@
             this.Function.Text = "Function";
             this.Function.Width = 124;
             // 
-            // button1
+            // btnConfiguaration
             // 
-            this.button1.Location = new System.Drawing.Point(714, 27);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Config";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnConfiguaration.Location = new System.Drawing.Point(714, 27);
+            this.btnConfiguaration.Name = "btnConfiguaration";
+            this.btnConfiguaration.Size = new System.Drawing.Size(75, 23);
+            this.btnConfiguaration.TabIndex = 2;
+            this.btnConfiguaration.Text = "Config";
+            this.btnConfiguaration.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btHelp
             // 
-            this.button2.Location = new System.Drawing.Point(795, 27);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 3;
-            this.button2.Text = "Help";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btHelp.Location = new System.Drawing.Point(795, 27);
+            this.btHelp.Name = "btHelp";
+            this.btHelp.Size = new System.Drawing.Size(75, 23);
+            this.btHelp.TabIndex = 3;
+            this.btHelp.Text = "Help";
+            this.btHelp.UseVisualStyleBackColor = true;
             // 
             // btnProfile
             // 
@@ -100,8 +100,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(963, 498);
             this.Controls.Add(this.btnProfile);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btHelp);
+            this.Controls.Add(this.btnConfiguaration);
             this.Controls.Add(this.lvNavigation);
             this.Controls.Add(this.pnlFunction);
             this.Cursor = System.Windows.Forms.Cursors.Default;
@@ -118,8 +118,8 @@
         private System.Windows.Forms.Panel pnlFunction;
         private System.Windows.Forms.ListView lvNavigation;
         private System.Windows.Forms.ColumnHeader Function;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnConfiguaration;
+        private System.Windows.Forms.Button btHelp;
         private System.Windows.Forms.Button btnProfile;
     }
 }

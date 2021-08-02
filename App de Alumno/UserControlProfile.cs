@@ -29,7 +29,7 @@ namespace App_De_Alumo
         {
             List<string> profileData = ControllerGetProfileData.getProfileData();
             lblActualUserName.Text = profileData[0];
-            lblCI.Text = profileData[1];
+            lblShowCI.Text = profileData[1];
             lblActualFirstName.Text = profileData[2];
             lblActualSecondName.Text = profileData[3];
             lblActualFirstSurname.Text = profileData[4];
@@ -84,7 +84,7 @@ namespace App_De_Alumo
         {
             string[] personInfo = new string[6];
             personInfo[0] = Session.userId.ToString();
-            personInfo[1] = lblCI.Text;
+            personInfo[1] = lblShowCI.Text;
             personInfo[2] = txtNewFirstName.Text;
             personInfo[3] = txtNewSecondName.Text;
             personInfo[4] = txtNewFirstSurname.Text;
