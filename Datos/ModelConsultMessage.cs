@@ -45,10 +45,7 @@ namespace Datos
             command.Parameters.AddWithValue("@consultId", consultId);
             command.Parameters.AddWithValue("@message", message);
             command.Parameters.AddWithValue("@date", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
-            openConnection();
-            command.Prepare();
-            command.ExecuteNonQuery();
-            closeConnection();
+            executeWithoutReutrn();
         }
 
         public DataTable getConsultMessages()

@@ -29,11 +29,7 @@ namespace Datos
             command.CommandText = commandString;
             command.Parameters.AddWithValue("@userName", userName);
             command.Parameters.AddWithValue("@userPassword", userPassword);
-            openConnection();
-            command.Prepare();
-            command.ExecuteNonQuery();
-            command.Parameters.Clear();
-            closeConnection();
+            executeWithParametersClearWhitoutReturn();
         }
         public void createObjectPerson()
         {
@@ -130,10 +126,7 @@ namespace Datos
             command.CommandText = commandString;
             command.Parameters.AddWithValue("@ci", ci);
             command.Parameters.AddWithValue("@roleId", roleId);
-            openConnection();
-            command.ExecuteNonQuery();
-            command.Parameters.Clear();
-            closeConnection();
+            executeWithParametersClearWhitoutReturn();
 
         }
         public string getUserName(string userName)
@@ -173,8 +166,7 @@ namespace Datos
             this.command.CommandText = commandString;
             this.command.Parameters.AddWithValue("@userPassword", userPassword);
 
-
-
+            
             this.openConnection();
             this.command.Prepare();
             try
@@ -201,14 +193,10 @@ namespace Datos
             "WHERE ID = @userID;";
 
 
-              this.command.CommandText = commandString;
+            this.command.CommandText = commandString;
             this.command.Parameters.AddWithValue("@userID", userID);
             this.command.Parameters.AddWithValue("@userLogin", updateUserName);
-            this.openConnection();
-            this.command.Prepare();
-            this.command.ExecuteNonQuery();
-            this.command.Parameters.Clear();
-            this.closeConnection();
+            executeWhitExecuteReaderWhitoutReturn();
 
 
         }
@@ -222,11 +210,7 @@ namespace Datos
             this.command.CommandText = commandString;
             this.command.Parameters.AddWithValue("@personId", personId);
             this.command.Parameters.AddWithValue("@nickName", nickName);
-            this.openConnection();
-            this.command.Prepare();
-            this.command.ExecuteNonQuery();
-            this.command.Parameters.Clear();
-            this.closeConnection();
+            executeWithParametersClearWhitoutReturn();
         }
 
 

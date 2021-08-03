@@ -21,10 +21,7 @@ namespace Datos
                 "FROM Coursing " +
                 "WHERE Student_ID = @studentId";
             command.CommandText = commandString;
-            command.Prepare();
-            openConnection();
-            reader = command.ExecuteReader();
-            closeConnection();
+            executeWhitExecuteReaderWhitoutReturn();
 
             while (reader.Read())
             {
@@ -48,12 +45,7 @@ namespace Datos
             command.Parameters.AddWithValue("@teacherId", studentId);
             command.Parameters.AddWithValue("@groupId", groupId);
             command.Parameters.AddWithValue("@subjectId", subjectId);
-            command.Prepare();
-            openConnection();
-            command.ExecuteNonQuery();
-            closeConnection();
-
-
+            prepareWhitNonQueryNonReturn();
         }
 
         public void deleteSubjectCoursing (int studentId, int groupId, int subjectId)
@@ -66,9 +58,7 @@ namespace Datos
             command.Parameters.AddWithValue("@studentId", studentId);
             command.Parameters.AddWithValue("@groupId", groupId);
             command.Parameters.AddWithValue("@subjectId", subjectId);
-
-            command.Prepare();
-            command.ExecuteNonQuery();
+            prepareWhitNonQueryNonReturn();
         }
 
 

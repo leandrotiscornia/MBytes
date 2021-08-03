@@ -26,11 +26,7 @@ namespace Datos
             this.command.CommandText = commandString;
             this.command.Parameters.AddWithValue("@consultState", consultState);
             this.command.Parameters.AddWithValue("@consultId", consultId);
-            this.openConnection();
-            this.command.Prepare();
-            this.command.ExecuteNonQuery();
-            this.command.Parameters.Clear();
-            this.closeConnection();
+            executeWithParametersClearWhitoutReturn();
         }
 
         public void createObjectConsult()

@@ -18,11 +18,7 @@ namespace Datos
                 "FROM AvailableSubjects " +
                 "WHERE Teacher_ID = @teacherId";
             command.CommandText = commandString;
-            command.Prepare();
-
-            openConnection();
-            reader = command.ExecuteReader();
-            closeConnection();
+            executeWhitExecuteReaderWhitoutReturn();
 
             while (reader.Read())
                 availableSubjects.Add(reader.GetString(0));
@@ -41,10 +37,7 @@ namespace Datos
                 "WHERE Teacher_ID = @teacherId";
             command.CommandText = commandString;
             command.Parameters.AddWithValue("@teacherId", teacherId);
-            command.Prepare();
-            openConnection();
-            reader = command.ExecuteReader();
-            closeConnection();
+            executeWhitExecuteReaderWhitoutReturn();
 
             while (reader.Read())
             { 
@@ -65,10 +58,7 @@ namespace Datos
             command.CommandText = commandString;
             command.Parameters.AddWithValue("@teacherId", teacherId);
             command.Parameters.AddWithValue("@subjectId", subjectId);
-            command.Prepare();
-            openConnection();
-            command.ExecuteNonQuery();
-            closeConnection();
+            executeWithoutReutrn();
 
         }
         public void deleteAvailableSubject(int teacherId, int subjectId)
@@ -80,9 +70,7 @@ namespace Datos
             command.CommandText = commandString;
             command.Parameters.AddWithValue("@teacherId", teacherId);
             command.Parameters.AddWithValue("@subjectId", subjectId);
-
-            command.Prepare();
-            command.ExecuteNonQuery();
+            prepareWhitNonQueryNonReturn();
         }
         public void assignImpartingSubject(int teacherId, int groupId, int subjectId)
         {
@@ -95,10 +83,7 @@ namespace Datos
             command.Parameters.AddWithValue("@teacherId", teacherId);
             command.Parameters.AddWithValue("@groupId", groupId);
             command.Parameters.AddWithValue("@subjectId", subjectId);
-            command.Prepare();
-            openConnection();
-            command.ExecuteNonQuery();
-            closeConnection();
+            executeWithoutReutrn();
 
         }
         public void deleteImpartingSubject(int teacherId, int groupId, int subjectId)
@@ -111,9 +96,7 @@ namespace Datos
             command.Parameters.AddWithValue("@teacherId", teacherId);
             command.Parameters.AddWithValue("@groupId", groupId);
             command.Parameters.AddWithValue("@subjectId", subjectId);
-
-            command.Prepare();
-            command.ExecuteNonQuery();
+            prepareWhitNonQueryNonReturn();
         }
     }
 

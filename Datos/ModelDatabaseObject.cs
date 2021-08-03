@@ -14,39 +14,32 @@ namespace Datos
         public string objectKeyValue { get; set; }
         public string[] columnNames { get; set; }
         public string[] objectValues { get; set; }
-        
-
-
-
-
-        
-
 
         public void insertObject()
         {
             string commandString;
-            commandString = "INSERT INTO " + tableName + "("; 
-            foreach (string column in columnNames) 
+            commandString = "INSERT INTO " + tableName + "(";
+            foreach (string column in columnNames)
                 commandString += column + ",";
-            commandString = commandString.Remove(commandString.Length - 1, 1); 
-            commandString += ") VALUES ("; 
-            foreach (string column in columnNames) 
+            commandString = commandString.Remove(commandString.Length - 1, 1);
+            commandString += ") VALUES (";
+            foreach (string column in columnNames)
                 commandString += "@" + column + ",";
-            commandString = commandString.Remove(commandString.Length - 1, 1); 
-            commandString += ");"; 
+            commandString = commandString.Remove(commandString.Length - 1, 1);
+            commandString += ");";
 
             command.CommandText = commandString;
-            var columnsAndValues = columnNames.Zip(objectValues, (c, v) => new {Column = c, Value = v} );
-            
+            var columnsAndValues = columnNames.Zip(objectValues, (c, v) => new { Column = c, Value = v });
+
             foreach (var index in columnsAndValues)
                 command.Parameters.AddWithValue("@" + index.Column, index.Value);
-            Console.WriteLine(""+commandString);
+            Console.WriteLine("" + commandString);
             foreach (string value in objectValues)
                 Console.WriteLine("" + value);
-            
+
             openConnection();
             command.Prepare();
-            
+
             command.ExecuteNonQuery();
             command.Parameters.Clear();
             closeConnection();
@@ -65,13 +58,13 @@ namespace Datos
             string commandString;
             commandString = "UPDATE " + tableName + " SET ";
             foreach (string column in columnNames)
-                commandString += column + " = @" + column + "," ;
+                commandString += column + " = @" + column + ",";
             commandString = commandString.Remove(commandString.Length - 1, 1);
             commandString += " WHERE id= @objectId";
             command.CommandText = commandString;
             var columnsAndValues = columnNames.Zip(objectValues, (c, v) => new { Column = c, Value = v });
             foreach (var index in columnsAndValues)
-                command.Parameters.AddWithValue("@"+index.Column ,index.Value);
+                command.Parameters.AddWithValue("@" + index.Column, index.Value);
             command.Parameters.AddWithValue("objectId", objectKey);
             Console.WriteLine(commandString);
             openConnection();
@@ -79,10 +72,10 @@ namespace Datos
             command.ExecuteNonQuery();
             command.Parameters.Clear();
             closeConnection();
-            
+
 
         }
-        public DataTable listObjects ()
+        public DataTable listObjects()
         {
             DataTable objectsData = new DataTable();
             //builds SQL SELECT command
@@ -91,7 +84,7 @@ namespace Datos
             foreach (string column in columnNames)
                 commandString += column + ",";
             commandString = commandString.Remove(commandString.Length - 1, 1); //deletes last comma
-            commandString += " FROM " + tableName +";";
+            commandString += " FROM " + tableName + ";";
             //saves SQL command result in DataTable
             command.CommandText = commandString;
             openConnection();
@@ -105,10 +98,10 @@ namespace Datos
         {
             string result;
             string commandString;
-            commandString = 
-                "SELECT "+ this.objectKey+ " "+ 
+            commandString =
+                "SELECT " + this.objectKey + " " +
                 "FROM " + this.tableName + " " +
-                "WHERE " +this.objectKey +"=@objectKeyValue";
+                "WHERE " + this.objectKey + "=@objectKeyValue";
             command.CommandText = commandString;
             command.Parameters.AddWithValue("objectKeyValue", objectKeyValue);
             openConnection();
@@ -123,6 +116,33 @@ namespace Datos
             return result;
         }
 
-        
+        public void executeWithoutReutrn()
+        {
+            command.Prepare();
+            openConnection();
+            command.ExecuteNonQuery();
+            closeConnection();
+        }
+        public void executeWithParametersClearWhitoutReturn()
+        {
+            openConnection();
+            command.Prepare();
+            command.ExecuteNonQuery();
+            command.Parameters.Clear();
+            closeConnection();
+        }
+        public void executeWhitExecuteReaderWhitoutReturn()
+        {
+            command.Prepare();
+            openConnection();
+            reader = command.ExecuteReader();
+            closeConnection();
+        }
+        public void  prepareWhitNonQueryNonReturn()
+            {
+            command.Prepare();
+            command.ExecuteNonQuery();
+            }
+
     }
 }

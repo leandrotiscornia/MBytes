@@ -24,10 +24,7 @@ namespace Datos
             command.CommandText = commandString;
             command.Parameters.AddWithValue("@GradeID", gradeId);
             command.Parameters.AddWithValue("@SubjectID", subjectId);
-            command.Prepare();
-            openConnection();
-            command.ExecuteNonQuery();
-            closeConnection();
+            executeWithoutReutrn();
         }
 
         public List <string> getSubjects (int gradeId)
@@ -41,10 +38,7 @@ namespace Datos
                 " AND SubjectInGrades.Grade_ID = @GradeID";
             command.CommandText = commandString;
             command.Parameters.AddWithValue("@GradeID", gradeId);
-            command.Prepare();
-            openConnection();
-            reader = command.ExecuteReader();
-            closeConnection();
+            executeWhitExecuteReaderWhitoutReturn();
             while (reader.Read())
                 subjects.Add(reader.GetString(0));
             return subjects;
