@@ -57,8 +57,8 @@
             this.btnChangePicture = new System.Windows.Forms.Button();
             this.lblActualUserName = new System.Windows.Forms.Label();
             this.lblUserName = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.lblCI = new System.Windows.Forms.Label();
+            this.lbCI = new System.Windows.Forms.Label();
+            this.lblShowCI = new System.Windows.Forms.Label();
             this.gbModifyProfile = new System.Windows.Forms.GroupBox();
             this.lblNewSecondSurname = new System.Windows.Forms.Label();
             this.lblNewFirstSurname = new System.Windows.Forms.Label();
@@ -146,7 +146,6 @@
             // 
             // pbUserPicture
             // 
-
             this.pbUserPicture.Location = new System.Drawing.Point(8, 3);
             this.pbUserPicture.Name = "pbUserPicture";
             this.pbUserPicture.Size = new System.Drawing.Size(64, 64);
@@ -350,23 +349,23 @@
             this.lblUserName.TabIndex = 78;
             this.lblUserName.Text = "User Name:";
             // 
-            // label1
+            // lbCI
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(11, 224);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(20, 13);
-            this.label1.TabIndex = 80;
-            this.label1.Text = "C.I";
+            this.lbCI.AutoSize = true;
+            this.lbCI.Location = new System.Drawing.Point(11, 224);
+            this.lbCI.Name = "lbCI";
+            this.lbCI.Size = new System.Drawing.Size(20, 13);
+            this.lbCI.TabIndex = 80;
+            this.lbCI.Text = "C.I";
             // 
-            // lblCI
+            // lblShowCI
             // 
-            this.lblCI.AutoSize = true;
-            this.lblCI.Location = new System.Drawing.Point(112, 224);
-            this.lblCI.Name = "lblCI";
-            this.lblCI.Size = new System.Drawing.Size(13, 13);
-            this.lblCI.TabIndex = 81;
-            this.lblCI.Text = "  ";
+            this.lblShowCI.AutoSize = true;
+            this.lblShowCI.Location = new System.Drawing.Point(112, 224);
+            this.lblShowCI.Name = "lblShowCI";
+            this.lblShowCI.Size = new System.Drawing.Size(13, 13);
+            this.lblShowCI.TabIndex = 81;
+            this.lblShowCI.Text = "  ";
             // 
             // gbModifyProfile
             // 
@@ -570,8 +569,8 @@
             this.Controls.Add(this.gbChangeNickName);
             this.Controls.Add(this.lblUserInfo);
             this.Controls.Add(this.gbModifyProfile);
-            this.Controls.Add(this.lblCI);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lblShowCI);
+            this.Controls.Add(this.lbCI);
             this.Controls.Add(this.btnConfirmInfo);
             this.Controls.Add(this.lblUserName);
             this.Controls.Add(this.lblActualUserName);
@@ -649,8 +648,8 @@
         private System.Windows.Forms.Button btnChangePicture;
         private System.Windows.Forms.Label lblActualUserName;
         private System.Windows.Forms.Label lblUserName;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label lblCI;
+        private System.Windows.Forms.Label lbCI;
+        private System.Windows.Forms.Label lblShowCI;
         private System.Windows.Forms.GroupBox gbModifyProfile;
         private System.Windows.Forms.Button btnConfirmInfo;
         private System.Windows.Forms.TextBox txtNewUserName;

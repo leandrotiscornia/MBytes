@@ -31,7 +31,7 @@ namespace App_de_Docente
         {
             List<string> profileData = ControllerPerson.getProfileData();
             lblActualUserName.Text = profileData[0];
-            lblCI.Text = profileData[1];
+            lbActualCI.Text = profileData[1];
             lblActualFirstName.Text = profileData[2];
             lblActualSecondName.Text = profileData[3];
             lblActualFirstSurname.Text = profileData[4];
@@ -86,7 +86,7 @@ namespace App_de_Docente
         {
             string[] personInfo = new string[6];
             personInfo[0] = Session.userId.ToString();
-            personInfo[1] = lblCI.Text;
+            personInfo[1] = lbActualCI.Text;
             personInfo[2] = txtNewFirstName.Text;
             personInfo[3] = txtNewSecondName.Text;
             personInfo[4] = txtNewFirstSurname.Text;
