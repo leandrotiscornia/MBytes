@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
 using MySql.Data.MySqlClient;
 using System.Configuration;
 
@@ -20,10 +21,9 @@ namespace Datos
         public MySqlConnection connection { get; set; }
 
         private DataBase connectionConfigFile = new DataBase();
-        
+
         public ModelConnection()
         {
-            
             command = new MySqlCommand();
             connection = new MySqlConnection();
             dbServer = DataBase.Default.dbServer;
@@ -31,18 +31,7 @@ namespace Datos
             dbName = DataBase.Default.dbName;
             dbUser = DataBase.Default.dbUser;
             dbPassword = DataBase.Default.dbPassword;
-            
-        }
-        public void setConnectionUser()
-        {
-            DataBase.Default.dbUser = dbName;
-            DataBase.Default.dbPassword = dbPassword;
-        }
-        public void setConnectionData()
-        {
-            DataBase.Default.dbName = dbName;
-            DataBase.Default.dbServer = dbServer;
-            DataBase.Default.dbPort = dbPort;
+            openConnection();
         }
         public void openConnection()
         {
@@ -58,17 +47,98 @@ namespace Datos
                 connection.Open();
                 Console.WriteLine("Conexión abierta");
             }
-            catch (MySqlException exception)
+            catch (MySqlException ex)
             {
-                Console.WriteLine("" + exception);
-                
+               handleException(ex);
             }
-
         }
-        public void closeConnection()
+        public void executeVoid()
         {
-            connection.Close();
-            Console.WriteLine("Conexión cerrada");
+            try
+            {
+                command.Prepare();
+                command.ExecuteNonQuery();
+            }
+            catch (MySqlException ex)
+            {
+                handleException(ex);
+            }
+            finally
+            {
+                command.Parameters.Clear();
+                Console.WriteLine(command.CommandText);
+            }
+        }
+        
+        public void executeAndRead()
+        {
+            try
+            {
+                command.Prepare();
+                if (reader != null) reader.Close();
+                reader = command.ExecuteReader();
+            }
+            catch (MySqlException ex)
+            {
+                throw ex;//handleException(ex);
+            }
+            finally
+            {
+                command.Parameters.Clear();
+            }
+        }
+        public DataTable readTable()
+        {
+            DataTable result = new DataTable();
+            try
+            {
+                if (reader.HasRows) result.Load(reader);
+            }
+            catch (MySqlException ex)
+            {
+                throw ex;//handleException(ex);
+            }
+            finally
+            {
+                command.Parameters.Clear();
+            }
+            return result;
+        }
+        public string readString(int index)
+        {
+            string result = "";
+            try
+            {
+                reader.Read();
+                if (reader.HasRows && !reader.IsDBNull(index)) result = reader.GetString(index);
+                else return null;
+            }
+            catch (MySqlException ex)
+            {
+                throw ex;// handleException(ex);
+            }
+            return result;
+        }
+        public int readInt(int index)
+        {
+            int result = -1;
+            try
+            {
+                while (reader.Read())
+                if (reader.HasRows && !reader.IsDBNull(index)) result = reader.GetInt32(index);
+                else throw new Exception("Null Number");
+            }
+            catch (MySqlException ex)
+            {
+                throw ex;// handleException(ex);
+            }
+            return result;
+        }
+
+        public void handleException(MySqlException ex)
+        {
+            Console.WriteLine(ex.ToString());
+            throw ex;
         }
     }
 }

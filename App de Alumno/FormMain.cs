@@ -28,11 +28,11 @@ namespace App_De_Alumo
             pnlFunction.Controls.Clear();
             if (lvNavigation.SelectedIndices.Count > 0)
             {
-                if (lvNavigation.SelectedItems[0].Text == "Consults")
+                if (lvNavigation.SelectedItems[0].Text == "Consultations")
                 {
-                    UserControlConsultsMainPanel consultsPanel = new UserControlConsultsMainPanel();
-                    consultsPanel.Dock = DockStyle.Fill;
-                    pnlFunction.Controls.Add(consultsPanel);
+                    UserControlConsultationsMainPanel consultationsPanel = new UserControlConsultationsMainPanel();
+                    consultationsPanel.Dock = DockStyle.Fill;
+                    pnlFunction.Controls.Add(consultationsPanel);
                 }
             }
         }

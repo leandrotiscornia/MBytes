@@ -8,9 +8,9 @@ using System.Data;
 namespace Datos
 {
     
-  public class ModelConsultMessage : ModelDataBaseObject
+  public class ModelConsultationMessage : ModelDataBaseObject
     {
-        public int consultId { get; set; }
+        public int consultationId { get; set; }
         public int senderId { get; set; }
         public string message { get; set; }
         public DateTime date { get; set; }
@@ -26,14 +26,9 @@ namespace Datos
             command.Parameters.AddWithValue("@senderId", senderId);
             command.Parameters.AddWithValue("@message", message);
             command.Parameters.AddWithValue("@date", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
-            openConnection();
-            command.Prepare();
-            command.ExecuteNonQuery();
-            Console.WriteLine("" + commandString);
-            closeConnection();
+            executeVoid();
         }
-
-        public void sendConsultMessage()
+        public void sendConsultationMessage()
         {
             string commandString;
             commandString =
@@ -42,16 +37,12 @@ namespace Datos
                 "VALUES(@senderId, @consultId, @message, @date);";
             command.CommandText = commandString;
             command.Parameters.AddWithValue("@senderId", senderId);
-            command.Parameters.AddWithValue("@consultId", consultId);
+            command.Parameters.AddWithValue("@consultId", consultationId);
             command.Parameters.AddWithValue("@message", message);
             command.Parameters.AddWithValue("@date", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
-            openConnection();
-            command.Prepare();
-            command.ExecuteNonQuery();
-            closeConnection();
+            executeVoid();
         }
-
-        public DataTable getConsultMessages()
+        public DataTable getConsultationMessages()
         {
             DataTable messages = new DataTable();
             string commandString;
@@ -61,14 +52,9 @@ namespace Datos
                 "WHERE Consult_ID = @consultId " +
                 "ORDER BY Time";
             command.CommandText = commandString;
-            command.Parameters.AddWithValue("@consultId", consultId);
-            openConnection();
-            command.Prepare();
-            reader = command.ExecuteReader();
-            messages.Load(reader);
-            closeConnection();
-            return messages;
+            command.Parameters.AddWithValue("@consultId", consultationId);
+            executeAndRead();
+            return readTable();
         }
-
     }
 }

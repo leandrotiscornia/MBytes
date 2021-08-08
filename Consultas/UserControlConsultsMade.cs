@@ -11,7 +11,7 @@ using Negocio;
 
 namespace Consultas
 {
-    public partial class UserControlConsultsMade : UserControl
+    public partial class UserControlConsultationsMade : UserControl
     {
         [Browsable(true)]
         [Category("Action")]
@@ -22,7 +22,7 @@ namespace Consultas
         public string topic { get; set; }
 
 
-        public UserControlConsultsMade()
+        public UserControlConsultationsMade()
         {
             InitializeComponent();
         }
@@ -42,7 +42,7 @@ namespace Consultas
         public void loadConsults()
         {
             DataTable consultsTable = new DataTable();
-            consultsTable = ControllerGetConsults.getConsultsDone(Session.userId);
+            consultsTable = ControllerConsultation.getConsultationsDone(Session.userId);
             ListViewItem item;
             lvConsultsMade.Items.Clear();
             foreach (DataRow consult in consultsTable.Rows)

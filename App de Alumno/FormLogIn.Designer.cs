@@ -28,33 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lbUser = new System.Windows.Forms.Label();
+            this.lbPassword = new System.Windows.Forms.Label();
             this.tbUser = new System.Windows.Forms.TextBox();
             this.tbPassword = new System.Windows.Forms.TextBox();
             this.btnLogIn = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.lklbForgotMyPassword = new System.Windows.Forms.LinkLabel();
             this.btnRegister = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // label1
+            // lbUser
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(26, 50);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(32, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "User:";
+            this.lbUser.AutoSize = true;
+            this.lbUser.Location = new System.Drawing.Point(26, 50);
+            this.lbUser.Name = "lbUser";
+            this.lbUser.Size = new System.Drawing.Size(32, 13);
+            this.lbUser.TabIndex = 0;
+            this.lbUser.Text = "User:";
             // 
-            // label2
+            // lbPassword
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(26, 87);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(56, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Password:";
+            this.lbPassword.AutoSize = true;
+            this.lbPassword.Location = new System.Drawing.Point(26, 87);
+            this.lbPassword.Name = "lbPassword";
+            this.lbPassword.Size = new System.Drawing.Size(56, 13);
+            this.lbPassword.TabIndex = 1;
+            this.lbPassword.Text = "Password:";
             // 
             // tbUser
             // 
@@ -90,15 +90,15 @@
             this.btnExit.UseVisualStyleBackColor = true;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
-            // linkLabel1
+            // lklbForgotMyPassword
             // 
-            this.linkLabel1.AutoSize = true;
-            this.linkLabel1.Location = new System.Drawing.Point(182, 103);
-            this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(102, 13);
-            this.linkLabel1.TabIndex = 6;
-            this.linkLabel1.TabStop = true;
-            this.linkLabel1.Text = "Forgot my Password";
+            this.lklbForgotMyPassword.AutoSize = true;
+            this.lklbForgotMyPassword.Location = new System.Drawing.Point(182, 103);
+            this.lklbForgotMyPassword.Name = "lklbForgotMyPassword";
+            this.lklbForgotMyPassword.Size = new System.Drawing.Size(102, 13);
+            this.lklbForgotMyPassword.TabIndex = 6;
+            this.lklbForgotMyPassword.TabStop = true;
+            this.lklbForgotMyPassword.Text = "Forgot my Password";
             // 
             // btnRegister
             // 
@@ -116,13 +116,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(312, 216);
             this.Controls.Add(this.btnRegister);
-            this.Controls.Add(this.linkLabel1);
+            this.Controls.Add(this.lklbForgotMyPassword);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnLogIn);
             this.Controls.Add(this.tbPassword);
             this.Controls.Add(this.tbUser);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lbPassword);
+            this.Controls.Add(this.lbUser);
             this.Name = "FormLogIn";
             this.Text = "Log In";
             this.ResumeLayout(false);
@@ -132,13 +132,13 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lbUser;
+        private System.Windows.Forms.Label lbPassword;
         private System.Windows.Forms.TextBox tbUser;
         private System.Windows.Forms.TextBox tbPassword;
         private System.Windows.Forms.Button btnLogIn;
         private System.Windows.Forms.Button btnExit;
-        private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.LinkLabel lklbForgotMyPassword;
         private System.Windows.Forms.Button btnRegister;
     }
 }

@@ -23,7 +23,7 @@ namespace Usuario
         private void FormMain_Load(object sender, EventArgs e)
         {
             List<string> features = new List<string>();
-            features = ControllerGetPermissions.getFeatures();
+            features = ControllerPerson.getFeatures();
             foreach (string feature in features)
                 lvNavigation.Items.Add(feature);
 
@@ -34,11 +34,11 @@ namespace Usuario
             pnlFunction.Controls.Clear();
             if (lvNavigation.SelectedIndices.Count > 0)
             {
-                if (lvNavigation.SelectedItems[0].Text == "Consults")
+                if (lvNavigation.SelectedItems[0].Text == "Consultationss")
                 {
-                    UserControlConsultsMainPanel consultsPanel = new UserControlConsultsMainPanel();
-                    consultsPanel.Dock = DockStyle.Fill;
-                    pnlFunction.Controls.Add(consultsPanel);
+                    UserControlConsultationsMainPanel consultationssPanel = new UserControlConsultationsMainPanel();
+                    consultationssPanel.Dock = DockStyle.Fill;
+                    pnlFunction.Controls.Add(consultationssPanel);
                 }
                 else if (lvNavigation.SelectedItems[0].Text == "Schedule")
                 {

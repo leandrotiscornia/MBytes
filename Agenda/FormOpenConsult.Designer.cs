@@ -1,6 +1,6 @@
 ﻿namespace Agenda
 {
-    partial class FormOpenConsult
+    partial class FormOpenConsultation
     {
         /// <summary>
         /// Required designer variable.
@@ -30,8 +30,8 @@
         {
             this.rtbMessages = new System.Windows.Forms.RichTextBox();
             this.btnSend = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lbMessage = new System.Windows.Forms.Label();
+            this.lbPrevious = new System.Windows.Forms.Label();
             this.tbNewMessage = new System.Windows.Forms.TextBox();
             this.lbTopic = new System.Windows.Forms.Label();
             this.tbTopic = new System.Windows.Forms.TextBox();
@@ -56,23 +56,23 @@
             this.btnSend.UseVisualStyleBackColor = true;
             this.btnSend.Click += new System.EventHandler(this.btnSend_Click);
             // 
-            // label2
+            // lbMessage
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(21, 226);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(53, 13);
-            this.label2.TabIndex = 20;
-            this.label2.Text = "Message:";
+            this.lbMessage.AutoSize = true;
+            this.lbMessage.Location = new System.Drawing.Point(21, 226);
+            this.lbMessage.Name = "lbMessage";
+            this.lbMessage.Size = new System.Drawing.Size(53, 13);
+            this.lbMessage.TabIndex = 20;
+            this.lbMessage.Text = "Message:";
             // 
-            // label1
+            // lbPrevious
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(20, 55);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(48, 13);
-            this.label1.TabIndex = 19;
-            this.label1.Text = "Previous";
+            this.lbPrevious.AutoSize = true;
+            this.lbPrevious.Location = new System.Drawing.Point(20, 55);
+            this.lbPrevious.Name = "lbPrevious";
+            this.lbPrevious.Size = new System.Drawing.Size(48, 13);
+            this.lbPrevious.TabIndex = 19;
+            this.lbPrevious.Text = "Previous";
             // 
             // tbNewMessage
             // 
@@ -107,8 +107,8 @@
             this.ClientSize = new System.Drawing.Size(400, 402);
             this.Controls.Add(this.rtbMessages);
             this.Controls.Add(this.btnSend);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lbMessage);
+            this.Controls.Add(this.lbPrevious);
             this.Controls.Add(this.tbNewMessage);
             this.Controls.Add(this.lbTopic);
             this.Controls.Add(this.tbTopic);
@@ -124,8 +124,8 @@
 
         private System.Windows.Forms.RichTextBox rtbMessages;
         private System.Windows.Forms.Button btnSend;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbMessage;
+        private System.Windows.Forms.Label lbPrevious;
         private System.Windows.Forms.TextBox tbNewMessage;
         private System.Windows.Forms.Label lbTopic;
         private System.Windows.Forms.TextBox tbTopic;

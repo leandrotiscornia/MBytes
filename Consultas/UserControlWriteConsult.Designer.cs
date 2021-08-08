@@ -31,7 +31,7 @@
             this.tbTopic = new System.Windows.Forms.TextBox();
             this.lbTopic = new System.Windows.Forms.Label();
             this.tbNewMessage = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lbMessageWriteConsult = new System.Windows.Forms.Label();
             this.btnSend = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -59,14 +59,14 @@
             this.tbNewMessage.Size = new System.Drawing.Size(293, 271);
             this.tbNewMessage.TabIndex = 3;
             // 
-            // label2
+            // lbMessageWriteConsult
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 78);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(53, 13);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Message:";
+            this.lbMessageWriteConsult.AutoSize = true;
+            this.lbMessageWriteConsult.Location = new System.Drawing.Point(12, 78);
+            this.lbMessageWriteConsult.Name = "lbMessageWriteConsult";
+            this.lbMessageWriteConsult.Size = new System.Drawing.Size(53, 13);
+            this.lbMessageWriteConsult.TabIndex = 5;
+            this.lbMessageWriteConsult.Text = "Message:";
             // 
             // btnSend
             // 
@@ -83,7 +83,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.btnSend);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lbMessageWriteConsult);
             this.Controls.Add(this.tbNewMessage);
             this.Controls.Add(this.lbTopic);
             this.Controls.Add(this.tbTopic);
@@ -100,7 +100,7 @@
         private System.Windows.Forms.TextBox tbTopic;
         private System.Windows.Forms.Label lbTopic;
         private System.Windows.Forms.TextBox tbNewMessage;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lbMessageWriteConsult;
         private System.Windows.Forms.Button btnSend;
     }
 }

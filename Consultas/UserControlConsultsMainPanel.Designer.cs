@@ -1,6 +1,6 @@
 ﻿namespace Consultas
 {
-    partial class UserControlConsultsMainPanel
+    partial class UserControlConsultationsMainPanel
     {
         /// <summary> 
         /// Variable del diseñador necesaria.

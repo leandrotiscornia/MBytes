@@ -50,8 +50,7 @@ namespace App_de_Docente
         }
         private string checkLogin()
         {
-            ControllerLogIn login = new ControllerLogIn(tbUser.Text, tbPassword.Text);
-            string message = login.login();
+            string message = ControllerPerson.login(tbUser.Text, tbPassword.Text);
             return message;
         }
     }

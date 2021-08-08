@@ -15,15 +15,11 @@ namespace Datos {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "15.9.0.0")]
     internal sealed partial class DataBase : global::System.Configuration.ApplicationSettingsBase {
         
-        public static DataBase defaultInstance = ((DataBase)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new DataBase())));
+        private static DataBase defaultInstance = ((DataBase)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new DataBase())));
         
         public static DataBase Default {
             get {
                 return defaultInstance;
-            }
-            set
-            {
-                defaultInstance = value;
             }
         }
         
@@ -34,7 +30,6 @@ namespace Datos {
             get {
                 return ((string)(this["dbName"]));
             }
-            set { this["dbName"] = value; }
         }
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
@@ -43,10 +38,6 @@ namespace Datos {
         public string dbServer {
             get {
                 return ((string)(this["dbServer"]));
-            }
-            set
-            {
-                 this["dbServer"] = value;
             }
         }
         
@@ -57,10 +48,6 @@ namespace Datos {
             get {
                 return ((string)(this["dbPort"]));
             }
-            set
-            {
-                this["dbPort"] = value;
-            }
         }
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
@@ -70,10 +57,6 @@ namespace Datos {
             get {
                 return ((string)(this["dbPassword"]));
             }
-            set
-            {
-                this["dbPassword"] = value;
-            }
         }
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
@@ -82,10 +65,6 @@ namespace Datos {
         public string dbUser {
             get {
                 return ((string)(this["dbUser"]));
-            }
-            set
-            {
-                this["dbUser"] = value;
             }
         }
     }

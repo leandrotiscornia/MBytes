@@ -29,9 +29,9 @@ namespace App_de_Docente
 
         private void loadUserData()
         {
-            List<string> profileData = ControllerGetProfileData.getProfileData();
+            List<string> profileData = ControllerPerson.getProfileData();
             lblActualUserName.Text = profileData[0];
-            lblCI.Text = profileData[1];
+            lbActualCI.Text = profileData[1];
             lblActualFirstName.Text = profileData[2];
             lblActualSecondName.Text = profileData[3];
             lblActualFirstSurname.Text = profileData[4];
@@ -86,22 +86,22 @@ namespace App_de_Docente
         {
             string[] personInfo = new string[6];
             personInfo[0] = Session.userId.ToString();
-            personInfo[1] = lblCI.Text;
+            personInfo[1] = lbActualCI.Text;
             personInfo[2] = txtNewFirstName.Text;
             personInfo[3] = txtNewSecondName.Text;
             personInfo[4] = txtNewFirstSurname.Text;
             personInfo[5] = txtNewSecondSurname.Text;
-            ControllerModifyPerson.modifyPerson(personInfo);
+            ControllerPerson.modifyPerson(personInfo);
             hideModifyProfileInfo();
         }
         public void modifyUserName()
         {
-            ControllerModifyUserName.modifyUserName(txtNewUserName.Text, Session.userId);
+            ControllerPerson.modifyUserName(txtNewUserName.Text, Session.userId);
         }
 
         public void modifyNickName()
         {
-            ControllerModifyNickName.modifyNickName(txtNewNickName.Text);
+            ControllerPerson.modifyNickName(txtNewNickName.Text);
         }
         private void btnConfirmNickName_Click(object sender, EventArgs e)
         {
