@@ -58,7 +58,7 @@ namespace App_de_Docente
 
             if (password == tbConfirmPassword.Text)
             {
-                    ControllerInsertTeacher.insertTeacher(personData, userName, password);
+                ControllerPerson.insertTeacher(personData, userName, password);
             }
             else
                 errorMessage("Passwords does not match");

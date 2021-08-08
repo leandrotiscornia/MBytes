@@ -43,7 +43,7 @@ namespace Consultas
         public void loadPersons()
         {
             DataTable personsTable = new DataTable();
-            personsTable = ControllerGetScheduleUsers.GetScheduleUsers();
+            personsTable = ControllerPerson.GetScheduleUsers();
             ListViewItem item;
             lvNewConsults.Items.Clear();
             string xd = "";

@@ -11,9 +11,7 @@ namespace Datos
     {
         public int groupId { get; set; }
         public string groupName { get; set; }
-
         public string groupGrade { get; set; }
-
         public string shift { get; set; }
     }
 }

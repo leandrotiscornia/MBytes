@@ -60,10 +60,10 @@ namespace Usuario
             {
                 if (cbRole.SelectedItem.ToString() == "Student")
                 {
-                    ControllerInsertStudent.insertStudent(personData, userName, password);
+                    ControllerPerson.insertStudent(personData, userName, password);
                 }
                 else if (cbRole.SelectedItem.ToString() == "Teacher")
-                    ControllerInsertTeacher.insertTeacher(personData, userName, password);
+                    ControllerPerson.insertTeacher(personData, userName, password);
             }
             else
                 errorMessage("Passwords does not match");

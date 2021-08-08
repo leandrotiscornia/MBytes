@@ -58,7 +58,7 @@ namespace App_De_Alumo
 
             if (password == tbConfirmPassword.Text)
             {
-                    ControllerInsertStudent.insertStudent(personData, userName, password);
+                ControllerPerson.insertStudent(personData, userName, password);
             }
             else
                 errorMessage("Passwords does not match");

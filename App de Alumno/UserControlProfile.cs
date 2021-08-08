@@ -27,7 +27,7 @@ namespace App_De_Alumo
         //TODO Load user picture, using directory stored in Database
         private void loadUserData()
         {
-            List<string> profileData = ControllerGetProfileData.getProfileData();
+            List<string> profileData = ControllerPerson.getProfileData();
             lblActualUserName.Text = profileData[0];
             lblCI.Text = profileData[1];
             lblActualFirstName.Text = profileData[2];
@@ -89,17 +89,17 @@ namespace App_De_Alumo
             personInfo[3] = txtNewSecondName.Text;
             personInfo[4] = txtNewFirstSurname.Text;
             personInfo[5] = txtNewSecondSurname.Text;
-            ControllerModifyPerson.modifyPerson(personInfo);
+            ControllerPerson.modifyPerson(personInfo);
             hideModifyProfileInfo();
         }
         public void modifyUserName()
         {
-            ControllerModifyUserName.modifyUserName(txtNewUserName.Text, Session.userId);
+            ControllerPerson.modifyUserName(txtNewUserName.Text, Session.userId);
         }
 
         public void modifyNickName()
         {
-            ControllerModifyNickName.modifyNickName(txtNewNickName.Text);
+            ControllerPerson.modifyNickName(txtNewNickName.Text);
         }
         private void btnConfirmNickName_Click(object sender, EventArgs e)
         {

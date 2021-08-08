@@ -12,6 +12,7 @@ namespace Datos
     {
         public int personId { get; set; }
         public string userName { get; set; }
+        public string userPassword { get; set; }
         public string ci { get; set; }
         public string firstName { get; set; }
         public string secondName { get; set; }
@@ -29,11 +30,8 @@ namespace Datos
             command.CommandText = commandString;
             command.Parameters.AddWithValue("@userName", userName);
             command.Parameters.AddWithValue("@userPassword", userPassword);
-            openConnection();
-            command.Prepare();
-            command.ExecuteNonQuery();
-            command.Parameters.Clear();
-            closeConnection();
+            executeVoid();
+            Console.WriteLine(commandString);
         }
         public void createObjectPerson()
         {
@@ -82,8 +80,9 @@ namespace Datos
             };
         }
 
-            public int getUserId(string userName)
+        public void getUserId(string userName)
         {
+
             string commandString;
             commandString =
                 "SELECT ID " +
@@ -91,15 +90,9 @@ namespace Datos
                 "WHERE User_Login = @userName";
             this.command.CommandText = commandString;
             this.command.Parameters.AddWithValue("@userName", userName);
-            this.openConnection();
-            this.command.Prepare();
-            this.reader = this.command.ExecuteReader();
-
-            reader.Read();
-            this.personId = this.reader.GetInt32(0);
-            command.Parameters.Clear();
-            this.closeConnection();
-            return this.personId;
+            executeAndRead();
+            personId = readInt(0);
+            reader.Close();
         }
         public List<int> getPermissions() 
         {
@@ -113,9 +106,7 @@ namespace Datos
             this.command.CommandText = commandString;
             this.command.Parameters.AddWithValue("@userId", this.personId);
             this.command.Prepare();
-            this.openConnection();
             this.reader = this.command.ExecuteReader();
-            this.closeConnection();
             while (this.reader.Read())
                 permissions.Add(reader.GetInt32(0));
             return permissions;
@@ -130,13 +121,10 @@ namespace Datos
             command.CommandText = commandString;
             command.Parameters.AddWithValue("@ci", ci);
             command.Parameters.AddWithValue("@roleId", roleId);
-            openConnection();
-            command.ExecuteNonQuery();
-            command.Parameters.Clear();
-            closeConnection();
+            executeVoid();
 
         }
-        public string getUserName(string userName)
+        public string getUserName()
         {
             string commandString = 
                 "SELECT User_Login " +
@@ -144,27 +132,13 @@ namespace Datos
                 "WHERE User_Login = @userLogin;";
             this.command.CommandText = commandString;
             this.command.Parameters.AddWithValue("@userLogin", userName);
-            
-
-            
-            this.openConnection();
-            this.command.Prepare();
-            try
-            {
-                this.reader = command.ExecuteReader();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("" + ex);
-            }
-            reader.Read();
-            if (!(reader.HasRows && reader.GetValue(0).ToString() == userName))
+            executeAndRead();
+            if (!(readString(0) == userName))
                 userName = null;
-            this.command.Parameters.Clear();
-            this.closeConnection();
+            reader.Close();
             return userName;
         }
-        public string getUserPassword(string userPassword)
+        public string getUserPassword()
         {
             string commandString =
                 "SELECT User_Password " +
@@ -172,24 +146,10 @@ namespace Datos
                 "WHERE User_Password = @userPassword;";
             this.command.CommandText = commandString;
             this.command.Parameters.AddWithValue("@userPassword", userPassword);
-
-
-
-            this.openConnection();
-            this.command.Prepare();
-            try
-            {
-                this.reader = command.ExecuteReader();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("" + ex);
-            }
-            reader.Read();
-            if (!(reader.HasRows && reader.GetValue(0).ToString() == userPassword))
+            executeAndRead();
+            Console.WriteLine("CONTRASEÑA: " + readString(0));
+            if (!(readString(0) == userPassword))
                 userPassword = null;
-            this.command.Parameters.Clear();
-            this.closeConnection();
             return userPassword;
 
         }
@@ -201,16 +161,10 @@ namespace Datos
             "WHERE ID = @userID;";
 
 
-              this.command.CommandText = commandString;
+            this.command.CommandText = commandString;
             this.command.Parameters.AddWithValue("@userID", userID);
             this.command.Parameters.AddWithValue("@userLogin", updateUserName);
-            this.openConnection();
-            this.command.Prepare();
-            this.command.ExecuteNonQuery();
-            this.command.Parameters.Clear();
-            this.closeConnection();
-
-
+            executeVoid();
         }
         public void updateNickName()
         {
@@ -222,11 +176,7 @@ namespace Datos
             this.command.CommandText = commandString;
             this.command.Parameters.AddWithValue("@personId", personId);
             this.command.Parameters.AddWithValue("@nickName", nickName);
-            this.openConnection();
-            this.command.Prepare();
-            this.command.ExecuteNonQuery();
-            this.command.Parameters.Clear();
-            this.closeConnection();
+            executeVoid();
         }
 
 
@@ -244,14 +194,8 @@ namespace Datos
                 "WHERE permissions.Feature_ID = @featureId;";
             this.command.CommandText = commandString;
             this.command.Parameters.AddWithValue("@featureId", featureId);
-            this.openConnection();
-            this.command.Prepare();
-            this.reader = command.ExecuteReader();
-            if (reader.HasRows)
-                users.Load(reader);
-            this.command.Parameters.Clear();
-            this.closeConnection();
-            return users;
+            executeAndRead();
+            return readTable(); 
         }
 
         public string getPersonName()
@@ -264,7 +208,6 @@ namespace Datos
                 "WHERE ID = @userId";
             this.command.CommandText = commandString;
             this.command.Parameters.AddWithValue("@userId", personId);
-            this.openConnection();
             this.command.Prepare();
             this.reader = command.ExecuteReader();
             this.reader.Read();
@@ -273,7 +216,7 @@ namespace Datos
             else
                 personName = null;
             this.command.Parameters.Clear();
-            this.closeConnection();
+            this.reader.Close();
             return personName;
         }
         public string getPersonNick()
@@ -286,7 +229,6 @@ namespace Datos
                 "WHERE ID = @userId";
             this.command.CommandText = commandString;
             this.command.Parameters.AddWithValue("@userId", personId);
-            this.openConnection();
             this.command.Prepare();
             this.reader = command.ExecuteReader();
             this.reader.Read();
@@ -295,7 +237,7 @@ namespace Datos
             else
                 personNickName = null;
             this.command.Parameters.Clear();
-            this.closeConnection();
+            this.reader.Close();
             return personNickName;
         }
         public List<string> getFeatures()
@@ -312,13 +254,12 @@ namespace Datos
                 "WHERE persons.ID = @myId;";
             this.command.CommandText = commandString;
             this.command.Parameters.AddWithValue("@myId", personId);
-            this.openConnection();
             this.command.Prepare();
             this.reader = command.ExecuteReader();
             while (this.reader.Read())
                 features.Add(reader.GetString(0));
             this.command.Parameters.Clear();
-            this.closeConnection();
+            this.reader.Close();
             return features;
         }
         public void getProfileData()
@@ -329,26 +270,18 @@ namespace Datos
                 "FROM persons " +
                 "JOIN users ON persons.ID = users.ID " +
                 "WHERE users.ID = @myId";
-            this.command.CommandText = commandString;
-            this.command.Parameters.AddWithValue("@myId", personId);
-            this.openConnection();
-            this.command.Prepare();
-            this.reader = command.ExecuteReader();
-            while (this.reader.Read())
-            {
-                this.userName = reader.GetString(0);
-                this.ci = reader.GetString(1);
-                this.firstName = reader.GetString(2);
-                if(!reader.IsDBNull(6)) // TODO -> getSafeString();
-                    this.secondName = reader.GetString(3);
-                this.firstSurname = reader.GetString(4);
-                if(!reader.IsDBNull(6))
-                    this.secondSurname = reader.GetString(5);
-                if (!reader.IsDBNull(6))
-                    this.nickName = reader.GetString(6);
-            }
-            this.command.Parameters.Clear();
-            this.closeConnection();
+            command.CommandText = commandString;
+            command.Parameters.AddWithValue("@myId", personId);
+            executeAndRead();
+            userName = readString(0);
+            ci = readString(1);
+            firstName = readString(2);
+            secondName = readString(3);
+            firstSurname = readString(4);
+            secondSurname = readString(5);
+            nickName = readString(6);
+            command.Parameters.Clear();
+            reader.Close();
         }
     }
 }

@@ -21,11 +21,7 @@ namespace Datos
                 "FROM Coursing " +
                 "WHERE Student_ID = @studentId";
             command.CommandText = commandString;
-            command.Prepare();
-            openConnection();
-            reader = command.ExecuteReader();
-            closeConnection();
-
+            executeAndRead();
             while (reader.Read())
             {
                 groups.Add(reader.GetString(0));
@@ -48,10 +44,7 @@ namespace Datos
             command.Parameters.AddWithValue("@teacherId", studentId);
             command.Parameters.AddWithValue("@groupId", groupId);
             command.Parameters.AddWithValue("@subjectId", subjectId);
-            command.Prepare();
-            openConnection();
-            command.ExecuteNonQuery();
-            closeConnection();
+            executeVoid();
 
 
         }
@@ -66,9 +59,7 @@ namespace Datos
             command.Parameters.AddWithValue("@studentId", studentId);
             command.Parameters.AddWithValue("@groupId", groupId);
             command.Parameters.AddWithValue("@subjectId", subjectId);
-
-            command.Prepare();
-            command.ExecuteNonQuery();
+            executeVoid();
         }
 
 

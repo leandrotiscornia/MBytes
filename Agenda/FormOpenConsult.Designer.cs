@@ -1,6 +1,6 @@
 ﻿namespace Agenda
 {
-    partial class FormOpenConsult
+    partial class FormOpenConsultation
     {
         /// <summary>
         /// Required designer variable.
