@@ -33,6 +33,14 @@ namespace Datos
             dbPassword = DataBase.Default.dbPassword;
             openConnection();
         }
+        public void setConnectionData()
+        {
+            DataBase.Default.dbUser = dbUser;
+            DataBase.Default.dbPassword = dbPassword;
+            DataBase.Default.dbPort = dbPort;
+            DataBase.Default.Save();
+        }
+
         public void openConnection()
         {
             command.Connection = connection;
@@ -80,7 +88,7 @@ namespace Datos
             }
             catch (MySqlException ex)
             {
-                throw ex;//handleException(ex);
+                handleException(ex);
             }
             finally
             {
@@ -96,7 +104,7 @@ namespace Datos
             }
             catch (MySqlException ex)
             {
-                throw ex;//handleException(ex);
+                handleException(ex);
             }
             finally
             {
@@ -115,7 +123,7 @@ namespace Datos
             }
             catch (MySqlException ex)
             {
-                throw ex;// handleException(ex);
+                handleException(ex);
             }
             return result;
         }
@@ -130,15 +138,52 @@ namespace Datos
             }
             catch (MySqlException ex)
             {
-                throw ex;// handleException(ex);
+                handleException(ex);
             }
             return result;
         }
 
         public void handleException(MySqlException ex)
         {
-            Console.WriteLine(ex.ToString());
-            throw ex;
+            Console.WriteLine(ex.Message);
+            int exceptionNumber;
+            if (ex.InnerException != null && ex.InnerException is MySqlException)
+                exceptionNumber = ((MySqlException)ex.InnerException).Number;
+            else
+                exceptionNumber = ex.Number;
+            int indexFrom;
+            int indexTo;
+            switch (exceptionNumber)
+            {
+                case 0:
+                    throw new Exception("Cannot Connect To Server", ex);
+                case 1042:
+                    throw new Exception("Access To Server Dennied", ex);
+                case 1045:
+                    throw new Exception("Incorrect Database Credentials", ex);
+                case 1049:
+                    throw new Exception("Unknown Database", ex);
+                case 1054:
+                    indexFrom = ex.Message.IndexOf("'");
+                    indexTo = ex.Message.IndexOf("'", indexFrom + 1) - indexFrom + 1;
+                    throw new Exception("Column " + ex.Message.Substring(indexFrom, indexTo) + " Does Not Exist", ex);
+                case 1064:
+                    indexFrom = ex.Message.IndexOf("'");
+                    indexTo = ex.Message.IndexOf("'", indexFrom + 1) - indexFrom + 1;
+                    throw new Exception("SQL Syntax Error At: " + ex.Message.Substring(indexFrom, indexTo), ex);
+                case 1146:
+                    indexFrom = ex.Message.IndexOf("'");
+                    indexTo = ex.Message.IndexOf("'", indexFrom + 1) - indexFrom + 1;
+                    throw new Exception("Table " + ex.Message.Substring(indexFrom, indexTo) + " Does Not Exist", ex);
+                case 1406:
+                    indexFrom = ex.Message.IndexOf("'");
+                    indexTo = ex.Message.LastIndexOf("'") - indexFrom;
+                    throw new Exception("Field Value Too Long For Table " + ex.Message.Substring(indexFrom, indexTo), ex);
+                case 1452:
+                    throw new Exception("Foregin Key Constraint Error", ex);
+                default:
+                    throw new Exception("UNHADLED INTERNAL EXCEPTION: " + ex.Message, ex);
+            }
         }
     }
 }

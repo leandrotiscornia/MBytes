@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Negocio
 {
-    public static class ControllerWatch
+    public static class WatchController
     {
 
 

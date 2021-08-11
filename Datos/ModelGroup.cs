@@ -7,7 +7,6 @@ using System.Threading.Tasks;
 namespace Datos
 {
    public class ModelGroup : ModelDataBaseObject
-
     {
         public int groupId { get; set; }
         public string groupName { get; set; }

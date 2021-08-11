@@ -21,11 +21,12 @@ namespace Datos
             commandString =
                 "INSERT INTO consultmessages " +
                 "(Sender_ID, Consult_ID, ConsultText, Time) " +
-                "VALUES(@senderId, Last_Insert_ID(), @message, @date);";
+                "VALUES(@senderId, @consulationId, @message, @date);";
             command.CommandText = commandString;
             command.Parameters.AddWithValue("@senderId", senderId);
             command.Parameters.AddWithValue("@message", message);
             command.Parameters.AddWithValue("@date", DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+            command.Parameters.AddWithValue("@consultationId", consultationId);
             executeVoid();
         }
         public void sendConsultationMessage()

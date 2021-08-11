@@ -34,24 +34,28 @@ namespace Consultas
 
         private void btnSend_Click(object sender, EventArgs e)
         {
-            string message = tbNewMessage.Text;
-            ControllerConsultationMessage.sendConsultationMessage(consultationId, Session.userId, message);
-            ControllerConsultation.changeConsultationState(consultationId, "Done");
+            if (consultationId > 0)
+                sendMessage();
+            else
+                MessageBox.Show("You need to select a consultation", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
         private void btnFileConsult_Click(object sender, EventArgs e)
         {
-            ControllerConsultation.changeConsultationState(consultationId, "Filed");
+            if (consultationId > 0)
+                fileConsultation();
+            else
+                MessageBox.Show("You need to select a consultation", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
         public void loadMessages()
         {
             DataTable consultMessages = new DataTable();
-            consultMessages = ControllerConsultationMessage.getConsultationMessages(consultationId);
+            consultMessages = ConsultationMessageController.getConsultationMessages(consultationId);
             rtbMessages.Clear();
             foreach (DataRow message in consultMessages.Rows)
             {
 
                 string personName;
-                personName = ControllerPerson.getPersonNick(Int32.Parse(message[0].ToString()));
+                personName = PersonController.getPersonNick(Int32.Parse(message[0].ToString()));
                                         //MessageBox.Show(message[0].ToString());
 
 
@@ -59,12 +63,23 @@ namespace Consultas
                 rtbMessages.AppendText(message[1].ToString() + "\n");
                 rtbMessages.AppendText(message[2].ToString() + "\n \n \n");
             }
-            if (ControllerConsultation.getConsultationState(consultationId) == "Answered")
-                ControllerConsultation.changeConsultationState(consultationId, "Received");
+            if (ConsultationController.getConsultationState(consultationId) == "Answered")
+                ConsultationController.changeConsultationState(consultationId, "Received");
         }
         public void loadTopic()
         {
             tbTopic.Text = this.topic;
+        }
+        private void sendMessage()
+        {
+            string message = tbNewMessage.Text;
+            ConsultationMessageController.sendConsultationMessage(consultationId, Session.userId, message);
+            ConsultationController.changeConsultationState(consultationId, "Done");
+
+        }
+        public void fileConsultation()
+        {
+            ConsultationController.changeConsultationState(consultationId, "Filed");
         }
     }
 }

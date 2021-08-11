@@ -29,12 +29,12 @@ namespace Agenda
         private void loadMessages()
         {
             DataTable consultMessages = new DataTable();
-            consultMessages = ControllerConsultationMessage.getConsultationMessages(_consultationId);
+            consultMessages = ConsultationMessageController.getConsultationMessages(_consultationId);
             rtbMessages.Clear();
             foreach (DataRow message in consultMessages.Rows)
             {
                 string personName;
-                personName = ControllerPerson.getPersonNick(Int32.Parse(message[0].ToString()));
+                personName = PersonController.getPersonNick(Int32.Parse(message[0].ToString()));
                 rtbMessages.AppendText(personName + "\n");
                 rtbMessages.AppendText(message[1].ToString() + "\n");
                 rtbMessages.AppendText(message[2].ToString() + "\n \n \n");
@@ -61,8 +61,8 @@ namespace Agenda
         private void btnSend_Click(object sender, EventArgs e)
         {
             string message = tbNewMessage.Text;
-            ControllerConsultationMessage.sendConsultationMessage(_consultationId, Session.userId, message);
-            ControllerConsultation.changeConsultationState(_consultationId, "Answered");
+            ConsultationMessageController.sendConsultationMessage(_consultationId, Session.userId, message);
+            ConsultationController.changeConsultationState(_consultationId, "Answered");
             this.Close();
         }
 

@@ -26,7 +26,7 @@ namespace Usuario
 
         private void loadUserData()
         {
-            List<string> profileData = ControllerPerson.getProfileData();
+            List<string> profileData = PersonController.getProfileData();
             lblActualUserName.Text = profileData[0];
             lblCI.Text = profileData[1];
             lblActualFirstName.Text = profileData[2];
@@ -88,17 +88,17 @@ namespace Usuario
             personInfo[3] = txtNewSecondName.Text;
             personInfo[4] = txtNewFirstSurname.Text;
             personInfo[5] = txtNewSecondSurname.Text;
-            ControllerPerson.modifyPerson(personInfo);
+            PersonController.modifyPerson(personInfo);
             hideModifyProfileInfo();
         }
         public void modifyUserName()
         {
-            ControllerPerson.modifyUserName(txtNewUserName.Text, Session.userId);
+            PersonController.modifyUserName(txtNewUserName.Text, Session.userId);
         }
 
         public void modifyNickName()
         {
-            ControllerPerson.modifyNickName(txtNewNickName.Text);
+            PersonController.modifyNickName(txtNewNickName.Text);
         }
         private void btnConfirmNickName_Click(object sender, EventArgs e)
         {

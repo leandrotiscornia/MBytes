@@ -23,7 +23,7 @@ namespace Usuario
         private void FormMain_Load(object sender, EventArgs e)
         {
             List<string> features = new List<string>();
-            features = ControllerPerson.getFeatures();
+            features = PersonController.getFeatures();
             foreach (string feature in features)
                 lvNavigation.Items.Add(feature);
 

@@ -9,7 +9,7 @@ using Datos;
 
 namespace Negocio
 {
-    public static class ControllerConsultation
+    public static class ConsultationController
     {
         public static void changeConsultationState(int consultationId, string state)
         {
@@ -43,7 +43,7 @@ namespace Negocio
             consultationState = consultation.getConsultationState();
             return consultationState;
         }
-        public static void newConsultation(int senderId, int receiverId, string topic)
+        public static void newConsultation(int senderId, int receiverId, string topic, string message)
         {
             ModelConsultation consultation = new ModelConsultation();
             consultation.senderId = senderId;
@@ -52,6 +52,7 @@ namespace Negocio
             consultation.consultationState = "Done";
             consultation.createObjectConsultation();
             consultation.insertObject();
+            ConsultationMessageController.sendConsultationMessage(consultation.getLastInsertId(), senderId, message);
         }
 
 

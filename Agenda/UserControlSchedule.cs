@@ -77,7 +77,7 @@ namespace Agenda
         private void loadConsults()
         {
             DataTable consults = new DataTable();
-            consults = ControllerConsultation.getConsultationsReceived(Session.userId);
+            consults = ConsultationController.getConsultationsReceived(Session.userId);
             ListViewItem item;
             clearLists();
             foreach (DataRow consult in consults.Rows)

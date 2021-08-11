@@ -8,7 +8,7 @@ using Datos;
 
 namespace Negocio
 {
-    public static class ControllerConsultationMessage
+    public static class ConsultationMessageController
     {
         public static DataTable getConsultationMessages(int consultationId)
         {
@@ -25,13 +25,7 @@ namespace Negocio
             consultationMessage.message = message;
             consultationMessage.sendConsultationMessage();
         }
-        public static void sendConsultationMessage(int senderId, string message)
-        {
-            ModelConsultationMessage consultationMessage = new ModelConsultationMessage();
-            consultationMessage.senderId = senderId;
-            consultationMessage.message = message;
-            consultationMessage.sendFirstMessage();
-        }
+        
     }
 
 

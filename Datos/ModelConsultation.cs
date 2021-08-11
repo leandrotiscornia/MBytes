@@ -23,10 +23,9 @@ namespace Datos
             command.Parameters.AddWithValue("@consultationId", consultationId);
             executeVoid();
         }
-
         public void createObjectConsultation()
         {
-            tableName = "consultations";
+            tableName = "consults";
             columnNames = new string[]
             {
                 "Sender_ID",
@@ -86,6 +85,17 @@ namespace Datos
             command.Parameters.AddWithValue("@consultationId", consultationId);
             executeAndRead();
             return readString(0);
+        }
+        public int getLastInsertId()
+        {
+            int lastInsertId;
+            string commandString;
+            commandString = 
+                "SELECT LAST_INSERT_ID();";
+            command.CommandText = commandString;
+            executeAndRead();
+            lastInsertId = readInt(0);
+            return lastInsertId;
         }
     }
 }

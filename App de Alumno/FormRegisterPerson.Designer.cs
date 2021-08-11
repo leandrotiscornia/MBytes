@@ -184,6 +184,7 @@
             this.tbPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tbPassword.Location = new System.Drawing.Point(179, 99);
             this.tbPassword.Name = "tbPassword";
+            this.tbPassword.PasswordChar = '*';
             this.tbPassword.Size = new System.Drawing.Size(100, 13);
             this.tbPassword.TabIndex = 15;
             // 
@@ -224,6 +225,7 @@
             this.tbConfirmPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.tbConfirmPassword.Location = new System.Drawing.Point(179, 143);
             this.tbConfirmPassword.Name = "tbConfirmPassword";
+            this.tbConfirmPassword.PasswordChar = '*';
             this.tbConfirmPassword.Size = new System.Drawing.Size(100, 13);
             this.tbConfirmPassword.TabIndex = 19;
             // 

@@ -33,8 +33,6 @@ namespace Usuario
         {
             FormRegisterPerson registerForm = new FormRegisterPerson();
             registerForm.Show();
-           
-
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -50,8 +48,16 @@ namespace Usuario
         }
         private string checkLogin()
         {
-            string message = ControllerPerson.login(tbUser.Text, tbPassword.Text);
-            return message;
+            try
+            {
+                string message = PersonController.login(tbUser.Text, tbPassword.Text, 0);
+                return message;
+            }
+            catch (Exception)
+            {
+                throw;
+                //return ExceptionController.handleException();
+            }   
         }
     }
 }

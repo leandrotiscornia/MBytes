@@ -51,8 +51,8 @@
             this.Function});
             this.lvNavigation.HideSelection = false;
             this.lvNavigation.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem3,
-            listViewItem4});
+            listViewItem1,
+            listViewItem2});
             this.lvNavigation.Location = new System.Drawing.Point(12, 70);
             this.lvNavigation.Name = "lvNavigation";
             this.lvNavigation.Size = new System.Drawing.Size(121, 400);
