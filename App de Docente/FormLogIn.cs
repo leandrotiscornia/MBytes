@@ -26,15 +26,11 @@ namespace App_de_Docente
                 MessageBox.Show("" + message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
                 goToMain();
-
         }
-
         private void btnRegister_Click(object sender, EventArgs e)
         {
             FormRegisterPerson registerForm = new FormRegisterPerson();
             registerForm.Show();
-           
-
         }
 
         private void btnExit_Click(object sender, EventArgs e)
@@ -50,8 +46,20 @@ namespace App_de_Docente
         }
         private string checkLogin()
         {
-            string message = ControllerPerson.login(tbUser.Text, tbPassword.Text);
-            return message;
+            try
+            {
+                string message = PersonController.login(tbUser.Text, tbPassword.Text, 1);
+                return message;
+            }
+            catch (Exception ex)
+            {
+                return ExceptionController.handleException(ex);
+            }
+        }
+
+        private void FormLogIn_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

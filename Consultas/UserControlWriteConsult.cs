@@ -28,15 +28,15 @@ namespace Consultas
 
         private void btnSend_Click(object sender, EventArgs e)
         {
-            if (receiverId > 0)
+            if (receiverId > -1)
                 sendConsultation();
             else
-                MessageBox.Show("You need to select a teacher");
+                MessageBox.Show("You need to select a teacher", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void UserControlWriteConsult_Load(object sender, EventArgs e)
         {
-            
+            receiverId = -1;
         }
         private void sendConsultation()
         {
@@ -44,8 +44,7 @@ namespace Consultas
             string topic = tbTopic.Text;
             string consultationMessage = tbNewMessage.Text;
             Console.WriteLine("" + receiverId);
-            ControllerConsultation.newConsultation(senderId, receiverId, topic);
-            ControllerConsultationMessage.sendConsultationMessage(senderId, consultationMessage);
+            ConsultationController.newConsultation(senderId, receiverId, topic, consultationMessage);
         }
     }
 }

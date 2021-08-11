@@ -18,15 +18,10 @@ namespace Consultas
         UserControlConsultationsMade consultationsMade = new UserControlConsultationsMade();
         UserControlConsultationsFiled consultationssFiled = new UserControlConsultationsFiled();
 
-
         UserControlWriteConsult writeConsult = new UserControlWriteConsult();
         UserControlEditConsult editConsult = new UserControlEditConsult();
         UserControlReadFiledConsult readFiled = new UserControlReadFiledConsult();
         
-
-
-
-
         public UserControlConsultationsMainPanel()
         {
             InitializeComponent();
@@ -70,30 +65,37 @@ namespace Consultas
         private void tabControlConsults_SelectedIndexChanged(object sender, EventArgs e)
         {
             pnlConsults.Controls.Clear();
-            Console.WriteLine("Cambia el indice seleccionado");
-
+            writeConsult.receiverId = -1;
+            editConsult.consultationId = 0;
 
             if (tabControlConsults.SelectedIndex == 0)
-            {
-                users.loadPersons();
-                Console.WriteLine("Selecciono indice 0");
-                writeConsult.Dock = DockStyle.Fill;
-                pnlConsults.Controls.Add(writeConsult);
-            }
+                loadPersons();
             else if (tabControlConsults.SelectedIndex == 1)
-            {
-                Console.WriteLine("Selecciono indice 1");
-                consultationsMade.loadConsults();
-                editConsult.Dock = DockStyle.Fill;
-                pnlConsults.Controls.Add(editConsult);
-            }
+                loadMade();
             else if (tabControlConsults.SelectedIndex == 2)
-            {
-                Console.WriteLine("Selecciono indice 2");
-                consultationssFiled.loadConsults();
-                readFiled.Dock = DockStyle.Fill;
-                pnlConsults.Controls.Add(readFiled);
-            }
+                loadFiled();
+        }
+        private void loadPersons()
+        {
+            users.loadPersons();
+            writeConsult.Dock = DockStyle.Fill;
+            pnlConsults.Controls.Add(writeConsult);
+
+        }
+        private void loadMade()
+        {
+            consultationsMade.loadConsults();
+            editConsult.Dock = DockStyle.Fill;
+            pnlConsults.Controls.Add(editConsult);
+
+        }
+
+        private void loadFiled()
+        {
+            consultationssFiled.loadConsults();
+            readFiled.Dock = DockStyle.Fill;
+            pnlConsults.Controls.Add(readFiled);
+
         }
     }
 }

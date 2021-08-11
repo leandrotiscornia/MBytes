@@ -31,9 +31,11 @@ namespace Consultas
         {
             if (lvConsultsMade.SelectedIndices.Count > 0)
             {
-                this.consultId = Int32.Parse(lvConsultsMade.SelectedItems[0].Text);
-                this.topic = lvConsultsMade.SelectedItems[0].SubItems[2].Text;
+                consultId = Int32.Parse(lvConsultsMade.SelectedItems[0].Text);
+                topic = lvConsultsMade.SelectedItems[0].SubItems[2].Text;
             }
+            else
+                consultId = 0;
                 
             SelectedIndexChanged?.Invoke(this, e);
         }
@@ -42,7 +44,7 @@ namespace Consultas
         public void loadConsults()
         {
             DataTable consultsTable = new DataTable();
-            consultsTable = ControllerConsultation.getConsultationsDone(Session.userId);
+            consultsTable = ConsultationController.getConsultationsDone(Session.userId);
             ListViewItem item;
             lvConsultsMade.Items.Clear();
             foreach (DataRow consult in consultsTable.Rows)
@@ -56,6 +58,7 @@ namespace Consultas
                 lvConsultsMade.Items.Add(item);
                 }
             }
+            
         }
 
         private void UserControlConsultsMade_Load(object sender, EventArgs e)

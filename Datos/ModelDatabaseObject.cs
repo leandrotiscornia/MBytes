@@ -15,7 +15,6 @@ namespace Datos
         public string objectKeyValue { get; set; }
         public string[] columnNames { get; set; }
         public string[] objectValues { get; set; }
-
         public void insertObject()
         {
             string commandString;

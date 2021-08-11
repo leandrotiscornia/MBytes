@@ -35,13 +35,13 @@ namespace Consultas
         public void loadMessages()
         {
             DataTable consultMessages = new DataTable();
-            consultMessages = ControllerConsultationMessage.getConsultationMessages(consultationId);
+            consultMessages = ConsultationMessageController.getConsultationMessages(consultationId);
             rtbMessages.Clear();
             foreach (DataRow message in consultMessages.Rows)
             {
 
                 string personName;
-                personName = ControllerPerson.getPersonNick(Int32.Parse(message[0].ToString()));
+                personName = PersonController.getPersonNick(Int32.Parse(message[0].ToString()));
                 //MessageBox.Show(message[0].ToString());
 
 

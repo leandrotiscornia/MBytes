@@ -20,6 +20,7 @@ namespace Datos
         public string secondSurname { get; set; }
         public string nickName { get; set; }
         public string avatarPicture { get; set; }
+        public int userRole { get; set; }
 
         public void registerUser(string userName, string userPassword)
         {
@@ -111,6 +112,20 @@ namespace Datos
                 permissions.Add(reader.GetInt32(0));
             return permissions;
         }
+        public void getUserRole()
+        {
+            string commandString;
+            commandString =
+                "SELECT Role_ID " +
+                "FROM PersonIs " +
+                "JOIN Persons ON Person_CI = Persons.CI " +
+                "JOIN Users ON Persons.ID = Users.ID " +
+                "WHERE Users.User_Login = @myUserName";
+            command.CommandText = commandString;
+            command.Parameters.AddWithValue("@myUserName", userName);
+            executeAndRead();
+            userRole = readInt(0);
+        }
         public void assignUserRole(int roleId)
         {
             string commandString;
@@ -178,9 +193,18 @@ namespace Datos
             this.command.Parameters.AddWithValue("@nickName", nickName);
             executeVoid();
         }
+        public void updatePassword()
+        {
+            string commandString =
+                "UPDATE users " +
+                "SET User_Password = @userPassword" +
+                "WHERE ID = @personId;";
 
-
-
+            this.command.CommandText = commandString;
+            this.command.Parameters.AddWithValue("@personId", personId);
+            this.command.Parameters.AddWithValue("@userPassword", userPassword);
+            executeVoid();
+        }
         public DataTable getUsersByPermission(int featureId)
         {
             DataTable users = new DataTable();

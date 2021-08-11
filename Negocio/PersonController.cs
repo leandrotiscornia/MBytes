@@ -8,29 +8,30 @@ using Datos;
 
 namespace Negocio
 {
-    public static class ControllerPerson
+    public static class PersonController
     {
-        public static string login(string userName, string userPassword)
-        {
+        public static string login(string userName, string userPassword, int userRole)
+        { 
             string result;
             ModelPerson user = new ModelPerson();
             user.userName = userName;
-            user.userPassword = userPassword;
+            user.userPassword = DataBaseController.encryptPassword(userPassword);
+            user.getUserRole();
             if (userName == "")
                 result = "You need to set an user name";
-            else if (userPassword == "")
+            else if (user.userPassword == "")
                 result = "You need to set your password";
-            else if (userName != user.getUserName())
+            else if (user.userName != user.getUserName())
                 result = "That user does not exist";
-            else if (userPassword != user.getUserPassword())
+            else if (user.userPassword != user.getUserPassword())
                 result = "Incorrect password";
+            else if (!(userRole == user.userRole))
+                result = "Access Denied For This User";
             else
             {
                 user.getUserId(userName);
-                Session.userLogIn = userName;
                 Session.userId = user.personId;
                 // Session.userRole = user.getUserRole();
-                Session.userPassword = userPassword;
                 result = "";
             }
             return result;
@@ -110,7 +111,7 @@ namespace Negocio
             studentToInsert.firstSurname = studentData[3];
             studentToInsert.secondSurname = studentData[4];
 
-            studentToInsert.registerUser(username, password);
+            studentToInsert.registerUser(username, DataBaseController.encryptPassword(password));
             studentToInsert.getUserId(username);
             studentToInsert.createObjectPerson();
             studentToInsert.insertObject();
@@ -126,7 +127,7 @@ namespace Negocio
             teacherToInsert.firstSurname = teacherData[3];
             teacherToInsert.secondSurname = teacherData[4];
 
-            teacherToInsert.registerUser(username, password);
+            teacherToInsert.registerUser(username, DataBaseController.encryptPassword(password));
             teacherToInsert.getUserId(username);
             teacherToInsert.createObjectPerson();
             teacherToInsert.insertObject();
@@ -181,6 +182,18 @@ namespace Negocio
             studentToList.createObjectPerson();
             studentToList.listObjects();
         }
-
+        public static void changePassword(string newPassword, string oldPassword)
+        {
+            ModelPerson person = new ModelPerson();
+            person.personId = Session.userId;
+            person.userPassword = DataBaseController.encryptPassword(oldPassword);
+            if ((person.getUserPassword() == null))
+                throw new Exception("Incorrect Password");
+            else
+            {
+                person.userPassword = DataBaseController.encryptPassword(newPassword);
+                person.updatePassword();
+            }
+        }
     }
 }

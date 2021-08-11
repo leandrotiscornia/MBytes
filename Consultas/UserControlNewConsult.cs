@@ -37,13 +37,15 @@ namespace Consultas
         {
             if (lvNewConsults.SelectedIndices.Count > 0)
                 this.userId = Int32.Parse(lvNewConsults.SelectedItems[0].SubItems[2].Text);
+            else
+                this.userId = -1;
             this.SelectedIndexChanged?.Invoke(this, e);
         }
         
         public void loadPersons()
         {
             DataTable personsTable = new DataTable();
-            personsTable = ControllerPerson.GetScheduleUsers();
+            personsTable = PersonController.GetScheduleUsers();
             ListViewItem item;
             lvNewConsults.Items.Clear();
             string xd = "";

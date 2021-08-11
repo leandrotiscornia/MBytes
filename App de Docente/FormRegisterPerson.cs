@@ -37,9 +37,9 @@ namespace App_de_Docente
         }
         private string checkUserExistence()
         {
-            if (ControllerCheckExistence.checkExistence("users", "User_Login", tbUserName.Text) == tbUserName.Text)
+            if (DataBaseController.checkExistence("users", "User_Login", tbUserName.Text) == tbUserName.Text)
                 return "That user already exist";
-            else if (ControllerCheckExistence.checkExistence("persons", "CI", tbCI.Text) == tbCI.Text)
+            else if (DataBaseController.checkExistence("persons", "CI", tbCI.Text) == tbCI.Text)
                 return "That person already exist";
             else
                 return null;
@@ -58,7 +58,7 @@ namespace App_de_Docente
 
             if (password == tbConfirmPassword.Text)
             {
-                ControllerPerson.insertTeacher(personData, userName, password);
+                PersonController.insertTeacher(personData, userName, password);
             }
             else
                 errorMessage("Passwords does not match");

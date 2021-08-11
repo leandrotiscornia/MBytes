@@ -41,7 +41,7 @@ namespace Consultas
         public void loadConsults()
         {
             DataTable consultsTable = new DataTable();
-            consultsTable = ControllerConsultation.getConsultationsDone(Session.userId);
+            consultsTable = ConsultationController.getConsultationsDone(Session.userId);
             ListViewItem item;
             lvFiledConsults.Items.Clear();
             foreach (DataRow consult in consultsTable.Rows)

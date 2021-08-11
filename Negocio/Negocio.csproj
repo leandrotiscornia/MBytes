@@ -41,15 +41,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ControllerConsultation.cs" />
-    <Compile Include="ControllerConsultationMessage.cs" />
-    <Compile Include="ControllerCourse.cs" />
-    <Compile Include="ControllerCheckExistence.cs" />
-    <Compile Include="ControllerGrade.cs" />
-    <Compile Include="ControllerGroup.cs" />
-    <Compile Include="ControllerPerson.cs" />
-    <Compile Include="ControllerSubject.cs" />
-    <Compile Include="ControllerWatch.cs" />
+    <Compile Include="ConsultationController.cs" />
+    <Compile Include="ConsultationMessageController.cs" />
+    <Compile Include="CourseController.cs" />
+    <Compile Include="DataBaseController.cs" />
+    <Compile Include="ExceptionController.cs" />
+    <Compile Include="GradeController.cs" />
+    <Compile Include="GroupController.cs" />
+    <Compile Include="PersonController.cs" />
+    <Compile Include="SubjectController.cs" />
+    <Compile Include="WatchController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Session.cs" />
   </ItemGroup>

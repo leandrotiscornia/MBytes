@@ -17,7 +17,6 @@ namespace App_De_Alumo
         {
             InitializeComponent();
         }
-
        
         private void btnLogIn_Click(object sender, EventArgs e)
         {
@@ -26,7 +25,6 @@ namespace App_De_Alumo
                 MessageBox.Show("" + message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
                 goToMain();
-            
         }
 
         private void btnRegister_Click(object sender, EventArgs e)
@@ -50,8 +48,20 @@ namespace App_De_Alumo
         }
         private string checkLogin()
         {
-            string message = ControllerPerson.login(tbUser.Text, tbPassword.Text);
-            return message;
+            try
+            {
+                string message = PersonController.login(tbUser.Text, tbPassword.Text, 2);
+                return message;
+            }
+            catch (Exception ex)
+            {
+                return ExceptionController.handleException(ex);
+            }
+        }
+
+        private void FormLogIn_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

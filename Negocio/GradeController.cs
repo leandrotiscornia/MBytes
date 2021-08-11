@@ -7,7 +7,7 @@ using Datos;
 
 namespace Negocio
 {
-    public static class ControllerGrade
+    public static class GradeController
     {
         public static void insertGrade(string[] gradeData)
         {
