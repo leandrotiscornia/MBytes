@@ -12,7 +12,7 @@ namespace Negocio
         {
             string message = null;
             Console.WriteLine("Exception: " + ex.Message);
-            throw ex;
+           
             switch (ex.Message)
             {
                 case "Unknown Database":

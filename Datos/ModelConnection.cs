@@ -50,15 +50,15 @@ namespace Datos
                 "userid=" + dbUser + "; " +
                 "password=" + dbPassword + "; " +
                 "database=" + dbName + ";";
-            try
-            {
+            //try
+            //{
                 connection.Open();
                 Console.WriteLine("Conexión abierta");
-            }
-            catch (MySqlException ex)
-            {
-               handleException(ex);
-            }
+            //}
+            //catch (MySqlException ex)
+            //{
+            //   handleException(ex);
+            //}
         }
         public void executeVoid()
         {
@@ -80,20 +80,20 @@ namespace Datos
         
         public void executeAndRead()
         {
-            try
-            {
+            //try
+            //{
                 command.Prepare();
                 if (reader != null) reader.Close();
                 reader = command.ExecuteReader();
-            }
-            catch (MySqlException ex)
-            {
-                handleException(ex);
-            }
-            finally
-            {
-                command.Parameters.Clear();
-            }
+            //}
+            //catch (MySqlException ex)
+            //{
+            //    handleException(ex);
+            //}
+            //finally
+            //{
+            //    command.Parameters.Clear();
+            //}
         }
         public DataTable readTable()
         {
@@ -115,16 +115,16 @@ namespace Datos
         public string readString(int index)
         {
             string result = "";
-            try
-            {
+            //try
+            //{
                 reader.Read();
                 if (reader.HasRows && !reader.IsDBNull(index)) result = reader.GetString(index);
                 else return null;
-            }
-            catch (MySqlException ex)
-            {
-                handleException(ex);
-            }
+            //}
+            //catch (MySqlException ex)
+            //{
+            //    handleException(ex);
+            //}
             return result;
         }
         public int readInt(int index)

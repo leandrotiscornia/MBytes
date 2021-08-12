@@ -81,19 +81,19 @@ namespace Datos
             };
         }
 
-        public void getUserId(string userName)
+        public void getUserId()
         {
-
             string commandString;
             commandString =
                 "SELECT ID " +
                 "FROM users " +
                 "WHERE User_Login = @userName";
-            this.command.CommandText = commandString;
-            this.command.Parameters.AddWithValue("@userName", userName);
+            command.CommandText = commandString;
+            command.Parameters.AddWithValue("@userName", userName);
             executeAndRead();
             personId = readInt(0);
             reader.Close();
+            command.Parameters.Clear();
         }
         public List<int> getPermissions() 
         {
@@ -104,10 +104,10 @@ namespace Datos
                 "JOIN Role ON Permissions.Role_ID = Role.ID" +
                 "JOIN PersonRoles ON Role.ID = PersonRoles.Role_ID" +
                 "WHERE Person_ID = @userId";
-            this.command.CommandText = commandString;
-            this.command.Parameters.AddWithValue("@userId", this.personId);
-            this.command.Prepare();
-            this.reader = this.command.ExecuteReader();
+            command.CommandText = commandString;
+            command.Parameters.AddWithValue("@userId", personId);
+            command.Prepare();
+            reader = this.command.ExecuteReader();
             while (this.reader.Read())
                 permissions.Add(reader.GetInt32(0));
             return permissions;
@@ -125,6 +125,7 @@ namespace Datos
             command.Parameters.AddWithValue("@myUserName", userName);
             executeAndRead();
             userRole = readInt(0);
+            command.Parameters.Clear();
         }
         public void assignUserRole(int roleId)
         {
@@ -150,6 +151,7 @@ namespace Datos
             executeAndRead();
             if (!(readString(0) == userName))
                 userName = null;
+            command.Parameters.Clear();
             reader.Close();
             return userName;
         }
@@ -165,6 +167,7 @@ namespace Datos
             Console.WriteLine("CONTRASEÑA: " + readString(0));
             if (!(readString(0) == userPassword))
                 userPassword = null;
+            command.Parameters.Clear();
             return userPassword;
 
         }
@@ -306,6 +309,22 @@ namespace Datos
             nickName = readString(6);
             command.Parameters.Clear();
             reader.Close();
+        }
+        public bool isAdmin()
+        {
+            string commandString;
+            commandString =
+                "SELECT ID " +
+                "FROM users " +
+                "WHERE User_Login = @userName AND EXISTS ( SELECT Admin_ID " +
+                                              "FROM administrator " +
+                                              "WHERE administrator.Admin_ID = users.ID);";
+            command.CommandText = commandString;
+            command.Parameters.AddWithValue("@userName", userName);
+            executeAndRead();
+            command.Parameters.Clear();
+            if (readString(0) != null) { reader.Close(); return true; }
+            else { reader.Close(); return false; }
         }
     }
 }
