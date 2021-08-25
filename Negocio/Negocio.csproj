@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChatMessageController.cs" />
     <Compile Include="ConsultationController.cs" />
     <Compile Include="ConsultationMessageController.cs" />
     <Compile Include="CourseController.cs" />
