@@ -16,14 +16,13 @@ namespace Negocio
             ModelPerson user = new ModelPerson();
             user.userName = userName;
             user.userPassword = DataBaseController.encryptPassword(userPassword);
-            user.getUserRole();
             if (userName == "")
                 result = "You need to set an user name";
             else if (user.userPassword == "")
                 result = "You need to set your password";
             else if (user.userName != user.getUserName())
                 result = "That user does not exist";
-            else if (user.userPassword != user.getUserPassword())
+            else if (user.userPassword != user.checkUserPassword())
                 result = "Incorrect password";
             else if(userRole == 0)
             {
@@ -35,30 +34,29 @@ namespace Negocio
                 }
                 else result = "Access Denied For This User";
             }
-            else if (!(userRole == user.userRole) && userRole != 0)
+            else if (!(userRole == user.checkUserRole()) && userRole != 0)
                 result = "Access Denied For This User";
             else
             {
                 user.getUserId();
+                user.getUserCI();
                 Session.userId = user.personId;
+                Session.ci = user.ci;
                 result = "";
             }
             return result;
         }
-            public static void deleteStudent(string[] studentData)
+        public static void deleteStudent(int id)
         {
             ModelPerson studentToDelete = new ModelPerson();
-            studentToDelete.personId = Int32.Parse(studentData[0]);
-            studentToDelete.createObjectPerson();
-            studentToDelete.deleteObject();
-
+            studentToDelete.personId = id;
+            studentToDelete.deleteStudent();
         }
-        public static void deleteTeacher(string[] teacherData)
+        public static void deleteTeacher(int id)
         {
             ModelPerson teacherToDelete = new ModelPerson();
-            teacherToDelete.personId = Int32.Parse(teacherData[0]);
-            teacherToDelete.createObjectPerson();
-            teacherToDelete.deleteObject();
+            teacherToDelete.personId = id;
+            teacherToDelete.deleteTeacher();
         }
         public static List<string> getFeatures()
         {
@@ -68,11 +66,11 @@ namespace Negocio
             features = person.getFeatures();
             return features;
         }
-        public static List<string> getProfileData()
+        public static List<string> getProfileData(int userId)
         {
             List<string> profileData = new List<string>();
             ModelPerson person = new ModelPerson();
-            person.personId = Session.userId;
+            person.personId = userId;
             person.getProfileData();
             profileData.Add(person.userName);
             profileData.Add(person.ci);
@@ -121,7 +119,8 @@ namespace Negocio
             studentToInsert.firstSurname = studentData[3];
             studentToInsert.secondSurname = studentData[4];
             studentToInsert.userName = userName;
-            studentToInsert.registerUser(userName, DataBaseController.encryptPassword(password));
+            studentToInsert.userPassword = DataBaseController.encryptPassword(password);
+            studentToInsert.registerUser();
             studentToInsert.getUserId();
             studentToInsert.createObjectPerson();
             studentToInsert.insertObject();
@@ -137,7 +136,8 @@ namespace Negocio
             teacherToInsert.firstSurname = teacherData[3];
             teacherToInsert.secondSurname = teacherData[4];
             teacherToInsert.userName = userName;
-            teacherToInsert.registerUser(userName, DataBaseController.encryptPassword(password));
+            teacherToInsert.userPassword = DataBaseController.encryptPassword(password);
+            teacherToInsert.registerUser();
             
             teacherToInsert.getUserId();
             teacherToInsert.createObjectPerson();
@@ -171,19 +171,13 @@ namespace Negocio
         }
         public static DataTable listTeacher()
         {
-            DataTable teacherData = new DataTable();
             ModelTeacher teacherToList = new ModelTeacher();
-            teacherToList.createObjectPerson();
-            teacherData = teacherToList.listObjects();
-            return teacherData;
+            return teacherToList.getUsersByRole(1);
         }
         public static DataTable listStudent()
         {
-            DataTable studentData = new DataTable();
             ModelStudent studentToList = new ModelStudent();
-            studentToList.createObjectPerson();
-            studentData = studentToList.listObjects();
-            return studentData;
+            return studentToList.getUsersByRole(2);
         }
         public static void changePassword(string newPassword, string oldPassword)
         {

@@ -8,14 +8,17 @@ using System.Text;
 using System.Threading.Tasks;
 using Negocio;
 using Gestion;
+using Autorizacion;
 using System.Windows.Forms;
 
 namespace App_de_Admin
 {
     public partial class FormMain : Form
     {
+        
         public FormMain()
         {
+            
             InitializeComponent();
         }
 
@@ -26,24 +29,12 @@ namespace App_de_Admin
 
         private void lvNavigation_SelectedIndexChanged(object sender, EventArgs e)
         {
-            pnlFunction.Controls.Clear();
             if (lvNavigation.SelectedIndices.Count > 0)
             {
-                if (lvNavigation.SelectedItems[0].Text == "Management")
-                {
-                    UserControlManagement management = new UserControlManagement();
-                    management.Dock = DockStyle.Fill;
-                    pnlFunction.Controls.Add(management);
-                }
-                else if (lvNavigation.SelectedItems[0].Text == "Authorization")
-                {
-
-                }
-                else if (lvNavigation.SelectedItems[0].Text == "Chat")
-                {
-
-                }
+                clearUserControls();
+                navigate();
             }
+                
         }
 
         private void FormMain_FormClosed(object sender, FormClosedEventArgs e)
@@ -54,6 +45,47 @@ namespace App_de_Admin
         private void btnProfile_Click(object sender, EventArgs e)
         {
 
+        }
+        private void loadManagement()
+        {
+            UserControlManagement management = new UserControlManagement();
+            management.Dock = DockStyle.Fill;
+            pnlFunction.Controls.Add(management);
+        }
+        private void loadAuthorization()
+        {
+            UserControlAuthorization authorization = new UserControlAuthorization();
+            authorization.Dock = DockStyle.Fill;
+            pnlFunction.Controls.Add(authorization);
+        }
+        private void loadChat()
+        {
+
+        }
+        private void navigate()
+        {
+            switch (lvNavigation.SelectedItems[0].Text)
+            {
+                case "Management":
+                    loadManagement();
+                    break;
+                case "Authorization":
+                    loadAuthorization();
+                    break;
+                case "Chat":
+                    break;
+                default:
+                    break;
+            }
+        }
+        private void clearUserControls()
+        {
+            foreach (UserControl userControl in pnlFunction.Controls)
+                if (userControl != null) userControl.Dispose();
+        }
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            
         }
     }
 }

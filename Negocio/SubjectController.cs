@@ -3,39 +3,58 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
 using Datos;
 
 namespace Negocio
 {
     public static class SubjectController
     {
-        public static void insertSubject(string[] subjectData)
+        public static void insertSubject(string subjectName, string subjectDescription)
         {
             ModelSubject subjectToInsert = new ModelSubject();
-            subjectToInsert.subjectName = subjectData[0];
-            subjectToInsert.insertObject();
+            subjectToInsert.subjectName = subjectName;
+            subjectToInsert.subjectDescription = subjectDescription;
+            subjectToInsert.insertSubject();
         }
-        public static void modifySubject(string[] subjectData)
+        public static void modifySubject(int subjectId, string subjectName, string subjectDescription)
         {
-            ModelSubject subjectToModify = new ModelSubject();
-            subjectToModify.subjectId = Int32.Parse(subjectData[0]);
-            subjectToModify.subjectName = subjectData[1];
-            subjectToModify.modifyObject();
+            ModelSubject subjectToInsert = new ModelSubject();
+            subjectToInsert.subjectId = subjectId;
+            subjectToInsert.subjectName = subjectName;
+            subjectToInsert.subjectDescription = subjectDescription;
+            subjectToInsert.modifySubject();
         }
-        public static void listSubject(string[] dataSubject)
+        public static DataTable listSubjects()
         {
             ModelSubject subjectToList = new ModelSubject();
-            subjectToList.subjectId = Int32.Parse(dataSubject[0]);
-            subjectToList.subjectName = dataSubject[1];
-            subjectToList.listObjects();
+            return subjectToList.listSubjects();
         }
-        public static void deleteSubject(string[] subjectData)
+        public static void deleteSubject(int subjectId)
         {
-            ModelSubject subjectToDelete = new ModelSubject();
-            subjectToDelete.subjectId = Int32.Parse(subjectData[0]);
-            subjectToDelete.deleteObject();
+            ModelSubject subjectToList = new ModelSubject();
+            subjectToList.subjectId = subjectId;
+            subjectToList.deleteSubject();
         }
-
-
+        public static DataTable listGradeSubjects(int gradeId)
+        {
+            ModelSubject subjectToList = new ModelSubject();
+            return subjectToList.listGradeSubjects(gradeId);
+        }
+        public static DataTable listRestSubjects(int gradeId)
+        {
+            ModelSubject subjectToList = new ModelSubject();
+            return subjectToList.listRestSubjects(gradeId);
+        }
+        public static List<string> getSubjectData(int subjectId)
+        {
+            List<string> subjectData = new List<string>();
+            ModelSubject subject = new ModelSubject();
+            subject.subjectId = subjectId;
+            subject.getSubjectData();
+            subjectData.Add(subject.subjectName);
+            subjectData.Add(subject.subjectDescription);
+            return subjectData;
+        }
     }
 }

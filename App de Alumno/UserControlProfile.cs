@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Negocio;
 
-namespace App_De_Alumo
+namespace App_De_Alumno
 {
 
     public partial class UserControlProfile : UserControl
@@ -27,7 +27,7 @@ namespace App_De_Alumo
         //TODO Load user picture, using directory stored in Database
         private void loadUserData()
         {
-            List<string> profileData = PersonController.getProfileData();
+            List<string> profileData = PersonController.getProfileData(Session.userId);
             lblActualUserName.Text = profileData[0];
             lblShowCI.Text = profileData[1];
             lblActualFirstName.Text = profileData[2];

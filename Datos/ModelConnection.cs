@@ -50,22 +50,24 @@ namespace Datos
                 "userid=" + dbUser + "; " +
                 "password=" + dbPassword + "; " +
                 "database=" + dbName + ";";
-            //try
-            //{
+            try
+            {
                 connection.Open();
                 Console.WriteLine("Conexión abierta");
-            //}
-            //catch (MySqlException ex)
-            //{
-            //   handleException(ex);
-            //}
+            }
+            catch (MySqlException ex)
+            {
+                handleException(ex);
+            }
         }
         public void executeVoid()
         {
             try
             {
+                if (reader != null) reader.Close();
                 command.Prepare();
                 command.ExecuteNonQuery();
+                Console.WriteLine(command.CommandText);
             }
             catch (MySqlException ex)
             {
@@ -80,20 +82,20 @@ namespace Datos
         
         public void executeAndRead()
         {
-            //try
-            //{
+            try
+            {
                 command.Prepare();
                 if (reader != null) reader.Close();
                 reader = command.ExecuteReader();
-            //}
-            //catch (MySqlException ex)
-            //{
-            //    handleException(ex);
-            //}
-            //finally
-            //{
-            //    command.Parameters.Clear();
-            //}
+            }
+            catch (MySqlException ex)
+            {
+                handleException(ex);
+            }
+            finally
+            {
+                command.Parameters.Clear();
+            }
         }
         public DataTable readTable()
         {
@@ -115,16 +117,16 @@ namespace Datos
         public string readString(int index)
         {
             string result = "";
-            //try
-            //{
+            try
+            {
                 reader.Read();
                 if (reader.HasRows && !reader.IsDBNull(index)) result = reader.GetString(index);
                 else return null;
-            //}
-            //catch (MySqlException ex)
-            //{
-            //    handleException(ex);
-            //}
+            }
+            catch (MySqlException ex)
+            {
+                handleException(ex);
+            }
             return result;
         }
         public int readInt(int index)
@@ -132,7 +134,7 @@ namespace Datos
             int result = -1;
             try
             {
-                while (reader.Read())
+                reader.Read();
                 if (reader.HasRows && !reader.IsDBNull(index)) result = reader.GetInt32(index);
                 else throw new Exception("Null Number");
             }

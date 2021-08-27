@@ -29,7 +29,7 @@ namespace App_de_Docente
         }
         private void btnRegister_Click(object sender, EventArgs e)
         {
-            FormRegisterPerson registerForm = new FormRegisterPerson();
+            FormRegisterTeacher registerForm = new FormRegisterTeacher();
             registerForm.Show();
         }
 

@@ -29,7 +29,7 @@ namespace App_de_Docente
 
         private void loadUserData()
         {
-            List<string> profileData = PersonController.getProfileData();
+            List<string> profileData = PersonController.getProfileData(Session.userId);
             lblActualUserName.Text = profileData[0];
             lbActualCI.Text = profileData[1];
             lblActualFirstName.Text = profileData[2];

@@ -42,17 +42,124 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FormModifyCourse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormModifyCourse.Designer.cs">
+      <DependentUpon>FormModifyCourse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormModifyGrade.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormModifyGrade.Designer.cs">
+      <DependentUpon>FormModifyGrade.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormModifyGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormModifyGroup.Designer.cs">
+      <DependentUpon>FormModifyGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormModifyStudent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormModifyStudent.Designer.cs">
+      <DependentUpon>FormModifyStudent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormModifySubject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormModifySubject.Designer.cs">
+      <DependentUpon>FormModifySubject.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormModifyTeacher.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormModifyTeacher.Designer.cs">
+      <DependentUpon>FormModifyTeacher.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormRegisterCourse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRegisterCourse.Designer.cs">
+      <DependentUpon>FormRegisterCourse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormRegisterGrade.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRegisterGrade.Designer.cs">
+      <DependentUpon>FormRegisterGrade.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormRegisterGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRegisterGroup.Designer.cs">
+      <DependentUpon>FormRegisterGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormRegisterStudent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRegisterStudent.Designer.cs">
+      <DependentUpon>FormRegisterStudent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormRegisterSubject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRegisterSubject.Designer.cs">
+      <DependentUpon>FormRegisterSubject.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormRegisterTeacher.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRegisterTeacher.Designer.cs">
+      <DependentUpon>FormRegisterTeacher.cs</DependentUpon>
+    </Compile>
     <Compile Include="UserControlManagement.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include=".Designer.cs">
+    <Compile Include="UserControlManagement.Designer.cs">
       <DependentUpon>UserControlManagement.cs</DependentUpon>
-      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="FormModifyCourse.resx">
+      <DependentUpon>FormModifyCourse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormModifyGrade.resx">
+      <DependentUpon>FormModifyGrade.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormModifyGroup.resx">
+      <DependentUpon>FormModifyGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormModifyStudent.resx">
+      <DependentUpon>FormModifyStudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormModifySubject.resx">
+      <DependentUpon>FormModifySubject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormModifyTeacher.resx">
+      <DependentUpon>FormModifyTeacher.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRegisterCourse.resx">
+      <DependentUpon>FormRegisterCourse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRegisterGrade.resx">
+      <DependentUpon>FormRegisterGrade.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRegisterGroup.resx">
+      <DependentUpon>FormRegisterGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRegisterStudent.resx">
+      <DependentUpon>FormRegisterStudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRegisterSubject.resx">
+      <DependentUpon>FormRegisterSubject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRegisterTeacher.resx">
+      <DependentUpon>FormRegisterTeacher.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControlManagement.resx">
       <DependentUpon>UserControlManagement.cs</DependentUpon>
     </EmbeddedResource>

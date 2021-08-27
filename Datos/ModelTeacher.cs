@@ -10,7 +10,7 @@ namespace Datos
     {
         public List<string> availableSubjects { get; set; }
         public List<List<string>> impartingSubjects { get; set; }
-        public List<string> getAvalilableSubjects(int teacherId)
+        public List<string> getAvalilableSubjects()
         {
             List<string> availableSubjects = new List<string>();
             string commandString = 
@@ -18,14 +18,15 @@ namespace Datos
                 "FROM AvailableSubjects " +
                 "WHERE Teacher_ID = @teacherId";
             command.CommandText = commandString;
+            command.Parameters.AddWithValue("@teacherId", personId);
             executeAndRead();
 
             while (reader.Read())
-                availableSubjects.Add(reader.GetString(0));
+                availableSubjects.Add(readString(0));
             return availableSubjects;
         }
         
-        public List<List<string>> getImpartingSubjects(int teacherId)
+        public List<List<string>> getImpartingSubjects()
         {
             List<List<string>> impartingSubjects = new List<List<string>>();
             List <string> groups = new List<string>();
@@ -36,42 +37,42 @@ namespace Datos
                 "FROM SubjectGroup " +
                 "WHERE Teacher_ID = @teacherId";
             command.CommandText = commandString;
-            command.Parameters.AddWithValue("@teacherId", teacherId);
+            command.Parameters.AddWithValue("@teacherId", personId);
             executeAndRead();
             while (reader.Read())
             { 
-                groups.Add(reader.GetString(0));
-                subjects.Add(reader.GetString(1));
+                groups.Add(readString(0));
+                subjects.Add(readString(1));
             }
             impartingSubjects[0] = groups;
             impartingSubjects[1] = subjects;
             return impartingSubjects;
         }
 
-        public void assignAvailableSubject(int teacherId, int subjectId)
+        public void assignAvailableSubject(int subjectId)
         {
             string commandString;
             commandString = "INSERT INTO AvailableSubjects " +
                 "(Teacher_ID, Subject_ID) " +
                 "VALUES (@teacherId, subjectId);";
             command.CommandText = commandString;
-            command.Parameters.AddWithValue("@teacherId", teacherId);
+            command.Parameters.AddWithValue("@teacherId", personId);
             command.Parameters.AddWithValue("@subjectId", subjectId);
             executeVoid();
 
         }
-        public void deleteAvailableSubject(int teacherId, int subjectId)
+        public void deleteAvailableSubject(int subjectId)
         {
             string commandString;
             commandString =
                 "DELETE FROM SubjectGroup" +
                 " WHERE Teacher_ID=@teacherId AND Subject_ID=@subjectId;";
             command.CommandText = commandString;
-            command.Parameters.AddWithValue("@teacherId", teacherId);
+            command.Parameters.AddWithValue("@teacherId", personId);
             command.Parameters.AddWithValue("@subjectId", subjectId);
             executeVoid();
         }
-        public void assignImpartingSubject(int teacherId, int groupId, int subjectId)
+        public void assignImpartingSubject(int groupId, int subjectId)
         {
             string commandString;
             commandString = 
@@ -79,19 +80,19 @@ namespace Datos
                 "(Teacher_ID, Group_ID, Subject_ID) " +
                 "VALUES (@teacherId, @groupId, @subjectId)";
             command.CommandText = commandString;
-            command.Parameters.AddWithValue("@teacherId", teacherId);
+            command.Parameters.AddWithValue("@teacherId", personId);
             command.Parameters.AddWithValue("@groupId", groupId);
             command.Parameters.AddWithValue("@subjectId", subjectId);
             executeVoid();
         }
-        public void deleteImpartingSubject(int teacherId, int groupId, int subjectId)
+        public void deleteImpartingSubject(int groupId, int subjectId)
         {
             string commandString;
             commandString =
                 "DELETE FROM SubjectGroup" +
                 " WHERE Teacher_ID=@teacherId AND Group_ID = @groupId AND Subject_ID=@subjectId;";
             command.CommandText = commandString;
-            command.Parameters.AddWithValue("@teacherId", teacherId);
+            command.Parameters.AddWithValue("@teacherId", personId);
             command.Parameters.AddWithValue("@groupId", groupId);
             command.Parameters.AddWithValue("@subjectId", subjectId);
             executeVoid();

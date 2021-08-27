@@ -61,7 +61,7 @@ namespace Datos {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("solarfenrir454")]
+        [global::System.Configuration.DefaultSettingValueAttribute("123")]
         public string dbPassword {
             get {
                 return ((string)(this["dbPassword"]));

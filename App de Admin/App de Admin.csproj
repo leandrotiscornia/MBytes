@@ -93,6 +93,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Autorizacion\Autorizacion.csproj">
+      <Project>{bc2a891c-0037-4547-99a9-dec59c739a65}</Project>
+      <Name>Autorizacion</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Gestion\Gestion.csproj">
       <Project>{0517dae0-3218-4a82-abc2-bf2f49b9a4a8}</Project>
       <Name>Gestion</Name>

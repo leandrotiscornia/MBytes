@@ -89,7 +89,15 @@ namespace Datos
             executeAndRead();
             return readString(0);
         }
-        
-        
+        public int getLastInsertId()
+        {
+            string commandString;
+            commandString =
+                "SELECT LAST_INSERT_ID();";
+            command.CommandText = commandString;
+            executeAndRead();
+            return readInt(0);
+        }
+
     }
 }

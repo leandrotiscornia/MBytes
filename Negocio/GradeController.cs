@@ -3,38 +3,60 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Collections;
+using System.Collections.Generic;
+using System.Data;
 using Datos;
 
 namespace Negocio
 {
     public static class GradeController
     {
-        public static void insertGrade(string[] gradeData)
+        public static void insertGrade(int courseId, List<int> subjects)
         {
             ModelGrade gradeToInsert = new ModelGrade();
-            gradeToInsert.gradeName = gradeData[0];
-            gradeToInsert.insertObject();
+            gradeToInsert.gradeSubjects = subjects;
+            gradeToInsert.insertGrade(courseId);
         }
-        public static void modifyGrade(string[] gradeData)
+        public static void modifyGrade(int gradeId, List<int> subjects)
         {
             ModelGrade gradeToModify = new ModelGrade();
-            gradeToModify.gradeId = Int32.Parse(gradeData[0]);
-            gradeToModify.gradeName = gradeData[1];
-            gradeToModify.courseName = gradeData[2];
-            gradeToModify.modifyObject();
+            gradeToModify.gradeId = gradeId;
+            gradeToModify.gradeSubjects = subjects;
+            gradeToModify.modifyGrade();
         }
-        public static void listGrade(string[] gradeData)
+        public static DataTable listGrades()
         {
+            DataTable result = new DataTable("grades");
             ModelGrade gradeToList = new ModelGrade();
-            gradeToList.gradeId = Int32.Parse(gradeData[0]);
-            gradeToList.gradeName = gradeData[1];
-            gradeToList.listObjects();
+
+            result.Columns.Add("ID", System.Type.GetType("System.Int32"));
+            result.Columns.Add("Name");
+            for(int i = 1; i <= 15; i++)
+                result.Columns.Add("Subject " + i);
+            foreach(DataRow grade in gradeToList.listGrades().Rows)
+            {
+                gradeToList.gradeId = int.Parse(grade["ID"].ToString());
+                List<string> subjects = gradeToList.getSubjects();
+                DataRow resultRow = result.NewRow();
+                resultRow[0] = gradeToList.gradeId;
+                resultRow[1] = grade["Name"].ToString();
+                for (int i = 0; i <= 12; i++)
+                    if (subjects.ElementAtOrDefault(i) != null) resultRow[i+2] = subjects[i];
+                result.Rows.Add(resultRow);
+            }
+            return result;
         }
-        public static void deleteGrade(string[] gradeData)
+        public static void deleteGrade(int gradeId)
         {
             ModelGrade gradeToDelete = new ModelGrade();
-            gradeToDelete.gradeId = Int32.Parse(gradeData[0]);
-            gradeToDelete.deleteObject();
+            gradeToDelete.gradeId = gradeId;
+            gradeToDelete.deleteGrade();
+        }
+        public static DataTable listGradeNames()
+        {
+            ModelGrade grade = new ModelGrade();
+            return grade.listGrades();
         }
     }
 }
