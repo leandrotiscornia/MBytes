@@ -30,58 +30,34 @@ namespace Chat
         /// </summary>
         private void InitializeComponent()
         {
-            this.txbWriteMessage = new System.Windows.Forms.TextBox();
-            this.btnSendMessage = new System.Windows.Forms.Button();
-            this.rtbReadMessages = new System.Windows.Forms.RichTextBox();
+            this.messageHost = new System.Windows.Forms.Integration.ElementHost();
             this.SuspendLayout();
             // 
-            // txbWriteMessage
+            // messageHost
             // 
-            this.txbWriteMessage.Location = new System.Drawing.Point(12, 286);
-            this.txbWriteMessage.Name = "txbWriteMessage";
-            this.txbWriteMessage.Size = new System.Drawing.Size(347, 20);
-            this.txbWriteMessage.TabIndex = 3;
+            this.messageHost.Location = new System.Drawing.Point(2, 1);
+            this.messageHost.Name = "messageHost";
+            this.messageHost.Size = new System.Drawing.Size(700, 700);
+            this.messageHost.TabIndex = 0;
+            this.messageHost.Text = "elementHost1";
+            this.messageHost.Child = null;
             // 
-            // btnSendMessage
-            // 
-            this.btnSendMessage.Location = new System.Drawing.Point(131, 329);
-            this.btnSendMessage.Name = "btnSendMessage";
-            this.btnSendMessage.Size = new System.Drawing.Size(90, 25);
-            this.btnSendMessage.TabIndex = 1;
-            this.btnSendMessage.Text = "Send";
-            this.btnSendMessage.UseVisualStyleBackColor = true;
-            this.btnSendMessage.Click += new System.EventHandler(this.btnSendMessage_Click);
-            // 
-            // rtbReadMessages
-            // 
-            this.rtbReadMessages.Location = new System.Drawing.Point(12, 26);
-            this.rtbReadMessages.Name = "rtbReadMessages";
-            this.rtbReadMessages.Size = new System.Drawing.Size(347, 223);
-            this.rtbReadMessages.TabIndex = 2;
-            this.rtbReadMessages.Text = "";
-
-            // 
-            // ChatSession
+            // FormChatSession
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(385, 395);
-            this.Controls.Add(this.rtbReadMessages);
-            this.Controls.Add(this.btnSendMessage);
-            this.Controls.Add(this.txbWriteMessage);
-            this.Name = "ChatSession";
+            this.ClientSize = new System.Drawing.Size(703, 707);
+            this.Controls.Add(this.messageHost);
+            this.Name = "FormChatSession";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.FormChatSession_Load);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.TextBox txbWriteMessage;
-        private System.Windows.Forms.Button btnSendMessage;
-        private System.Windows.Forms.RichTextBox rtbReadMessages;
-
+        private System.Windows.Forms.Integration.ElementHost messageHost;
     }
 }
 

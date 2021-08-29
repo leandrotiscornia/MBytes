@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ChatMessageController.cs" />
+    <Compile Include="ChatSessionController.cs" />
     <Compile Include="ConsultationController.cs" />
     <Compile Include="ConsultationMessageController.cs" />
     <Compile Include="CourseController.cs" />
@@ -49,6 +50,12 @@
     <Compile Include="ExceptionController.cs" />
     <Compile Include="GradeController.cs" />
     <Compile Include="GroupController.cs" />
+    <Compile Include="LogController.cs" />
+    <Compile Include="LogSettings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>LogSettings.settings</DependentUpon>
+    </Compile>
     <Compile Include="PersonController.cs" />
     <Compile Include="SubjectController.cs" />
     <Compile Include="WatchController.cs" />
@@ -69,6 +76,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
+    <None Include="LogSettings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>LogSettings.Designer.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

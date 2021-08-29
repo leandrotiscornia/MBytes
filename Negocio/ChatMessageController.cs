@@ -10,22 +10,25 @@ namespace Negocio
 {
     public static class ChatMessageController
     {
-        public static DataTable getChatMessage(int chatId)
+        public static void sendMessage(int chatId, int senderId, string text)
         {
-            ModelChat chatMessage = new ModelChat();
-            chatMessage.chatId = chatId;
-            DataTable chatMessageTable = chatMessage.getChatMessages();
-            return chatMessageTable;
+            ModelChatMessage message = new ModelChatMessage();
+            message.chatId = chatId;
+            message.senderId = senderId;
+            message.text = text;
+            message.time = DateTime.Now;
         }
-        public static void sendChatMessage(int chatId, int senderId, string text )
+        public static void editMessage()
         {
-            ModelChat chatMessage = new ModelChat();
-            chatMessage.chatId = chatId;
-            chatMessage.senderId = senderId;
-            chatMessage.text = text;
-            chatMessage.sendChatMessage();
-        }
 
+        }
+        public static DataTable listMessages(int chatId)
+        {
+            ModelChatMessage message = new ModelChatMessage();
+            message.chatId = chatId;
+            
+            return message.listMessages();
+        }
     }
 
 

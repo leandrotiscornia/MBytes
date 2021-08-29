@@ -8,69 +8,52 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Negocio;
-using Datos;
+
 
 
 namespace Chat
 {
     public partial class UserControlChatMainPanel : UserControl
     {
-
-
-
+        
         public UserControlChatMainPanel()
         {
             InitializeComponent();
-
-
+            
         }
 
-        private void btnCreateNewChatSession_Click(object sender, EventArgs e)
+        private void loadSessions()
+        {
+            
+        }
+        private void createSession()
         {
 
-            int userRole = Session.userId;
-
-
-            if (Session.userId == 1)
-            {
-                UserControlNewChatSession newSession = new UserControlNewChatSession();
-                btnCreateNewChatSession.Controls.Add(newSession);
-                lbWelcome.Text = "Welcome teacher";
-            }
-            else if (Session.userId == 2)
-            {
-
-                UserControlNewChatSession newSession = new UserControlNewChatSession();
-                btnCreateNewChatSession.Controls.Add(newSession);
-                lbWelcome.Text = "Welcome student";
-            }
         }
-        private void btnViewExistingsessions_Click(object sender, EventArgs e) { 
+        private void joinSession()
+        {
 
-            if (Session.userId == 1)
-            {   
+        }
+
+
         
-                UserControlViewExistingSessions viewExistingSession = new UserControlViewExistingSessions();
 
-                btnViewExistingSessions.Controls.Add(viewExistingSession);
+        private void btnJoin_Click(object sender, EventArgs e)
+        {
 
-            }
-            else if (Session.userId == 2)
-            {
-
-                UserControlViewExistingSessions viewExistingSession = new UserControlViewExistingSessions();
-
-                btnViewExistingSessions.Controls.Add(viewExistingSession);
-
-            }
         }
 
+        private void btnCreate_Click(object sender, EventArgs e)
+        {
 
-           
+        }
+
+        private void UserControlChatMainPanel_Load(object sender, EventArgs e)
+        {
+
+        }
+    }
+
 
 
 }
-
-
-
-    }

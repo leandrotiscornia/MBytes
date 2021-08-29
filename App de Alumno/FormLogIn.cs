@@ -44,7 +44,7 @@ namespace App_De_Alumo
         {
             FormMain mainForm = new FormMain();
             mainForm.Show();
-            this.Hide();
+            Hide();
         }
         private string checkLogin()
         {
