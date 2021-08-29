@@ -1,6 +1,6 @@
-﻿namespace App_De_Alumo
+﻿namespace App_de_Docente
 {
-    partial class FormRegisterPerson
+    partial class FormRegisterTeacher
     {
         /// <summary>
         /// Required designer variable.
@@ -31,8 +31,8 @@
             this.lbCI = new System.Windows.Forms.Label();
             this.lbFirstName = new System.Windows.Forms.Label();
             this.lbSecondName = new System.Windows.Forms.Label();
+            this.lbFirstSurname = new System.Windows.Forms.Label();
             this.lbFisrtSurname = new System.Windows.Forms.Label();
-            this.lbSeconSurname = new System.Windows.Forms.Label();
             this.tbSecondSurname = new System.Windows.Forms.TextBox();
             this.tbFirstSurname = new System.Windows.Forms.TextBox();
             this.tbSecondName = new System.Windows.Forms.TextBox();
@@ -81,27 +81,27 @@
             this.lbSecondName.TabIndex = 2;
             this.lbSecondName.Text = "Second Name";
             // 
+            // lbFirstSurname
+            // 
+            this.lbFirstSurname.AutoSize = true;
+            this.lbFirstSurname.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbFirstSurname.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(195)))), ((int)(((byte)(195)))));
+            this.lbFirstSurname.Location = new System.Drawing.Point(8, 335);
+            this.lbFirstSurname.Name = "lbFirstSurname";
+            this.lbFirstSurname.Size = new System.Drawing.Size(99, 16);
+            this.lbFirstSurname.TabIndex = 3;
+            this.lbFirstSurname.Text = "First Surname";
+            // 
             // lbFisrtSurname
             // 
             this.lbFisrtSurname.AutoSize = true;
             this.lbFisrtSurname.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbFisrtSurname.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(195)))), ((int)(((byte)(195)))));
-            this.lbFisrtSurname.Location = new System.Drawing.Point(8, 335);
+            this.lbFisrtSurname.Location = new System.Drawing.Point(8, 383);
             this.lbFisrtSurname.Name = "lbFisrtSurname";
-            this.lbFisrtSurname.Size = new System.Drawing.Size(99, 16);
-            this.lbFisrtSurname.TabIndex = 3;
-            this.lbFisrtSurname.Text = "First Surname";
-            // 
-            // lbSeconSurname
-            // 
-            this.lbSeconSurname.AutoSize = true;
-            this.lbSeconSurname.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbSeconSurname.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(195)))), ((int)(((byte)(195)))));
-            this.lbSeconSurname.Location = new System.Drawing.Point(8, 383);
-            this.lbSeconSurname.Name = "lbSeconSurname";
-            this.lbSeconSurname.Size = new System.Drawing.Size(119, 16);
-            this.lbSeconSurname.TabIndex = 4;
-            this.lbSeconSurname.Text = "Second Surname";
+            this.lbFisrtSurname.Size = new System.Drawing.Size(119, 16);
+            this.lbFisrtSurname.TabIndex = 4;
+            this.lbFisrtSurname.Text = "Second Surname";
             // 
             // tbSecondSurname
             // 
@@ -260,8 +260,8 @@
             this.Controls.Add(this.tbSecondName);
             this.Controls.Add(this.tbFirstSurname);
             this.Controls.Add(this.tbSecondSurname);
-            this.Controls.Add(this.lbSeconSurname);
             this.Controls.Add(this.lbFisrtSurname);
+            this.Controls.Add(this.lbFirstSurname);
             this.Controls.Add(this.lbSecondName);
             this.Controls.Add(this.lbFirstName);
             this.Controls.Add(this.lbCI);
@@ -277,8 +277,8 @@
         private System.Windows.Forms.Label lbCI;
         private System.Windows.Forms.Label lbFirstName;
         private System.Windows.Forms.Label lbSecondName;
+        private System.Windows.Forms.Label lbFirstSurname;
         private System.Windows.Forms.Label lbFisrtSurname;
-        private System.Windows.Forms.Label lbSeconSurname;
         private System.Windows.Forms.TextBox tbSecondSurname;
         private System.Windows.Forms.TextBox tbFirstSurname;
         private System.Windows.Forms.TextBox tbSecondName;

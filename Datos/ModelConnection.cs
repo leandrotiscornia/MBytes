@@ -57,15 +57,17 @@ namespace Datos
             }
             catch (MySqlException ex)
             {
-               handleException(ex);
+                handleException(ex);
             }
         }
         public void executeVoid()
         {
             try
             {
+                if (reader != null) reader.Close();
                 command.Prepare();
                 command.ExecuteNonQuery();
+                Console.WriteLine(command.CommandText);
             }
             catch (MySqlException ex)
             {
@@ -132,7 +134,7 @@ namespace Datos
             int result = -1;
             try
             {
-                while (reader.Read())
+                reader.Read();
                 if (reader.HasRows && !reader.IsDBNull(index)) result = reader.GetInt32(index);
                 else throw new Exception("Null Number");
             }

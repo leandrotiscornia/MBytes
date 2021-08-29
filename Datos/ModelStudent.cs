@@ -45,8 +45,6 @@ namespace Datos
             command.Parameters.AddWithValue("@groupId", groupId);
             command.Parameters.AddWithValue("@subjectId", subjectId);
             executeVoid();
-
-
         }
 
         public void deleteSubjectCoursing (int studentId, int groupId, int subjectId)
@@ -61,7 +59,5 @@ namespace Datos
             command.Parameters.AddWithValue("@subjectId", subjectId);
             executeVoid();
         }
-
-
     }
 }

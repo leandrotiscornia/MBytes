@@ -41,6 +41,7 @@ namespace Consultas
         private void sendConsultation()
         {
             int senderId = Session.userId;
+            MessageBox.Show("" + senderId);
             string topic = tbTopic.Text;
             string consultationMessage = tbNewMessage.Text;
             Console.WriteLine("" + receiverId);

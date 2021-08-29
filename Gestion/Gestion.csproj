@@ -1,0 +1,174 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{0517DAE0-3218-4A82-ABC2-BF2F49B9A4A8}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Gestion</RootNamespace>
+    <AssemblyName>Gestion</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FormModifyCourse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormModifyCourse.Designer.cs">
+      <DependentUpon>FormModifyCourse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormModifyGrade.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormModifyGrade.Designer.cs">
+      <DependentUpon>FormModifyGrade.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormModifyGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormModifyGroup.Designer.cs">
+      <DependentUpon>FormModifyGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormModifyStudent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormModifyStudent.Designer.cs">
+      <DependentUpon>FormModifyStudent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormModifySubject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormModifySubject.Designer.cs">
+      <DependentUpon>FormModifySubject.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormModifyTeacher.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormModifyTeacher.Designer.cs">
+      <DependentUpon>FormModifyTeacher.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormRegisterCourse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRegisterCourse.Designer.cs">
+      <DependentUpon>FormRegisterCourse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormRegisterGrade.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRegisterGrade.Designer.cs">
+      <DependentUpon>FormRegisterGrade.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormRegisterGroup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRegisterGroup.Designer.cs">
+      <DependentUpon>FormRegisterGroup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormRegisterStudent.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRegisterStudent.Designer.cs">
+      <DependentUpon>FormRegisterStudent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormRegisterSubject.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRegisterSubject.Designer.cs">
+      <DependentUpon>FormRegisterSubject.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormRegisterTeacher.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormRegisterTeacher.Designer.cs">
+      <DependentUpon>FormRegisterTeacher.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlManagement.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlManagement.Designer.cs">
+      <DependentUpon>UserControlManagement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="FormModifyCourse.resx">
+      <DependentUpon>FormModifyCourse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormModifyGrade.resx">
+      <DependentUpon>FormModifyGrade.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormModifyGroup.resx">
+      <DependentUpon>FormModifyGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormModifyStudent.resx">
+      <DependentUpon>FormModifyStudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormModifySubject.resx">
+      <DependentUpon>FormModifySubject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormModifyTeacher.resx">
+      <DependentUpon>FormModifyTeacher.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRegisterCourse.resx">
+      <DependentUpon>FormRegisterCourse.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRegisterGrade.resx">
+      <DependentUpon>FormRegisterGrade.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRegisterGroup.resx">
+      <DependentUpon>FormRegisterGroup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRegisterStudent.resx">
+      <DependentUpon>FormRegisterStudent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRegisterSubject.resx">
+      <DependentUpon>FormRegisterSubject.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormRegisterTeacher.resx">
+      <DependentUpon>FormRegisterTeacher.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlManagement.resx">
+      <DependentUpon>UserControlManagement.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Negocio\Negocio.csproj">
+      <Project>{df697e70-b8cb-4948-9f51-204f4ac48bad}</Project>
+      <Name>Negocio</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

@@ -3,44 +3,141 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
 using Datos;
 
 namespace Negocio
 {
     public static class GroupController
     {
-        public static void insertGroup(string[] groupData)
+        public static void insertGroup(string groupName,string shift, int gradeId)
         {
-            ModelGroup groupToInsert = new ModelGroup();
-            groupToInsert.groupName = groupData[0];
-            groupToInsert.groupGrade = groupData[1];
-            groupToInsert.shift = groupData[2];
-            groupToInsert.insertObject();
+            ModelGroup group = new ModelGroup();
+            group.groupName = groupName;
+            group.shift = shift;
+            group.insertGroup(gradeId);
         }
-        public static void modifyGroup(string[] groupData)
+        public static void modifyGroup(string groupName, string shift, int groupId)
         {
-            ModelGroup groupToModify = new ModelGroup();
-            groupToModify.groupId = Int32.Parse(groupData[0]);
-            groupToModify.groupName = groupData[1];
-            groupToModify.groupGrade = groupData[2];
-            groupToModify.shift = groupData[3];
-            groupToModify.modifyObject();
+            ModelGroup group = new ModelGroup();
+            group.groupName = groupName;
+            group.shift = shift;
+            group.groupId = groupId;
+            group.modifyGroup();
         }
-        public static void deleteGroup(string[] groupData)
+       
+        public static void deleteGroup(int groupId)
         {
-            ModelGroup groupToDelete = new ModelGroup();
-            groupToDelete.groupId = Int32.Parse(groupData[0]);
-            groupToDelete.deleteObject();
+            ModelGroup group = new ModelGroup();
+            group.groupId = groupId;
+            group.deleteGroup();
         }
-        public static void listGroup(string[] groupData)
+        public static DataTable listGroupsWithStudents()
         {
+            DataTable result = new DataTable("students");
             ModelGroup groupToList = new ModelGroup();
-            groupToList.groupId = Int32.Parse(groupData[0]);
-            groupToList.groupName = groupData[1];
-            groupToList.groupGrade = groupData[2];
-            groupToList.shift = groupData[3];
-            groupToList.listObjects();
+            result.Columns.Add("ID", System.Type.GetType("System.Int32"));
+            result.Columns.Add("Group Name");
+            for (int i = 1; i < 31; i++)
+                result.Columns.Add("Student " + i);
+            foreach (DataRow group in groupToList.listGroups().Rows)
+            {
+                groupToList.groupId = int.Parse(group["ID"].ToString());
+                List<string> students = groupToList.getStudents();
+                DataRow resultRow = result.NewRow();
+                resultRow[0] = groupToList.groupId;
+                resultRow[1] = group["Grade Name"].ToString().Substring(0, 2) + group["Group Name"].ToString();
+                for (int i = 0; i < 12; i++)
+                    if (students.ElementAtOrDefault(i) != null) resultRow[i + 2] = students[i];
+                result.Rows.Add(resultRow);
+            }
+            return result;
         }
-
+        public static DataTable listGroups()
+        {
+            DataTable result = new DataTable("students");
+            ModelGroup groupToList = new ModelGroup();
+            result.Columns.Add("ID", System.Type.GetType("System.Int32"));
+            result.Columns.Add("Group Name");
+            result.Columns.Add("Shift");
+            foreach (DataRow group in groupToList.listGroups().Rows)
+            {
+                groupToList.groupId = int.Parse(group["ID"].ToString());
+                DataRow resultRow = result.NewRow();
+                resultRow[0] = groupToList.groupId;
+                resultRow[1] = group["Grade Name"].ToString().Substring(0, 2) + group["Group Name"].ToString();
+                resultRow[2] = group["Shift"].ToString();
+                result.Rows.Add(resultRow);
+            }
+            return result;
+        }
+        public static DataTable listSubjectsByGroup(int groupId)
+        {
+            ModelGroup group = new ModelGroup();
+            group.groupId = groupId;
+            return group.listSubjectsByGroup();
+        }
+        public static List<string> getGroupData(int groupId)
+        {
+            ModelGroup group = new ModelGroup();
+            group.groupId = groupId;
+            return group.getGroup();
+        } 
+        public static void clearInscriptions(int groupId)
+        {
+            ModelGroup group = new ModelGroup();
+            group.groupId = groupId;
+            group.clearInscriptions();
+        }
+        public static DataTable listInscriptions()
+        {
+            DataTable inscriptions = new DataTable();
+            inscriptions.Columns.Add("Group ID");
+            inscriptions.Columns.Add("CI");
+            inscriptions.Columns.Add("Subject ID");
+            inscriptions.Columns.Add("First_Name");
+            inscriptions.Columns.Add("First_Surname");
+            inscriptions.Columns.Add("Group");
+            inscriptions.Columns.Add("Subject");
+            inscriptions.Columns.Add("Status");
+            inscriptions.Columns.Add("Type");
+            
+            ModelGroup group = new ModelGroup();
+            foreach(DataRow student in group.listStudentInscriptions().Rows)
+            {
+                DataRow inscription = inscriptions.NewRow();
+                for (int i = 0; i <= 7; i++)
+                    inscription[i] = student[i].ToString();
+                inscription["Type"] = "Student";
+                inscriptions.Rows.Add(inscription);
+            }
+            foreach (DataRow teacher in group.listTeacherInscriptions().Rows)
+            {
+                DataRow inscription = inscriptions.NewRow();
+                for (int i = 0; i <= 7; i++)
+                    inscription[i] = teacher[i].ToString();
+                inscription["Type"] = "Teacher";
+                inscriptions.Rows.Add(inscription);
+            }
+            return inscriptions;
+        }
+        public static void requestInscription(string studentCI, int groupId, List<int> subjects)
+        {
+            ModelGroup group = new ModelGroup();
+            group.groupId = groupId;
+            group.requestStudentInscription(studentCI, subjects);
+        }
+        public static void updateStudentRequestStatus(string CI, int groupId, int subjectId, string status)
+        {
+            ModelGroup group = new ModelGroup();
+            group.groupId = groupId;
+            group.updateStudentRequestStatus(CI, subjectId, status);
+        }
+        public static void updateTeacherRequestStatus(string CI, int groupId, int subjectId, string status)
+        {
+            ModelGroup group = new ModelGroup();
+            group.groupId = groupId;
+            group.updateTeacherRequestStatus(CI, subjectId, status);
+        }
     }
 }

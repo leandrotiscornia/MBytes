@@ -11,9 +11,9 @@ using Negocio;
 
 namespace App_de_Docente
 {
-    public partial class FormRegisterPerson : Form
+    public partial class FormRegisterTeacher : Form
     {
-        public FormRegisterPerson()
+        public FormRegisterTeacher()
         {
             InitializeComponent();
         }
