@@ -91,6 +91,8 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>DataBase.settings</DependentUpon>
     </Compile>
+    <Compile Include="ModelChatSession.cs" />
+    <Compile Include="ModelChatMessage.cs" />
     <Compile Include="ModelConnection.cs" />
     <Compile Include="ModelConsultation.cs" />
     <Compile Include="ModelConsultationMessage.cs" />
