@@ -50,10 +50,11 @@ namespace Datos
         {
             string commandString;
             commandString =
-                "SELECT ID, Sender_ID, Time, Text " +
+                "SELECT chatmessages.ID, users.User_Login AS 'Sender Name', Sender_ID, Time, Text " +
                 "FROM chatmessages " +
-                "ORDER BY(Time) " +
-                "WHERE Chat_ID = @chatId;";
+                "JOIN users ON users.ID = chatmessages.Sender_ID " +
+                "WHERE Chat_ID = @chatId " +
+                "ORDER BY(Time);";
             command.CommandText = commandString;
             command.Parameters.AddWithValue("@chatId", chatId);
             executeAndRead();

@@ -41,6 +41,15 @@ namespace Chat
             this.tpSessions = new System.Windows.Forms.TabPage();
             this.tpRegisters = new System.Windows.Forms.TabPage();
             this.lvRegisters = new System.Windows.Forms.ListView();
+            this.registerID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.registerName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.registerHostID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.registerStartTime = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.registerEndTime = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.sessionId = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.sessionHostID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.sessionHostName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.sessionStartTime = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             ((System.ComponentModel.ISupportInitialize)(this.pbProfilePicture)).BeginInit();
             this.tcChat.SuspendLayout();
             this.tpSessions.SuspendLayout();
@@ -49,6 +58,11 @@ namespace Chat
             // 
             // lvSessions
             // 
+            this.lvSessions.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.sessionId,
+            this.sessionHostID,
+            this.sessionHostName,
+            this.sessionStartTime});
             this.lvSessions.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lvSessions.HideSelection = false;
             this.lvSessions.Location = new System.Drawing.Point(3, 3);
@@ -120,6 +134,7 @@ namespace Chat
             this.tcChat.SelectedIndex = 0;
             this.tcChat.Size = new System.Drawing.Size(382, 328);
             this.tcChat.TabIndex = 7;
+            this.tcChat.SelectedIndexChanged += new System.EventHandler(this.tcChat_SelectedIndexChanged);
             // 
             // tpSessions
             // 
@@ -145,6 +160,12 @@ namespace Chat
             // 
             // lvRegisters
             // 
+            this.lvRegisters.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.registerID,
+            this.registerName,
+            this.registerHostID,
+            this.registerStartTime,
+            this.registerEndTime});
             this.lvRegisters.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lvRegisters.HideSelection = false;
             this.lvRegisters.Location = new System.Drawing.Point(3, 3);
@@ -153,6 +174,34 @@ namespace Chat
             this.lvRegisters.TabIndex = 1;
             this.lvRegisters.UseCompatibleStateImageBehavior = false;
             this.lvRegisters.View = System.Windows.Forms.View.Tile;
+            // 
+            // registerName
+            // 
+            this.registerName.DisplayIndex = 0;
+            // 
+            // registerHostID
+            // 
+            this.registerHostID.DisplayIndex = 1;
+            // 
+            // registerStartTime
+            // 
+            this.registerStartTime.DisplayIndex = 2;
+            // 
+            // registerEndTime
+            // 
+            this.registerEndTime.DisplayIndex = 3;
+            // 
+            // sessionHostID
+            // 
+            this.sessionHostID.DisplayIndex = 0;
+            // 
+            // sessionHostName
+            // 
+            this.sessionHostName.DisplayIndex = 1;
+            // 
+            // sessionStartTime
+            // 
+            this.sessionStartTime.DisplayIndex = 2;
             // 
             // UserControlChatMainPanel
             // 
@@ -190,5 +239,14 @@ namespace Chat
         private System.Windows.Forms.TabPage tpSessions;
         private System.Windows.Forms.TabPage tpRegisters;
         private System.Windows.Forms.ListView lvRegisters;
+        private System.Windows.Forms.ColumnHeader sessionId;
+        private System.Windows.Forms.ColumnHeader sessionHostID;
+        private System.Windows.Forms.ColumnHeader sessionHostName;
+        private System.Windows.Forms.ColumnHeader sessionStartTime;
+        private System.Windows.Forms.ColumnHeader registerID;
+        private System.Windows.Forms.ColumnHeader registerName;
+        private System.Windows.Forms.ColumnHeader registerHostID;
+        private System.Windows.Forms.ColumnHeader registerStartTime;
+        private System.Windows.Forms.ColumnHeader registerEndTime;
     }
 }

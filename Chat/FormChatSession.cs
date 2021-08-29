@@ -11,22 +11,35 @@ using System.Windows.Forms;
 
 namespace Chat
 {
-    public partial class FormChatSession : Form
+    public partial class FormChatSession : Form, IDisposable
     {
         private int _chatId;
-
-        public FormChatSession(int chatId)
+        UserControlMessages messagesControl;
+        private bool _readOnlyMode;
+        public FormChatSession(int chatId, bool readOnlyMode)
         {
+            _chatId = chatId;
+            _readOnlyMode = readOnlyMode;
             InitializeComponent();
         }
 
         private void FormChatSession_Load(object sender, EventArgs e)
         {
-            UserControlMessages messagesControl = new UserControlMessages(_chatId);
+            messagesControl = new UserControlMessages(_chatId);
+            if (_readOnlyMode)
+            {
+                messagesControl.tbMessage.IsEnabled = false;
+                messagesControl.btnSend.IsEnabled = false;
+                messagesControl.timer.IsEnabled = false;
+            }
             messageHost.Child = messagesControl;
         }
 
-        
+        private void FormChatSession_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            ChatSessionController.closeSession(_chatId);
+            messagesControl.timer.Stop();
+        }
     }
     
 }

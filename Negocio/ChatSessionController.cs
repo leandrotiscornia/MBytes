@@ -20,13 +20,20 @@ namespace Negocio
             ModelChatSession session = new ModelChatSession();
             return session.listRegisters();
         }
-        public static int openSession(int hostId)
+        public static int openSession(int hostId, string sessionName)
         {
             ModelChatSession session = new ModelChatSession();
             session.hostId = hostId;
+            session.sessionName = sessionName;
             session.startTime = DateTime.Now;
-            session.openSession();
-            
+            return session.openSession();
+        }
+        public static void closeSession(int sessionId)
+        {
+            ModelChatSession session = new ModelChatSession();
+            session.sessionId = sessionId;
+            session.endTime = DateTime.Now;
+            session.closeSession();
         }
     }
 }

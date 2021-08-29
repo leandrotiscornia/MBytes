@@ -35,9 +35,10 @@ namespace Chat
             // 
             // messageHost
             // 
-            this.messageHost.Location = new System.Drawing.Point(2, 1);
+            this.messageHost.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.messageHost.Location = new System.Drawing.Point(0, 0);
             this.messageHost.Name = "messageHost";
-            this.messageHost.Size = new System.Drawing.Size(700, 700);
+            this.messageHost.Size = new System.Drawing.Size(703, 707);
             this.messageHost.TabIndex = 0;
             this.messageHost.Text = "elementHost1";
             this.messageHost.Child = null;
@@ -50,6 +51,7 @@ namespace Chat
             this.Controls.Add(this.messageHost);
             this.Name = "FormChatSession";
             this.Text = "Form1";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormChatSession_FormClosing);
             this.Load += new System.EventHandler(this.FormChatSession_Load);
             this.ResumeLayout(false);
 

@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Negocio;
+using Chat;
 using Consultas;
 
 namespace App_De_Alumno 
@@ -33,6 +34,12 @@ namespace App_De_Alumno
                     UserControlConsultationsMainPanel consultationsPanel = new UserControlConsultationsMainPanel();
                     consultationsPanel.Dock = DockStyle.Fill;
                     pnlFunction.Controls.Add(consultationsPanel);
+                }
+                else if (lvNavigation.SelectedItems[0].Text == "Chat")
+                {
+                    UserControlChatMainPanel chat = new UserControlChatMainPanel();
+                    chat.Dock = DockStyle.Fill;
+                    pnlFunction.Controls.Add(chat);
                 }
             }
         }

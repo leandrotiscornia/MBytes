@@ -17,6 +17,7 @@ namespace Negocio
             message.senderId = senderId;
             message.text = text;
             message.time = DateTime.Now;
+            message.sendMessage();
         }
         public static void editMessage()
         {

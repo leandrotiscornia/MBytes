@@ -64,7 +64,7 @@ namespace Datos
             DataTable consultationsReceived = new DataTable();
             string commandString;
             commandString =
-                "SELECT consults.ID, persons.First_Name, persons.First_Surname,Topic, State " +
+                "SELECT consults.ID, persons.First_Name, persons.First_Surname,Topic, consults.State " +
                 "FROM consults " +
                 "JOIN users as sender ON consults.Sender_ID = sender.ID " +
                 "JOIN users as receiver ON consults.Receiver_ID = receiver.ID " +

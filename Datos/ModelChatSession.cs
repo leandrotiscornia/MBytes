@@ -11,22 +11,25 @@ namespace Datos
     {
         public int sessionId { get; set; }
         public int hostId { get; set; }
+        public string sessionName { get; set; }
         public DateTime startTime { get; set; }
         public DateTime endTime { get; set; }
         public List<int> allowedUsers { get; set; }
         public List<int> chatParticipants { get; set; }
 
-        public void openSession()
+        public int openSession()
         {
             string commandString;
             commandString =
                 "INSERT INTO chatsessions " +
-                "(Host_ID, Start_Time) " +
-                "VALUES(@hostId, @startTime)";
+                "(Host_ID, Name, Start_Time) " +
+                "VALUES(@hostId, @name, @startTime)";
             command.CommandText = commandString;
+            command.Parameters.AddWithValue("@name", sessionName);
             command.Parameters.AddWithValue("@hostId", hostId);
             command.Parameters.AddWithValue("startTime", startTime);
             executeVoid();
+            return getLastInsertId();
         }
         public void setInvitations()
         {
@@ -58,9 +61,9 @@ namespace Datos
         public DataTable listSessions()
         {
             string commandString =
-                "SELECT ID, Host_ID, Start_Time " +
+                "SELECT ID, Name, Host_ID, Start_Time " +
                 "FROM chatsessions " +
-                "WHERE End_Time = null";
+                "WHERE End_Time IS NULL";
             command.CommandText = commandString;
             executeAndRead();
             return readTable();
@@ -68,9 +71,9 @@ namespace Datos
         public DataTable listRegisters()
         {
             string commandString =
-                "SELECT ID, Host_ID, Start_Time, End_Time " +
+                "SELECT ID, Name, Host_ID, Start_Time, End_Time " +
                 "FROM chatsessions " +
-                "WHERE End_Time != null";
+                "WHERE End_Time IS NOT NULL";
             command.CommandText = commandString;
             executeAndRead();
             return readTable();

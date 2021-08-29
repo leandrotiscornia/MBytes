@@ -51,12 +51,13 @@
     <Compile Include="GradeController.cs" />
     <Compile Include="GroupController.cs" />
     <Compile Include="LogController.cs" />
-    <Compile Include="LogSettings.Designer.cs">
+    <Compile Include="Paths.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
-      <DependentUpon>LogSettings.settings</DependentUpon>
+      <DependentUpon>Paths.settings</DependentUpon>
     </Compile>
     <Compile Include="PersonController.cs" />
+    <Compile Include="PictureController.cs" />
     <Compile Include="SubjectController.cs" />
     <Compile Include="WatchController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -76,9 +77,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
-    <None Include="LogSettings.settings">
+    <None Include="Paths.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>LogSettings.Designer.cs</LastGenOutput>
+      <LastGenOutput>Paths.Designer.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

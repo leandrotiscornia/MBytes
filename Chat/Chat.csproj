@@ -63,14 +63,14 @@
       <DependentUpon>FormChatSession.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserControl1.xaml.cs">
+      <DependentUpon>UserControl1.xaml</DependentUpon>
+    </Compile>
     <Compile Include="UserControlChatMainPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="UserControlChatMainPanel.Designer.cs">
       <DependentUpon>UserControlChatMainPanel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UserControlMessage.xaml.cs">
-      <DependentUpon>UserControlMessage.xaml</DependentUpon>
     </Compile>
     <Compile Include="UserControlMessages.xaml.cs">
       <DependentUpon>UserControlMessages.xaml</DependentUpon>
@@ -110,7 +110,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Page Include="UserControlMessage.xaml">
+    <Page Include="UserControl1.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
