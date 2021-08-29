@@ -16,40 +16,47 @@ namespace Negocio
             ModelPerson user = new ModelPerson();
             user.userName = userName;
             user.userPassword = DataBaseController.encryptPassword(userPassword);
-            user.getUserRole();
             if (userName == "")
                 result = "You need to set an user name";
             else if (user.userPassword == "")
                 result = "You need to set your password";
             else if (user.userName != user.getUserName())
                 result = "That user does not exist";
-            else if (user.userPassword != user.getUserPassword())
+            else if (user.userPassword != user.checkUserPassword())
                 result = "Incorrect password";
-            else if (!(userRole == user.userRole))
+            else if(userRole == 0)
+            {
+                if (user.isAdmin())
+                {
+                    user.getUserId();
+                    Session.userId = user.personId;
+                    result = "";
+                }
+                else result = "Access Denied For This User";
+            }
+            else if (!(userRole == user.checkUserRole()) && userRole != 0)
                 result = "Access Denied For This User";
             else
             {
-                user.getUserId(userName);
+                user.getUserId();
+                user.getUserCI();
                 Session.userId = user.personId;
-                // Session.userRole = user.getUserRole();
+                Session.ci = user.ci;
                 result = "";
             }
             return result;
         }
-            public static void deleteStudent(string[] studentData)
+        public static void deleteStudent(int id)
         {
             ModelPerson studentToDelete = new ModelPerson();
-            studentToDelete.personId = Int32.Parse(studentData[0]);
-            studentToDelete.createObjectPerson();
-            studentToDelete.deleteObject();
-
+            studentToDelete.personId = id;
+            studentToDelete.deleteStudent();
         }
-        public static void deleteTeacher(string[] teacherData)
+        public static void deleteTeacher(int id)
         {
             ModelPerson teacherToDelete = new ModelPerson();
-            teacherToDelete.personId = Int32.Parse(teacherData[0]);
-            teacherToDelete.createObjectPerson();
-            teacherToDelete.deleteObject();
+            teacherToDelete.personId = id;
+            teacherToDelete.deleteTeacher();
         }
         public static List<string> getFeatures()
         {
@@ -59,11 +66,11 @@ namespace Negocio
             features = person.getFeatures();
             return features;
         }
-        public static List<string> getProfileData()
+        public static List<string> getProfileData(int userId)
         {
             List<string> profileData = new List<string>();
             ModelPerson person = new ModelPerson();
-            person.personId = Session.userId;
+            person.personId = userId;
             person.getProfileData();
             profileData.Add(person.userName);
             profileData.Add(person.ci);
@@ -98,10 +105,11 @@ namespace Negocio
         public static int getUserId(string userName)
         {
             ModelPerson user = new ModelPerson();
-            user.getUserId(userName);
+            user.userName = userName;
+            user.getUserId();
             return user.personId;
         }
-        public static void insertStudent(string[] studentData, string username, string password)
+        public static void insertStudent(string[] studentData, string userName, string password)
         {
             ModelStudent studentToInsert = new ModelStudent();
 
@@ -110,14 +118,15 @@ namespace Negocio
             studentToInsert.secondName = studentData[2];
             studentToInsert.firstSurname = studentData[3];
             studentToInsert.secondSurname = studentData[4];
-
-            studentToInsert.registerUser(username, DataBaseController.encryptPassword(password));
-            studentToInsert.getUserId(username);
+            studentToInsert.userName = userName;
+            studentToInsert.userPassword = DataBaseController.encryptPassword(password);
+            studentToInsert.registerUser();
+            studentToInsert.getUserId();
             studentToInsert.createObjectPerson();
             studentToInsert.insertObject();
             studentToInsert.assignUserRole(2); //roles.ID {1=Teacher, 2=Student}
         }
-        public static void insertTeacher(string[] teacherData, string username, string password)
+        public static void insertTeacher(string[] teacherData, string userName, string password)
         {
             ModelTeacher teacherToInsert = new ModelTeacher();
 
@@ -126,9 +135,11 @@ namespace Negocio
             teacherToInsert.secondName = teacherData[2];
             teacherToInsert.firstSurname = teacherData[3];
             teacherToInsert.secondSurname = teacherData[4];
-
-            teacherToInsert.registerUser(username, DataBaseController.encryptPassword(password));
-            teacherToInsert.getUserId(username);
+            teacherToInsert.userName = userName;
+            teacherToInsert.userPassword = DataBaseController.encryptPassword(password);
+            teacherToInsert.registerUser();
+            
+            teacherToInsert.getUserId();
             teacherToInsert.createObjectPerson();
             teacherToInsert.insertObject();
             teacherToInsert.assignUserRole(1); //roles.ID {1=Teacher, 2=Student}
@@ -158,29 +169,15 @@ namespace Negocio
             userNameToModify.updateUserName(userNameData, userIDData);
 
         }
-        public static void listTeacher(string[] teacherData)
+        public static DataTable listTeacher()
         {
             ModelTeacher teacherToList = new ModelTeacher();
-            teacherToList.personId = Int32.Parse(teacherData[0]);
-            teacherToList.ci = teacherData[1];
-            teacherToList.firstName = teacherData[2];
-            teacherToList.secondName = teacherData[3];
-            teacherToList.firstSurname = teacherData[4];
-            teacherToList.secondSurname = teacherData[5];
-            teacherToList.createObjectPerson();
-            teacherToList.listObjects();
+            return teacherToList.getUsersByRole(1);
         }
-        public static void listStudent(string[] studentData)
+        public static DataTable listStudent()
         {
             ModelStudent studentToList = new ModelStudent();
-            studentToList.personId = Int32.Parse(studentData[0]);
-            studentToList.ci = studentData[1];
-            studentToList.firstName = studentData[2];
-            studentToList.secondName = studentData[3];
-            studentToList.firstSurname = studentData[4];
-            studentToList.secondSurname = studentData[5];
-            studentToList.createObjectPerson();
-            studentToList.listObjects();
+            return studentToList.getUsersByRole(2);
         }
         public static void changePassword(string newPassword, string oldPassword)
         {

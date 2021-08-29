@@ -58,11 +58,11 @@
     <Compile Include="FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormRegisterPerson.cs">
+    <Compile Include="FormRegisterStudent.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormRegisterPerson.Designer.cs">
-      <DependentUpon>FormRegisterPerson.cs</DependentUpon>
+    <Compile Include="FormRegisterStudent.Designer.cs">
+      <DependentUpon>FormRegisterStudent.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -72,14 +72,20 @@
     <Compile Include="UserControlProfile.Designer.cs">
       <DependentUpon>UserControlProfile.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControlStudentInscriptions.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlStudentInscriptions.Designer.cs">
+      <DependentUpon>UserControlStudentInscriptions.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="FormLogIn.resx">
       <DependentUpon>FormLogIn.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormRegisterPerson.resx">
-      <DependentUpon>FormRegisterPerson.cs</DependentUpon>
+    <EmbeddedResource Include="FormRegisterStudent.resx">
+      <DependentUpon>FormRegisterStudent.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -92,6 +98,9 @@
     </Compile>
     <EmbeddedResource Include="UserControlProfile.resx">
       <DependentUpon>UserControlProfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlStudentInscriptions.resx">
+      <DependentUpon>UserControlStudentInscriptions.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

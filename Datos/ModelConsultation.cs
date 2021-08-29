@@ -48,7 +48,7 @@ namespace Datos
             DataTable consultationsReceived = new DataTable();
             string commandString;
             commandString =
-                "SELECT consults.ID, persons.First_Name, persons.First_Surname,Topic, State " +
+                "SELECT consults.ID, persons.First_Name, persons.First_Surname,Topic, consults.State " +
                 "FROM consults " +
                 "JOIN users AS sender ON consults.Sender_ID = sender.ID " +
                 "JOIN users AS receiver ON consults.Receiver_ID = receiver.ID " +
@@ -86,16 +86,6 @@ namespace Datos
             executeAndRead();
             return readString(0);
         }
-        public int getLastInsertId()
-        {
-            int lastInsertId;
-            string commandString;
-            commandString = 
-                "SELECT LAST_INSERT_ID();";
-            command.CommandText = commandString;
-            executeAndRead();
-            lastInsertId = readInt(0);
-            return lastInsertId;
-        }
+        
     }
 }

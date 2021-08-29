@@ -9,18 +9,18 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Negocio;
 
-namespace App_De_Alumo
+namespace Gestion
 {
-    public partial class FormRegisterPerson : Form
+    public partial class FormRegisterStudent : Form
     {
-        public FormRegisterPerson()
+        public FormRegisterStudent()
         {
             InitializeComponent();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Close();
         }
 
         private void btnRegister_Click(object sender, EventArgs e)
@@ -34,6 +34,7 @@ namespace App_De_Alumo
                 errorMessage(existenceCheckResult);
             else
                 registerUser();
+            Close();
         }
         private string checkUserExistence()
         {
@@ -86,6 +87,11 @@ namespace App_De_Alumo
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void FormRegisterStudent_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

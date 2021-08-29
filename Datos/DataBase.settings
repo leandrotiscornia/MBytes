@@ -12,7 +12,7 @@
       <Value Profile="(Default)">3306</Value>
     </Setting>
     <Setting Name="dbPassword" Type="System.String" Scope="User">
-      <Value Profile="(Default)">solarfenrir454</Value>
+      <Value Profile="(Default)">123</Value>
     </Setting>
     <Setting Name="dbUser" Type="System.String" Scope="User">
       <Value Profile="(Default)">root</Value>

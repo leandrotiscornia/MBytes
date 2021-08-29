@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using Negocio;
 using Consultas;
 
-namespace App_De_Alumo
+namespace App_De_Alumno 
 {
     public partial class FormMain : Form
     {
@@ -48,6 +48,14 @@ namespace App_De_Alumo
             UserControlProfile profile = new UserControlProfile();
             profile.Dock = DockStyle.Fill;
             pnlFunction.Controls.Add(profile);
+        }
+
+        private void btnInscriptions_Click(object sender, EventArgs e)
+        {
+            pnlFunction.Controls.Clear();
+            UserControlStudentInscriptions inscriptions = new UserControlStudentInscriptions();
+            inscriptions.Dock = DockStyle.Fill;
+            pnlFunction.Controls.Add(inscriptions);
         }
     }
 }

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Negocio;
 
-namespace App_De_Alumo
+namespace App_De_Alumno
 {
     public partial class FormLogIn : Form
     {
@@ -21,7 +21,7 @@ namespace App_De_Alumo
         private void btnLogIn_Click(object sender, EventArgs e)
         {
             string message = checkLogin();
-            if (message != "") //TODO Check if user is student
+            if (message != "") 
                 MessageBox.Show("" + message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
                 goToMain();
@@ -31,8 +31,6 @@ namespace App_De_Alumo
         {
             FormRegisterPerson registerForm = new FormRegisterPerson();
             registerForm.Show();
-           
-
         }
 
         private void btnExit_Click(object sender, EventArgs e)

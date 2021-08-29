@@ -1,4 +1,4 @@
-﻿namespace App_De_Alumo
+﻿namespace App_De_Alumno
 {
     partial class UserControlProfile
     {
