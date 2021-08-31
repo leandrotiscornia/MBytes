@@ -59,5 +59,23 @@ namespace Negocio
             session.sessionId = sessionId;
             return session.getEndTime();
         }
+        public static void setInactive(int userId, int sessionId)
+        {
+            ModelChatSession session = new ModelChatSession();
+            session.sessionId = sessionId;
+            session.setInactive(userId);
+        }
+        public static void joinSession(int userId, int sessionId)
+        {
+            ModelChatSession session = new ModelChatSession();
+            session.sessionId = sessionId;
+            session.joinSession(userId);
+        }
+        public static void abandonSession(int userId, int sessionId)
+        {
+            ModelChatSession session = new ModelChatSession();
+            session.sessionId = sessionId;
+            session.abandonSession(userId);
+        }
     }
 }

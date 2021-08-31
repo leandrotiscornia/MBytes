@@ -30,6 +30,7 @@ namespace Chat
     {
         public DispatcherTimer messagePool { get; set; }
         public DispatcherTimer statusCheck { get; set; }
+        public DispatcherTimer activityCheck { get; set; }
         private int _chatId;
         public ConnectedUser host { get; set; }
         public ConnectedUser teacher { get; set; }
@@ -42,16 +43,24 @@ namespace Chat
             messagePool.Interval = TimeSpan.FromSeconds(0.5);
             messagePool.Tick += pool_Tick;
             messagePool.Start();
-
+            
             statusCheck = new DispatcherTimer();
             statusCheck.Interval = TimeSpan.FromSeconds(3);
             statusCheck.Tick += status_Tick;
             statusCheck.Start();
+
+            activityCheck = new DispatcherTimer();
+            activityCheck.Interval = TimeSpan.FromMinutes(0.5);
+            activityCheck.Tick += activity_Tick;
+            activityCheck.Start();
+
             InitializeComponent();
             _chatId = chatId;
             loadMessages();
-            
-
+        }
+        private void activity_Tick(object sender, EventArgs e)
+        {
+            setInactive();
         }
         private void pool_Tick(object sender, EventArgs e)
         {
@@ -79,15 +88,14 @@ namespace Chat
             {
                 if(!messageDictionary.ContainsKey(int.Parse(messageRow["ID"].ToString())))
                 {
-                    messageDictionary.Add(int.Parse(messageRow["ID"].ToString()), new ChatMessage
-                        (
-                        int.Parse(messageRow["ID"].ToString()),
-                        messageRow.Field<DateTime>("Time"),
-                        messageRow.Field<string>("Text"),
-                        PersonController.getPersonNick(int.Parse(messageRow["Sender_ID"].ToString())),
-                        messageRow.Field<int>("Sender_ID"),
-                        _chatId,
-                        messageRow.Field<string>("CI")));
+                    messageDictionary.Add(int.Parse(messageRow["ID"].ToString()), new ChatMessage(
+                    int.Parse(messageRow["ID"].ToString()),
+                    messageRow.Field<DateTime>("Time"),
+                    messageRow.Field<string>("Text"),
+                    PersonController.getPersonNick(int.Parse(messageRow["Sender_ID"].ToString())),
+                    messageRow.Field<int>("Sender_ID"),
+                    _chatId,
+                    messageRow.Field<string>("CI")));
                 }
             }
             
@@ -95,49 +103,25 @@ namespace Chat
         }
         public void loadUsers()
         {
-            //DataTable userTable = ChatSessionController.getStudents(_chatId);
 
-            //for (int index = 0; index <= userTable.Rows.Count - 1; index++)
-            //{
-            //    if(students.Where(student => student.userId == int.Parse(userTable.Rows[index]["ID"].ToString())).Any())
-            //    {
-            //        students.Add(new ConnectedUser(
-            //        int.Parse(userTable.Rows[index]["ID"].ToString()),
-            //        userTable.Rows[index]["CI"].ToString(),
-            //        userTable.Rows[index]["Nick_Name"].ToString(),
-            //        userTable.Rows[index]["First_Name"] + " " + userTable.Rows[index]["First_Surname"],
-            //        userTable.Rows[index]["Name"].ToString(),
-            //        userTable.Rows[index]["Status"].ToString()
-            //        ));
-            //    }
-            //    studentsBox.ItemsSource = students;
+            Dictionary<int, ConnectedUser> studentDictionary = new Dictionary<int, ConnectedUser>();
 
-                Dictionary<int, ConnectedUser> studentDictionary = new Dictionary<int, ConnectedUser>();
-
-                foreach (DataRow studentRow in ChatSessionController.getStudents(_chatId).Rows)
+            foreach (DataRow studentRow in ChatSessionController.getStudents(_chatId).Rows)
+            {
+                if (!studentDictionary.ContainsKey(int.Parse(studentRow["ID"].ToString()))) 
                 {
-                    if (!studentDictionary.ContainsKey(int.Parse(studentRow["ID"].ToString())))
-                    {
-                        studentDictionary.Add(int.Parse(studentRow["ID"].ToString()), new ConnectedUser(
-                        int.Parse(studentRow["ID"].ToString()),
-                        studentRow["CI"].ToString(),
-                        studentRow["Nick_Name"].ToString(),
-                        studentRow["First_Name"] + " " + studentRow["First_Surname"],
-                        studentRow["Name"].ToString(),
-                        studentRow["Status"].ToString()
-                        ));
-                    }
+                    studentDictionary.Add(int.Parse(studentRow["ID"].ToString()), new ConnectedUser(
+                    int.Parse(studentRow["ID"].ToString()),
+                    studentRow["CI"].ToString(),
+                    studentRow["Nick_Name"].ToString(),
+                    studentRow["First_Name"] + " " + studentRow["First_Surname"],
+                    studentRow["Name"].ToString(),
+                    studentRow["Status"].ToString()
+                    ));
                 }
+            }
             studentsBox.ItemsSource = studentDictionary;
-            //else if (students[index].userId == int.Parse(userTable.Rows[index]["ID"].ToString()))
-            //{
-            //    students[index].userNick = userTable.Rows[index]["CI"].ToString();
-            //    students[index].personalName = userTable.Rows[index]["First_Name"] + " " + userTable.Rows[index]["First_Surname"];
-            //    students[index].userRole = userTable.Rows[index]["Name"].ToString();
-            //    students[index].status = userTable.Rows[index]["Status"].ToString();
-            //}
-
-        //}
+           
         }
         
         public void sendMessage()
@@ -150,16 +134,31 @@ namespace Chat
         private void BtnSend_Click(object sender, RoutedEventArgs e)
         {
             if (tbMessage.Text != "") sendMessage();
+            resetTimer(activityCheck);
         }
 
        
-        private void UserControl_KeyUp(object sender, KeyEventArgs e)
+        
+
+        private void resetTimer(DispatcherTimer timer)
         {
-            if (tbMessage.IsFocused && e.Key == Key.Enter && tbMessage.Text != "")
-                sendMessage();
+            timer.Stop();
+            timer.Start();
+        }
+        private void setInactive()
+        {
+            ChatSessionController.setInactive(Session.userId, _chatId);
         }
 
-       
+        private void TbMessage_TextInput(object sender, TextCompositionEventArgs e)
+        {
+            resetTimer(activityCheck);
+        }
+
+        private void TbMessage_TouchEnter(object sender, TouchEventArgs e)
+        {
+            if (tbMessage.Text != "") sendMessage();
+        }
     }
     
 }

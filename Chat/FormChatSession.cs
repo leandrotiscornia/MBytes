@@ -23,7 +23,6 @@ namespace Chat
             _readOnlyMode = readOnlyMode;
             _hostId = hostId;
             InitializeComponent();
-            
         }
         private void messagesControl_closeSession(object sender, EventArgs e)
         {
@@ -48,12 +47,22 @@ namespace Chat
         private void FormChatSession_FormClosing(object sender, FormClosingEventArgs e)
         {
             if (_hostId == Session.userId) closeSession();
+            else abandonSession();
+        }
+
+        private void abandonSession()
+        {
+            ChatSessionController.abandonSession(Session.userId, _chatId);
+            messagesControl.messagePool.Stop();
+            messagesControl.statusCheck.Stop();
+            messagesControl.activityCheck.Stop();
         }
         private void closeSession()
         {
             ChatSessionController.closeSession(_chatId);
             messagesControl.messagePool.Stop();
             messagesControl.statusCheck.Stop();
+            messagesControl.activityCheck.Stop();
         }
     }
     

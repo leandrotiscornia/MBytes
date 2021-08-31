@@ -61,6 +61,7 @@ namespace Chat
             {
                 FormChatSession chatSession = new FormChatSession(getChatId(lvSessions.SelectedItems[0]), false, getHostId(lvSessions.SelectedItems[0]));
                 chatSession.Show();
+                ChatSessionController.joinSession(Session.userId, getChatId(lvSessions.SelectedItems[0]));
             }
             else if (lvRegisters.SelectedItems.Count > 0 && tcChat.SelectedTab.Name == "tpRegisters")
             {

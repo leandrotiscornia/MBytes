@@ -14,6 +14,7 @@ namespace Chat
         private string _userNick;
         private string _personalName;
         private string _userRole;
+        public string status { get; set; }
         public string statusColor { get; set; }
         public string opacity { get; set; }
         public string picture { get; set; }
@@ -25,7 +26,8 @@ namespace Chat
             _personalName = personalName;
             _userRole = userRole;
             picture = PictureController.getPicturePath() + userCI;
-            opacity = "100%";
+            opacity = "1";
+            this.status = status;
             switch (status)
             {
                 case "Online":
@@ -33,7 +35,7 @@ namespace Chat
                     break;
                 case "Offline":
                     statusColor = "#FF9EA8A7";
-                    opacity = "20%";
+                    opacity = "0.5";
                     break;
                 case "Invited":
                     statusColor = "#FF1FCDBD";

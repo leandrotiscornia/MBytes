@@ -131,10 +131,9 @@ namespace Datos
         public void joinSession(int userId)
         {
             string commandString =
-                "UPDATE chatparticipants " +
-                "SET Status = 'Online' " +
-                "WHERE Chat_ID = @sessionsId AND " +
-                "User_ID = @userId";
+                "INSERT INTO chatparticipants " +
+                "(Chat_ID, User_ID, Status) " +
+                "VALUES(@sessionId, @userId, 'Online')";
             command.CommandText = commandString;
             command.Parameters.AddWithValue("@sessionId", sessionId);
             command.Parameters.AddWithValue("@userId", userId);
@@ -145,7 +144,7 @@ namespace Datos
             string commandString =
                 "UPDATE chatparticipants " +
                 "SET Status = 'Inactive' " +
-                "WHERE Chat_ID = @sessionsId AND " +
+                "WHERE Chat_ID = @sessionId AND " +
                 "User_ID = @userId";
             command.CommandText = commandString;
             command.Parameters.AddWithValue("@sessionId", sessionId);
@@ -157,7 +156,7 @@ namespace Datos
             string commandString =
                 "UPDATE chatparticipants " +
                 "SET Status = 'Offline' " +
-                "WHERE Chat_ID = @sessionsId AND " +
+                "WHERE Chat_ID = @sessionId AND " +
                 "User_ID = @userId";
             command.CommandText = commandString;
             command.Parameters.AddWithValue("@sessionId", sessionId);
