@@ -35,5 +35,29 @@ namespace Negocio
             session.endTime = DateTime.Now;
             session.closeSession();
         }
+        public static DataTable getHost (int sessionId)
+        {
+            ModelChatSession session = new ModelChatSession();
+            session.sessionId = sessionId;
+            return session.showHost();
+        }
+        public static DataTable getStudents(int sessionId)
+        {
+            ModelChatSession session = new ModelChatSession();
+            session.sessionId = sessionId;
+            return session.showStudents();
+        }
+        public static DataTable getTeacher(int sessionId)
+        {
+            ModelChatSession session = new ModelChatSession();
+            session.sessionId = sessionId;
+            return session.showTeacher();
+        }
+        public static string checkSessionEndTime(int sessionId)
+        {
+            ModelChatSession session = new ModelChatSession();
+            session.sessionId = sessionId;
+            return session.getEndTime();
+        }
     }
 }

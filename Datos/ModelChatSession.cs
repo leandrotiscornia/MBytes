@@ -61,7 +61,7 @@ namespace Datos
         public DataTable listSessions()
         {
             string commandString =
-                "SELECT ID, Name, Host_ID, Start_Time " +
+                "SELECT ID, Host_ID, Name, Start_Time " +
                 "FROM chatsessions " +
                 "WHERE End_Time IS NULL";
             command.CommandText = commandString;
@@ -71,7 +71,7 @@ namespace Datos
         public DataTable listRegisters()
         {
             string commandString =
-                "SELECT ID, Name, Host_ID, Start_Time, End_Time " +
+                "SELECT ID, Host_ID, Name, Start_Time, End_Time " +
                 "FROM chatsessions " +
                 "WHERE End_Time IS NOT NULL";
             command.CommandText = commandString;
@@ -81,29 +81,50 @@ namespace Datos
         public DataTable showHost()
         {
             string commandString =
-                "SELECT persons.Nick_Name, persons.First_Name, persons.Second_Name, roles.Name " +
+                "SELECT persons.ID, persons.CI, persons.Nick_Name, persons.First_Name, " +
+                "persons.First_Surname, roles.Name " +
                 "FROM chatsessions " +
                 "JOIN users ON users.ID = chatSessions.Host_ID " +
                 "JOIN persons ON persons.ID = users.ID " +
-                "JOIN personsis ON persons.CI = personis.Person_CI " +
+                "JOIN personis ON persons.CI = personis.Person_CI " +
                 "JOIN roles On roles.ID = personis.Role_ID " +
                 "WHERE chatsessions.ID = @sessionId";
             command.CommandText = commandString;
+            command.Parameters.AddWithValue("@sessionId", sessionId);
             executeAndRead();
             return readTable();
         }
-        public DataTable showUsers()
+        public DataTable showTeacher()
         {
             string commandString =
-                "SELECT persons.Nick_Name, persons.First_Name, persons.Second_Name, roles.Name, chatparticipants.Status " +
+                "SELECT persons.ID, persons.CI, persons.Nick_Name, persons.First_Name, " +
+                "persons.First_Surname, roles.Name, chatparticipants.Status " +
                 "FROM chatsessions " +
                 "JOIN chatparticipants ON chatparticipants.Chat_ID = chatsessions.ID" +
                 "JOIN users ON users.ID = chatparticipants.User_ID " +
                 "JOIN persons ON persons.ID = users.ID " +
-                "JOIN personsis ON persons.CI = personis.Person_CI " +
+                "JOIN personis ON persons.CI = personis.Person_CI " +
                 "JOIN roles On roles.ID = personis.Role_ID " +
-                "WHERE chatsessions.ID = @sessionId";
+                "WHERE chatsessions.ID = @sessionId AND roles.ID = 1";
             command.CommandText = commandString;
+            command.Parameters.AddWithValue("@sessionId", sessionId);
+            executeAndRead();
+            return readTable();
+        }
+        public DataTable showStudents()
+        {
+            string commandString =
+                "SELECT persons.ID, persons.CI, persons.Nick_Name, persons.First_Name, " +
+                "persons.First_Surname, roles.Name, chatparticipants.Status " +
+                "FROM chatsessions " +
+                "JOIN chatparticipants ON chatparticipants.Chat_ID = chatsessions.ID " +
+                "JOIN users ON users.ID = chatparticipants.User_ID " +
+                "JOIN persons ON persons.ID = users.ID " +
+                "JOIN personis ON persons.CI = personis.Person_CI " +
+                "JOIN roles On roles.ID = personis.Role_ID " +
+                "WHERE chatsessions.ID = @sessionId AND roles.ID = 2";
+            command.CommandText = commandString;
+            command.Parameters.AddWithValue("@sessionId", sessionId);
             executeAndRead();
             return readTable();
         }
@@ -142,6 +163,20 @@ namespace Datos
             command.Parameters.AddWithValue("@sessionId", sessionId);
             command.Parameters.AddWithValue("@userId", userId);
             executeVoid();
+        }
+        public string getEndTime()
+        {
+            string endTime;
+            string commandString =
+                "SELECT End_Time " +
+                "FROM chatsessions " +
+                "WHERE ID = @sessionId";
+            command.CommandText = commandString;
+            command.Parameters.AddWithValue("@sessionId", sessionId);
+            executeAndRead();
+            endTime = readString(0);
+            connection.Close();
+            return endTime;
         }
     }
 }

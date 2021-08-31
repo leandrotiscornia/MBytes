@@ -21,19 +21,9 @@ namespace Chat
             InitializeComponent();
             
         }
-        /*ListViewItem item;
-            lvNewConsults.Items.Clear();
-            if(personsTable.Rows.Count > 0)
-            {
-                foreach (DataRow person in personsTable.Rows)
-                {
-                    item = new ListViewItem(person[1].ToString());
-                    item.SubItems.Add(person[2].ToString() + " " + person[4].ToString());
-                    item.SubItems.Add(person[0].ToString());
-                    item.SubItems.Add(person[6].ToString());
-                    lvNewConsults.Items.Add(item);
-                }
-            }*/
+
+        Func<ListViewItem, int> getChatId = item => int.Parse(item.SubItems[0].Text);
+        Func<ListViewItem, int> getHostId = item => int.Parse(item.SubItems[1].Text);
         private void loadSessions()
         {
             DataTable sessions = ChatSessionController.listSessions();
@@ -62,19 +52,19 @@ namespace Chat
         }
         private void createSession()
         {
-            FormChatSession chatSession = new FormChatSession(ChatSessionController.openSession(Session.userId, tbSessionName.Text), false);
+            FormChatSession chatSession = new FormChatSession(ChatSessionController.openSession(Session.userId, tbSessionName.Text), false, Session.userId);
             chatSession.Show();
         }
         private void joinSession()
         {
             if (lvSessions.SelectedIndices.Count > 0 && tcChat.SelectedTab.Name == "tpSessions")
             {
-                FormChatSession chatSession = new FormChatSession(int.Parse(lvSessions.SelectedItems[0].SubItems[0].Text), false);
+                FormChatSession chatSession = new FormChatSession(getChatId(lvSessions.SelectedItems[0]), false, getHostId(lvSessions.SelectedItems[0]));
                 chatSession.Show();
             }
             else if (lvRegisters.SelectedItems.Count > 0 && tcChat.SelectedTab.Name == "tpRegisters")
             {
-                FormChatSession chatRegister = new FormChatSession(int.Parse(lvRegisters.SelectedItems[0].SubItems[0].Text), true);
+                FormChatSession chatRegister = new FormChatSession(getChatId(lvRegisters.SelectedItems[0]), true, getHostId(lvRegisters.SelectedItems[0]));
                 chatRegister.Show();
             }
         }

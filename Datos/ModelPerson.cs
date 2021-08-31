@@ -243,15 +243,10 @@ namespace Datos
                 "WHERE ID = @userId";
             command.CommandText = commandString;
             command.Parameters.AddWithValue("@userId", personId);
-            command.Prepare();
-            reader = command.ExecuteReader();
-            reader.Read();
-            if (!reader.IsDBNull(0))
-                personName = reader.GetString(0) + " " + reader.GetString(1);
-            else
-                personName = null;
-            command.Parameters.Clear();
-            reader.Close();
+            executeAndRead();
+            personName = readString(0) + " " + readString(1);
+            Console.WriteLine("EL NOMBRE ES: " + personName);
+            connection.Close();
             return personName;
         }
         public string getPersonNick()
@@ -264,14 +259,8 @@ namespace Datos
                 "WHERE ID = @userId";
             command.CommandText = commandString;
             command.Parameters.AddWithValue("@userId", personId);
-            command.Prepare();
-            reader = command.ExecuteReader();
-            reader.Read();
-            if (!reader.IsDBNull(0))
-                personNickName = reader.GetString(0);
-            else
-                personNickName = null;
-            command.Parameters.Clear();
+            executeAndRead();
+            personNickName = readString(0);
             reader.Close();
             return personNickName;
         }

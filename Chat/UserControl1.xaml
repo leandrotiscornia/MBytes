@@ -7,7 +7,7 @@
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid x:Name="grid" Width="200" Height="50">
-        <Border Background="Black" BorderThickness="1" CornerRadius="50" Width="50" Margin="140,-34,10,34" Padding="0,20,0,0" Height="50" VerticalAlignment="Bottom"/>
+        <Border Background="Black" BorderThickness="1" CornerRadius="50" Width="50" Margin="140,-34,10,40" Padding="0,20,0,0" Height="50" VerticalAlignment="Bottom"/>
         <Border x:Name="messageColor" Background="#FF9935D3" CornerRadius="15 15 0 15" Padding="5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" MaxWidth="200">
             <TextBlock  x:Name="messageText"  TextWrapping="Wrap" Text="ESTO ES UNA PRUEBA" FontSize="14" HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="0" Padding="7,10,0,12"/>
         </Border>

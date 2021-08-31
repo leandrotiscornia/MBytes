@@ -15,30 +15,45 @@ namespace Chat
     {
         private int _chatId;
         UserControlMessages messagesControl;
+        private int _hostId;
         private bool _readOnlyMode;
-        public FormChatSession(int chatId, bool readOnlyMode)
+        public FormChatSession(int chatId, bool readOnlyMode, int hostId)
         {
             _chatId = chatId;
             _readOnlyMode = readOnlyMode;
+            _hostId = hostId;
             InitializeComponent();
+            
         }
-
+        private void messagesControl_closeSession(object sender, EventArgs e)
+        {
+            messagesControl.messagePool.Stop();
+            messagesControl.statusCheck.Stop();
+            Close();
+        }
         private void FormChatSession_Load(object sender, EventArgs e)
         {
             messagesControl = new UserControlMessages(_chatId);
+            messagesControl.closeSession += new EventHandler(messagesControl_closeSession);
             if (_readOnlyMode)
             {
                 messagesControl.tbMessage.IsEnabled = false;
                 messagesControl.btnSend.IsEnabled = false;
-                messagesControl.timer.IsEnabled = false;
+                messagesControl.messagePool.IsEnabled = false;
+                messagesControl.statusCheck.IsEnabled = false;
             }
             messageHost.Child = messagesControl;
         }
 
         private void FormChatSession_FormClosing(object sender, FormClosingEventArgs e)
         {
+            if (_hostId == Session.userId) closeSession();
+        }
+        private void closeSession()
+        {
             ChatSessionController.closeSession(_chatId);
-            messagesControl.timer.Stop();
+            messagesControl.messagePool.Stop();
+            messagesControl.statusCheck.Stop();
         }
     }
     

@@ -6,6 +6,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 using System.Windows.Forms;
 using Negocio;
 
@@ -17,15 +18,14 @@ namespace App_de_Docente
         public UserControlProfile()
         {
             InitializeComponent();
+            pictureSelector.Filter = "Image files(*.jpg, *.jpeg, *.jpe, *.jfif, *.png) | *.jpg; *.jpeg; *.jpe; *.jfif; *.png";
         }
         private void UserControlProfile_Load(object sender, EventArgs e)
         {
             hideModifyProfileInfo();
             loadUserData();
         }
-        //TODO Save user picture, file in a folde, directory stored in Database
-        //TODO Load user picture, using directory stored in Database
-
+       
 
         private void loadUserData()
         {
@@ -43,6 +43,7 @@ namespace App_de_Docente
             txtNewSecondName.Text = profileData[3];
             txtNewFirstSurname.Text = profileData[4];
             txtNewSecondSurname.Text = profileData[5];
+            loadPicture();
         }
 
         private void btnChangeUserName_Click(object sender, EventArgs e)
@@ -136,7 +137,19 @@ namespace App_de_Docente
         {
             modifyProfile();
         }
-
+        private void savePicture()
+        {
+            if (pictureSelector.ShowDialog() == DialogResult.OK)
+            {
+                File.Copy(pictureSelector.FileName, Path.Combine(PictureController.getPicturePath(), Session.ci), true);
+                loadPicture();
+            }
+        }
+        private void loadPicture()
+        {
+            if (File.Exists(Path.Combine(PictureController.getPicturePath(), Session.ci)))
+                pbUserPicture.Image = Image.FromFile(Path.Combine(PictureController.getPicturePath(), Session.ci));
+        }
         private void btnConfirmInfo_Click(object sender, EventArgs e)
         {
             if (txtNewFirstName.Text == null)
@@ -152,7 +165,7 @@ namespace App_de_Docente
         }
         private void btnChangePicture_Click_1(object sender, EventArgs e)
         {
-            MessageBox.Show("Feature not added yet", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            savePicture();
         }
         private void btnChangePassword_Click(object sender, EventArgs e)
         {

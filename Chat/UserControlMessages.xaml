@@ -11,12 +11,34 @@
         <DataTemplate x:Key="MessagesTemplate">
             <DockPanel>
                 <Grid x:Name="grid" Width="200" MinHeight="50"  VerticalAlignment="Top" HorizontalAlignment="{Binding Path=Value.align}" Margin="0,40,0,0">
-                    <Border Background="Black" BorderThickness="1" CornerRadius="50" Width="50" Height="50" Margin="{Binding Path=Value.pictureAlign}" VerticalAlignment="Top"/>
+                    <Border Background="#FFCDCDCD" BorderThickness="1" CornerRadius="50" Width="50" Height="50" Margin="{Binding Path=Value.pictureAlign}" VerticalAlignment="Top" Padding="2">
+                        <Ellipse>
+                            <Ellipse.Fill>
+                                <ImageBrush ImageSource="{Binding Path=Value.picture}" />
+                            </Ellipse.Fill>
+                        </Ellipse>
+                    </Border>
                     <Border x:Name="messageColor" Background="{Binding Path=Value.color}" CornerRadius="{Binding Path=Value.corner}" Padding="5" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" MaxWidth="200">
                         <TextBlock  x:Name="messageText"  TextWrapping="Wrap" Text="{Binding Path=Value.text}" FontSize="14" HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="0" Padding="7,10,0,12"/>
                     </Border>
-                    <TextBlock x:Name="senderName" Text="{Binding Path=Value.senderName}"  Foreground="White" VerticalAlignment="Top" HorizontalAlignment="Left" Padding="11,0,0,0"></TextBlock>
+                    <TextBlock x:Name="senderName" Text="{Binding Path=Value.senderName}"  Foreground="White" VerticalAlignment="Top" HorizontalAlignment="Left" Padding="11,0,0,0" Margin="0,5,0,0"></TextBlock>
                     <TextBlock x:Name="time" Text="{Binding Path=Value.time}"  VerticalAlignment="Bottom" HorizontalAlignment="Right" Padding="0,0,8,0"></TextBlock>
+                </Grid>
+            </DockPanel>
+        </DataTemplate>
+        <DataTemplate x:Key="UsersTemplate">
+            <DockPanel>
+                <Grid Margin="0,10,0,0" Opacity="{Binding Path}">
+                    <Border Background="#FFCDCDCD" CornerRadius="30" Width="30" Height="30" Margin="3,2,187,18" Padding="1">
+                        <Ellipse>
+                            <Ellipse.Fill>
+                                <ImageBrush ImageSource="{Binding Path=Value.picture}" />
+                            </Ellipse.Fill>
+                        </Ellipse>
+                    </Border>
+                    <Border Background="{Binding Path=Value.statusColor}" CornerRadius="10" Width="10" Height="10" Margin="23,22,187,18" RenderTransformOrigin="0.067,0.067"/>
+                    <TextBlock Text="{Binding Path=Value.userNick}" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="43,2,109,29" FontSize="14" Foreground="#FFC71B1B"></TextBlock>
+                    <TextBlock Text="{Binding Path=Value.personalName}" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="43,21,97,13" Foreground="#FFDCD2D2"></TextBlock>
                 </Grid>
             </DockPanel>
         </DataTemplate>
@@ -30,14 +52,14 @@
                             <ContentPresenter />
                         </Border>
                         <ControlTemplate.Triggers>
-                            
+
                         </ControlTemplate.Triggers>
                     </ControlTemplate>
                 </Setter.Value>
             </Setter>
         </Style>
     </UserControl.Resources>
-    
+
 
     <Grid Width="700" Height="700">
         <Grid Background="{DynamicResource {x:Static SystemColors.ControlDarkDarkBrushKey}}">
@@ -45,14 +67,37 @@
                 <ColumnDefinition Width="17*" />
                 <ColumnDefinition Width="8*" />
             </Grid.ColumnDefinitions>
+
             <ListBox x:Name="messageBox" Grid.Column ="0" Margin="0,0,0,60" Background="#FF464242" 
                      ItemTemplate="{StaticResource MessagesTemplate}" HorizontalContentAlignment="Stretch"
                      ItemContainerStyle="{StaticResource noHighLight}"/>
 
+            <Grid Grid.Column="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="70"/>
+                    <RowDefinition Height="70"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                
+                <TextBlock Grid.Row="0" Text="Host:" FontSize="14" Foreground="#FFD32C2C" 
+                           HorizontalAlignment="Left" VerticalAlignment="Top" Panel.ZIndex="1" FontWeight="Bold"></TextBlock>
+                <TextBlock Grid.Row="1" Text="Teacher:" HorizontalAlignment="Left" 
+                           VerticalAlignment="Top" FontSize="14" Panel.ZIndex="1" Foreground="#FF3D38B9" FontWeight="Bold"></TextBlock>
+                <TextBlock Grid.Row="2" Text="Students:" VerticalAlignment="Top" 
+                           HorizontalAlignment="Left" FontSize="14" Panel.ZIndex="1" Foreground="#FF31A020" FontWeight="Bold"></TextBlock>
+                
+                <ListBox x:Name="hostBox" Grid.Row="0" Background="{DynamicResource 
+                        {x:Static SystemColors.ControlDarkDarkBrushKey}}" BorderBrush="{DynamicResource {x:Static SystemColors.ControlDarkBrushKey}}" 
+                         ItemTemplate="{StaticResource UsersTemplate}"/>
+                <ListBox x:Name="teacherBox" Grid.Row="1" Background="{DynamicResource 
+                        {x:Static SystemColors.ControlDarkDarkBrushKey}}" BorderBrush="{DynamicResource {x:Static SystemColors.ControlDarkBrushKey}}" 
+                         ItemTemplate="{StaticResource UsersTemplate}"/>
+                <ListBox x:Name="studentsBox" Grid.Row="2" Background="{DynamicResource 
+                        {x:Static SystemColors.ControlDarkDarkBrushKey}}" BorderBrush="{DynamicResource {x:Static SystemColors.ControlDarkBrushKey}}" 
+                         ItemTemplate="{StaticResource UsersTemplate}"/>
+            </Grid>
 
-            <StackPanel Grid.Column="1" Background="{DynamicResource {x:Static SystemColors.ControlDarkDarkBrushKey}}">
-                <Label x:Name="we" Content="Label" Foreground="#FFE41414"/>
-            </StackPanel>
+
             <TextBox x:Name="tbMessage" HorizontalAlignment="Left" Height="23" Margin="10,667,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="368" Background="#FFAEADAD"/>
             <Button x:Name="btnSend" Content="Send" HorizontalAlignment="Left" Margin="383,667,0,10" Width="83" Background="#FFAEA9A9" Click="BtnSend_Click"/>
         </Grid>
