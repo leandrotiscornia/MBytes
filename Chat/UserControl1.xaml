@@ -12,6 +12,7 @@
             <TextBlock  x:Name="messageText"  TextWrapping="Wrap" Text="ESTO ES UNA PRUEBA" FontSize="14" HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="0" Padding="7,10,0,12"/>
         </Border>
         <TextBlock x:Name="senderName" Text="El Carlito'"  Foreground="White" VerticalAlignment="Top" HorizontalAlignment="Left" Padding="11,0,0,0"></TextBlock>
-        <TextBlock x:Name="time" Text="29/08/2021 15:27:30"  VerticalAlignment="Bottom" HorizontalAlignment="Right" Padding="0,0,8,0"></TextBlock>
+        <TextBlock x:Name="time" Text="29/08/2021 15:27:30"  VerticalAlignment="Bottom" HorizontalAlignment="Right" Padding="0,0,8,0" Margin="0,0,74,-16" Foreground="#FFAEAEAE"></TextBlock>
+        <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Height="14" Margin="140,36,0,0" VerticalAlignment="Top" Width="60" Background="#FFC91010" BorderBrush="#FFE81414"/>
     </Grid>
 </UserControl>

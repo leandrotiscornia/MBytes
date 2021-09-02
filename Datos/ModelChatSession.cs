@@ -177,6 +177,19 @@ namespace Datos
             connection.Close();
             return endTime;
         }
+        public void setActive(int userId)
+        {
+            string commandString =
+                "UPDATE chatparticipants " +
+                "SET Status = 'Online' " +
+                "WHERE Chat_ID = @sessionId AND " +
+                "User_ID = @userId";
+            command.CommandText = commandString;
+            command.Parameters.AddWithValue("@sessionId", sessionId);
+            command.Parameters.AddWithValue("@userId", userId);
+            executeVoid();
+        }
+
     }
 }
         

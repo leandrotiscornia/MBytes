@@ -22,7 +22,8 @@
                         <TextBlock  x:Name="messageText"  TextWrapping="Wrap" Text="{Binding Path=Value.text}" FontSize="14" HorizontalAlignment="Left" VerticalAlignment="Stretch" Margin="0" Padding="7,10,0,12"/>
                     </Border>
                     <TextBlock x:Name="senderName" Text="{Binding Path=Value.senderName}"  Foreground="White" VerticalAlignment="Top" HorizontalAlignment="Left" Padding="11,0,0,0" Margin="0,5,0,0"></TextBlock>
-                    <TextBlock x:Name="time" Text="{Binding Path=Value.time}"  VerticalAlignment="Bottom" HorizontalAlignment="Right" Padding="0,0,8,0"></TextBlock>
+                    <TextBlock x:Name="time" Text="{Binding Path=Value.time}"  VerticalAlignment="Bottom" HorizontalAlignment="Right" Padding="0,0,8,0" Margin="{Binding Path=Value.timeAlign}" 
+                               Foreground="#FFAEAEAE"></TextBlock>
                 </Grid>
             </DockPanel>
         </DataTemplate>

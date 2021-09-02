@@ -18,6 +18,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using JB.Collections.Reactive;
 using System.Windows.Threading;
 using System.Collections.Specialized;
 
@@ -34,11 +35,17 @@ namespace Chat
         private int _chatId;
         public ConnectedUser host { get; set; }
         public ConnectedUser teacher { get; set; }
-        public ObservableCollection<ConnectedUser> students { get; set; } = new ObservableCollection<ConnectedUser>();
         public EventHandler closeSession;
+        public ObservableDictionary<int, ChatMessage> messageDictionary { get; set;}
+        ObservableDictionary<int, ConnectedUser> studentDictionary { get; set; }
+        private string userStatus;
         
         public UserControlMessages(int chatId)
         {
+            studentDictionary = new ObservableDictionary<int, ConnectedUser>();
+            messageDictionary = new ObservableDictionary<int, ChatMessage>();
+            userStatus = "Online";
+            
             messagePool = new DispatcherTimer();
             messagePool.Interval = TimeSpan.FromSeconds(0.5);
             messagePool.Tick += pool_Tick;
@@ -57,6 +64,9 @@ namespace Chat
             InitializeComponent();
             _chatId = chatId;
             loadMessages();
+            loadUsers();
+            messageBox.ItemsSource = messageDictionary;
+            studentsBox.ItemsSource = studentDictionary;
         }
         private void activity_Tick(object sender, EventArgs e)
         {
@@ -77,36 +87,37 @@ namespace Chat
             if (endTime != null)
             {
                 MessageBox.Show("This session was closed at " + endTime, "Warning", MessageBoxButton.OK, MessageBoxImage.Information);
+                Focusable = false;
                 closeSession?.Invoke(this, null);
             }
         }
         private void loadMessages()
         {
-            Dictionary<int, ChatMessage> messageDictionary = new Dictionary<int, ChatMessage>();
-            
+            int messageIdIndex;
             foreach (DataRow messageRow in ChatMessageController.listMessages(_chatId).Rows)
             {
-                if(!messageDictionary.ContainsKey(int.Parse(messageRow["ID"].ToString())))
+                messageIdIndex = int.Parse(messageRow["ID"].ToString());
+                if (!messageDictionary.ContainsKey(messageIdIndex))
                 {
-                    messageDictionary.Add(int.Parse(messageRow["ID"].ToString()), new ChatMessage(
-                    int.Parse(messageRow["ID"].ToString()),
+                    messageDictionary.Add(messageIdIndex, new ChatMessage(
+                    messageIdIndex,
                     messageRow.Field<DateTime>("Time"),
                     messageRow.Field<string>("Text"),
                     PersonController.getPersonNick(int.Parse(messageRow["Sender_ID"].ToString())),
                     messageRow.Field<int>("Sender_ID"),
                     _chatId,
                     messageRow.Field<string>("CI")));
+                } else if (messageDictionary[messageIdIndex].text != messageRow.Field<string>("Text"))
+                {
+                    messageDictionary[messageIdIndex].text = messageRow.Field<string>("Text");
+                    messageDictionary[messageIdIndex].time = messageRow.Field<DateTime>("Time");
                 }
             }
             
-            messageBox.ItemsSource = messageDictionary;
+            
         }
         public void loadUsers()
-        {
-
-            Dictionary<int, ConnectedUser> studentDictionary = new Dictionary<int, ConnectedUser>();
-
-            foreach (DataRow studentRow in ChatSessionController.getStudents(_chatId).Rows)
+        {            foreach (DataRow studentRow in ChatSessionController.getStudents(_chatId).Rows)
             {
                 if (!studentDictionary.ContainsKey(int.Parse(studentRow["ID"].ToString()))) 
                 {
@@ -120,10 +131,13 @@ namespace Chat
                     ));
                 }
             }
-            studentsBox.ItemsSource = studentDictionary;
+            
            
         }
-        
+        public void readMessages()
+        {
+
+        }
         public void sendMessage()
         {
             ChatMessageController.sendMessage(_chatId, Session.userId, tbMessage.Text);
@@ -148,11 +162,17 @@ namespace Chat
         private void setInactive()
         {
             ChatSessionController.setInactive(Session.userId, _chatId);
+            userStatus = "Inactive";
         }
 
         private void TbMessage_TextInput(object sender, TextCompositionEventArgs e)
         {
             resetTimer(activityCheck);
+            if(userStatus != "Online")
+            {
+                ChatSessionController.setActive(Session.userId, _chatId);
+                userStatus = "Online";
+            }
         }
 
         private void TbMessage_TouchEnter(object sender, TouchEventArgs e)

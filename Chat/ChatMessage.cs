@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+
+using System.Runtime.CompilerServices;
+
 using Negocio;
 using System.Linq;
 using System.Text;
@@ -20,7 +23,8 @@ namespace Chat
         public string corner { get; set; }
         public string align { get; set; }
         public string pictureAlign { get; set; }
-        public event PropertyChangedEventHandler PropertyChanged;
+        public string timeAlign { get; set; }
+        public event PropertyChangedEventHandler PropertyChanged = delegate { };
         public string picture { get; set; }
         public ChatMessage(int messageId, DateTime time, string text, string senderName, int senderId, int sessionId, string senderCI)
         {
@@ -31,12 +35,14 @@ namespace Chat
             corner = "15 15 15 0";
             align = "left";
             pictureAlign = "10 -40 140 34";
+            timeAlign = "0,0,0,-16";
             picture = PictureController.getPicturePath() + senderCI; 
             if (senderId == Session.userId)
             {
                 color = "#FF1D8CD8";
                 corner = "15 15 0 15";
                 align = "right";
+                timeAlign = "0,0,74,-16";
                 pictureAlign = "140 -40 10 34";
             }
             else if (senderId * sessionId % 10 == 0)
@@ -60,13 +66,14 @@ namespace Chat
             else if (senderId * sessionId % 10 == 9)
                 color = "#FF596768";
         }
+
         public int messageId
         {
             get { return _messageId; }
             set
             {
                 _messageId = value;
-                OnPropertyOnPropertyChanged("messageId");
+                OnPropertyChanged("messageId");
             }
         }
         public int senderId
@@ -75,7 +82,7 @@ namespace Chat
             set
             {
                 _senderId = value;
-                OnPropertyOnPropertyChanged("senderId");
+                OnPropertyChanged("senderId");
             }
         }
         public string senderName
@@ -84,7 +91,7 @@ namespace Chat
             set
             {
                 _senderName = value;
-                OnPropertyOnPropertyChanged("senderName");
+                OnPropertyChanged("senderName");
             }
         }
         public DateTime time
@@ -93,7 +100,7 @@ namespace Chat
             set
             {
                 _time = value;
-                OnPropertyOnPropertyChanged("time");
+                OnPropertyChanged("time");
             }
         }
         public string text
@@ -102,7 +109,7 @@ namespace Chat
             set
             {
                 _text = value;
-                OnPropertyOnPropertyChanged("text");
+                OnPropertyChanged("text");
             }
         }
         public Dictionary<int, bool> readed
@@ -111,15 +118,16 @@ namespace Chat
             set
             {
                 _readed = value;
-                OnPropertyOnPropertyChanged("readed");
+                OnPropertyChanged("readed");
             }
         }
 
        
 
-        protected void OnPropertyOnPropertyChanged(string name)
+        protected void OnPropertyChanged(string name)
         {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
+            if (PropertyChanged != null)
+                PropertyChanged?.Invoke(messageId, new PropertyChangedEventArgs(name));
         }
 
         

@@ -77,5 +77,11 @@ namespace Negocio
             session.sessionId = sessionId;
             session.abandonSession(userId);
         }
+        public static void setActive(int userId, int sessionId)
+        {
+            ModelChatSession session = new ModelChatSession();
+            session.sessionId = sessionId;
+            session.setActive(userId);
+        }
     }
 }
