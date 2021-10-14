@@ -20,7 +20,15 @@ namespace Datos
         public MySqlDataReader reader { get; set; }
         public MySqlConnection connection { get; set; }
 
-        private DataBase connectionConfigFile = new DataBase();
+        internal DataBase DataBase
+        {
+            get => default;
+            set
+            {
+            }
+        }
+
+        
 
         public ModelConnection()
         {
