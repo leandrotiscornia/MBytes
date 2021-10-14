@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Negocio;
+using Chat;
 using Agenda;
 
 namespace App_de_Docente
@@ -33,6 +34,12 @@ namespace App_de_Docente
                     UserControlSchedule schedulePanel = new UserControlSchedule();
                     schedulePanel.Dock = DockStyle.Fill;
                     pnlFunction.Controls.Add(schedulePanel);
+                }
+                else if (lvNavigation.SelectedItems[0].Text == "Chat")
+                {
+                    UserControlChatMainPanel chat = new UserControlChatMainPanel();
+                    chat.Dock = DockStyle.Fill;
+                    pnlFunction.Controls.Add(chat);
                 }
             }
         }

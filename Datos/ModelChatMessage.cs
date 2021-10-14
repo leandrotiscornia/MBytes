@@ -48,16 +48,21 @@ namespace Datos
         }
         public DataTable listMessages()
         {
+            DataTable messages = new DataTable();
             string commandString;
             commandString =
-                "SELECT ID, Sender_ID, Time, Text " +
+                "SELECT chatmessages.ID, Sender_ID, Time, Text , persons.CI " +
                 "FROM chatmessages " +
-                "ORDER BY(Time) " +
-                "WHERE Chat_ID = @chatId;";
+                "JOIN users ON users.ID = chatmessages.Sender_ID " +
+                "JOIN persons ON users.ID = persons.ID " +
+                "WHERE Chat_ID = @chatId " +
+                "ORDER BY(Time);";
             command.CommandText = commandString;
             command.Parameters.AddWithValue("@chatId", chatId);
             executeAndRead();
-            return readTable();
+            messages = readTable();
+            connection.Close();
+            return messages;
         }
     }
 }

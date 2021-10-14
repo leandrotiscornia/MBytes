@@ -20,13 +20,68 @@ namespace Negocio
             ModelChatSession session = new ModelChatSession();
             return session.listRegisters();
         }
-        public static int openSession(int hostId)
+        public static int openSession(int hostId, string sessionName)
         {
             ModelChatSession session = new ModelChatSession();
             session.hostId = hostId;
+            session.sessionName = sessionName;
             session.startTime = DateTime.Now;
-            session.openSession();
-            
+            return session.openSession();
+        }
+        public static void closeSession(int sessionId)
+        {
+            ModelChatSession session = new ModelChatSession();
+            session.sessionId = sessionId;
+            session.endTime = DateTime.Now;
+            session.closeSession();
+        }
+        public static DataTable getHost (int sessionId)
+        {
+            ModelChatSession session = new ModelChatSession();
+            session.sessionId = sessionId;
+            return session.showHost();
+        }
+        public static DataTable getStudents(int sessionId)
+        {
+            ModelChatSession session = new ModelChatSession();
+            session.sessionId = sessionId;
+            return session.showStudents();
+        }
+        public static DataTable getTeacher(int sessionId)
+        {
+            ModelChatSession session = new ModelChatSession();
+            session.sessionId = sessionId;
+            return session.showTeacher();
+        }
+        public static string checkSessionEndTime(int sessionId)
+        {
+            ModelChatSession session = new ModelChatSession();
+            session.sessionId = sessionId;
+            return session.getEndTime();
+        }
+        public static void setInactive(int userId, int sessionId)
+        {
+            ModelChatSession session = new ModelChatSession();
+            session.sessionId = sessionId;
+            session.setInactive(userId);
+        }
+        public static void joinSession(int userId, int sessionId)
+        {
+            ModelChatSession session = new ModelChatSession();
+            session.sessionId = sessionId;
+            session.joinSession(userId);
+        }
+        public static void abandonSession(int userId, int sessionId)
+        {
+            ModelChatSession session = new ModelChatSession();
+            session.sessionId = sessionId;
+            session.abandonSession(userId);
+        }
+        public static void setActive(int userId, int sessionId)
+        {
+            ModelChatSession session = new ModelChatSession();
+            session.sessionId = sessionId;
+            session.setActive(userId);
         }
     }
 }

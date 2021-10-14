@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace Chat
 {
     /// <summary>
-    /// Lógica de interacción para UserControlMessage.xaml
+    /// Lógica de interacción para UserControl1.xaml
     /// </summary>
-    public partial class UserControlMessage : UserControl
+    public partial class UserControl1 : UserControl
     {
-        public UserControlMessage()
+        public UserControl1()
         {
             InitializeComponent();
         }

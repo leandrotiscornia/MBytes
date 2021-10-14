@@ -80,6 +80,7 @@
             this.gbPictureModifyUserProfile = new System.Windows.Forms.GroupBox();
             this.btnConfirmUserName = new System.Windows.Forms.Button();
             this.btnConfirmNickName = new System.Windows.Forms.Button();
+            this.pictureSelector = new System.Windows.Forms.OpenFileDialog();
             ((System.ComponentModel.ISupportInitialize)(this.pbUserPicture)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbUserConfig)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbUserInfo)).BeginInit();
@@ -149,7 +150,7 @@
             this.pbUserPicture.Location = new System.Drawing.Point(8, 3);
             this.pbUserPicture.Name = "pbUserPicture";
             this.pbUserPicture.Size = new System.Drawing.Size(64, 64);
-            this.pbUserPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pbUserPicture.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pbUserPicture.TabIndex = 56;
             this.pbUserPicture.TabStop = false;
             // 
@@ -558,6 +559,10 @@
             this.btnConfirmNickName.UseVisualStyleBackColor = true;
             this.btnConfirmNickName.Click += new System.EventHandler(this.btnConfirmNickName_Click);
             // 
+            // pictureSelector
+            // 
+            this.pictureSelector.FileName = "profilePicture";
+            // 
             // UserControlProfile
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -671,5 +676,6 @@
         private System.Windows.Forms.GroupBox gbPictureModifyUserProfile;
         private System.Windows.Forms.Button btnConfirmUserName;
         private System.Windows.Forms.Button btnConfirmNickName;
+        private System.Windows.Forms.OpenFileDialog pictureSelector;
     }
 }

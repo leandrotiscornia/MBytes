@@ -11,22 +11,59 @@ using System.Windows.Forms;
 
 namespace Chat
 {
-    public partial class FormChatSession : Form
+    public partial class FormChatSession : Form, IDisposable
     {
         private int _chatId;
-
-        public FormChatSession(int chatId)
+        UserControlMessages messagesControl;
+        private int _hostId;
+        private bool _readOnlyMode;
+        public FormChatSession(int chatId, bool readOnlyMode, int hostId)
         {
+            _chatId = chatId;
+            _readOnlyMode = readOnlyMode;
+            _hostId = hostId;
             InitializeComponent();
         }
-
+        private void messagesControl_closeSession(object sender, EventArgs e)
+        {
+            messagesControl.messagePool.Stop();
+            messagesControl.statusCheck.Stop();
+            Close();
+        }
         private void FormChatSession_Load(object sender, EventArgs e)
         {
-            UserControlMessages messagesControl = new UserControlMessages(_chatId);
+            messagesControl = new UserControlMessages(_chatId);
+            messagesControl.closeSession += new EventHandler(messagesControl_closeSession);
+            if (_readOnlyMode)
+            {
+                messagesControl.tbMessage.IsEnabled = false;
+                messagesControl.btnSend.IsEnabled = false;
+                messagesControl.messagePool.IsEnabled = false;
+                messagesControl.statusCheck.IsEnabled = false;
+            }
             messageHost.Child = messagesControl;
         }
 
-        
+        private void FormChatSession_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (_hostId == Session.userId) closeSession();
+            else abandonSession();
+        }
+
+        private void abandonSession()
+        {
+            ChatSessionController.abandonSession(Session.userId, _chatId);
+            messagesControl.messagePool.Stop();
+            messagesControl.statusCheck.Stop();
+            messagesControl.activityCheck.Stop();
+        }
+        private void closeSession()
+        {
+            ChatSessionController.closeSession(_chatId);
+            messagesControl.messagePool.Stop();
+            messagesControl.statusCheck.Stop();
+            messagesControl.activityCheck.Stop();
+        }
     }
     
 }

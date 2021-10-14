@@ -13,11 +13,11 @@ namespace Negocio {
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "15.9.0.0")]
-    internal sealed partial class LogSettings : global::System.Configuration.ApplicationSettingsBase {
+    internal sealed partial class Paths : global::System.Configuration.ApplicationSettingsBase {
         
-        private static LogSettings defaultInstance = ((LogSettings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new LogSettings())));
+        private static Paths defaultInstance = ((Paths)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Paths())));
         
-        public static LogSettings Default {
+        public static Paths Default {
             get {
                 return defaultInstance;
             }
@@ -25,10 +25,19 @@ namespace Negocio {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("/ruta")]
-        public string Ruta {
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        public string LogsRoute {
             get {
-                return ((string)(this["Ruta"]));
+                return ((string)(this["LogsRoute"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("C:\\Users\\Spiral\\Documents\\ProfilePictures\\")]
+        public string PictureRoute {
+            get {
+                return ((string)(this["PictureRoute"]));
             }
         }
     }

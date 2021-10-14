@@ -1,0 +1,15 @@
+﻿<UserControl x:Class="Chat.TemplateTest"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:Chat"
+             mc:Ignorable="d" 
+             d:DesignHeight="50" d:DesignWidth="220">
+    <Grid>
+        <Border Background="Black" CornerRadius="30" Width="30" Height="30" Margin="3,2,187,18"/>
+        <Border Background="#FF9EA8A7" CornerRadius="10" Width="10" Height="10" Margin="23,22,187,18" RenderTransformOrigin="0.067,0.067"/>
+        <TextBlock Text="Nick Name" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="43,2,109,29" FontSize="14" Foreground="#FFC71B1B"></TextBlock>
+        <TextBlock Text="Personal Name" VerticalAlignment="Center" HorizontalAlignment="Center" Margin="43,21,97,13" Foreground="#FFDCD2D2"></TextBlock>
+    </Grid>
+</UserControl>

@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Collections;
-using System.Collections.Generic;
 using System.Data;
 using Datos;
 
@@ -30,7 +29,7 @@ namespace Negocio
             DataTable result = new DataTable("grades");
             ModelGrade gradeToList = new ModelGrade();
 
-            result.Columns.Add("ID", System.Type.GetType("System.Int32"));
+            result.Columns.Add("ID", Type.GetType("System.Int32"));
             result.Columns.Add("Name");
             for(int i = 1; i <= 15; i++)
                 result.Columns.Add("Subject " + i);
