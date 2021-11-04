@@ -54,7 +54,10 @@
             // 
             // tbTopic
             // 
+            this.tbTopic.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.tbTopic.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbTopic.Enabled = false;
+            this.tbTopic.ForeColor = System.Drawing.SystemColors.ScrollBar;
             this.tbTopic.Location = new System.Drawing.Point(70, 30);
             this.tbTopic.Name = "tbTopic";
             this.tbTopic.ReadOnly = true;
@@ -63,6 +66,9 @@
             // 
             // rtbMessages
             // 
+            this.rtbMessages.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.rtbMessages.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.rtbMessages.ForeColor = System.Drawing.SystemColors.ScrollBar;
             this.rtbMessages.Location = new System.Drawing.Point(70, 59);
             this.rtbMessages.Name = "rtbMessages";
             this.rtbMessages.ReadOnly = true;
@@ -74,10 +80,12 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.Controls.Add(this.rtbMessages);
             this.Controls.Add(this.lbPreviousFiled);
             this.Controls.Add(this.lbTopic);
             this.Controls.Add(this.tbTopic);
+            this.ForeColor = System.Drawing.SystemColors.ScrollBar;
             this.Name = "UserControlReadFiledConsult";
             this.Size = new System.Drawing.Size(400, 400);
             this.Load += new System.EventHandler(this.UserControlReadFiledConsult_Load);

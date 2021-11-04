@@ -100,6 +100,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnModify);
             this.Controls.Add(this.btnCancel);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormModifySubject";
             this.Text = "FormRegisterSubject";
             this.Load += new System.EventHandler(this.FormModifySubject_Load);

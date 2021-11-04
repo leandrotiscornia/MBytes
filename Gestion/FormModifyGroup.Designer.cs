@@ -44,7 +44,7 @@
             this.cbShift.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbShift.FormattingEnabled = true;
             this.cbShift.Items.AddRange(new object[] {
-            "Mourning",
+            "Morning",
             "Afternoon",
             "Night"});
             this.cbShift.Location = new System.Drawing.Point(122, 124);
@@ -138,6 +138,7 @@
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnModify);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormModifyGroup";
             this.Text = "FormModifyGroup";
             this.Load += new System.EventHandler(this.FormModifyGroup_Load);

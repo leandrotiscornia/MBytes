@@ -25,7 +25,7 @@ namespace Negocio
             courseToModify.numberOfGrades = numberOfGrades;
             courseToModify.modifyCourse(oldCourseName);
         }
-        public static DataTable listCouses()
+        public static DataTable listCourses()
         {
             ModelCourse courseToList = new ModelCourse();
             return courseToList.listCourses();

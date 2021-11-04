@@ -15,15 +15,38 @@ namespace Chat
 {
     public partial class UserControlChatMainPanel : UserControl
     {
-        
-        public UserControlChatMainPanel()
-        {
-            InitializeComponent();
-            
-        }
+        private List<int> groupsId;
+        private List<int> subjectsId;
 
         Func<ListViewItem, int> getChatId = item => int.Parse(item.SubItems[0].Text);
         Func<ListViewItem, int> getHostId = item => int.Parse(item.SubItems[1].Text);
+
+        public UserControlChatMainPanel()
+        {
+            InitializeComponent();
+            groupsId = new List<int>();
+            subjectsId = new List<int>();
+        }
+        
+       
+        private void loadGroups()
+        {
+            DataTable groups = GroupController.listGroups();
+            foreach(DataRow group in groups.Rows)
+            {
+                cbGroups.Items.Add(group[1]);
+                groupsId.Add((int)group[0]);
+            }
+        }
+        private void loadSubjects(int groupId)
+        {
+            DataTable subjects = SubjectController.listSubjectsByGroup(groupId);
+            foreach (DataRow subject in subjects.Rows)
+            {
+                cbSubjects.Items.Add(subject[1]);
+                subjectsId.Add((int)subject[0]);
+            }
+        }
         private void loadSessions()
         {
             DataTable sessions = ChatSessionController.listSessions();
@@ -50,9 +73,11 @@ namespace Chat
                 lvRegisters.Items.Add(registerView);
             }
         }
-        private void createSession()
+        private void createSession(int groupId, int subjectId)
         {
-            FormChatSession chatSession = new FormChatSession(ChatSessionController.openSession(Session.userId, tbSessionName.Text), false, Session.userId);
+            FormChatSession chatSession = 
+                new FormChatSession(ChatSessionController.openSession(Session.userId, tbSessionName.Text, groupId, subjectId),
+                false, Session.userId);
             chatSession.Show();
         }
         private void joinSession()
@@ -77,17 +102,25 @@ namespace Chat
 
         private void btnCreate_Click(object sender, EventArgs e)
         {
-            createSession();
+            if(cbGroups.SelectedIndex != null && cbSubjects.SelectedIndex != null)
+                createSession(groupsId[cbGroups.SelectedIndex], subjectsId[cbSubjects.SelectedIndex]);
         }
 
         private void UserControlChatMainPanel_Load(object sender, EventArgs e)
         {
             loadSessions();
+            loadGroups();
         }
 
         private void tcChat_SelectedIndexChanged(object sender, EventArgs e)
         {
             loadSessions();
+        }
+
+        private void cbGroups_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbGroups.SelectedIndex > 0)
+                loadSubjects(groupsId[cbGroups.SelectedIndex]);
         }
     }
 

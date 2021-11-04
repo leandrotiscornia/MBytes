@@ -6,6 +6,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 using System.Windows.Forms;
 using Negocio;
 
@@ -48,6 +49,10 @@ namespace Consultas
             personsTable = PersonController.GetScheduleUsers();
             ListViewItem item;
             lvNewConsults.Items.Clear();
+            ImageList images = new ImageList();
+            images.ImageSize = new Size(40 , 40);
+            images.ColorDepth = ColorDepth.Depth32Bit;
+
             if(personsTable.Rows.Count > 0)
             {
                 foreach (DataRow person in personsTable.Rows)
@@ -59,6 +64,15 @@ namespace Consultas
                     lvNewConsults.Items.Add(item);
                 }
             }
+            foreach(ListViewItem itemm in lvNewConsults.Items)
+            {
+                if (File.Exists(Path.Combine(PictureController.getPicturePath(), itemm.Text + ".jpg")))
+                    images.Images.Add(Image.FromFile(PictureController.getPicturePath() + itemm.Text + ".jpg"));
+                else
+                    images.Images.Add(new Bitmap(40, 40));
+                itemm.ImageIndex = images.Images.Count - 1;
+            }
+            lvNewConsults.LargeImageList = images;
         }
         
     }

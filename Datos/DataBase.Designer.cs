@@ -25,7 +25,7 @@ namespace Datos {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("prueba_proyecto")]
+        [global::System.Configuration.DefaultSettingValueAttribute("mbytes")]
         public string dbName {
             get {
                 return ((string)(this["dbName"]));

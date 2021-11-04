@@ -40,7 +40,7 @@ namespace Gestion
         private void loadCourses()
         {
             courseId = new List<int>();
-            DataTable courses = CourseController.listCouses();
+            DataTable courses = CourseController.listCourses();
             foreach(DataRow course in courses.Rows)
             {
                 courseId.Add((int)course[0]);

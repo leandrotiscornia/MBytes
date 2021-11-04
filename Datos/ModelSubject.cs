@@ -114,7 +114,21 @@ namespace Datos
             subjectName = readString(0);
             subjectDescription = readString(1);
         }
-       
+       public DataTable listSubjectsByGroup(int groupId)
+        {
+            string commandString;
+            commandString =
+                "SELECT subjects.ID, subjects.Name " +
+                "FROM subjects " +
+                "JOIN grade_subjects ON grade_subjects.Subject_ID = subjects.ID " +
+                "JOIN grades ON grades.ID = grade_subjects.Grade_ID " +
+                "JOIN groups ON groups.Grade_ID = grades.ID " +
+                "WHERE groups.ID = @groupId;";
+            command.CommandText = commandString;
+            command.Parameters.AddWithValue("@groupId", groupId);
+            executeAndRead();
+            return readTable();
+        }
     }
 
 

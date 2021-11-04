@@ -5,7 +5,7 @@
     <Setting Name="LogsRoute" Type="System.String" Scope="Application">
       <Value Profile="(Default)" />
     </Setting>
-    <Setting Name="PictureRoute" Type="System.String" Scope="Application">
+    <Setting Name="PictureRoute" Type="System.String" Scope="User">
       <Value Profile="(Default)">C:\Users\Spiral\Documents\ProfilePictures\</Value>
     </Setting>
   </Settings>

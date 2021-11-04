@@ -31,8 +31,10 @@
             this.dgvGroups = new System.Windows.Forms.DataGridView();
             this.dgvSubjects = new System.Windows.Forms.DataGridView();
             this.btnRequest = new System.Windows.Forms.Button();
+            this.dgvPending = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dgvGroups)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSubjects)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPending)).BeginInit();
             this.SuspendLayout();
             // 
             // dgvGroups
@@ -45,7 +47,7 @@
             this.dgvGroups.Name = "dgvGroups";
             this.dgvGroups.ReadOnly = true;
             this.dgvGroups.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvGroups.Size = new System.Drawing.Size(272, 251);
+            this.dgvGroups.Size = new System.Drawing.Size(173, 251);
             this.dgvGroups.TabIndex = 0;
             this.dgvGroups.SelectionChanged += new System.EventHandler(this.dgvGroups_SelectionChanged);
             // 
@@ -54,16 +56,16 @@
             this.dgvSubjects.AllowUserToAddRows = false;
             this.dgvSubjects.AllowUserToDeleteRows = false;
             this.dgvSubjects.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvSubjects.Location = new System.Drawing.Point(490, 39);
+            this.dgvSubjects.Location = new System.Drawing.Point(232, 39);
             this.dgvSubjects.Name = "dgvSubjects";
             this.dgvSubjects.ReadOnly = true;
             this.dgvSubjects.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvSubjects.Size = new System.Drawing.Size(271, 251);
+            this.dgvSubjects.Size = new System.Drawing.Size(166, 251);
             this.dgvSubjects.TabIndex = 1;
             // 
             // btnRequest
             // 
-            this.btnRequest.Location = new System.Drawing.Point(630, 312);
+            this.btnRequest.Location = new System.Drawing.Point(267, 296);
             this.btnRequest.Name = "btnRequest";
             this.btnRequest.Size = new System.Drawing.Size(131, 37);
             this.btnRequest.TabIndex = 2;
@@ -71,10 +73,24 @@
             this.btnRequest.UseVisualStyleBackColor = true;
             this.btnRequest.Click += new System.EventHandler(this.btnRequest_Click);
             // 
+            // dgvPending
+            // 
+            this.dgvPending.AllowUserToAddRows = false;
+            this.dgvPending.AllowUserToDeleteRows = false;
+            this.dgvPending.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvPending.Location = new System.Drawing.Point(489, 39);
+            this.dgvPending.MultiSelect = false;
+            this.dgvPending.Name = "dgvPending";
+            this.dgvPending.ReadOnly = true;
+            this.dgvPending.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvPending.Size = new System.Drawing.Size(271, 251);
+            this.dgvPending.TabIndex = 3;
+            // 
             // UserControlStudentInscriptions
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.dgvPending);
             this.Controls.Add(this.btnRequest);
             this.Controls.Add(this.dgvSubjects);
             this.Controls.Add(this.dgvGroups);
@@ -83,6 +99,7 @@
             this.Load += new System.EventHandler(this.UserControlStudentInscriptions_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvGroups)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSubjects)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvPending)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -92,5 +109,6 @@
         private System.Windows.Forms.DataGridView dgvGroups;
         private System.Windows.Forms.DataGridView dgvSubjects;
         private System.Windows.Forms.Button btnRequest;
+        private System.Windows.Forms.DataGridView dgvPending;
     }
 }

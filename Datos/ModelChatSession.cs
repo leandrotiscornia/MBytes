@@ -17,7 +17,7 @@ namespace Datos
         public List<int> allowedUsers { get; set; }
         public List<int> chatParticipants { get; set; }
 
-        public int openSession()
+        public void openSession()
         {
             string commandString;
             commandString =
@@ -29,7 +29,8 @@ namespace Datos
             command.Parameters.AddWithValue("@hostId", hostId);
             command.Parameters.AddWithValue("startTime", startTime);
             executeVoid();
-            return getLastInsertId();
+            sessionId = getLastInsertId();
+            reader.Close();
         }
         public void setInvitations()
         {
@@ -58,23 +59,32 @@ namespace Datos
             command.Parameters.AddWithValue("@sessionId", sessionId);
             executeVoid();
         }
-        public DataTable listSessions()
+        public DataTable listSessions(int userId)
         {
             string commandString =
                 "SELECT ID, Host_ID, Name, Start_Time " +
                 "FROM chatsessions " +
-                "WHERE End_Time IS NULL";
+                "WHERE End_Time IS NULL AND EXISTS" +
+                "(SELECT * " +
+                "FROM chatparticipants " +
+                "WHERE User_ID = @userId)";
             command.CommandText = commandString;
+            command.Parameters.AddWithValue("@userId", userId);
             executeAndRead();
             return readTable();
         }
-        public DataTable listRegisters()
+        public DataTable listRegisters(int userId)
         {
             string commandString =
                 "SELECT ID, Host_ID, Name, Start_Time, End_Time " +
                 "FROM chatsessions " +
-                "WHERE End_Time IS NOT NULL";
+                "WHERE End_Time IS NOT NULL AND EXISTS" +
+                "(SELECT * " +
+                "FROM chatparticipants " +
+                "WHERE User_ID = @userId) " +
+                "OR End_Time IS NOT NULL AND Host_ID = @userId";
             command.CommandText = commandString;
+            command.Parameters.AddWithValue("@userId", userId);
             executeAndRead();
             return readTable();
         }
@@ -100,7 +110,7 @@ namespace Datos
                 "SELECT persons.ID, persons.CI, persons.Nick_Name, persons.First_Name, " +
                 "persons.First_Surname, roles.Name, chatparticipants.Status " +
                 "FROM chatsessions " +
-                "JOIN chatparticipants ON chatparticipants.Chat_ID = chatsessions.ID" +
+                "JOIN chatparticipants ON chatparticipants.Chat_ID = chatsessions.ID " +
                 "JOIN users ON users.ID = chatparticipants.User_ID " +
                 "JOIN persons ON persons.ID = users.ID " +
                 "JOIN personis ON persons.CI = personis.Person_CI " +
@@ -122,7 +132,7 @@ namespace Datos
                 "JOIN persons ON persons.ID = users.ID " +
                 "JOIN personis ON persons.CI = personis.Person_CI " +
                 "JOIN roles On roles.ID = personis.Role_ID " +
-                "WHERE chatsessions.ID = @sessionId AND roles.ID = 2";
+                "WHERE chatsessions.ID = @sessionId AND roles.ID = 2 AND users.ID != chatsessions.Host_ID";
             command.CommandText = commandString;
             command.Parameters.AddWithValue("@sessionId", sessionId);
             executeAndRead();
@@ -131,9 +141,10 @@ namespace Datos
         public void joinSession(int userId)
         {
             string commandString =
-                "INSERT INTO chatparticipants " +
-                "(Chat_ID, User_ID, Status) " +
-                "VALUES(@sessionId, @userId, 'Online')";
+                "UPDATE chatparticipants " +
+                "SET Status ='Online' " +
+                "WHERE Chat_ID = @sessionId AND " +
+                "User_ID = @userId";
             command.CommandText = commandString;
             command.Parameters.AddWithValue("@sessionId", sessionId);
             command.Parameters.AddWithValue("@userId", userId);
@@ -189,7 +200,32 @@ namespace Datos
             command.Parameters.AddWithValue("@userId", userId);
             executeVoid();
         }
-
+        public void getAllowedUsers(int groupId, int subjectId)
+        {
+            string commandString =
+                "SELECT users.ID " +
+                "FROM users " +
+                "JOIN persons ON persons.ID = users.ID " +
+                "WHERE EXISTS( " +
+                "SELECT * FROM classes " +
+                "WHERE classes.Teacher_CI = persons.CI AND " +
+                "classes.Subject_ID = @subjectID AND " +
+                "classes.Group_ID = @groupId) " +
+                "OR EXISTS( " +
+                "SELECT * FROM student_take_subjects " +
+                "WHERE student_take_subjects.Student_CI = persons.CI AND " +
+                "student_take_subjects.Subject_ID = @subjectId AND " +
+                "student_take_subjects.Group_ID = @groupId);";
+            command.CommandText = commandString;
+            command.Parameters.AddWithValue("@subjectId", subjectId);
+            command.Parameters.AddWithValue("@groupId", groupId);
+            executeAndRead();
+            DataTable usersAllowed = readTable();
+            allowedUsers = new List<int>();
+            foreach(DataRow user in usersAllowed.Rows)
+                allowedUsers.Add((int)user[0]);
+            reader.Close();
+        }
     }
 }
         

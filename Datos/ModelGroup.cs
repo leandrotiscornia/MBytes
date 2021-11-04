@@ -50,6 +50,7 @@ namespace Datos
             command.Parameters.AddWithValue("@shift",shift);
             command.Parameters.AddWithValue("@gradeId",gradeId);
             executeVoid();
+            groupId = getLastInsertId();
         }
         public void deleteGroup()
         {
@@ -116,6 +117,36 @@ namespace Datos
             command.Parameters.AddWithValue("@groupId", groupId);
             executeVoid();
         }
+        public DataTable getPendingInscriptions(string studentCI)
+        {
+            string commandString;
+            commandString =
+                "SELECT groups.Name AS 'Group', subjects.Name AS 'subject', Status " +
+                "FROM student_take_subjects " +
+                "JOIN groups on student_take_subjects.Group_ID = groups.ID " +
+                "JOIN subjects on student_take_subjects.Subject_ID = subjects.ID " +
+                "WHERE Student_CI = @studentCI;";
+            command.CommandText = commandString;
+            command.Parameters.AddWithValue("@studentCI", studentCI);
+            executeAndRead();
+            return readTable();
+        }
+        public DataTable getPendingClasses(string teacherCI)
+        {
+            string commandString;
+            commandString =
+                "SELECT groups.Name AS 'Group', subjects.Name AS 'subject', Status " +
+                "FROM classes " +
+                "JOIN groups on classes.Group_ID = groups.ID " +
+                "JOIN subjects on classes.Subject_ID = subjects.ID " +
+                "WHERE Teacher_CI = @teacherCI;";
+            command.CommandText = commandString;
+            command.Parameters.AddWithValue("@teacherCI", teacherCI);
+            executeAndRead();
+            return readTable();
+        }
+
+
         public DataTable listStudentInscriptions()
         {
             string commandString;
@@ -177,6 +208,22 @@ namespace Datos
                 executeVoid();
             }
         }
+        public void requestTeacherInscription(string teacherCI, List<int> subjects)
+        {
+            string commandString;
+            commandString =
+                "INSERT INTO classes" +
+                "(Teacher_CI, Group_ID, Subject_ID, Status) " +
+                "VALUES(@teacherCI, @groupId, @subjectId, 'Requested')";
+            command.CommandText = commandString;
+            foreach (int subjectId in subjects)
+            {
+                command.Parameters.AddWithValue("@teacherCI", teacherCI);
+                command.Parameters.AddWithValue("@groupId", groupId);
+                command.Parameters.AddWithValue("@subjectId", subjectId);
+                executeVoid();
+            }
+        }
         public void updateStudentRequestStatus(string CI, int subjectId, string status)
         {
             string commandString;
@@ -208,6 +255,44 @@ namespace Datos
             command.Parameters.AddWithValue("@subjectId", subjectId);
             command.Parameters.AddWithValue("groupId", groupId);
             executeVoid();
+        }
+        public DataTable listClassSubjects(string teacherCI)
+        {
+            string commandString;
+            commandString =
+                "SELECT subjects.ID, subjects.Name, subjects.Description " +
+                "FROM subjects " +
+                "JOIN grade_subjects ON grade_subjects.Subject_ID = subjects.ID " +
+                "JOIN grades ON grades.ID = grade_subjects.Grade_ID " +
+                "JOIN groups ON groups.Grade_ID = grades.ID " +
+                "WHERE groups.ID = @groupId AND NOT EXISTS " +
+                "(SELECT * FROM classes " +
+                "WHERE classes.Subject_ID = subjects.ID " +
+                "AND classes.Teacher_CI = @teacherCI);";
+            command.CommandText = commandString;
+            command.Parameters.AddWithValue("@groupId", groupId);
+            command.Parameters.AddWithValue("@teacherCI", teacherCI);
+            executeAndRead();
+            return readTable();
+        }
+        public DataTable listInscriptionSubjects(string studentCI)
+        {
+            string commandString;
+            commandString =
+                "SELECT subjects.ID, subjects.Name, subjects.Description " +
+                "FROM subjects " +
+                "JOIN grade_subjects ON grade_subjects.Subject_ID = subjects.ID " +
+                "JOIN grades ON grades.ID = grade_subjects.Grade_ID " +
+                "JOIN groups ON groups.Grade_ID = grades.ID " +
+                "WHERE groups.ID = @groupId AND NOT EXISTS " +
+                "(SELECT * FROM student_take_subjects " +
+                "WHERE student_take_subjects.Subject_ID = subjects.ID " +
+                "AND student_take_subjects.Student_CI = @studentCI);";
+            command.CommandText = commandString;
+            command.Parameters.AddWithValue("@groupId", groupId);
+            command.Parameters.AddWithValue("@studentCI", studentCI);
+            executeAndRead();
+            return readTable();
         }
     }
 }

@@ -30,19 +30,23 @@
         {
             this.lvConsultsMade = new System.Windows.Forms.ListView();
             this.ID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.Topic = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Person_Name = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Topic = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.State = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.CI = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // lvConsultsMade
             // 
+            this.lvConsultsMade.BackColor = System.Drawing.SystemColors.WindowFrame;
             this.lvConsultsMade.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.ID,
             this.Person_Name,
             this.Topic,
-            this.State});
+            this.State,
+            this.CI});
             this.lvConsultsMade.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lvConsultsMade.ForeColor = System.Drawing.SystemColors.ScrollBar;
             this.lvConsultsMade.HideSelection = false;
             this.lvConsultsMade.Location = new System.Drawing.Point(0, 0);
             this.lvConsultsMade.Name = "lvConsultsMade";
@@ -57,25 +61,25 @@
             this.ID.DisplayIndex = 2;
             this.ID.Text = "ID";
             // 
+            // Person_Name
+            // 
+            this.Person_Name.Text = "Person_Name";
+            // 
             // Topic
             // 
             this.Topic.DisplayIndex = 0;
             this.Topic.Text = "Topic";
             // 
-            // Person_Name
-            // 
-            this.Person_Name.Text = "Person_Name";
-            // 
             // State
             // 
             this.State.Text = "State";
             // 
-            // UserControlConsultsMade
+            // UserControlConsultationsMade
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.lvConsultsMade);
-            this.Name = "UserControlConsultsMade";
+            this.Name = "UserControlConsultationsMade";
             this.Size = new System.Drawing.Size(400, 400);
             this.Load += new System.EventHandler(this.UserControlConsultsMade_Load);
             this.ResumeLayout(false);
@@ -89,5 +93,6 @@
         private System.Windows.Forms.ColumnHeader Topic;
         private System.Windows.Forms.ColumnHeader Person_Name;
         private System.Windows.Forms.ColumnHeader State;
+        private System.Windows.Forms.ColumnHeader CI;
     }
 }

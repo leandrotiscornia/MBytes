@@ -37,6 +37,9 @@
             // 
             // tbTopic
             // 
+            this.tbTopic.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.tbTopic.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbTopic.ForeColor = System.Drawing.SystemColors.ScrollBar;
             this.tbTopic.Location = new System.Drawing.Point(71, 38);
             this.tbTopic.Name = "tbTopic";
             this.tbTopic.Size = new System.Drawing.Size(293, 20);
@@ -53,6 +56,9 @@
             // 
             // tbNewMessage
             // 
+            this.tbNewMessage.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.tbNewMessage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbNewMessage.ForeColor = System.Drawing.SystemColors.ScrollBar;
             this.tbNewMessage.Location = new System.Drawing.Point(71, 75);
             this.tbNewMessage.Multiline = true;
             this.tbNewMessage.Name = "tbNewMessage";
@@ -70,23 +76,27 @@
             // 
             // btnSend
             // 
+            this.btnSend.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btnSend.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSend.Location = new System.Drawing.Point(260, 352);
             this.btnSend.Name = "btnSend";
             this.btnSend.Size = new System.Drawing.Size(104, 23);
             this.btnSend.TabIndex = 6;
             this.btnSend.Text = "Send Consult";
-            this.btnSend.UseVisualStyleBackColor = true;
+            this.btnSend.UseVisualStyleBackColor = false;
             this.btnSend.Click += new System.EventHandler(this.btnSend_Click);
             // 
             // UserControlWriteConsult
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.Controls.Add(this.btnSend);
             this.Controls.Add(this.lbMessageWriteConsult);
             this.Controls.Add(this.tbNewMessage);
             this.Controls.Add(this.lbTopic);
             this.Controls.Add(this.tbTopic);
+            this.ForeColor = System.Drawing.SystemColors.ScrollBar;
             this.Name = "UserControlWriteConsult";
             this.Size = new System.Drawing.Size(400, 400);
             this.Load += new System.EventHandler(this.UserControlWriteConsult_Load);

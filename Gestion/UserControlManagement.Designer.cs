@@ -39,7 +39,6 @@
             this.btnModify = new System.Windows.Forms.Button();
             this.lvData = new System.Windows.Forms.ListView();
             this.Data = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.pnlFilter = new System.Windows.Forms.Panel();
             this.dgvData = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dgvData)).BeginInit();
             this.SuspendLayout();
@@ -99,13 +98,6 @@
             this.Data.Text = "Data";
             this.Data.Width = 74;
             // 
-            // pnlFilter
-            // 
-            this.pnlFilter.Location = new System.Drawing.Point(574, 3);
-            this.pnlFilter.Name = "pnlFilter";
-            this.pnlFilter.Size = new System.Drawing.Size(211, 324);
-            this.pnlFilter.TabIndex = 5;
-            // 
             // dgvData
             // 
             this.dgvData.AllowUserToAddRows = false;
@@ -116,7 +108,7 @@
             this.dgvData.Name = "dgvData";
             this.dgvData.ReadOnly = true;
             this.dgvData.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvData.Size = new System.Drawing.Size(452, 324);
+            this.dgvData.Size = new System.Drawing.Size(693, 324);
             this.dgvData.TabIndex = 6;
             // 
             // UserControlManagement
@@ -124,7 +116,6 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.dgvData);
-            this.Controls.Add(this.pnlFilter);
             this.Controls.Add(this.lvData);
             this.Controls.Add(this.btnModify);
             this.Controls.Add(this.btnDelete);
@@ -144,7 +135,6 @@
         private System.Windows.Forms.Button btnModify;
         private System.Windows.Forms.ListView lvData;
         private System.Windows.Forms.ColumnHeader Data;
-        private System.Windows.Forms.Panel pnlFilter;
         private System.Windows.Forms.DataGridView dgvData;
     }
 }

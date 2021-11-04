@@ -94,6 +94,7 @@
             // lklbForgotMyPassword
             // 
             this.lklbForgotMyPassword.AutoSize = true;
+            this.lklbForgotMyPassword.LinkColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.lklbForgotMyPassword.Location = new System.Drawing.Point(182, 103);
             this.lklbForgotMyPassword.Name = "lklbForgotMyPassword";
             this.lklbForgotMyPassword.Size = new System.Drawing.Size(102, 13);
@@ -115,6 +116,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ClientSize = new System.Drawing.Size(312, 216);
             this.Controls.Add(this.btnRegister);
             this.Controls.Add(this.lklbForgotMyPassword);
@@ -124,6 +126,7 @@
             this.Controls.Add(this.tbUser);
             this.Controls.Add(this.lbPassword);
             this.Controls.Add(this.lbUser);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormLogIn";
             this.Text = "Log In";
             this.Load += new System.EventHandler(this.FormLogIn_Load);

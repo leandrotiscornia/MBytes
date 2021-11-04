@@ -77,6 +77,18 @@ namespace Negocio
             group.groupId = groupId;
             return group.listSubjectsByGroup();
         }
+        public static DataTable listInscriptionSubjects(int groupId, string studentCI)
+        {
+            ModelGroup group = new ModelGroup();
+            group.groupId = groupId;
+            return group.listInscriptionSubjects(studentCI);
+        }
+        public static DataTable listClassSubjects(int groupId, string teacherCI)
+        {
+            ModelGroup group = new ModelGroup();
+            group.groupId = groupId;
+            return group.listClassSubjects(teacherCI);
+        }
         public static List<string> getGroupData(int groupId)
         {
             ModelGroup group = new ModelGroup();
@@ -121,11 +133,17 @@ namespace Negocio
             }
             return inscriptions;
         }
-        public static void requestInscription(string studentCI, int groupId, List<int> subjects)
+        public static void requestStudentInscription(string studentCI, int groupId, List<int> subjects)
         {
             ModelGroup group = new ModelGroup();
             group.groupId = groupId;
             group.requestStudentInscription(studentCI, subjects);
+        }
+        public static void requestTeacherInscription(string teacherCI, int groupId, List<int> subjects)
+        {
+            ModelGroup group = new ModelGroup();
+            group.groupId = groupId;
+            group.requestTeacherInscription(teacherCI, subjects);
         }
         public static void updateStudentRequestStatus(string CI, int groupId, int subjectId, string status)
         {
@@ -133,11 +151,22 @@ namespace Negocio
             group.groupId = groupId;
             group.updateStudentRequestStatus(CI, subjectId, status);
         }
+
         public static void updateTeacherRequestStatus(string CI, int groupId, int subjectId, string status)
         {
             ModelGroup group = new ModelGroup();
             group.groupId = groupId;
             group.updateTeacherRequestStatus(CI, subjectId, status);
+        }
+        public static DataTable loadStudentInscriptions(string CI)
+        {
+            ModelGroup group = new ModelGroup();
+            return group.getPendingInscriptions(CI);
+        }
+        public static DataTable loadTeacherInscriptions(string CI)
+        {
+            ModelGroup group = new ModelGroup();
+            return group.getPendingClasses(CI);
         }
     }
 }

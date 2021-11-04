@@ -94,7 +94,7 @@ namespace Gestion
                     dgvData.DataSource = PersonController.listStudent();
                     break;
                 case "Courses":
-                    dgvData.DataSource = CourseController.listCouses();
+                    dgvData.DataSource = CourseController.listCourses();
                     break;
                 case "Grades":
                     dgvData.DataSource = GradeController.listGrades();

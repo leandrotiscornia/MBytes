@@ -36,6 +36,7 @@
             this.btnConfiguration = new System.Windows.Forms.Button();
             this.btnHelp = new System.Windows.Forms.Button();
             this.btnProfile = new System.Windows.Forms.Button();
+            this.btnInscriptions = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // pnlFunction
@@ -94,11 +95,22 @@
             this.btnProfile.UseVisualStyleBackColor = true;
             this.btnProfile.Click += new System.EventHandler(this.btnProfile_Click);
             // 
+            // btnInscriptions
+            // 
+            this.btnInscriptions.Location = new System.Drawing.Point(633, 27);
+            this.btnInscriptions.Name = "btnInscriptions";
+            this.btnInscriptions.Size = new System.Drawing.Size(75, 23);
+            this.btnInscriptions.TabIndex = 6;
+            this.btnInscriptions.Text = "Inscriptions";
+            this.btnInscriptions.UseVisualStyleBackColor = true;
+            this.btnInscriptions.Click += new System.EventHandler(this.btnInscriptions_Click);
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(963, 498);
+            this.Controls.Add(this.btnInscriptions);
             this.Controls.Add(this.btnProfile);
             this.Controls.Add(this.btnHelp);
             this.Controls.Add(this.btnConfiguration);
@@ -121,5 +133,6 @@
         private System.Windows.Forms.Button btnConfiguration;
         private System.Windows.Forms.Button btnHelp;
         private System.Windows.Forms.Button btnProfile;
+        private System.Windows.Forms.Button btnInscriptions;
     }
 }

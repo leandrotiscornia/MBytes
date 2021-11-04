@@ -19,7 +19,6 @@ namespace Datos
         public string firstSurname { get; set; }
         public string secondSurname { get; set; }
         public string nickName { get; set; }
-        public string avatarPicture { get; set; }
         public int userRole { get; set; }
 
         public void registerUser()
@@ -34,7 +33,7 @@ namespace Datos
             executeVoid();
             Console.WriteLine(commandString);
         }
-        public void createObjectPerson()
+        public void createPersonObject()
         {
             objectKey = personId.ToString();
             tableName = "persons";
@@ -47,7 +46,6 @@ namespace Datos
                 "First_Surname",
                 "Second_Surname",
                 "Nick_Name",
-                "Avatar_Picture"
             };
             objectValues = new string[]
             {
@@ -58,10 +56,19 @@ namespace Datos
                 firstSurname,
                 secondSurname,
                 nickName,
-                avatarPicture
             };
         }
-        public void createObjectPersonToModify()
+        public void getUserRole()
+        {
+            string commandString;
+            commandString = 
+                "SELECT Role_ID FROM personis WHERE Person_CI = @ci;";
+            command.CommandText = commandString;
+            command.Parameters.AddWithValue("@ci", ci);
+            executeAndRead();
+            userRole = readInt(0);
+        }
+        public void createPersonObjectToModify()
         {
             objectKey = personId.ToString();
             tableName = "persons";
@@ -221,7 +228,7 @@ namespace Datos
             DataTable users = new DataTable();
             string commandString;
             commandString =
-                "SELECT persons.ID, CI, First_Name, Second_Name, First_Surname, Second_Surname, Nick_Name, Avatar_Picture " +
+                "SELECT persons.ID, CI, First_Name, Second_Name, First_Surname, Second_Surname, Nick_Name " +
                 "FROM persons " +
                 "JOIN personis ON persons.CI = personis.Person_CI " +
                 "JOIN roles ON roles.ID = personis.Role_ID " +
@@ -311,7 +318,7 @@ namespace Datos
         {
             string commandString;
             commandString =
-                "SELECT ID, CI, First_Name, Second_Name, First_Surname, Second_Surname, Nick_Name, Avatar_Picture " +
+                "SELECT ID, CI, First_Name, Second_Name, First_Surname, Second_Surname, Nick_Name " +
                 "FROM persons " +
                 "JOIN personis ON persons.CI = personis.Person_CI " +
                 "WHERE personis.Role_ID = @roleId;";
@@ -342,6 +349,12 @@ namespace Datos
             command.CommandText = commandString;
             command.Parameters.AddWithValue("@myId", personId);
             executeVoid();
+            commandString =
+                "DELETE FROM users " +
+                "WHERE ID = @myId";
+            command.CommandText = commandString;
+            command.Parameters.AddWithValue("@myId", personId);
+            executeVoid();
         }
         public void deleteTeacher()
         {
@@ -367,6 +380,12 @@ namespace Datos
             command.CommandText = commandString;
             command.Parameters.AddWithValue("@myId", personId);
             executeVoid();
+            commandString =
+                "DELETE FROM users " +
+                "WHERE ID = @myId";
+            command.CommandText = commandString;
+            command.Parameters.AddWithValue("@myId", personId);
+            executeVoid();
         }
         public bool isAdmin()
         {
@@ -384,7 +403,7 @@ namespace Datos
             if (readString(0) != null) { reader.Close(); return true; }
             else { reader.Close(); return false; }
         }
-        public string getUserPassword()
+        public void getUserPassword()
         {
             string commandString;
             commandString =
@@ -394,7 +413,8 @@ namespace Datos
             command.CommandText = commandString;
             command.Parameters.AddWithValue("@myId", personId);
             executeAndRead();
-            return readString(0);
+            userPassword = readString(0);
+            reader.Close();
         }
     }
 }

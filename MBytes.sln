@@ -25,6 +25,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gestion", "Gestion\Gestion.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Autorizacion", "Autorizacion\Autorizacion.csproj", "{BC2A891C-0037-4547-99A9-DEC59C739A65}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PruebasUnitarias", "PruebasUnitarias\PruebasUnitarias.csproj", "{2B1B6B3D-3F0A-4519-A27F-40EF0146FA67}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -75,6 +77,10 @@ Global
 		{BC2A891C-0037-4547-99A9-DEC59C739A65}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BC2A891C-0037-4547-99A9-DEC59C739A65}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BC2A891C-0037-4547-99A9-DEC59C739A65}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B1B6B3D-3F0A-4519-A27F-40EF0146FA67}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B1B6B3D-3F0A-4519-A27F-40EF0146FA67}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B1B6B3D-3F0A-4519-A27F-40EF0146FA67}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B1B6B3D-3F0A-4519-A27F-40EF0146FA67}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

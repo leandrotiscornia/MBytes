@@ -119,14 +119,15 @@ namespace App_De_Alumno
         {
             if (pictureSelector.ShowDialog() == DialogResult.OK)
             {
-                File.Copy(pictureSelector.FileName, Path.Combine(PictureController.getPicturePath(), Session.ci), true);
+                pbUserPicture.Image.Dispose();
+                File.Copy(pictureSelector.FileName, Path.Combine(PictureController.getPicturePath(), Session.ci + ".jpg"), true);
                 loadPicture();
             }
         }
         private void loadPicture()
         {
-            if(File.Exists(Path.Combine(PictureController.getPicturePath(),Session.ci)))
-                pbUserPicture.Image = Image.FromFile(Path.Combine(PictureController.getPicturePath(), Session.ci));
+            if(File.Exists(Path.Combine(PictureController.getPicturePath(),Session.ci + ".jpg")))
+                pbUserPicture.Image = Image.FromFile(Path.Combine(PictureController.getPicturePath(), Session.ci + ".jpg"));
         }
         private void btnConfirmUserName_Click(object sender, EventArgs e)
         {

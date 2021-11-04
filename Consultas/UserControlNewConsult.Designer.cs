@@ -28,21 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lvNewConsults = new System.Windows.Forms.ListView();
-            this.ID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.PersonName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.CI = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.PersonName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.ID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.NickName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.Icons = new System.Windows.Forms.ImageList(this.components);
             this.SuspendLayout();
             // 
             // lvNewConsults
             // 
+            this.lvNewConsults.BackColor = System.Drawing.SystemColors.WindowFrame;
             this.lvNewConsults.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.CI,
             this.PersonName,
             this.ID,
             this.NickName});
             this.lvNewConsults.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lvNewConsults.ForeColor = System.Drawing.SystemColors.ScrollBar;
             this.lvNewConsults.HideSelection = false;
             this.lvNewConsults.Location = new System.Drawing.Point(0, 0);
             this.lvNewConsults.Name = "lvNewConsults";
@@ -52,24 +56,27 @@
             this.lvNewConsults.View = System.Windows.Forms.View.Tile;
             this.lvNewConsults.SelectedIndexChanged += new System.EventHandler(this.lvNewConsults_SelectedIndexChanged);
             // 
-            // ID
-            // 
-            this.ID.DisplayIndex = 3;
-            this.ID.Text = "ID";
-            // 
-            // PersonName
-            // 
-            this.PersonName.DisplayIndex = 0;
-            this.PersonName.Text = "Name";
-            // 
             // CI
             // 
             this.CI.Text = "CI";
             // 
+            // PersonName
+            // 
+            this.PersonName.Text = "Name";
+            // 
+            // ID
+            // 
+            this.ID.Text = "ID";
+            // 
             // NickName
             // 
-            this.NickName.DisplayIndex = 1;
             this.NickName.Text = "NickName";
+            // 
+            // Icons
+            // 
+            this.Icons.ColorDepth = System.Windows.Forms.ColorDepth.Depth8Bit;
+            this.Icons.ImageSize = new System.Drawing.Size(16, 16);
+            this.Icons.TransparentColor = System.Drawing.Color.Transparent;
             // 
             // UserControlNewConsult
             // 
@@ -89,5 +96,6 @@
         private System.Windows.Forms.ColumnHeader CI;
         private System.Windows.Forms.ColumnHeader ID;
         public System.Windows.Forms.ListView lvNewConsults;
+        private System.Windows.Forms.ImageList Icons;
     }
 }

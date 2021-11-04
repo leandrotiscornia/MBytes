@@ -20,13 +20,7 @@ namespace Datos
         public MySqlDataReader reader { get; set; }
         public MySqlConnection connection { get; set; }
 
-        internal DataBase DataBase
-        {
-            get => default;
-            set
-            {
-            }
-        }
+     
 
         
 
@@ -41,12 +35,19 @@ namespace Datos
             dbPassword = DataBase.Default.dbPassword;
             openConnection();
         }
-        public void setConnectionData()
+        public void setConnectionData(string dbUser, string dbPort, string dbPassword)
         {
             DataBase.Default.dbUser = dbUser;
             DataBase.Default.dbPassword = dbPassword;
             DataBase.Default.dbPort = dbPort;
             DataBase.Default.Save();
+            this.dbUser = DataBase.Default.dbUser;
+            this.dbPort = DataBase.Default.dbPort;
+            this.dbPassword = DataBase.Default.dbPassword;
+        }
+        public void setDefaultConnection()
+        {
+            DataBase.Default.Reset();
         }
 
         public void openConnection()

@@ -52,7 +52,7 @@
             // 
             this.lbCI.AutoSize = true;
             this.lbCI.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbCI.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(195)))), ((int)(((byte)(195)))));
+            this.lbCI.ForeColor = System.Drawing.SystemColors.ControlText;
             this.lbCI.Location = new System.Drawing.Point(9, 191);
             this.lbCI.Name = "lbCI";
             this.lbCI.Size = new System.Drawing.Size(22, 16);
@@ -63,7 +63,7 @@
             // 
             this.lbFirstName.AutoSize = true;
             this.lbFirstName.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbFirstName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(195)))), ((int)(((byte)(195)))));
+            this.lbFirstName.ForeColor = System.Drawing.SystemColors.ControlText;
             this.lbFirstName.Location = new System.Drawing.Point(8, 237);
             this.lbFirstName.Name = "lbFirstName";
             this.lbFirstName.Size = new System.Drawing.Size(78, 16);
@@ -74,7 +74,7 @@
             // 
             this.lbSecondName.AutoSize = true;
             this.lbSecondName.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbSecondName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(195)))), ((int)(((byte)(195)))));
+            this.lbSecondName.ForeColor = System.Drawing.SystemColors.ControlText;
             this.lbSecondName.Location = new System.Drawing.Point(8, 286);
             this.lbSecondName.Name = "lbSecondName";
             this.lbSecondName.Size = new System.Drawing.Size(98, 16);
@@ -85,7 +85,7 @@
             // 
             this.lbFisrtSurname.AutoSize = true;
             this.lbFisrtSurname.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbFisrtSurname.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(195)))), ((int)(((byte)(195)))));
+            this.lbFisrtSurname.ForeColor = System.Drawing.SystemColors.ControlText;
             this.lbFisrtSurname.Location = new System.Drawing.Point(8, 335);
             this.lbFisrtSurname.Name = "lbFisrtSurname";
             this.lbFisrtSurname.Size = new System.Drawing.Size(99, 16);
@@ -96,7 +96,7 @@
             // 
             this.lbSeconSurname.AutoSize = true;
             this.lbSeconSurname.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbSeconSurname.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(195)))), ((int)(((byte)(195)))));
+            this.lbSeconSurname.ForeColor = System.Drawing.SystemColors.ControlText;
             this.lbSeconSurname.Location = new System.Drawing.Point(8, 383);
             this.lbSeconSurname.Name = "lbSeconSurname";
             this.lbSeconSurname.Size = new System.Drawing.Size(119, 16);
@@ -105,56 +105,55 @@
             // 
             // tbSecondSurname
             // 
-            this.tbSecondSurname.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(120)))), ((int)(((byte)(130)))));
-            this.tbSecondSurname.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tbSecondSurname.BackColor = System.Drawing.SystemColors.Window;
+            this.tbSecondSurname.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbSecondSurname.Location = new System.Drawing.Point(179, 382);
             this.tbSecondSurname.Name = "tbSecondSurname";
-            this.tbSecondSurname.Size = new System.Drawing.Size(100, 13);
+            this.tbSecondSurname.Size = new System.Drawing.Size(100, 20);
             this.tbSecondSurname.TabIndex = 5;
             // 
             // tbFirstSurname
             // 
-            this.tbFirstSurname.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(120)))), ((int)(((byte)(130)))));
-            this.tbFirstSurname.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tbFirstSurname.BackColor = System.Drawing.SystemColors.Window;
+            this.tbFirstSurname.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbFirstSurname.Location = new System.Drawing.Point(179, 334);
             this.tbFirstSurname.Name = "tbFirstSurname";
-            this.tbFirstSurname.Size = new System.Drawing.Size(100, 13);
+            this.tbFirstSurname.Size = new System.Drawing.Size(100, 20);
             this.tbFirstSurname.TabIndex = 6;
             // 
             // tbSecondName
             // 
-            this.tbSecondName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(120)))), ((int)(((byte)(130)))));
-            this.tbSecondName.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tbSecondName.BackColor = System.Drawing.SystemColors.Window;
+            this.tbSecondName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbSecondName.Location = new System.Drawing.Point(179, 285);
             this.tbSecondName.Name = "tbSecondName";
-            this.tbSecondName.Size = new System.Drawing.Size(100, 13);
+            this.tbSecondName.Size = new System.Drawing.Size(100, 20);
             this.tbSecondName.TabIndex = 7;
             // 
             // tbFirstName
             // 
-            this.tbFirstName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(120)))), ((int)(((byte)(130)))));
-            this.tbFirstName.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tbFirstName.BackColor = System.Drawing.SystemColors.Window;
+            this.tbFirstName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbFirstName.Location = new System.Drawing.Point(179, 236);
             this.tbFirstName.Name = "tbFirstName";
-            this.tbFirstName.Size = new System.Drawing.Size(100, 13);
+            this.tbFirstName.Size = new System.Drawing.Size(100, 20);
             this.tbFirstName.TabIndex = 8;
             // 
             // tbCI
             // 
-            this.tbCI.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(120)))), ((int)(((byte)(130)))));
-            this.tbCI.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tbCI.BackColor = System.Drawing.SystemColors.Window;
+            this.tbCI.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbCI.Location = new System.Drawing.Point(179, 190);
             this.tbCI.Name = "tbCI";
-            this.tbCI.Size = new System.Drawing.Size(100, 13);
+            this.tbCI.Size = new System.Drawing.Size(100, 20);
             this.tbCI.TabIndex = 9;
             // 
             // btnRegister
             // 
-            this.btnRegister.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(194)))), ((int)(((byte)(157)))));
+            this.btnRegister.BackColor = System.Drawing.SystemColors.Control;
             this.btnRegister.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(194)))), ((int)(((byte)(157)))));
-            this.btnRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnRegister.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRegister.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(57)))), ((int)(((byte)(67)))));
+            this.btnRegister.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnRegister.Location = new System.Drawing.Point(191, 595);
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.Size = new System.Drawing.Size(75, 32);
@@ -165,11 +164,10 @@
             // 
             // btnCancel
             // 
-            this.btnCancel.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(194)))), ((int)(((byte)(157)))));
+            this.btnCancel.BackColor = System.Drawing.SystemColors.Control;
             this.btnCancel.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(194)))), ((int)(((byte)(157)))));
-            this.btnCancel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnCancel.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(57)))), ((int)(((byte)(67)))));
+            this.btnCancel.ForeColor = System.Drawing.SystemColors.ControlText;
             this.btnCancel.Location = new System.Drawing.Point(41, 595);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(75, 32);
@@ -180,28 +178,28 @@
             // 
             // tbPassword
             // 
-            this.tbPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(120)))), ((int)(((byte)(130)))));
-            this.tbPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tbPassword.BackColor = System.Drawing.SystemColors.Window;
+            this.tbPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbPassword.Location = new System.Drawing.Point(179, 99);
             this.tbPassword.Name = "tbPassword";
             this.tbPassword.PasswordChar = '*';
-            this.tbPassword.Size = new System.Drawing.Size(100, 13);
+            this.tbPassword.Size = new System.Drawing.Size(100, 20);
             this.tbPassword.TabIndex = 15;
             // 
             // tbUserName
             // 
-            this.tbUserName.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(120)))), ((int)(((byte)(130)))));
-            this.tbUserName.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tbUserName.BackColor = System.Drawing.SystemColors.Window;
+            this.tbUserName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbUserName.Location = new System.Drawing.Point(179, 57);
             this.tbUserName.Name = "tbUserName";
-            this.tbUserName.Size = new System.Drawing.Size(100, 13);
+            this.tbUserName.Size = new System.Drawing.Size(100, 20);
             this.tbUserName.TabIndex = 16;
             // 
             // lbPassword
             // 
             this.lbPassword.AutoSize = true;
             this.lbPassword.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(195)))), ((int)(((byte)(195)))));
+            this.lbPassword.ForeColor = System.Drawing.SystemColors.ControlText;
             this.lbPassword.Location = new System.Drawing.Point(12, 100);
             this.lbPassword.Name = "lbPassword";
             this.lbPassword.Size = new System.Drawing.Size(70, 16);
@@ -212,7 +210,7 @@
             // 
             this.lbUserName.AutoSize = true;
             this.lbUserName.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbUserName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(195)))), ((int)(((byte)(195)))));
+            this.lbUserName.ForeColor = System.Drawing.SystemColors.ControlText;
             this.lbUserName.Location = new System.Drawing.Point(12, 58);
             this.lbUserName.Name = "lbUserName";
             this.lbUserName.Size = new System.Drawing.Size(78, 16);
@@ -221,19 +219,19 @@
             // 
             // tbConfirmPassword
             // 
-            this.tbConfirmPassword.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(30)))), ((int)(((byte)(120)))), ((int)(((byte)(130)))));
-            this.tbConfirmPassword.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.tbConfirmPassword.BackColor = System.Drawing.SystemColors.Window;
+            this.tbConfirmPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbConfirmPassword.Location = new System.Drawing.Point(179, 143);
             this.tbConfirmPassword.Name = "tbConfirmPassword";
             this.tbConfirmPassword.PasswordChar = '*';
-            this.tbConfirmPassword.Size = new System.Drawing.Size(100, 13);
+            this.tbConfirmPassword.Size = new System.Drawing.Size(100, 20);
             this.tbConfirmPassword.TabIndex = 19;
             // 
             // lbConfirmPassword
             // 
             this.lbConfirmPassword.AutoSize = true;
             this.lbConfirmPassword.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbConfirmPassword.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(195)))), ((int)(((byte)(195)))), ((int)(((byte)(195)))));
+            this.lbConfirmPassword.ForeColor = System.Drawing.SystemColors.ControlText;
             this.lbConfirmPassword.Location = new System.Drawing.Point(8, 144);
             this.lbConfirmPassword.Name = "lbConfirmPassword";
             this.lbConfirmPassword.Size = new System.Drawing.Size(124, 16);
@@ -244,7 +242,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(60)))), ((int)(((byte)(57)))), ((int)(((byte)(67)))));
+            this.BackColor = System.Drawing.SystemColors.Control;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(309, 639);
             this.Controls.Add(this.lbConfirmPassword);
@@ -265,6 +263,7 @@
             this.Controls.Add(this.lbSecondName);
             this.Controls.Add(this.lbFirstName);
             this.Controls.Add(this.lbCI);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormRegisterStudent";
             this.Text = "FormRegister";
             this.Load += new System.EventHandler(this.FormRegisterStudent_Load);

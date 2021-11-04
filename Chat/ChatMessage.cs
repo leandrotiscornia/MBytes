@@ -36,7 +36,7 @@ namespace Chat
             align = "left";
             pictureAlign = "10 -40 140 34";
             timeAlign = "0,0,0,-16";
-            picture = PictureController.getPicturePath() + senderCI; 
+            picture = PictureController.getPicturePath() + senderCI + ".jpg"; 
             if (senderId == Session.userId)
             {
                 color = "#FF1D8CD8";

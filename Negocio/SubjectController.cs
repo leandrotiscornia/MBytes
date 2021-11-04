@@ -56,5 +56,10 @@ namespace Negocio
             subjectData.Add(subject.subjectDescription);
             return subjectData;
         }
+        public static DataTable listSubjectsByGroup(int groupId)
+        {
+            ModelSubject subject = new ModelSubject();
+            return subject.listSubjectsByGroup(groupId);
+        }
     }
 }

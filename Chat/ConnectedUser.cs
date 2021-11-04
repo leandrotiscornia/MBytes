@@ -14,7 +14,7 @@ namespace Chat
         private string _userNick;
         private string _personalName;
         private string _userRole;
-        public string status { get; set; }
+        private string _status { get; set; }
         public string statusColor { get; set; }
         public string opacity { get; set; }
         public string picture { get; set; }
@@ -27,11 +27,12 @@ namespace Chat
             _userRole = userRole;
             picture = PictureController.getPicturePath() + userCI;
             opacity = "1";
-            this.status = status;
+            _status = status;
             switch (status)
             {
                 case "Online":
                     statusColor = "#FF208D07";
+                    opacity = "1";
                     break;
                 case "Offline":
                     statusColor = "#FF9EA8A7";
@@ -39,14 +40,21 @@ namespace Chat
                     break;
                 case "Invited":
                     statusColor = "#FF1FCDBD";
+                    opacity = "1";
                     break;
                 case "Inactive":
                     statusColor = "#FFBDCD1F";
+                    opacity = "1";
+                    break;
+                case "Host":
+                    statusColor = "#ec4c4c";
+                    opacity = "1";
                     break;
                 default:
                     break;
             }
         }
+        
         public int userId
         {
             get { return _userId; }
@@ -54,6 +62,15 @@ namespace Chat
             {
                 _userId = value;
                 OnPropertyChanged("userId");
+            }
+        }
+        public string status
+        {
+            get { return _status; }
+            set
+            {
+                _status = value;
+                OnPropertyChanged("status");
             }
         }
         public string userNick
@@ -86,8 +103,35 @@ namespace Chat
         
         protected void OnPropertyChanged(string name)
         {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
+            PropertyChanged?.Invoke(userId, new PropertyChangedEventArgs(name));
         }
-
+        public void statusCheck()
+        {
+            switch (_status)
+            {
+                case "Online":
+                    statusColor = "#FF208D07";
+                    opacity = "1";
+                    break;
+                case "Offline":
+                    statusColor = "#FF9EA8A7";
+                    opacity = "0.5";
+                    break;
+                case "Invited":
+                    statusColor = "#FF1FCDBD";
+                    opacity = "1";
+                    break;
+                case "Inactive":
+                    statusColor = "#FFBDCD1F";
+                    opacity = "1";
+                    break;
+                case "Host":
+                    statusColor = "#ec4c4c";
+                    opacity = "1";
+                    break;
+                default:
+                    break;
+            }
+        }
     }
 }

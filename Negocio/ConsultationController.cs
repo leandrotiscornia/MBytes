@@ -24,7 +24,7 @@ namespace Negocio
             ModelConsultation consultation = new ModelConsultation();
             consultation.senderId = myId;
             Console.WriteLine("El id del usuario es: " + myId);
-            consultationDone = consultation.getConsultationssDone();
+            consultationDone = consultation.getConsultationsDone();
             return consultationDone;
         }
         public static DataTable getConsultationsReceived(int myId)
@@ -43,8 +43,9 @@ namespace Negocio
             consultationState = consultation.getConsultationState();
             return consultationState;
         }
-        public static void newConsultation(int senderId, int receiverId, string topic, string message)
+        public static int newConsultation(int senderId, int receiverId, string topic, string message)
         {
+            int consultationId;
             ModelConsultation consultation = new ModelConsultation();
             consultation.senderId = senderId;
             consultation.receiverId = receiverId;
@@ -52,9 +53,9 @@ namespace Negocio
             consultation.consultationState = "Done";
             consultation.createObjectConsultation();
             consultation.insertObject();
-            ConsultationMessageController.sendConsultationMessage(consultation.getLastInsertId(), senderId, message);
+            consultationId = consultation.getLastInsertId();
+            ConsultationMessageController.sendConsultationMessage(consultationId, senderId, message);
+            return consultationId;
         }
-
-
     }
 }

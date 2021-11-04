@@ -31,8 +31,16 @@ namespace Chat
         private void InitializeComponent()
         {
             this.lvSessions = new System.Windows.Forms.ListView();
+            this.sessionId = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.sessionHostID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.sessionHostName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.sessionStartTime = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnJoin = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.cbSubjects = new System.Windows.Forms.ComboBox();
+            this.cbGroups = new System.Windows.Forms.ComboBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.tbSessionName = new System.Windows.Forms.TextBox();
             this.pbProfilePicture = new System.Windows.Forms.PictureBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -46,10 +54,7 @@ namespace Chat
             this.registerHostID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.registerStartTime = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.registerEndTime = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.sessionId = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.sessionHostID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.sessionHostName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.sessionStartTime = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbProfilePicture)).BeginInit();
             this.tcChat.SuspendLayout();
             this.tpSessions.SuspendLayout();
@@ -72,6 +77,18 @@ namespace Chat
             this.lvSessions.UseCompatibleStateImageBehavior = false;
             this.lvSessions.View = System.Windows.Forms.View.Tile;
             // 
+            // sessionId
+            // 
+            this.sessionId.DisplayIndex = 1;
+            // 
+            // sessionHostID
+            // 
+            this.sessionHostID.DisplayIndex = 2;
+            // 
+            // sessionHostName
+            // 
+            this.sessionHostName.DisplayIndex = 0;
+            // 
             // btnJoin
             // 
             this.btnJoin.Location = new System.Drawing.Point(289, 351);
@@ -84,16 +101,55 @@ namespace Chat
             // 
             // groupBox1
             // 
-            this.groupBox1.Location = new System.Drawing.Point(402, 108);
+            this.groupBox1.Controls.Add(this.label3);
+            this.groupBox1.Controls.Add(this.cbSubjects);
+            this.groupBox1.Controls.Add(this.cbGroups);
+            this.groupBox1.Controls.Add(this.label2);
+            this.groupBox1.Location = new System.Drawing.Point(512, 144);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(395, 237);
+            this.groupBox1.Size = new System.Drawing.Size(285, 117);
             this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Filter";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(28, 61);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(46, 13);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "Subject:";
+            // 
+            // cbSubjects
+            // 
+            this.cbSubjects.FormattingEnabled = true;
+            this.cbSubjects.Location = new System.Drawing.Point(107, 61);
+            this.cbSubjects.Name = "cbSubjects";
+            this.cbSubjects.Size = new System.Drawing.Size(160, 21);
+            this.cbSubjects.TabIndex = 1;
+            // 
+            // cbGroups
+            // 
+            this.cbGroups.FormattingEnabled = true;
+            this.cbGroups.Location = new System.Drawing.Point(107, 24);
+            this.cbGroups.Name = "cbGroups";
+            this.cbGroups.Size = new System.Drawing.Size(160, 21);
+            this.cbGroups.TabIndex = 0;
+            this.cbGroups.SelectedIndexChanged += new System.EventHandler(this.cbGroups_SelectedIndexChanged);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(28, 24);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(36, 13);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Group";
+            // 
             // tbSessionName
             // 
-            this.tbSessionName.Location = new System.Drawing.Point(586, 38);
+            this.tbSessionName.Location = new System.Drawing.Point(593, 82);
             this.tbSessionName.Name = "tbSessionName";
             this.tbSessionName.Size = new System.Drawing.Size(186, 20);
             this.tbSessionName.TabIndex = 3;
@@ -109,7 +165,7 @@ namespace Chat
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(502, 41);
+            this.label1.Location = new System.Drawing.Point(509, 85);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(78, 13);
             this.label1.TabIndex = 5;
@@ -175,33 +231,13 @@ namespace Chat
             this.lvRegisters.UseCompatibleStateImageBehavior = false;
             this.lvRegisters.View = System.Windows.Forms.View.Tile;
             // 
+            // registerID
+            // 
+            this.registerID.DisplayIndex = 1;
+            // 
             // registerName
             // 
             this.registerName.DisplayIndex = 0;
-            // 
-            // registerHostID
-            // 
-            this.registerHostID.DisplayIndex = 1;
-            // 
-            // registerStartTime
-            // 
-            this.registerStartTime.DisplayIndex = 2;
-            // 
-            // registerEndTime
-            // 
-            this.registerEndTime.DisplayIndex = 3;
-            // 
-            // sessionHostID
-            // 
-            this.sessionHostID.DisplayIndex = 0;
-            // 
-            // sessionHostName
-            // 
-            this.sessionHostName.DisplayIndex = 1;
-            // 
-            // sessionStartTime
-            // 
-            this.sessionStartTime.DisplayIndex = 2;
             // 
             // UserControlChatMainPanel
             // 
@@ -217,6 +253,8 @@ namespace Chat
             this.Name = "UserControlChatMainPanel";
             this.Size = new System.Drawing.Size(800, 400);
             this.Load += new System.EventHandler(this.UserControlChatMainPanel_Load);
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbProfilePicture)).EndInit();
             this.tcChat.ResumeLayout(false);
             this.tpSessions.ResumeLayout(false);
@@ -248,5 +286,9 @@ namespace Chat
         private System.Windows.Forms.ColumnHeader registerHostID;
         private System.Windows.Forms.ColumnHeader registerStartTime;
         private System.Windows.Forms.ColumnHeader registerEndTime;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.ComboBox cbSubjects;
+        private System.Windows.Forms.ComboBox cbGroups;
     }
 }

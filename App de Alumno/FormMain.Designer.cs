@@ -48,8 +48,11 @@
             // 
             // lvNavigation
             // 
+            this.lvNavigation.BackColor = System.Drawing.SystemColors.WindowFrame;
             this.lvNavigation.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.Function});
+            this.lvNavigation.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lvNavigation.ForeColor = System.Drawing.SystemColors.ScrollBar;
             this.lvNavigation.HideSelection = false;
             this.lvNavigation.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
             listViewItem1,
@@ -109,6 +112,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ClientSize = new System.Drawing.Size(963, 498);
             this.Controls.Add(this.btnInscriptions);
             this.Controls.Add(this.btnProfile);

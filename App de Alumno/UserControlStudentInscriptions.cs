@@ -21,6 +21,7 @@ namespace App_De_Alumno
         private void UserControlStudentInscriptions_Load(object sender, EventArgs e)
         {
             loadGroups();
+            loadInscriptions();
         }
 
         private void btnRequest_Click(object sender, EventArgs e)
@@ -41,7 +42,7 @@ namespace App_De_Alumno
         }
         private void loadSubjects()
         {
-            DataTable subjects = GroupController.listSubjectsByGroup((int)dgvGroups["ID", dgvGroups.CurrentCell.RowIndex].Value);
+            DataTable subjects = GroupController.listInscriptionSubjects(getId(dgvGroups.SelectedRows[0]),Session.ci);
             dgvSubjects.DataSource = subjects;
             if (dgvSubjects.Columns["ID"] != null) dgvSubjects.Columns["ID"].Visible = false;
         }
@@ -52,7 +53,14 @@ namespace App_De_Alumno
             {
                 subjects.Add(getId(subject));
             }
-            GroupController.requestInscription(Session.ci, getId(dgvGroups.SelectedRows[0]), subjects);
+            GroupController.requestStudentInscription(Session.ci, getId(dgvGroups.SelectedRows[0]), subjects);
+            loadSubjects();
+            loadInscriptions();
+        }
+        private void loadInscriptions()
+        {
+            DataTable inscriptions = GroupController.loadStudentInscriptions(Session.ci);
+            dgvPending.DataSource = inscriptions;
         }
     }
 }

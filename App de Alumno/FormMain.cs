@@ -27,6 +27,7 @@ namespace App_De_Alumno
         private void lvNavigation_SelectedIndexChanged(object sender, EventArgs e)
         {
             pnlFunction.Controls.Clear();
+            GC.Collect();
             if (lvNavigation.SelectedIndices.Count > 0)
             {
                 if (lvNavigation.SelectedItems[0].Text == "Consultations")
@@ -52,6 +53,7 @@ namespace App_De_Alumno
         private void btnProfile_Click(object sender, EventArgs e)
         {
             pnlFunction.Controls.Clear();
+            GC.Collect();
             UserControlProfile profile = new UserControlProfile();
             profile.Dock = DockStyle.Fill;
             pnlFunction.Controls.Add(profile);
@@ -60,6 +62,7 @@ namespace App_De_Alumno
         private void btnInscriptions_Click(object sender, EventArgs e)
         {
             pnlFunction.Controls.Clear();
+            GC.Collect();
             UserControlStudentInscriptions inscriptions = new UserControlStudentInscriptions();
             inscriptions.Dock = DockStyle.Fill;
             pnlFunction.Controls.Add(inscriptions);

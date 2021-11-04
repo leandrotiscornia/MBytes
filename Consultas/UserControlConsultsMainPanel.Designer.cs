@@ -51,33 +51,35 @@
             // 
             // tabPageNewConsult
             // 
+            this.tabPageNewConsult.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.tabPageNewConsult.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabPageNewConsult.ForeColor = System.Drawing.SystemColors.ScrollBar;
             this.tabPageNewConsult.Location = new System.Drawing.Point(4, 22);
             this.tabPageNewConsult.Name = "tabPageNewConsult";
             this.tabPageNewConsult.Padding = new System.Windows.Forms.Padding(3);
             this.tabPageNewConsult.Size = new System.Drawing.Size(378, 374);
             this.tabPageNewConsult.TabIndex = 0;
             this.tabPageNewConsult.Text = "New Consult";
-            this.tabPageNewConsult.UseVisualStyleBackColor = true;
             // 
             // tabPageConsultsMade
             // 
+            this.tabPageConsultsMade.BackColor = System.Drawing.SystemColors.ControlDark;
             this.tabPageConsultsMade.Location = new System.Drawing.Point(4, 22);
             this.tabPageConsultsMade.Name = "tabPageConsultsMade";
             this.tabPageConsultsMade.Padding = new System.Windows.Forms.Padding(3);
             this.tabPageConsultsMade.Size = new System.Drawing.Size(378, 374);
             this.tabPageConsultsMade.TabIndex = 1;
             this.tabPageConsultsMade.Text = "Consults Done";
-            this.tabPageConsultsMade.UseVisualStyleBackColor = true;
             // 
             // tabPageConsultsFiled
             // 
+            this.tabPageConsultsFiled.BackColor = System.Drawing.SystemColors.ControlDark;
             this.tabPageConsultsFiled.Location = new System.Drawing.Point(4, 22);
             this.tabPageConsultsFiled.Name = "tabPageConsultsFiled";
             this.tabPageConsultsFiled.Padding = new System.Windows.Forms.Padding(3);
             this.tabPageConsultsFiled.Size = new System.Drawing.Size(378, 374);
             this.tabPageConsultsFiled.TabIndex = 2;
             this.tabPageConsultsFiled.Text = "Consults Filed";
-            this.tabPageConsultsFiled.UseVisualStyleBackColor = true;
             // 
             // pnlConsults
             // 
@@ -87,13 +89,14 @@
             this.pnlConsults.Size = new System.Drawing.Size(399, 400);
             this.pnlConsults.TabIndex = 1;
             // 
-            // UserControlConsultsMainPanel
+            // UserControlConsultationsMainPanel
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.Controls.Add(this.pnlConsults);
             this.Controls.Add(this.tabControlConsults);
-            this.Name = "UserControlConsultsMainPanel";
+            this.Name = "UserControlConsultationsMainPanel";
             this.Size = new System.Drawing.Size(800, 400);
             this.tabControlConsults.ResumeLayout(false);
             this.ResumeLayout(false);

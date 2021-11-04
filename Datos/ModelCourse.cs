@@ -98,7 +98,7 @@ namespace Datos
                 "SELECT courses.ID, courses.Name, COUNT(grades.ID) AS `Number Of Grades`" +
                 "FROM courses " +
                 "JOIN grades ON grades.Course_ID = courses.ID " +
-                "GROUP BY(courses.Name);";
+                "GROUP BY(courses.ID);";
             command.CommandText = commandString;
             executeAndRead();
             return readTable();

@@ -128,6 +128,7 @@
             this.Controls.Add(this.lblGradeName);
             this.Controls.Add(this.dgvSubjects);
             this.Controls.Add(this.dgvGrade);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormModifyGrade";
             this.Text = "FormModifyGrade";
             this.Load += new System.EventHandler(this.FormModifyGrade_Load);

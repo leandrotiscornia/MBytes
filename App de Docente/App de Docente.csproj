@@ -72,6 +72,12 @@
     <Compile Include="UserControlProfile.Designer.cs">
       <DependentUpon>UserControlProfile.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControlTeacherInscriptions.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlTeacherInscriptions.Designer.cs">
+      <DependentUpon>UserControlTeacherInscriptions.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="FormLogIn.resx">
       <DependentUpon>FormLogIn.cs</DependentUpon>
     </EmbeddedResource>
@@ -92,6 +98,9 @@
     </Compile>
     <EmbeddedResource Include="UserControlProfile.resx">
       <DependentUpon>UserControlProfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlTeacherInscriptions.resx">
+      <DependentUpon>UserControlTeacherInscriptions.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

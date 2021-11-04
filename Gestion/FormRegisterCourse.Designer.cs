@@ -105,6 +105,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnRegister);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormRegisterCourse";
             this.Text = "FormRegisterGrade";
             ((System.ComponentModel.ISupportInitialize)(this.nudGrades)).EndInit();

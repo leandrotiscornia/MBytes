@@ -63,7 +63,12 @@
 
 
     <Grid Width="700" Height="700">
-        <Grid Background="{DynamicResource {x:Static SystemColors.ControlDarkDarkBrushKey}}">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="644*"/>
+            <ColumnDefinition Width="9*"/>
+            <ColumnDefinition Width="47*"/>
+        </Grid.ColumnDefinitions>
+        <Grid Background="{DynamicResource {x:Static SystemColors.ControlDarkDarkBrushKey}}" Grid.ColumnSpan="3">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="17*" />
                 <ColumnDefinition Width="8*" />
@@ -79,14 +84,14 @@
                     <RowDefinition Height="70"/>
                     <RowDefinition/>
                 </Grid.RowDefinitions>
-                
+
                 <TextBlock Grid.Row="0" Text="Host:" FontSize="14" Foreground="#FFD32C2C" 
                            HorizontalAlignment="Left" VerticalAlignment="Top" Panel.ZIndex="1" FontWeight="Bold"></TextBlock>
                 <TextBlock Grid.Row="1" Text="Teacher:" HorizontalAlignment="Left" 
                            VerticalAlignment="Top" FontSize="14" Panel.ZIndex="1" Foreground="#FF3D38B9" FontWeight="Bold"></TextBlock>
                 <TextBlock Grid.Row="2" Text="Students:" VerticalAlignment="Top" 
                            HorizontalAlignment="Left" FontSize="14" Panel.ZIndex="1" Foreground="#FF31A020" FontWeight="Bold"></TextBlock>
-                
+
                 <ListBox x:Name="hostBox" Grid.Row="0" Background="{DynamicResource 
                         {x:Static SystemColors.ControlDarkDarkBrushKey}}" BorderBrush="{DynamicResource {x:Static SystemColors.ControlDarkBrushKey}}" 
                          ItemTemplate="{StaticResource UsersTemplate}"/>

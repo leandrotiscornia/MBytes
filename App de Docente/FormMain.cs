@@ -22,11 +22,12 @@ namespace App_de_Docente
 
         private void FormMain_Load(object sender, EventArgs e)
         {
-        }
 
+        }
         private void lvNavigation_SelectedIndexChanged(object sender, EventArgs e)
         {
             pnlFunction.Controls.Clear();
+            GC.Collect();
             if (lvNavigation.SelectedIndices.Count > 0)
             {
                 if (lvNavigation.SelectedItems[0].Text == "Schedule")
@@ -52,9 +53,19 @@ namespace App_de_Docente
         private void btnProfile_Click(object sender, EventArgs e)
         {
             pnlFunction.Controls.Clear();
+            GC.Collect();
             UserControlProfile profile = new UserControlProfile();
             profile.Dock = DockStyle.Fill;
             pnlFunction.Controls.Add(profile);
+        }
+
+        private void btnInscriptions_Click(object sender, EventArgs e)
+        {
+            pnlFunction.Controls.Clear();
+            GC.Collect();
+            UserControlTeacherInscriptions inscriptions = new UserControlTeacherInscriptions();
+            inscriptions.Dock = DockStyle.Fill;
+            pnlFunction.Controls.Add(inscriptions);
         }
     }
 }

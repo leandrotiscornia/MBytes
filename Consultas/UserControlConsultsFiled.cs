@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Drawing;
 using System.Data;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -43,6 +44,9 @@ namespace Consultas
             DataTable consultsTable = new DataTable();
             consultsTable = ConsultationController.getConsultationsDone(Session.userId);
             ListViewItem item;
+            ImageList images = new ImageList();
+            images.ImageSize = new Size(40, 40);
+            images.ColorDepth = ColorDepth.Depth32Bit;
             lvFiledConsults.Items.Clear();
             foreach (DataRow consult in consultsTable.Rows)
             {
@@ -52,9 +56,19 @@ namespace Consultas
                     item.SubItems.Add(consult[1].ToString() + " " + consult[2].ToString());
                     item.SubItems.Add(consult[3].ToString());
                     item.SubItems.Add(consult[4].ToString());
+                    item.SubItems.Add(consult[5].ToString());
                     lvFiledConsults.Items.Add(item);
                 }
             }
+            foreach (ListViewItem itemm in lvFiledConsults.Items)
+            {
+                if (File.Exists(Path.Combine(PictureController.getPicturePath(), itemm.SubItems[4].Text + ".jpg")))
+                    images.Images.Add(Image.FromFile(PictureController.getPicturePath() + itemm.SubItems[4].Text + ".jpg"));
+                else
+                    images.Images.Add(new Bitmap(40, 40));
+                itemm.ImageIndex = images.Images.Count - 1;
+            }
+            lvFiledConsults.LargeImageList = images;
         }
 
         private void UserControlConsultsFiled_Load(object sender, EventArgs e)

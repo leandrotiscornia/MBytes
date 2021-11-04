@@ -37,13 +37,17 @@ namespace Chat
         public ConnectedUser teacher { get; set; }
         public EventHandler closeSession;
         public ObservableDictionary<int, ChatMessage> messageDictionary { get; set;}
-        ObservableDictionary<int, ConnectedUser> studentDictionary { get; set; }
+        public ObservableDictionary<int, ConnectedUser> hostDictionary { get; set; } 
+        public ObservableDictionary<int, ConnectedUser> teacherDictionary { get; set; }
+        public ObservableDictionary<int, ConnectedUser> studentDictionary { get; set; }
         private string userStatus;
         
         public UserControlMessages(int chatId)
         {
             studentDictionary = new ObservableDictionary<int, ConnectedUser>();
             messageDictionary = new ObservableDictionary<int, ChatMessage>();
+            teacherDictionary = new ObservableDictionary<int, ConnectedUser>();
+            hostDictionary = new ObservableDictionary<int, ConnectedUser>();
             userStatus = "Online";
             
             messagePool = new DispatcherTimer();
@@ -64,9 +68,13 @@ namespace Chat
             InitializeComponent();
             _chatId = chatId;
             loadMessages();
-            loadUsers();
+            loadStudents();
+            loadTeachers();
+            loadHost();
             messageBox.ItemsSource = messageDictionary;
             studentsBox.ItemsSource = studentDictionary;
+            teacherBox.ItemsSource = teacherDictionary;
+            hostBox.ItemsSource = hostDictionary;
         }
         private void activity_Tick(object sender, EventArgs e)
         {
@@ -79,7 +87,8 @@ namespace Chat
         private void status_Tick(object sender, EventArgs e)
         {
             checkStatus();
-            loadUsers();
+            loadStudents();
+            loadTeachers();
         }
         private void checkStatus()
         {
@@ -113,13 +122,12 @@ namespace Chat
                     messageDictionary[messageIdIndex].time = messageRow.Field<DateTime>("Time");
                 }
             }
-            
-            
         }
-        public void loadUsers()
-        {            foreach (DataRow studentRow in ChatSessionController.getStudents(_chatId).Rows)
+        public void loadStudents()
+        {
+            foreach (DataRow studentRow in ChatSessionController.getStudents(_chatId).Rows)
             {
-                if (!studentDictionary.ContainsKey(int.Parse(studentRow["ID"].ToString()))) 
+                if (!studentDictionary.ContainsKey(int.Parse(studentRow["ID"].ToString())))
                 {
                     studentDictionary.Add(int.Parse(studentRow["ID"].ToString()), new ConnectedUser(
                     int.Parse(studentRow["ID"].ToString()),
@@ -130,9 +138,48 @@ namespace Chat
                     studentRow["Status"].ToString()
                     ));
                 }
+                else
+                {
+                    studentDictionary[int.Parse(studentRow["ID"].ToString())].status = studentRow["Status"].ToString();
+                    studentDictionary[int.Parse(studentRow["ID"].ToString())].statusCheck();
+                }
+                    
             }
-            
-           
+        }
+        public void loadTeachers()
+        {
+            DataRow teacherRow = ChatSessionController.getTeacher(_chatId).Rows[0];
+            if (!teacherDictionary.ContainsKey(int.Parse(teacherRow["ID"].ToString())))
+            {
+                teacherDictionary.Add(int.Parse(teacherRow["ID"].ToString()), new ConnectedUser(
+                int.Parse(teacherRow["ID"].ToString()),
+                teacherRow["CI"].ToString(),
+                teacherRow["Nick_Name"].ToString(),
+                teacherRow["First_Name"] + " " + teacherRow["First_Surname"],
+                teacherRow["Name"].ToString(),
+                teacherRow["Status"].ToString()
+                ));
+            }
+            else
+            {
+                teacherDictionary[int.Parse(teacherRow["ID"].ToString())].status = teacherRow["Status"].ToString();
+                teacherDictionary[int.Parse(teacherRow["ID"].ToString())].statusCheck();
+            }
+        }
+        public void loadHost()
+        {
+            DataRow hostRow = ChatSessionController.getHost(_chatId).Rows[0];
+            if (!hostDictionary.ContainsKey(int.Parse(hostRow["ID"].ToString())))
+            {
+                hostDictionary.Add(int.Parse(hostRow["ID"].ToString()), new ConnectedUser(
+                int.Parse(hostRow["ID"].ToString()),
+                hostRow["CI"].ToString(),
+                hostRow["Nick_Name"].ToString(),
+                hostRow["First_Name"] + " " + hostRow["First_Surname"],
+                hostRow["Name"].ToString(),
+                "Host"
+                ));
+            }
         }
         public void readMessages()
         {
@@ -150,9 +197,6 @@ namespace Chat
             if (tbMessage.Text != "") sendMessage();
             resetTimer(activityCheck);
         }
-
-       
-        
 
         private void resetTimer(DispatcherTimer timer)
         {

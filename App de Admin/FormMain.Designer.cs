@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("Management");
             System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem("Authorization");
-            System.Windows.Forms.ListViewItem listViewItem3 = new System.Windows.Forms.ListViewItem("Chat");
             this.pnlFunction = new System.Windows.Forms.Panel();
             this.lvNavigation = new System.Windows.Forms.ListView();
             this.Function = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -55,8 +54,7 @@
             this.lvNavigation.HideSelection = false;
             this.lvNavigation.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
             listViewItem1,
-            listViewItem2,
-            listViewItem3});
+            listViewItem2});
             this.lvNavigation.Location = new System.Drawing.Point(12, 70);
             this.lvNavigation.MultiSelect = false;
             this.lvNavigation.Name = "lvNavigation";

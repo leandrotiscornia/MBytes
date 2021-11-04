@@ -40,12 +40,14 @@
             // 
             // btnSend
             // 
+            this.btnSend.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btnSend.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnSend.Location = new System.Drawing.Point(261, 345);
             this.btnSend.Name = "btnSend";
             this.btnSend.Size = new System.Drawing.Size(104, 23);
             this.btnSend.TabIndex = 13;
             this.btnSend.Text = "Add Consult";
-            this.btnSend.UseVisualStyleBackColor = true;
+            this.btnSend.UseVisualStyleBackColor = false;
             this.btnSend.Click += new System.EventHandler(this.btnSend_Click);
             // 
             // lbMessageEditConsult
@@ -68,6 +70,8 @@
             // 
             // tbNewMessage
             // 
+            this.tbNewMessage.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.tbNewMessage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbNewMessage.Location = new System.Drawing.Point(72, 228);
             this.tbNewMessage.Multiline = true;
             this.tbNewMessage.Name = "tbNewMessage";
@@ -85,6 +89,8 @@
             // 
             // tbTopic
             // 
+            this.tbTopic.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.tbTopic.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.tbTopic.Enabled = false;
             this.tbTopic.Location = new System.Drawing.Point(72, 31);
             this.tbTopic.Name = "tbTopic";
@@ -94,16 +100,20 @@
             // 
             // btnFileConsult
             // 
+            this.btnFileConsult.BackColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.btnFileConsult.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnFileConsult.Location = new System.Drawing.Point(72, 345);
             this.btnFileConsult.Name = "btnFileConsult";
             this.btnFileConsult.Size = new System.Drawing.Size(104, 23);
             this.btnFileConsult.TabIndex = 14;
             this.btnFileConsult.Text = "File Consult";
-            this.btnFileConsult.UseVisualStyleBackColor = true;
+            this.btnFileConsult.UseVisualStyleBackColor = false;
             this.btnFileConsult.Click += new System.EventHandler(this.btnFileConsult_Click);
             // 
             // rtbMessages
             // 
+            this.rtbMessages.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.rtbMessages.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.rtbMessages.Location = new System.Drawing.Point(72, 60);
             this.rtbMessages.Name = "rtbMessages";
             this.rtbMessages.ReadOnly = true;
@@ -115,6 +125,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.Controls.Add(this.rtbMessages);
             this.Controls.Add(this.btnFileConsult);
             this.Controls.Add(this.btnSend);
@@ -123,6 +134,7 @@
             this.Controls.Add(this.tbNewMessage);
             this.Controls.Add(this.lbTopicEditConsult);
             this.Controls.Add(this.tbTopic);
+            this.ForeColor = System.Drawing.SystemColors.ScrollBar;
             this.Name = "UserControlEditConsult";
             this.Size = new System.Drawing.Size(400, 400);
             this.Load += new System.EventHandler(this.UserControlEditConsult_Load);

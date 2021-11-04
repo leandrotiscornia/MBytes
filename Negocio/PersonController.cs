@@ -98,7 +98,6 @@ namespace Negocio
             DataTable scheduleUsers = new DataTable();
             ModelPerson scheduleUser = new ModelPerson();
             scheduleUsers = scheduleUser.getUsersByPermission(2);
-            Console.WriteLine("" + scheduleUsers.Rows[0][2]);
             return scheduleUsers;
         }
 
@@ -122,7 +121,7 @@ namespace Negocio
             studentToInsert.userPassword = DataBaseController.encryptPassword(password);
             studentToInsert.registerUser();
             studentToInsert.getUserId();
-            studentToInsert.createObjectPerson();
+            studentToInsert.createPersonObject();
             studentToInsert.insertObject();
             studentToInsert.assignUserRole(2); //roles.ID {1=Teacher, 2=Student}
         }
@@ -140,7 +139,7 @@ namespace Negocio
             teacherToInsert.registerUser();
             
             teacherToInsert.getUserId();
-            teacherToInsert.createObjectPerson();
+            teacherToInsert.createPersonObject();
             teacherToInsert.insertObject();
             teacherToInsert.assignUserRole(1); //roles.ID {1=Teacher, 2=Student}
         }
@@ -160,7 +159,7 @@ namespace Negocio
             personToModify.secondName = personData[3];
             personToModify.firstSurname = personData[4];
             personToModify.secondSurname = personData[5];
-            personToModify.createObjectPersonToModify();
+            personToModify.createPersonObjectToModify();
             personToModify.modifyObject();
         }
         public static void modifyUserName(string userNameData, int userIDData)
@@ -184,7 +183,8 @@ namespace Negocio
             ModelPerson person = new ModelPerson();
             person.personId = Session.userId;
             person.userPassword = DataBaseController.encryptPassword(oldPassword);
-            if ((person.getUserPassword() == null))
+            person.getUserPassword();
+            if ((person.userPassword == null))
                 throw new Exception("Incorrect Password");
             else
             {

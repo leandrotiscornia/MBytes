@@ -13,20 +13,23 @@ namespace Negocio
         public static DataTable listSessions()
         {
             ModelChatSession session = new ModelChatSession();
-            return session.listSessions();
+            return session.listSessions(Session.userId);
         }
         public static DataTable listRegister()
         {
             ModelChatSession session = new ModelChatSession();
-            return session.listRegisters();
+            return session.listRegisters(Session.userId);
         }
-        public static int openSession(int hostId, string sessionName)
+        public static int openSession(int hostId, string sessionName, int groupId, int subjectId)
         {
             ModelChatSession session = new ModelChatSession();
             session.hostId = hostId;
             session.sessionName = sessionName;
             session.startTime = DateTime.Now;
-            return session.openSession();
+            session.openSession();
+            session.getAllowedUsers(groupId, subjectId);
+            session.setInvitations();
+            return session.sessionId;
         }
         public static void closeSession(int sessionId)
         {

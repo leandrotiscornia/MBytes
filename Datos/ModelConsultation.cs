@@ -43,12 +43,12 @@ namespace Datos
             };
         }
 
-        public DataTable getConsultationssDone()
+        public DataTable getConsultationsDone()
         {
             DataTable consultationsReceived = new DataTable();
             string commandString;
             commandString =
-                "SELECT consults.ID, persons.First_Name, persons.First_Surname,Topic, consults.State " +
+                "SELECT consults.ID, persons.First_Name, persons.First_Surname,Topic, consults.State, persons.CI " +
                 "FROM consults " +
                 "JOIN users AS sender ON consults.Sender_ID = sender.ID " +
                 "JOIN users AS receiver ON consults.Receiver_ID = receiver.ID " +

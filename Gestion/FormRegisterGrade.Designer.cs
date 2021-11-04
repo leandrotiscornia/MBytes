@@ -137,6 +137,7 @@
             this.Controls.Add(this.btnAdd);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.cbCourses);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "FormRegisterGrade";
             this.Text = "FormRegisterGrade";
             this.Load += new System.EventHandler(this.FormRegisterGrade_Load);

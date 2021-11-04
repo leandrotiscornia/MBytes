@@ -32,12 +32,15 @@ namespace Negocio {
             }
         }
         
-        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("C:\\Users\\Spiral\\Documents\\ProfilePictures\\")]
         public string PictureRoute {
             get {
                 return ((string)(this["PictureRoute"]));
+            }
+            set {
+                this["PictureRoute"] = value;
             }
         }
     }

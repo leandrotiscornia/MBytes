@@ -12,10 +12,7 @@ namespace Negocio
         public static void setConnection(string dbUser, string dbPassword, string dbPort)
         {
             ModelConnection connection = new ModelConnection();
-            connection.dbUser = dbUser;
-            connection.dbPassword = dbPassword;
-            connection.dbPort = dbPort;
-            connection.setConnectionData();
+            connection.setConnectionData(dbUser, dbPassword, dbPort);
         }
 
         public static string checkExistence(string tableName, string objectKey, string objectKeyValue)
@@ -37,8 +34,13 @@ namespace Negocio
         public static string decryptPassword(string password)
         {
             byte[] decrypted = Convert.FromBase64String(password);
-            password = System.Text.Encoding.Unicode.GetString(decrypted);
+            password = Encoding.Unicode.GetString(decrypted);
             return password;
         }
     }
+
+    
+
+
+
 }
