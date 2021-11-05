@@ -30,6 +30,7 @@ namespace Chat
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserControlChatMainPanel));
             this.lvSessions = new System.Windows.Forms.ListView();
             this.sessionId = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.sessionHostID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -63,185 +64,156 @@ namespace Chat
             // 
             // lvSessions
             // 
+            resources.ApplyResources(this.lvSessions, "lvSessions");
             this.lvSessions.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.sessionId,
             this.sessionHostID,
             this.sessionHostName,
             this.sessionStartTime});
-            this.lvSessions.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lvSessions.HideSelection = false;
-            this.lvSessions.Location = new System.Drawing.Point(3, 3);
             this.lvSessions.Name = "lvSessions";
-            this.lvSessions.Size = new System.Drawing.Size(368, 296);
-            this.lvSessions.TabIndex = 0;
             this.lvSessions.UseCompatibleStateImageBehavior = false;
             this.lvSessions.View = System.Windows.Forms.View.Tile;
             // 
             // sessionId
             // 
-            this.sessionId.DisplayIndex = 1;
+            resources.ApplyResources(this.sessionId, "sessionId");
             // 
             // sessionHostID
             // 
-            this.sessionHostID.DisplayIndex = 2;
+            resources.ApplyResources(this.sessionHostID, "sessionHostID");
             // 
             // sessionHostName
             // 
-            this.sessionHostName.DisplayIndex = 0;
+            resources.ApplyResources(this.sessionHostName, "sessionHostName");
+            // 
+            // sessionStartTime
+            // 
+            resources.ApplyResources(this.sessionStartTime, "sessionStartTime");
             // 
             // btnJoin
             // 
-            this.btnJoin.Location = new System.Drawing.Point(289, 351);
+            resources.ApplyResources(this.btnJoin, "btnJoin");
             this.btnJoin.Name = "btnJoin";
-            this.btnJoin.Size = new System.Drawing.Size(96, 46);
-            this.btnJoin.TabIndex = 1;
-            this.btnJoin.Text = "Join Session";
             this.btnJoin.UseVisualStyleBackColor = true;
             this.btnJoin.Click += new System.EventHandler(this.btnJoin_Click);
             // 
             // groupBox1
             // 
+            resources.ApplyResources(this.groupBox1, "groupBox1");
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.cbSubjects);
             this.groupBox1.Controls.Add(this.cbGroups);
             this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Location = new System.Drawing.Point(512, 144);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(285, 117);
-            this.groupBox1.TabIndex = 2;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Filter";
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(28, 61);
+            resources.ApplyResources(this.label3, "label3");
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(46, 13);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Subject:";
             // 
             // cbSubjects
             // 
+            resources.ApplyResources(this.cbSubjects, "cbSubjects");
             this.cbSubjects.FormattingEnabled = true;
-            this.cbSubjects.Location = new System.Drawing.Point(107, 61);
             this.cbSubjects.Name = "cbSubjects";
-            this.cbSubjects.Size = new System.Drawing.Size(160, 21);
-            this.cbSubjects.TabIndex = 1;
             // 
             // cbGroups
             // 
+            resources.ApplyResources(this.cbGroups, "cbGroups");
             this.cbGroups.FormattingEnabled = true;
-            this.cbGroups.Location = new System.Drawing.Point(107, 24);
             this.cbGroups.Name = "cbGroups";
-            this.cbGroups.Size = new System.Drawing.Size(160, 21);
-            this.cbGroups.TabIndex = 0;
             this.cbGroups.SelectedIndexChanged += new System.EventHandler(this.cbGroups_SelectedIndexChanged);
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(28, 24);
+            resources.ApplyResources(this.label2, "label2");
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(36, 13);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Group";
             // 
             // tbSessionName
             // 
-            this.tbSessionName.Location = new System.Drawing.Point(593, 82);
+            resources.ApplyResources(this.tbSessionName, "tbSessionName");
             this.tbSessionName.Name = "tbSessionName";
-            this.tbSessionName.Size = new System.Drawing.Size(186, 20);
-            this.tbSessionName.TabIndex = 3;
             // 
             // pbProfilePicture
             // 
-            this.pbProfilePicture.Location = new System.Drawing.Point(402, 38);
+            resources.ApplyResources(this.pbProfilePicture, "pbProfilePicture");
             this.pbProfilePicture.Name = "pbProfilePicture";
-            this.pbProfilePicture.Size = new System.Drawing.Size(86, 64);
-            this.pbProfilePicture.TabIndex = 4;
             this.pbProfilePicture.TabStop = false;
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(509, 85);
+            resources.ApplyResources(this.label1, "label1");
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(78, 13);
-            this.label1.TabIndex = 5;
-            this.label1.Text = "Session Name:";
             // 
             // btnCreate
             // 
-            this.btnCreate.Location = new System.Drawing.Point(701, 351);
+            resources.ApplyResources(this.btnCreate, "btnCreate");
             this.btnCreate.Name = "btnCreate";
-            this.btnCreate.Size = new System.Drawing.Size(96, 46);
-            this.btnCreate.TabIndex = 6;
-            this.btnCreate.Text = "Create Session";
             this.btnCreate.UseVisualStyleBackColor = true;
             this.btnCreate.Click += new System.EventHandler(this.btnCreate_Click);
             // 
             // tcChat
             // 
+            resources.ApplyResources(this.tcChat, "tcChat");
             this.tcChat.Controls.Add(this.tpSessions);
             this.tcChat.Controls.Add(this.tpRegisters);
-            this.tcChat.Location = new System.Drawing.Point(3, 17);
             this.tcChat.Name = "tcChat";
             this.tcChat.SelectedIndex = 0;
-            this.tcChat.Size = new System.Drawing.Size(382, 328);
-            this.tcChat.TabIndex = 7;
             this.tcChat.SelectedIndexChanged += new System.EventHandler(this.tcChat_SelectedIndexChanged);
             // 
             // tpSessions
             // 
+            resources.ApplyResources(this.tpSessions, "tpSessions");
             this.tpSessions.Controls.Add(this.lvSessions);
-            this.tpSessions.Location = new System.Drawing.Point(4, 22);
             this.tpSessions.Name = "tpSessions";
-            this.tpSessions.Padding = new System.Windows.Forms.Padding(3);
-            this.tpSessions.Size = new System.Drawing.Size(374, 302);
-            this.tpSessions.TabIndex = 0;
-            this.tpSessions.Text = "Sessions";
             this.tpSessions.UseVisualStyleBackColor = true;
             // 
             // tpRegisters
             // 
+            resources.ApplyResources(this.tpRegisters, "tpRegisters");
             this.tpRegisters.Controls.Add(this.lvRegisters);
-            this.tpRegisters.Location = new System.Drawing.Point(4, 22);
             this.tpRegisters.Name = "tpRegisters";
-            this.tpRegisters.Padding = new System.Windows.Forms.Padding(3);
-            this.tpRegisters.Size = new System.Drawing.Size(374, 302);
-            this.tpRegisters.TabIndex = 1;
-            this.tpRegisters.Text = "Registers";
             this.tpRegisters.UseVisualStyleBackColor = true;
             // 
             // lvRegisters
             // 
+            resources.ApplyResources(this.lvRegisters, "lvRegisters");
             this.lvRegisters.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.registerID,
             this.registerName,
             this.registerHostID,
             this.registerStartTime,
             this.registerEndTime});
-            this.lvRegisters.Dock = System.Windows.Forms.DockStyle.Fill;
             this.lvRegisters.HideSelection = false;
-            this.lvRegisters.Location = new System.Drawing.Point(3, 3);
             this.lvRegisters.Name = "lvRegisters";
-            this.lvRegisters.Size = new System.Drawing.Size(368, 296);
-            this.lvRegisters.TabIndex = 1;
             this.lvRegisters.UseCompatibleStateImageBehavior = false;
             this.lvRegisters.View = System.Windows.Forms.View.Tile;
             // 
             // registerID
             // 
-            this.registerID.DisplayIndex = 1;
+            resources.ApplyResources(this.registerID, "registerID");
             // 
             // registerName
             // 
-            this.registerName.DisplayIndex = 0;
+            resources.ApplyResources(this.registerName, "registerName");
+            // 
+            // registerHostID
+            // 
+            resources.ApplyResources(this.registerHostID, "registerHostID");
+            // 
+            // registerStartTime
+            // 
+            resources.ApplyResources(this.registerStartTime, "registerStartTime");
+            // 
+            // registerEndTime
+            // 
+            resources.ApplyResources(this.registerEndTime, "registerEndTime");
             // 
             // UserControlChatMainPanel
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tcChat);
             this.Controls.Add(this.btnCreate);
@@ -251,7 +223,6 @@ namespace Chat
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnJoin);
             this.Name = "UserControlChatMainPanel";
-            this.Size = new System.Drawing.Size(800, 400);
             this.Load += new System.EventHandler(this.UserControlChatMainPanel_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();

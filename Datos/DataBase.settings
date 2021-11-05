@@ -12,10 +12,10 @@
       <Value Profile="(Default)">3306</Value>
     </Setting>
     <Setting Name="dbPassword" Type="System.String" Scope="User">
-      <Value Profile="(Default)">123</Value>
+      <Value Profile="(Default)">system</Value>
     </Setting>
     <Setting Name="dbUser" Type="System.String" Scope="User">
-      <Value Profile="(Default)">root</Value>
+      <Value Profile="(Default)">system</Value>
     </Setting>
   </Settings>
 </SettingsFile>

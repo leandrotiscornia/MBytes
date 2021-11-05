@@ -117,7 +117,570 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="&gt;&gt;lblFirstName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pbUserPicture.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="lblUserNickName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>13, 13</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="lblNewFirstSurname.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;lblNewSecondSurname.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtNewSecondSurname.Name" xml:space="preserve">
+    <value>txtNewSecondSurname</value>
+  </data>
+  <data name="pbUserInfo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>64, 64</value>
+  </data>
+  <data name="&gt;&gt;lblFirstSurName.ZOrder" xml:space="preserve">
+    <value>27</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="pbUserPicture.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>Zoom</value>
+  </data>
+  <data name="&gt;&gt;lblShowCI.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;lblNewSecondName.Name" xml:space="preserve">
+    <value>lblNewSecondName</value>
+  </data>
+  <data name="&gt;&gt;lblChangePicture.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="txtNewFirstName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>129, 13</value>
+  </data>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="&gt;&gt;lblSetNickName.Name" xml:space="preserve">
+    <value>lblSetNickName</value>
+  </data>
+  <data name="&gt;&gt;btnChangePicture.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtNewFirstName.Parent" xml:space="preserve">
+    <value>gbModifyProfile</value>
+  </data>
+  <data name="btnChangePicture.Location" type="System.Drawing.Point, System.Drawing">
+    <value>680, 155</value>
+  </data>
+  <data name="&gt;&gt;lblActualSecondName.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="&gt;&gt;lblActualFirstName.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="lblNickName.TabIndex" type="System.Int32, mscorlib">
+    <value>42</value>
+  </data>
+  <data name="lblSecondSurname.TabIndex" type="System.Int32, mscorlib">
+    <value>46</value>
+  </data>
+  <data name="btnConfirmUserName.Text" xml:space="preserve">
+    <value>Confirm Information</value>
+  </data>
+  <data name="pbUserConfig.TabIndex" type="System.Int32, mscorlib">
+    <value>41</value>
+  </data>
+  <data name="gbChangeUserName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>240, 144</value>
+  </data>
+  <data name="&gt;&gt;btnSetNickName.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="gbModifyProfile.Location" type="System.Drawing.Point, System.Drawing">
+    <value>237, 146</value>
+  </data>
+  <data name="&gt;&gt;gbChangeUserName.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="lblNewUserName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>88, 13</value>
+  </data>
+  <data name="lblNewUserName.TabIndex" type="System.Int32, mscorlib">
+    <value>99</value>
+  </data>
+  <data name="lblNewSecondName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>103, 13</value>
+  </data>
+  <data name="&gt;&gt;lblActualFirstSurname.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="gbModifyProfile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>237, 156</value>
+  </data>
+  <data name="&gt;&gt;lblSetNickName.ZOrder" xml:space="preserve">
+    <value>23</value>
+  </data>
+  <data name="btnConfirmInfo.TabIndex" type="System.Int32, mscorlib">
+    <value>90</value>
+  </data>
+  <data name="lblChangePassword.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblChangeUserName.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;lblSecondSurname.ZOrder" xml:space="preserve">
+    <value>26</value>
+  </data>
+  <data name="&gt;&gt;lblChangePicture.Name" xml:space="preserve">
+    <value>lblChangePicture</value>
+  </data>
+  <data name="lblNewUserName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 16</value>
+  </data>
+  <data name="&gt;&gt;lblActualNickName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="pbUserPicture.Size" type="System.Drawing.Size, System.Drawing">
+    <value>64, 64</value>
+  </data>
+  <data name="btnChangePicture.TabIndex" type="System.Int32, mscorlib">
+    <value>37</value>
+  </data>
+  <data name="lblFirstName.Text" xml:space="preserve">
+    <value>First Name:</value>
+  </data>
+  <data name="lblFirstSurName.Text" xml:space="preserve">
+    <value>First Surname:</value>
+  </data>
+  <data name="&gt;&gt;gbPictureModifyUserProfile.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblUserInfo.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="btnChangePicture.Text" xml:space="preserve">
+    <value>Change Picture..</value>
+  </data>
+  <data name="pbModifyUserProfile.Location" type="System.Drawing.Point, System.Drawing">
+    <value>0, 0</value>
+  </data>
+  <data name="&gt;&gt;gbModifyProfile.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;btnConfirmUserName.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="pbModifyUserProfile.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>AutoSize</value>
+  </data>
+  <data name="&gt;&gt;btnSetNickName.ZOrder" xml:space="preserve">
+    <value>33</value>
+  </data>
+  <data name="&gt;&gt;lblUserName.Name" xml:space="preserve">
+    <value>lblUserName</value>
+  </data>
+  <data name="lblChangePassword.Location" type="System.Drawing.Point, System.Drawing">
+    <value>516, 312</value>
+  </data>
+  <data name="lblShowCI.TabIndex" type="System.Int32, mscorlib">
+    <value>81</value>
+  </data>
+  <data name="btnChangeUserName.TabIndex" type="System.Int32, mscorlib">
+    <value>50</value>
+  </data>
+  <data name="&gt;&gt;txtNewSecondSurname.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="lblShowCI.Text" xml:space="preserve">
+    <value>  </value>
+  </data>
+  <data name="&gt;&gt;gbChangeUserName.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;txtNewNickName.Name" xml:space="preserve">
+    <value>txtNewNickName</value>
+  </data>
+  <data name="btnConfirmNickName.TabIndex" type="System.Int32, mscorlib">
+    <value>105</value>
+  </data>
+  <data name="&gt;&gt;lblChangeUserName.ZOrder" xml:space="preserve">
+    <value>20</value>
+  </data>
+  <data name="btnConfirmInfo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>314, 308</value>
+  </data>
+  <data name="lblActualFirstSurname.Size" type="System.Drawing.Size, System.Drawing">
+    <value>13, 13</value>
+  </data>
+  <data name="lblUserInfo.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;lblActualSecondSurname.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;lblNewFirstSurname.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="txtNewFirstName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>103, 20</value>
+  </data>
+  <data name="&gt;&gt;lblUserConfig.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="lblNewSecondSurname.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;lblNickName.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lblFirstSurName.Name" xml:space="preserve">
+    <value>lblFirstSurName</value>
+  </data>
+  <data name="lblUserName.Text" xml:space="preserve">
+    <value>User Name:</value>
+  </data>
+  <data name="&gt;&gt;lblSecondName.Name" xml:space="preserve">
+    <value>lblSecondName</value>
+  </data>
+  <data name="lblActualUserName.TabIndex" type="System.Int32, mscorlib">
+    <value>76</value>
+  </data>
+  <data name="btnConfirmNickName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>68, 23</value>
+  </data>
+  <data name="&gt;&gt;btnConfirmInfo.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="pbUserConfig.Size" type="System.Drawing.Size, System.Drawing">
+    <value>64, 64</value>
+  </data>
+  <data name="&gt;&gt;lblNewFirstName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lblNewSecondSurname.Text" xml:space="preserve">
+    <value>New Second Surname:</value>
+  </data>
+  <data name="lblNewFirstSurname.Size" type="System.Drawing.Size, System.Drawing">
+    <value>99, 13</value>
+  </data>
+  <data name="txtNewSecondSurname.Location" type="System.Drawing.Point, System.Drawing">
+    <value>129, 124</value>
+  </data>
+  <data name="txtNewUserName.TabIndex" type="System.Int32, mscorlib">
+    <value>100</value>
+  </data>
+  <data name="btnChangeUserName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>117, 23</value>
+  </data>
+  <data name="&gt;&gt;txtNewFirstName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnChangePassword.ZOrder" xml:space="preserve">
+    <value>21</value>
+  </data>
+  <data name="&gt;&gt;lblShowCI.Name" xml:space="preserve">
+    <value>lblShowCI</value>
+  </data>
+  <data name="&gt;&gt;lblSetNickName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblFirstSurName.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="lblUserNickName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>90, 3</value>
+  </data>
+  <data name="lblActualFirstSurname.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="gbChangeNickName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>242, 144</value>
+  </data>
+  <data name="lblActualFirstSurname.Location" type="System.Drawing.Point, System.Drawing">
+    <value>112, 327</value>
+  </data>
+  <data name="&gt;&gt;btnSetNickName.Name" xml:space="preserve">
+    <value>btnSetNickName</value>
+  </data>
+  <data name="&gt;&gt;lblNickName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lblNewNickName.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lbCI.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;lblChangeUserName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lbCI.TabIndex" type="System.Int32, mscorlib">
+    <value>80</value>
+  </data>
+  <data name="&gt;&gt;lblUserName.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="lblChangePicture.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;lblNewUserName.Name" xml:space="preserve">
+    <value>lblNewUserName</value>
+  </data>
+  <data name="&gt;&gt;txtNewFirstName.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="lblActualSecondName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>112, 289</value>
+  </data>
+  <data name="&gt;&gt;txtNewUserName.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="lblSecondSurname.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 366</value>
+  </data>
+  <data name="&gt;&gt;lblNewNickName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lblSecondSurname.Size" type="System.Drawing.Size, System.Drawing">
+    <value>92, 13</value>
+  </data>
+  <data name="gbPictureModifyUserProfile.TabIndex" type="System.Int32, mscorlib">
+    <value>103</value>
+  </data>
+  <data name="lblNewSecondSurname.Size" type="System.Drawing.Size, System.Drawing">
+    <value>117, 13</value>
+  </data>
+  <data name="lblUserConfig.TabIndex" type="System.Int32, mscorlib">
+    <value>55</value>
+  </data>
+  <data name="&gt;&gt;lblModifyProfile.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblNickName.ZOrder" xml:space="preserve">
+    <value>30</value>
+  </data>
+  <data name="lblSecondName.Text" xml:space="preserve">
+    <value>Second Name:</value>
+  </data>
+  <data name="gbChangeUserName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>237, 40</value>
+  </data>
+  <data name="&gt;&gt;txtNewSecondName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblUserInfo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lblFirstName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>60, 13</value>
+  </data>
+  <data name="&gt;&gt;btnConfirmUserName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lblNewFirstName.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;lblFirstName.ZOrder" xml:space="preserve">
+    <value>29</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.UserControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="btnConfirmUserName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>314, 308</value>
+  </data>
+  <data name="lblUserName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 190</value>
+  </data>
+  <data name="&gt;&gt;btnChangePassword.Name" xml:space="preserve">
+    <value>btnChangePassword</value>
+  </data>
+  <data name="&gt;&gt;txtNewNickName.Parent" xml:space="preserve">
+    <value>gbChangeNickName</value>
+  </data>
+  <data name="lblModifyUserProfile.Location" type="System.Drawing.Point, System.Drawing">
+    <value>71, 24</value>
+  </data>
+  <data name="lblNewSecondName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 53</value>
+  </data>
+  <data name="&gt;&gt;lblNewFirstName.Parent" xml:space="preserve">
+    <value>gbModifyProfile</value>
+  </data>
+  <data name="lblActualFirstName.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;lblNewNickName.Name" xml:space="preserve">
+    <value>lblNewNickName</value>
+  </data>
+  <data name="&gt;&gt;lblNewNickName.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lbCI.Size" type="System.Drawing.Size, System.Drawing">
+    <value>20, 13</value>
+  </data>
+  <data name="&gt;&gt;btnChangePicture.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lblNewSecondName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblNewSecondName.Parent" xml:space="preserve">
+    <value>gbModifyProfile</value>
+  </data>
+  <data name="lblNewUserName.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;btnConfirmNickName.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="pbUserPicture.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 3</value>
+  </data>
+  <data name="&gt;&gt;lblActualUserName.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;pbUserPicture.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lblChangeUserName.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="lblActualUserName.Text" xml:space="preserve">
+    <value>  </value>
+  </data>
+  <data name="&gt;&gt;pbModifyUserProfile.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="txtNewNickName.TabIndex" type="System.Int32, mscorlib">
+    <value>95</value>
+  </data>
+  <data name="&gt;&gt;btnModifyProfile.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="btnSetNickName.TabIndex" type="System.Int32, mscorlib">
+    <value>39</value>
+  </data>
+  <data name="txtNewFirstSurname.TabIndex" type="System.Int32, mscorlib">
+    <value>90</value>
+  </data>
+  <data name="&gt;&gt;btnChangePassword.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="btnChangePassword.Size" type="System.Drawing.Size, System.Drawing">
+    <value>117, 23</value>
+  </data>
+  <data name="&gt;&gt;lblUserName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lblChangePicture.Size" type="System.Drawing.Size, System.Drawing">
+    <value>140, 13</value>
+  </data>
+  <data name="txtNewFirstSurname.Location" type="System.Drawing.Point, System.Drawing">
+    <value>129, 88</value>
+  </data>
+  <data name="lblActualSecondSurname.Text" xml:space="preserve">
+    <value>  </value>
+  </data>
+  <data name="&gt;&gt;lblNewFirstSurname.Name" xml:space="preserve">
+    <value>lblNewFirstSurname</value>
+  </data>
+  <data name="&gt;&gt;pbUserPicture.ZOrder" xml:space="preserve">
+    <value>17</value>
+  </data>
+  <data name="txtNewSecondName.TabIndex" type="System.Int32, mscorlib">
+    <value>89</value>
+  </data>
+  <data name="btnChangePassword.TabIndex" type="System.Int32, mscorlib">
+    <value>51</value>
+  </data>
+  <data name="&gt;&gt;lblSecondName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="btnModifyProfile.TabIndex" type="System.Int32, mscorlib">
+    <value>38</value>
+  </data>
+  <data name="txtNewFirstSurname.Size" type="System.Drawing.Size, System.Drawing">
+    <value>103, 20</value>
+  </data>
+  <data name="lblActualNickName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>107, 159</value>
+  </data>
+  <data name="&gt;&gt;lblUserNickName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;gbChangeUserName.Name" xml:space="preserve">
+    <value>gbChangeUserName</value>
+  </data>
+  <data name="lblUserNickName.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;lblChangeUserName.Name" xml:space="preserve">
+    <value>lblChangeUserName</value>
+  </data>
+  <data name="lblUserConfig.Size" type="System.Drawing.Size, System.Drawing">
+    <value>94, 13</value>
+  </data>
+  <data name="&gt;&gt;lblSecondSurname.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="pbUserInfo.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>AutoSize</value>
+  </data>
+  <data name="&gt;&gt;lblUserConfig.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lblModifyProfile.Location" type="System.Drawing.Point, System.Drawing">
+    <value>516, 198</value>
+  </data>
+  <data name="&gt;&gt;gbChangeNickName.Parent" xml:space="preserve">
+    <value>gbChangeUserName</value>
+  </data>
+  <data name="&gt;&gt;lblUserInfo.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;pictureSelector.Name" xml:space="preserve">
+    <value>pictureSelector</value>
+  </data>
+  <data name="&gt;&gt;btnChangeUserName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblActualSecondName.Name" xml:space="preserve">
+    <value>lblActualSecondName</value>
+  </data>
+  <data name="lblNewFirstSurname.TabIndex" type="System.Int32, mscorlib">
+    <value>94</value>
+  </data>
+  <data name="lblFirstSurName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 327</value>
+  </data>
+  <data name="&gt;&gt;txtNewUserName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lblNewSecondName.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;txtNewUserName.Parent" xml:space="preserve">
+    <value>gbChangeUserName</value>
+  </data>
+  <data name="lblFirstName.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;btnChangePicture.ZOrder" xml:space="preserve">
+    <value>35</value>
+  </data>
+  <data name="&gt;&gt;btnChangePassword.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="pbUserConfig.SizeMode" type="System.Windows.Forms.PictureBoxSizeMode, System.Windows.Forms">
+    <value>AutoSize</value>
+  </data>
+  <data name="&gt;&gt;gbPictureModifyUserProfile.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
   <data name="pbUserConfig.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAB
@@ -167,6 +730,378 @@
         uweM04p9fIUHTxg6FUZvxN8/A15puvpNkg9uigG3sO/xNT5N/ZMp3Febm5u/hKCEoaWsAG/CsbfxO0Zj
         E4jCsyW8FsHq1F/L+kyeidtiMPwf5pOrFk4bQl4AAAAASUVORK5CYII=
 </value>
+  </data>
+  <data name="&gt;&gt;lblUserConfig.Name" xml:space="preserve">
+    <value>lblUserConfig</value>
+  </data>
+  <data name="lblUserName.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lbCI.Text" xml:space="preserve">
+    <value>C.I</value>
+  </data>
+  <data name="&gt;&gt;lblNewSecondSurname.Name" xml:space="preserve">
+    <value>lblNewSecondSurname</value>
+  </data>
+  <data name="&gt;&gt;lblActualUserName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lblSetNickName.TabIndex" type="System.Int32, mscorlib">
+    <value>49</value>
+  </data>
+  <data name="&gt;&gt;txtNewSecondName.Parent" xml:space="preserve">
+    <value>gbModifyProfile</value>
+  </data>
+  <data name="&gt;&gt;txtNewFirstSurname.Name" xml:space="preserve">
+    <value>txtNewFirstSurname</value>
+  </data>
+  <data name="lblNickName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>8, 160</value>
+  </data>
+  <data name="&gt;&gt;btnConfirmNickName.Name" xml:space="preserve">
+    <value>btnConfirmNickName</value>
+  </data>
+  <data name="&gt;&gt;lblActualFirstSurname.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="pbUserPicture.TabIndex" type="System.Int32, mscorlib">
+    <value>56</value>
+  </data>
+  <data name="pbUserInfo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>3, 74</value>
+  </data>
+  <data name="lblModifyProfile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>153, 13</value>
+  </data>
+  <data name="lblActualSecondName.Text" xml:space="preserve">
+    <value>  </value>
+  </data>
+  <data name="&gt;&gt;lblActualFirstName.ZOrder" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <data name="&gt;&gt;lblUserName.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;pbModifyUserProfile.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lblUserNickName.Text" xml:space="preserve">
+    <value>  </value>
+  </data>
+  <data name="lblNewNickName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>1, 20</value>
+  </data>
+  <data name="&gt;&gt;txtNewFirstSurname.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;lblFirstName.Name" xml:space="preserve">
+    <value>lblFirstName</value>
+  </data>
+  <data name="&gt;&gt;lblModifyProfile.Name" xml:space="preserve">
+    <value>lblModifyProfile</value>
+  </data>
+  <data name="lblSetNickName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>107, 13</value>
+  </data>
+  <data name="&gt;&gt;gbModifyProfile.Name" xml:space="preserve">
+    <value>gbModifyProfile</value>
+  </data>
+  <data name="txtNewSecondSurname.Size" type="System.Drawing.Size, System.Drawing">
+    <value>103, 20</value>
+  </data>
+  <data name="&gt;&gt;gbPictureModifyUserProfile.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;btnConfirmInfo.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;btnChangePicture.Name" xml:space="preserve">
+    <value>btnChangePicture</value>
+  </data>
+  <data name="lblFirstSurName.TabIndex" type="System.Int32, mscorlib">
+    <value>45</value>
+  </data>
+  <data name="&gt;&gt;lblSecondName.ZOrder" xml:space="preserve">
+    <value>28</value>
+  </data>
+  <data name="lblModifyUserProfile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>95, 13</value>
+  </data>
+  <data name="lblSecondName.TabIndex" type="System.Int32, mscorlib">
+    <value>44</value>
+  </data>
+  <data name="lblShowCI.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblNewFirstName.TabIndex" type="System.Int32, mscorlib">
+    <value>92</value>
+  </data>
+  <data name="lblNewNickName.TabIndex" type="System.Int32, mscorlib">
+    <value>96</value>
+  </data>
+  <data name="lbCI.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 224</value>
+  </data>
+  <data name="&gt;&gt;lblChangePassword.ZOrder" xml:space="preserve">
+    <value>19</value>
+  </data>
+  <data name="lblChangeUserName.Text" xml:space="preserve">
+    <value>Change Your User Name:</value>
+  </data>
+  <data name="&gt;&gt;btnConfirmUserName.Name" xml:space="preserve">
+    <value>btnConfirmUserName</value>
+  </data>
+  <data name="&gt;&gt;pbUserInfo.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lblNewFirstName.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="lblUserConfig.Text" xml:space="preserve">
+    <value>User Configuration</value>
+  </data>
+  <data name="&gt;&gt;lblActualFirstSurname.Name" xml:space="preserve">
+    <value>lblActualFirstSurname</value>
+  </data>
+  <data name="&gt;&gt;lblNewSecondName.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="lblSecondName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 289</value>
+  </data>
+  <data name="lblActualUserName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>109, 187</value>
+  </data>
+  <data name="&gt;&gt;txtNewUserName.Name" xml:space="preserve">
+    <value>txtNewUserName</value>
+  </data>
+  <data name="txtNewUserName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>105, 20</value>
+  </data>
+  <data name="&gt;&gt;lblSetNickName.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="lblUserInfo.TabIndex" type="System.Int32, mscorlib">
+    <value>54</value>
+  </data>
+  <data name="lblNewFirstName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 16</value>
+  </data>
+  <data name="lblNewNickName.Text" xml:space="preserve">
+    <value>New Nick Name:</value>
+  </data>
+  <data name="lblActualSecondName.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblModifyUserProfile.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblNewFirstName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>85, 13</value>
+  </data>
+  <data name="&gt;&gt;btnModifyProfile.ZOrder" xml:space="preserve">
+    <value>34</value>
+  </data>
+  <data name="lblActualNickName.TabIndex" type="System.Int32, mscorlib">
+    <value>58</value>
+  </data>
+  <data name="&gt;&gt;lblSecondName.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;pbUserInfo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;pbUserConfig.Name" xml:space="preserve">
+    <value>pbUserConfig</value>
+  </data>
+  <data name="&gt;&gt;gbChangeNickName.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;lblNewFirstSurname.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;gbChangeUserName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblNewNickName.Parent" xml:space="preserve">
+    <value>gbChangeNickName</value>
+  </data>
+  <data name="&gt;&gt;lblActualFirstSurname.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="&gt;&gt;pbUserInfo.Name" xml:space="preserve">
+    <value>pbUserInfo</value>
+  </data>
+  <data name="&gt;&gt;lbCI.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lblNickName.Name" xml:space="preserve">
+    <value>lblNickName</value>
+  </data>
+  <data name="lblChangePassword.Text" xml:space="preserve">
+    <value>Change Your Password:</value>
+  </data>
+  <data name="&gt;&gt;lblChangePassword.Name" xml:space="preserve">
+    <value>lblChangePassword</value>
+  </data>
+  <data name="&gt;&gt;lblActualNickName.Name" xml:space="preserve">
+    <value>lblActualNickName</value>
+  </data>
+  <data name="btnChangePassword.Location" type="System.Drawing.Point, System.Drawing">
+    <value>680, 307</value>
+  </data>
+  <data name="lblNewSecondName.Text" xml:space="preserve">
+    <value>New Second Name:</value>
+  </data>
+  <data name="lblFirstName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>11, 252</value>
+  </data>
+  <data name="btnModifyProfile.Text" xml:space="preserve">
+    <value>Modify Profile..</value>
+  </data>
+  <data name="lblNewFirstSurname.Text" xml:space="preserve">
+    <value>New First Surname:</value>
+  </data>
+  <data name="&gt;&gt;txtNewNickName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lblActualFirstSurname.TabIndex" type="System.Int32, mscorlib">
+    <value>61</value>
+  </data>
+  <data name="lblNewFirstSurname.Location" type="System.Drawing.Point, System.Drawing">
+    <value>6, 91</value>
+  </data>
+  <data name="&gt;&gt;lblSecondSurname.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;txtNewFirstSurname.Parent" xml:space="preserve">
+    <value>gbModifyProfile</value>
+  </data>
+  <data name="&gt;&gt;lblNewFirstName.Name" xml:space="preserve">
+    <value>lblNewFirstName</value>
+  </data>
+  <data name="&gt;&gt;txtNewSecondSurname.Parent" xml:space="preserve">
+    <value>gbModifyProfile</value>
+  </data>
+  <data name="btnModifyProfile.Location" type="System.Drawing.Point, System.Drawing">
+    <value>680, 193</value>
+  </data>
+  <data name="&gt;&gt;lblNewUserName.Parent" xml:space="preserve">
+    <value>gbChangeUserName</value>
+  </data>
+  <data name="&gt;&gt;txtNewFirstSurname.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lblActualSecondName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>13, 13</value>
+  </data>
+  <data name="&gt;&gt;txtNewSecondName.Name" xml:space="preserve">
+    <value>txtNewSecondName</value>
+  </data>
+  <data name="&gt;&gt;lblChangePassword.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lblNewSecondName.TabIndex" type="System.Int32, mscorlib">
+    <value>93</value>
+  </data>
+  <data name="&gt;&gt;btnConfirmNickName.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="lblUserConfig.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="gbModifyProfile.TabIndex" type="System.Int32, mscorlib">
+    <value>82</value>
+  </data>
+  <data name="btnConfirmNickName.Text" xml:space="preserve">
+    <value>Confirm Information</value>
+  </data>
+  <data name="&gt;&gt;lblActualNickName.ZOrder" xml:space="preserve">
+    <value>15</value>
+  </data>
+  <data name="&gt;&gt;lblNewUserName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnConfirmInfo.Name" xml:space="preserve">
+    <value>btnConfirmInfo</value>
+  </data>
+  <data name="&gt;&gt;lblModifyUserProfile.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>UserControlProfile</value>
+  </data>
+  <data name="lblActualSecondName.TabIndex" type="System.Int32, mscorlib">
+    <value>60</value>
+  </data>
+  <data name="&gt;&gt;lblNewUserName.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="lblNewSecondSurname.Location" type="System.Drawing.Point, System.Drawing">
+    <value>4, 128</value>
+  </data>
+  <data name="lblActualNickName.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="btnChangePicture.Size" type="System.Drawing.Size, System.Drawing">
+    <value>117, 23</value>
+  </data>
+  <data name="lblSetNickName.Text" xml:space="preserve">
+    <value>Set Your Nick Name:</value>
+  </data>
+  <data name="gbChangeNickName.TabIndex" type="System.Int32, mscorlib">
+    <value>102</value>
+  </data>
+  <data name="&gt;&gt;lblUserInfo.Name" xml:space="preserve">
+    <value>lblUserInfo</value>
+  </data>
+  <data name="&gt;&gt;btnModifyProfile.Name" xml:space="preserve">
+    <value>btnModifyProfile</value>
+  </data>
+  <data name="lblNickName.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblUserNickName.TabIndex" type="System.Int32, mscorlib">
+    <value>57</value>
+  </data>
+  <data name="txtNewNickName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>100, 20</value>
+  </data>
+  <data name="lblNickName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>63, 13</value>
+  </data>
+  <data name="&gt;&gt;pbUserConfig.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lblActualFirstName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lblActualUserName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>13, 13</value>
+  </data>
+  <data name="txtNewSecondName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>129, 50</value>
+  </data>
+  <data name="gbPictureModifyUserProfile.Location" type="System.Drawing.Point, System.Drawing">
+    <value>240, 74</value>
+  </data>
+  <data name="&gt;&gt;pbUserInfo.ZOrder" xml:space="preserve">
+    <value>32</value>
+  </data>
+  <data name="lblActualSecondSurname.Location" type="System.Drawing.Point, System.Drawing">
+    <value>112, 366</value>
+  </data>
+  <data name="txtNewFirstName.TabIndex" type="System.Int32, mscorlib">
+    <value>88</value>
+  </data>
+  <data name="&gt;&gt;pbModifyUserProfile.Name" xml:space="preserve">
+    <value>pbModifyUserProfile</value>
+  </data>
+  <data name="btnConfirmNickName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>314, 308</value>
+  </data>
+  <data name="lblActualNickName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>13, 13</value>
   </data>
   <data name="pbUserInfo.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
@@ -222,6 +1157,75 @@
         Sq/0ig1Eo/kvdZTawjUnLesAAAAASUVORK5CYII=
 </value>
   </data>
+  <data name="lblNickName.Text" xml:space="preserve">
+    <value>Nick Name:</value>
+  </data>
+  <data name="&gt;&gt;gbModifyProfile.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lblFirstName.TabIndex" type="System.Int32, mscorlib">
+    <value>43</value>
+  </data>
+  <data name="lblModifyProfile.Text" xml:space="preserve">
+    <value>Modify Your Profile Information:</value>
+  </data>
+  <data name="lblActualFirstName.TabIndex" type="System.Int32, mscorlib">
+    <value>59</value>
+  </data>
+  <data name="btnChangePassword.Text" xml:space="preserve">
+    <value>Change Password..</value>
+  </data>
+  <data name="&gt;&gt;lblChangePassword.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="lblSetNickName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>516, 235</value>
+  </data>
+  <data name="&gt;&gt;lblFirstSurName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lblUserInfo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>116, 13</value>
+  </data>
+  <data name="&gt;&gt;lblChangePicture.ZOrder" xml:space="preserve">
+    <value>25</value>
+  </data>
+  <data name="&gt;&gt;lblFirstName.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="gbChangeUserName.TabIndex" type="System.Int32, mscorlib">
+    <value>101</value>
+  </data>
+  <data name="lblShowCI.Location" type="System.Drawing.Point, System.Drawing">
+    <value>112, 224</value>
+  </data>
+  <data name="&gt;&gt;gbChangeNickName.Name" xml:space="preserve">
+    <value>gbChangeNickName</value>
+  </data>
+  <data name="lblFirstSurName.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblModifyProfile.TabIndex" type="System.Int32, mscorlib">
+    <value>48</value>
+  </data>
+  <data name="&gt;&gt;btnConfirmNickName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblSecondSurname.Name" xml:space="preserve">
+    <value>lblSecondSurname</value>
+  </data>
+  <data name="lblSecondName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>78, 13</value>
+  </data>
+  <data name="lblChangeUserName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>516, 273</value>
+  </data>
+  <data name="lblActualSecondSurname.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;lblModifyUserProfile.Name" xml:space="preserve">
+    <value>lblModifyUserProfile</value>
+  </data>
   <data name="pbModifyUserProfile.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAEAAAABACAYAAACqaXHeAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAB
@@ -266,6 +1270,309 @@
         XuuwmaD+XgAAAABJRU5ErkJggg==
 </value>
   </data>
+  <data name="&gt;&gt;lblActualSecondSurname.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
+    <value>800, 400</value>
+  </data>
+  <data name="lblChangeUserName.TabIndex" type="System.Int32, mscorlib">
+    <value>52</value>
+  </data>
+  <data name="btnConfirmInfo.Size" type="System.Drawing.Size, System.Drawing">
+    <value>68, 23</value>
+  </data>
+  <data name="&gt;&gt;lblUserConfig.ZOrder" xml:space="preserve">
+    <value>18</value>
+  </data>
+  <data name="&gt;&gt;lblActualNickName.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="btnConfirmInfo.Text" xml:space="preserve">
+    <value>Confirm Information</value>
+  </data>
+  <data name="lblModifyUserProfile.TabIndex" type="System.Int32, mscorlib">
+    <value>98</value>
+  </data>
+  <data name="lblActualSecondSurname.TabIndex" type="System.Int32, mscorlib">
+    <value>62</value>
+  </data>
+  <data name="lblActualUserName.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;lblModifyProfile.ZOrder" xml:space="preserve">
+    <value>24</value>
+  </data>
+  <data name="&gt;&gt;btnModifyProfile.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="pbModifyUserProfile.TabIndex" type="System.Int32, mscorlib">
+    <value>97</value>
+  </data>
+  <data name="btnSetNickName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>680, 230</value>
+  </data>
+  <data name="&gt;&gt;lblModifyUserProfile.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnConfirmUserName.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lblActualFirstName.Name" xml:space="preserve">
+    <value>lblActualFirstName</value>
+  </data>
+  <data name="gbChangeNickName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>237, 41</value>
+  </data>
+  <data name="lblActualSecondSurname.Size" type="System.Drawing.Size, System.Drawing">
+    <value>13, 13</value>
+  </data>
+  <data name="lblFirstSurName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>74, 13</value>
+  </data>
+  <data name="lblModifyProfile.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="txtNewNickName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>129, 17</value>
+  </data>
+  <data name="btnChangeUserName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>680, 268</value>
+  </data>
+  <data name="lblChangePicture.TabIndex" type="System.Int32, mscorlib">
+    <value>47</value>
+  </data>
+  <data name="&gt;&gt;lblShowCI.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lblNewSecondSurname.Parent" xml:space="preserve">
+    <value>gbModifyProfile</value>
+  </data>
+  <data name="lblSetNickName.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;lblModifyProfile.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="lblActualFirstName.Text" xml:space="preserve">
+    <value>  </value>
+  </data>
+  <data name="&gt;&gt;lbCI.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="pbUserInfo.TabIndex" type="System.Int32, mscorlib">
+    <value>40</value>
+  </data>
+  <data name="&gt;&gt;lblActualSecondName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lblChangePassword.Size" type="System.Drawing.Size, System.Drawing">
+    <value>121, 13</value>
+  </data>
+  <data name="&gt;&gt;lblUserNickName.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="btnSetNickName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>117, 23</value>
+  </data>
+  <data name="txtNewUserName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>129, 13</value>
+  </data>
+  <data name="&gt;&gt;lblActualSecondSurname.Name" xml:space="preserve">
+    <value>lblActualSecondSurname</value>
+  </data>
+  <data name="lblChangePicture.Text" xml:space="preserve">
+    <value>Change Your Profile Picture:</value>
+  </data>
+  <data name="lblNewNickName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>88, 13</value>
+  </data>
+  <data name="&gt;&gt;txtNewFirstName.Name" xml:space="preserve">
+    <value>txtNewFirstName</value>
+  </data>
+  <data name="&gt;&gt;btnConfirmInfo.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;txtNewSecondName.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="lblChangePassword.TabIndex" type="System.Int32, mscorlib">
+    <value>53</value>
+  </data>
+  <data name="lblUserName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>63, 13</value>
+  </data>
+  <data name="&gt;&gt;gbPictureModifyUserProfile.Name" xml:space="preserve">
+    <value>gbPictureModifyUserProfile</value>
+  </data>
+  <data name="lblChangeUserName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>128, 13</value>
+  </data>
+  <data name="&gt;&gt;txtNewSecondSurname.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblNewFirstSurname.Parent" xml:space="preserve">
+    <value>gbModifyProfile</value>
+  </data>
+  <data name="lblActualFirstSurname.Text" xml:space="preserve">
+    <value>  </value>
+  </data>
+  <data name="&gt;&gt;pbUserConfig.ZOrder" xml:space="preserve">
+    <value>31</value>
+  </data>
+  <data name="&gt;&gt;lblActualSecondName.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lblActualUserName.Name" xml:space="preserve">
+    <value>lblActualUserName</value>
+  </data>
+  <data name="lblNewFirstName.Text" xml:space="preserve">
+    <value>New First Name:</value>
+  </data>
+  <data name="&gt;&gt;pbUserConfig.Type" xml:space="preserve">
+    <value>System.Windows.Forms.PictureBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblChangePicture.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="pbUserConfig.Location" type="System.Drawing.Point, System.Drawing">
+    <value>720, 74</value>
+  </data>
+  <data name="lblModifyUserProfile.Text" xml:space="preserve">
+    <value>Modify User Profile</value>
+  </data>
+  <data name="&gt;&gt;lblModifyUserProfile.Parent" xml:space="preserve">
+    <value>gbPictureModifyUserProfile</value>
+  </data>
+  <data name="lblUserName.TabIndex" type="System.Int32, mscorlib">
+    <value>78</value>
+  </data>
+  <data name="lblShowCI.Size" type="System.Drawing.Size, System.Drawing">
+    <value>13, 13</value>
+  </data>
+  <data name="&gt;&gt;btnChangeUserName.ZOrder" xml:space="preserve">
+    <value>22</value>
+  </data>
+  <data name="txtNewSecondName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>103, 20</value>
+  </data>
+  <data name="lblNewUserName.Text" xml:space="preserve">
+    <value>New User Name:</value>
+  </data>
+  <data name="&gt;&gt;pbUserPicture.Name" xml:space="preserve">
+    <value>pbUserPicture</value>
+  </data>
+  <data name="lblSecondSurname.Text" xml:space="preserve">
+    <value>Second Surname:</value>
+  </data>
+  <data name="&gt;&gt;lblActualUserName.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="lblUserConfig.Location" type="System.Drawing.Point, System.Drawing">
+    <value>620, 98</value>
+  </data>
+  <data name="pbModifyUserProfile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>64, 64</value>
+  </data>
+  <data name="btnChangeUserName.Text" xml:space="preserve">
+    <value>Change User Name..</value>
+  </data>
+  <data name="btnSetNickName.Text" xml:space="preserve">
+    <value>Set Nick Name..</value>
+  </data>
+  <data name="&gt;&gt;txtNewNickName.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;lbCI.Name" xml:space="preserve">
+    <value>lbCI</value>
+  </data>
+  <data name="&gt;&gt;lblUserNickName.ZOrder" xml:space="preserve">
+    <value>16</value>
+  </data>
+  <data name="lblUserInfo.Location" type="System.Drawing.Point, System.Drawing">
+    <value>73, 98</value>
+  </data>
+  <data name="lblActualNickName.Text" xml:space="preserve">
+    <value>  </value>
+  </data>
+  <data name="&gt;&gt;lblShowCI.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lblActualSecondSurname.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="btnConfirmUserName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>68, 23</value>
+  </data>
+  <data name="lblNewSecondSurname.TabIndex" type="System.Int32, mscorlib">
+    <value>95</value>
+  </data>
+  <data name="&gt;&gt;lblNewSecondSurname.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;pbModifyUserProfile.Parent" xml:space="preserve">
+    <value>gbPictureModifyUserProfile</value>
+  </data>
+  <data name="&gt;&gt;lbCI.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;btnChangeUserName.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="lblSecondName.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lblChangePicture.Location" type="System.Drawing.Point, System.Drawing">
+    <value>516, 160</value>
+  </data>
+  <data name="lblActualFirstName.Size" type="System.Drawing.Size, System.Drawing">
+    <value>13, 13</value>
+  </data>
+  <data name="lblUserInfo.Text" xml:space="preserve">
+    <value>User Profile Information</value>
+  </data>
+  <data name="&gt;&gt;btnChangeUserName.Name" xml:space="preserve">
+    <value>btnChangeUserName</value>
+  </data>
+  <data name="lblActualFirstName.Location" type="System.Drawing.Point, System.Drawing">
+    <value>112, 252</value>
+  </data>
+  <data name="&gt;&gt;pictureSelector.Type" xml:space="preserve">
+    <value>System.Windows.Forms.OpenFileDialog, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="txtNewSecondSurname.TabIndex" type="System.Int32, mscorlib">
+    <value>91</value>
+  </data>
+  <data name="lblSecondSurname.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="gbPictureModifyUserProfile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>237, 64</value>
+  </data>
+  <data name="&gt;&gt;gbChangeNickName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.GroupBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="btnModifyProfile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>117, 23</value>
+  </data>
+  <data name="&gt;&gt;gbModifyProfile.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="&gt;&gt;btnSetNickName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="btnConfirmUserName.TabIndex" type="System.Int32, mscorlib">
+    <value>104</value>
+  </data>
+  <data name="&gt;&gt;lblUserNickName.Name" xml:space="preserve">
+    <value>lblUserNickName</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>es</value>
+  </metadata>
   <metadata name="pictureSelector.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>

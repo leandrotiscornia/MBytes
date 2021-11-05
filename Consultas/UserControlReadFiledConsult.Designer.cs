@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserControlReadFiledConsult));
             this.lbPreviousFiled = new System.Windows.Forms.Label();
             this.lbTopic = new System.Windows.Forms.Label();
             this.tbTopic = new System.Windows.Forms.TextBox();
@@ -36,49 +37,35 @@
             // 
             // lbPreviousFiled
             // 
-            this.lbPreviousFiled.AutoSize = true;
-            this.lbPreviousFiled.Location = new System.Drawing.Point(10, 59);
+            resources.ApplyResources(this.lbPreviousFiled, "lbPreviousFiled");
             this.lbPreviousFiled.Name = "lbPreviousFiled";
-            this.lbPreviousFiled.Size = new System.Drawing.Size(48, 13);
-            this.lbPreviousFiled.TabIndex = 11;
-            this.lbPreviousFiled.Text = "Previous";
             // 
             // lbTopic
             // 
-            this.lbTopic.AutoSize = true;
-            this.lbTopic.Location = new System.Drawing.Point(27, 33);
+            resources.ApplyResources(this.lbTopic, "lbTopic");
             this.lbTopic.Name = "lbTopic";
-            this.lbTopic.Size = new System.Drawing.Size(37, 13);
-            this.lbTopic.TabIndex = 8;
-            this.lbTopic.Text = "Topic:";
             // 
             // tbTopic
             // 
+            resources.ApplyResources(this.tbTopic, "tbTopic");
             this.tbTopic.BackColor = System.Drawing.SystemColors.ControlDark;
             this.tbTopic.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.tbTopic.Enabled = false;
             this.tbTopic.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.tbTopic.Location = new System.Drawing.Point(70, 30);
             this.tbTopic.Name = "tbTopic";
             this.tbTopic.ReadOnly = true;
-            this.tbTopic.Size = new System.Drawing.Size(293, 20);
-            this.tbTopic.TabIndex = 7;
             // 
             // rtbMessages
             // 
+            resources.ApplyResources(this.rtbMessages, "rtbMessages");
             this.rtbMessages.BackColor = System.Drawing.SystemColors.ControlDark;
             this.rtbMessages.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.rtbMessages.ForeColor = System.Drawing.SystemColors.ScrollBar;
-            this.rtbMessages.Location = new System.Drawing.Point(70, 59);
             this.rtbMessages.Name = "rtbMessages";
             this.rtbMessages.ReadOnly = true;
-            this.rtbMessages.Size = new System.Drawing.Size(293, 293);
-            this.rtbMessages.TabIndex = 12;
-            this.rtbMessages.Text = "";
             // 
             // UserControlReadFiledConsult
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.Controls.Add(this.rtbMessages);
@@ -87,7 +74,6 @@
             this.Controls.Add(this.tbTopic);
             this.ForeColor = System.Drawing.SystemColors.ScrollBar;
             this.Name = "UserControlReadFiledConsult";
-            this.Size = new System.Drawing.Size(400, 400);
             this.Load += new System.EventHandler(this.UserControlReadFiledConsult_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

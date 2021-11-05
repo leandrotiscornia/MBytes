@@ -104,7 +104,7 @@
             </Grid>
 
 
-            <TextBox x:Name="tbMessage" HorizontalAlignment="Left" Height="23" Margin="10,667,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="368" Background="#FFAEADAD" TextInput="TbMessage_TextInput" TouchEnter="TbMessage_TouchEnter"/>
+            <TextBox x:Name="tbMessage" HorizontalAlignment="Left" Height="23" Margin="10,667,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="368" Background="#FFAEADAD" TextInput="TbMessage_TextInput" KeyUp="TbMessage_KeyUp"/>
             <Button x:Name="btnSend" Content="Send" HorizontalAlignment="Left" Margin="383,667,0,10" Width="83" Background="#FFAEA9A9" Click="BtnSend_Click"/>
         </Grid>
 

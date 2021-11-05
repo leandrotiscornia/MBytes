@@ -174,7 +174,15 @@ namespace App_De_Alumno
             MessageBox.Show("Feature not added yet", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
-       
+        private void gbChangeNickName_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblModifyUserProfile_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

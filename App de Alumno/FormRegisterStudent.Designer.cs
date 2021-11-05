@@ -51,7 +51,7 @@
             // lbCI
             // 
             this.lbCI.AutoSize = true;
-            this.lbCI.BackColor = System.Drawing.SystemColors.Control;
+            this.lbCI.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lbCI.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbCI.ForeColor = System.Drawing.SystemColors.ControlText;
             this.lbCI.Location = new System.Drawing.Point(9, 191);
@@ -63,7 +63,7 @@
             // lbFirstName
             // 
             this.lbFirstName.AutoSize = true;
-            this.lbFirstName.BackColor = System.Drawing.SystemColors.Control;
+            this.lbFirstName.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lbFirstName.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbFirstName.ForeColor = System.Drawing.SystemColors.ControlText;
             this.lbFirstName.Location = new System.Drawing.Point(8, 237);
@@ -75,7 +75,7 @@
             // lbSecondName
             // 
             this.lbSecondName.AutoSize = true;
-            this.lbSecondName.BackColor = System.Drawing.SystemColors.Control;
+            this.lbSecondName.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lbSecondName.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbSecondName.ForeColor = System.Drawing.SystemColors.ControlText;
             this.lbSecondName.Location = new System.Drawing.Point(8, 286);
@@ -87,7 +87,7 @@
             // lbFisrtSurname
             // 
             this.lbFisrtSurname.AutoSize = true;
-            this.lbFisrtSurname.BackColor = System.Drawing.SystemColors.Control;
+            this.lbFisrtSurname.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lbFisrtSurname.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbFisrtSurname.ForeColor = System.Drawing.SystemColors.ControlText;
             this.lbFisrtSurname.Location = new System.Drawing.Point(8, 335);
@@ -99,7 +99,7 @@
             // lbSeconSurname
             // 
             this.lbSeconSurname.AutoSize = true;
-            this.lbSeconSurname.BackColor = System.Drawing.SystemColors.Control;
+            this.lbSeconSurname.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lbSeconSurname.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbSeconSurname.ForeColor = System.Drawing.SystemColors.ControlText;
             this.lbSeconSurname.Location = new System.Drawing.Point(8, 383);
@@ -110,8 +110,9 @@
             // 
             // tbSecondSurname
             // 
-            this.tbSecondSurname.BackColor = System.Drawing.SystemColors.Window;
+            this.tbSecondSurname.BackColor = System.Drawing.SystemColors.ControlDark;
             this.tbSecondSurname.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbSecondSurname.ForeColor = System.Drawing.SystemColors.Window;
             this.tbSecondSurname.Location = new System.Drawing.Point(179, 382);
             this.tbSecondSurname.Name = "tbSecondSurname";
             this.tbSecondSurname.Size = new System.Drawing.Size(100, 20);
@@ -119,8 +120,9 @@
             // 
             // tbFirstSurname
             // 
-            this.tbFirstSurname.BackColor = System.Drawing.SystemColors.Window;
+            this.tbFirstSurname.BackColor = System.Drawing.SystemColors.ControlDark;
             this.tbFirstSurname.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbFirstSurname.ForeColor = System.Drawing.SystemColors.Window;
             this.tbFirstSurname.Location = new System.Drawing.Point(179, 334);
             this.tbFirstSurname.Name = "tbFirstSurname";
             this.tbFirstSurname.Size = new System.Drawing.Size(100, 20);
@@ -128,8 +130,9 @@
             // 
             // tbSecondName
             // 
-            this.tbSecondName.BackColor = System.Drawing.SystemColors.Window;
+            this.tbSecondName.BackColor = System.Drawing.SystemColors.ControlDark;
             this.tbSecondName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbSecondName.ForeColor = System.Drawing.SystemColors.Window;
             this.tbSecondName.Location = new System.Drawing.Point(179, 285);
             this.tbSecondName.Name = "tbSecondName";
             this.tbSecondName.Size = new System.Drawing.Size(100, 20);
@@ -137,8 +140,9 @@
             // 
             // tbFirstName
             // 
-            this.tbFirstName.BackColor = System.Drawing.SystemColors.Window;
+            this.tbFirstName.BackColor = System.Drawing.SystemColors.ControlDark;
             this.tbFirstName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbFirstName.ForeColor = System.Drawing.SystemColors.Window;
             this.tbFirstName.Location = new System.Drawing.Point(179, 236);
             this.tbFirstName.Name = "tbFirstName";
             this.tbFirstName.Size = new System.Drawing.Size(100, 20);
@@ -146,8 +150,9 @@
             // 
             // tbCI
             // 
-            this.tbCI.BackColor = System.Drawing.SystemColors.Window;
+            this.tbCI.BackColor = System.Drawing.SystemColors.ControlDark;
             this.tbCI.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbCI.ForeColor = System.Drawing.SystemColors.Window;
             this.tbCI.Location = new System.Drawing.Point(179, 190);
             this.tbCI.Name = "tbCI";
             this.tbCI.Size = new System.Drawing.Size(100, 20);
@@ -183,8 +188,9 @@
             // 
             // tbPassword
             // 
-            this.tbPassword.BackColor = System.Drawing.SystemColors.Window;
+            this.tbPassword.BackColor = System.Drawing.SystemColors.ControlDark;
             this.tbPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbPassword.ForeColor = System.Drawing.SystemColors.Window;
             this.tbPassword.Location = new System.Drawing.Point(179, 99);
             this.tbPassword.Name = "tbPassword";
             this.tbPassword.PasswordChar = '*';
@@ -193,8 +199,9 @@
             // 
             // tbUserName
             // 
-            this.tbUserName.BackColor = System.Drawing.SystemColors.Window;
+            this.tbUserName.BackColor = System.Drawing.SystemColors.ControlDark;
             this.tbUserName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbUserName.ForeColor = System.Drawing.SystemColors.Window;
             this.tbUserName.Location = new System.Drawing.Point(179, 57);
             this.tbUserName.Name = "tbUserName";
             this.tbUserName.Size = new System.Drawing.Size(100, 20);
@@ -203,7 +210,7 @@
             // lbPassword
             // 
             this.lbPassword.AutoSize = true;
-            this.lbPassword.BackColor = System.Drawing.SystemColors.Control;
+            this.lbPassword.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lbPassword.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbPassword.ForeColor = System.Drawing.SystemColors.ControlText;
             this.lbPassword.Location = new System.Drawing.Point(12, 100);
@@ -215,7 +222,7 @@
             // lbUserName
             // 
             this.lbUserName.AutoSize = true;
-            this.lbUserName.BackColor = System.Drawing.SystemColors.Control;
+            this.lbUserName.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lbUserName.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbUserName.ForeColor = System.Drawing.SystemColors.ControlText;
             this.lbUserName.Location = new System.Drawing.Point(12, 58);
@@ -226,8 +233,9 @@
             // 
             // tbConfirmPassword
             // 
-            this.tbConfirmPassword.BackColor = System.Drawing.SystemColors.Window;
+            this.tbConfirmPassword.BackColor = System.Drawing.SystemColors.ControlDark;
             this.tbConfirmPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbConfirmPassword.ForeColor = System.Drawing.SystemColors.Window;
             this.tbConfirmPassword.Location = new System.Drawing.Point(179, 143);
             this.tbConfirmPassword.Name = "tbConfirmPassword";
             this.tbConfirmPassword.PasswordChar = '*';
@@ -237,7 +245,7 @@
             // lbConfirmPassword
             // 
             this.lbConfirmPassword.AutoSize = true;
-            this.lbConfirmPassword.BackColor = System.Drawing.SystemColors.Control;
+            this.lbConfirmPassword.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lbConfirmPassword.Font = new System.Drawing.Font("MS Reference Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbConfirmPassword.ForeColor = System.Drawing.SystemColors.ControlText;
             this.lbConfirmPassword.Location = new System.Drawing.Point(8, 144);
@@ -250,7 +258,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Control;
+            this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(309, 639);
             this.Controls.Add(this.lbConfirmPassword);

@@ -117,4 +117,456 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="PersonNameMade.DisplayIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;lvConsultsMade.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;lbMade.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;lbFiled.Name" xml:space="preserve">
+    <value>lbFiled</value>
+  </data>
+  <data name="&gt;&gt;lvConsultsFiled.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="TopicAnsewered.Width" type="System.Int32, mscorlib">
+    <value>84</value>
+  </data>
+  <data name="&gt;&gt;PersonNameAnswered.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lbAnswered.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="lbAnswered.Location" type="System.Drawing.Point, System.Drawing">
+    <value>261, 7</value>
+  </data>
+  <data name="&gt;&gt;btnOpenConsult.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;IDMade.Name" xml:space="preserve">
+    <value>IDMade</value>
+  </data>
+  <data name="lbFiled.TabIndex" type="System.Int32, mscorlib">
+    <value>7</value>
+  </data>
+  <data name="lbAnswered.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 12pt</value>
+  </data>
+  <data name="&gt;&gt;lbReceived.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="lvConsultsAnswered.Location" type="System.Drawing.Point, System.Drawing">
+    <value>216, 30</value>
+  </data>
+  <data name="PersonNameAnswered.Text" xml:space="preserve">
+    <value>Person Name</value>
+  </data>
+  <data name="lbReceived.Location" type="System.Drawing.Point, System.Drawing">
+    <value>447, 7</value>
+  </data>
+  <data name="&gt;&gt;lbMade.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="TopicReceived.Width" type="System.Int32, mscorlib">
+    <value>84</value>
+  </data>
+  <data name="lbAnswered.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="lbMade.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="PersonNameMade.Width" type="System.Int32, mscorlib">
+    <value>85</value>
+  </data>
+  <data name="lvConsultsReceived.TabIndex" type="System.Int32, mscorlib">
+    <value>9</value>
+  </data>
+  <data name="&gt;&gt;lvConsultsMade.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ListView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lvConsultsAnswered.Size" type="System.Drawing.Size, System.Drawing">
+    <value>174, 321</value>
+  </data>
+  <data name="&gt;&gt;IDAnswered.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lbReceived.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 12pt</value>
+  </data>
+  <data name="&gt;&gt;TopicAnsewered.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lvConsultsMade.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lvConsultsAnswered.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ListView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;IDAnswered.Name" xml:space="preserve">
+    <value>IDAnswered</value>
+  </data>
+  <data name="&gt;&gt;lvConsultsAnswered.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;PersonNameReceived.Name" xml:space="preserve">
+    <value>PersonNameReceived</value>
+  </data>
+  <data name="&gt;&gt;lbReceived.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="lvConsultsFiled.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="PersonNameFiled.Width" type="System.Int32, mscorlib">
+    <value>85</value>
+  </data>
+  <data name="&gt;&gt;btnOpenConsult.Name" xml:space="preserve">
+    <value>btnOpenConsult</value>
+  </data>
+  <data name="TopicMade.DisplayIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="TopicMade.Text" xml:space="preserve">
+    <value>Topic</value>
+  </data>
+  <data name="btnOpenConsult.Location" type="System.Drawing.Point, System.Drawing">
+    <value>576, 357</value>
+  </data>
+  <data name="&gt;&gt;btnReload.Name" xml:space="preserve">
+    <value>btnReload</value>
+  </data>
+  <data name="IDFiled.DisplayIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;lvConsultsReceived.Name" xml:space="preserve">
+    <value>lvConsultsReceived</value>
+  </data>
+  <data name="TopicFiled.DisplayIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="lbMade.Size" type="System.Drawing.Size, System.Drawing">
+    <value>49, 20</value>
+  </data>
+  <data name="lbFiled.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 12pt</value>
+  </data>
+  <data name="&gt;&gt;btnOpenConsult.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;PersonNameMade.Name" xml:space="preserve">
+    <value>PersonNameMade</value>
+  </data>
+  <data name="&gt;&gt;lbMade.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="lbMade.Font" type="System.Drawing.Font, System.Drawing">
+    <value>Microsoft Sans Serif, 12pt</value>
+  </data>
+  <data name="IDFiled.Text" xml:space="preserve">
+    <value>ID</value>
+  </data>
+  <data name="PersonNameAnswered.DisplayIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="lvConsultsFiled.Location" type="System.Drawing.Point, System.Drawing">
+    <value>576, 30</value>
+  </data>
+  <data name="lbReceived.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 20</value>
+  </data>
+  <data name="IDReceived.Text" xml:space="preserve">
+    <value>ID</value>
+  </data>
+  <data name="&gt;&gt;lvConsultsFiled.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ListView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="IDAnswered.DisplayIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;TopicFiled.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;IDMade.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lbFiled.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;PersonNameAnswered.Name" xml:space="preserve">
+    <value>PersonNameAnswered</value>
+  </data>
+  <data name="&gt;&gt;PersonNameMade.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lvConsultsAnswered.Name" xml:space="preserve">
+    <value>lvConsultsAnswered</value>
+  </data>
+  <data name="&gt;&gt;TopicAnsewered.Name" xml:space="preserve">
+    <value>TopicAnsewered</value>
+  </data>
+  <data name="btnReload.Size" type="System.Drawing.Size, System.Drawing">
+    <value>174, 23</value>
+  </data>
+  <data name="lvConsultsReceived.Location" type="System.Drawing.Point, System.Drawing">
+    <value>396, 30</value>
+  </data>
+  <data name="PersonNameMade.Text" xml:space="preserve">
+    <value>Person Name</value>
+  </data>
+  <data name="&gt;&gt;btnReload.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;lbAnswered.Name" xml:space="preserve">
+    <value>lbAnswered</value>
+  </data>
+  <data name="lbMade.Text" xml:space="preserve">
+    <value>Made</value>
+  </data>
+  <data name="lvConsultsAnswered.TabIndex" type="System.Int32, mscorlib">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;TopicFiled.Name" xml:space="preserve">
+    <value>TopicFiled</value>
+  </data>
+  <data name="PersonNameReceived.Width" type="System.Int32, mscorlib">
+    <value>85</value>
+  </data>
+  <data name="&gt;&gt;PersonNameFiled.Name" xml:space="preserve">
+    <value>PersonNameFiled</value>
+  </data>
+  <data name="&gt;&gt;lbMade.Name" xml:space="preserve">
+    <value>lbMade</value>
+  </data>
+  <data name="&gt;&gt;lvConsultsReceived.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="&gt;&gt;lvConsultsReceived.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ListView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;lvConsultsFiled.Name" xml:space="preserve">
+    <value>lvConsultsFiled</value>
+  </data>
+  <data name="&gt;&gt;PersonNameFiled.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lvConsultsFiled.Size" type="System.Drawing.Size, System.Drawing">
+    <value>174, 321</value>
+  </data>
+  <data name="PersonNameAnswered.Width" type="System.Int32, mscorlib">
+    <value>85</value>
+  </data>
+  <data name="lbFiled.Text" xml:space="preserve">
+    <value>Filed</value>
+  </data>
+  <data name="lbFiled.Size" type="System.Drawing.Size, System.Drawing">
+    <value>43, 20</value>
+  </data>
+  <data name="TopicAnsewered.Text" xml:space="preserve">
+    <value>Topic</value>
+  </data>
+  <data name="&gt;&gt;PersonNameReceived.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="IDAnswered.Text" xml:space="preserve">
+    <value>ID</value>
+  </data>
+  <data name="&gt;&gt;lvConsultsFiled.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lvConsultsReceived.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lbFiled.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="btnOpenConsult.Size" type="System.Drawing.Size, System.Drawing">
+    <value>174, 23</value>
+  </data>
+  <data name="PersonNameFiled.Text" xml:space="preserve">
+    <value>Person Name</value>
+  </data>
+  <data name="TopicFiled.Text" xml:space="preserve">
+    <value>Topic</value>
+  </data>
+  <data name="btnOpenConsult.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
+    <value>800, 400</value>
+  </data>
+  <data name="TopicReceived.Text" xml:space="preserve">
+    <value>Topic</value>
+  </data>
+  <data name="btnOpenConsult.Text" xml:space="preserve">
+    <value>Open Consult</value>
+  </data>
+  <data name="PersonNameFiled.DisplayIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;lvConsultsMade.Name" xml:space="preserve">
+    <value>lvConsultsMade</value>
+  </data>
+  <data name="&gt;&gt;lbAnswered.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;lbFiled.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="lvConsultsMade.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.UserControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lbReceived.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;lbReceived.Name" xml:space="preserve">
+    <value>lbReceived</value>
+  </data>
+  <data name="PersonNameReceived.Text" xml:space="preserve">
+    <value>Person Name</value>
+  </data>
+  <data name="&gt;&gt;TopicReceived.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TopicMade.Name" xml:space="preserve">
+    <value>TopicMade</value>
+  </data>
+  <data name="&gt;&gt;btnReload.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;IDFiled.Name" xml:space="preserve">
+    <value>IDFiled</value>
+  </data>
+  <data name="&gt;&gt;IDFiled.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lbFiled.Location" type="System.Drawing.Point, System.Drawing">
+    <value>640, 7</value>
+  </data>
+  <data name="IDReceived.DisplayIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="IDMade.DisplayIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;btnReload.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;TopicMade.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="TopicReceived.DisplayIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;lbAnswered.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="lvConsultsReceived.Size" type="System.Drawing.Size, System.Drawing">
+    <value>174, 321</value>
+  </data>
+  <data name="IDReceived.Width" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="lbReceived.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="&gt;&gt;IDReceived.Name" xml:space="preserve">
+    <value>IDReceived</value>
+  </data>
+  <data name="&gt;&gt;lvConsultsAnswered.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;lbReceived.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="lbAnswered.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="lvConsultsMade.Size" type="System.Drawing.Size, System.Drawing">
+    <value>174, 321</value>
+  </data>
+  <data name="lbMade.Location" type="System.Drawing.Point, System.Drawing">
+    <value>98, 7</value>
+  </data>
+  <data name="&gt;&gt;IDReceived.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;TopicReceived.Name" xml:space="preserve">
+    <value>TopicReceived</value>
+  </data>
+  <data name="TopicMade.Width" type="System.Int32, mscorlib">
+    <value>84</value>
+  </data>
+  <data name="btnReload.Location" type="System.Drawing.Point, System.Drawing">
+    <value>36, 357</value>
+  </data>
+  <data name="IDMade.Width" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="TopicAnsewered.DisplayIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="lbAnswered.Text" xml:space="preserve">
+    <value>Answered</value>
+  </data>
+  <data name="IDAnswered.Width" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="PersonNameReceived.DisplayIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="lbAnswered.Size" type="System.Drawing.Size, System.Drawing">
+    <value>80, 20</value>
+  </data>
+  <data name="btnReload.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="lbReceived.Text" xml:space="preserve">
+    <value>Received</value>
+  </data>
+  <data name="TopicFiled.Width" type="System.Int32, mscorlib">
+    <value>84</value>
+  </data>
+  <data name="&gt;&gt;lbFiled.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="IDMade.Text" xml:space="preserve">
+    <value>ID</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>UserControlSchedule</value>
+  </data>
+  <data name="IDFiled.Width" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="lbMade.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="btnReload.Text" xml:space="preserve">
+    <value>Reload Consults</value>
+  </data>
+  <data name="lvConsultsMade.Location" type="System.Drawing.Point, System.Drawing">
+    <value>36, 30</value>
+  </data>
+  <data name="&gt;&gt;btnOpenConsult.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>es</value>
+  </metadata>
 </root>

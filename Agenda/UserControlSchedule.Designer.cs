@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserControlSchedule));
             this.lvConsultsMade = new System.Windows.Forms.ListView();
             this.IDMade = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.PersonNameMade = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -54,17 +55,15 @@
             // 
             // lvConsultsMade
             // 
+            resources.ApplyResources(this.lvConsultsMade, "lvConsultsMade");
             this.lvConsultsMade.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.IDMade,
             this.PersonNameMade,
             this.TopicMade});
             this.lvConsultsMade.FullRowSelect = true;
             this.lvConsultsMade.HideSelection = false;
-            this.lvConsultsMade.Location = new System.Drawing.Point(36, 30);
             this.lvConsultsMade.MultiSelect = false;
             this.lvConsultsMade.Name = "lvConsultsMade";
-            this.lvConsultsMade.Size = new System.Drawing.Size(174, 321);
-            this.lvConsultsMade.TabIndex = 0;
             this.lvConsultsMade.UseCompatibleStateImageBehavior = false;
             this.lvConsultsMade.View = System.Windows.Forms.View.Details;
             this.lvConsultsMade.SelectedIndexChanged += new System.EventHandler(this.lvConsultsMade_SelectedIndexChanged);
@@ -72,79 +71,51 @@
             // 
             // IDMade
             // 
-            this.IDMade.DisplayIndex = 2;
-            this.IDMade.Text = "ID";
-            this.IDMade.Width = 0;
+            resources.ApplyResources(this.IDMade, "IDMade");
             // 
             // PersonNameMade
             // 
-            this.PersonNameMade.DisplayIndex = 0;
-            this.PersonNameMade.Text = "Person Name";
-            this.PersonNameMade.Width = 85;
+            resources.ApplyResources(this.PersonNameMade, "PersonNameMade");
             // 
             // TopicMade
             // 
-            this.TopicMade.DisplayIndex = 1;
-            this.TopicMade.Text = "Topic";
-            this.TopicMade.Width = 84;
+            resources.ApplyResources(this.TopicMade, "TopicMade");
             // 
             // lbMade
             // 
-            this.lbMade.AutoSize = true;
-            this.lbMade.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            resources.ApplyResources(this.lbMade, "lbMade");
             this.lbMade.ForeColor = System.Drawing.Color.Red;
-            this.lbMade.Location = new System.Drawing.Point(98, 7);
             this.lbMade.Name = "lbMade";
-            this.lbMade.Size = new System.Drawing.Size(49, 20);
-            this.lbMade.TabIndex = 4;
-            this.lbMade.Text = "Made";
             // 
             // lbAnswered
             // 
-            this.lbAnswered.AutoSize = true;
-            this.lbAnswered.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            resources.ApplyResources(this.lbAnswered, "lbAnswered");
             this.lbAnswered.ForeColor = System.Drawing.Color.SaddleBrown;
-            this.lbAnswered.Location = new System.Drawing.Point(261, 7);
             this.lbAnswered.Name = "lbAnswered";
-            this.lbAnswered.Size = new System.Drawing.Size(80, 20);
-            this.lbAnswered.TabIndex = 5;
-            this.lbAnswered.Text = "Answered";
             // 
             // lbReceived
             // 
-            this.lbReceived.AutoSize = true;
-            this.lbReceived.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            resources.ApplyResources(this.lbReceived, "lbReceived");
             this.lbReceived.ForeColor = System.Drawing.Color.Green;
-            this.lbReceived.Location = new System.Drawing.Point(447, 7);
             this.lbReceived.Name = "lbReceived";
-            this.lbReceived.Size = new System.Drawing.Size(75, 20);
-            this.lbReceived.TabIndex = 6;
-            this.lbReceived.Text = "Received";
             // 
             // lbFiled
             // 
-            this.lbFiled.AutoSize = true;
-            this.lbFiled.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            resources.ApplyResources(this.lbFiled, "lbFiled");
             this.lbFiled.ForeColor = System.Drawing.Color.MediumBlue;
-            this.lbFiled.Location = new System.Drawing.Point(640, 7);
             this.lbFiled.Name = "lbFiled";
-            this.lbFiled.Size = new System.Drawing.Size(43, 20);
-            this.lbFiled.TabIndex = 7;
-            this.lbFiled.Text = "Filed";
             // 
             // lvConsultsAnswered
             // 
+            resources.ApplyResources(this.lvConsultsAnswered, "lvConsultsAnswered");
             this.lvConsultsAnswered.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.IDAnswered,
             this.PersonNameAnswered,
             this.TopicAnsewered});
             this.lvConsultsAnswered.FullRowSelect = true;
             this.lvConsultsAnswered.HideSelection = false;
-            this.lvConsultsAnswered.Location = new System.Drawing.Point(216, 30);
             this.lvConsultsAnswered.MultiSelect = false;
             this.lvConsultsAnswered.Name = "lvConsultsAnswered";
-            this.lvConsultsAnswered.Size = new System.Drawing.Size(174, 321);
-            this.lvConsultsAnswered.TabIndex = 8;
             this.lvConsultsAnswered.UseCompatibleStateImageBehavior = false;
             this.lvConsultsAnswered.View = System.Windows.Forms.View.Details;
             this.lvConsultsAnswered.SelectedIndexChanged += new System.EventHandler(this.lvConsultsAnswered_SelectedIndexChanged);
@@ -152,35 +123,27 @@
             // 
             // IDAnswered
             // 
-            this.IDAnswered.DisplayIndex = 2;
-            this.IDAnswered.Text = "ID";
-            this.IDAnswered.Width = 0;
+            resources.ApplyResources(this.IDAnswered, "IDAnswered");
             // 
             // PersonNameAnswered
             // 
-            this.PersonNameAnswered.DisplayIndex = 0;
-            this.PersonNameAnswered.Text = "Person Name";
-            this.PersonNameAnswered.Width = 85;
+            resources.ApplyResources(this.PersonNameAnswered, "PersonNameAnswered");
             // 
             // TopicAnsewered
             // 
-            this.TopicAnsewered.DisplayIndex = 1;
-            this.TopicAnsewered.Text = "Topic";
-            this.TopicAnsewered.Width = 84;
+            resources.ApplyResources(this.TopicAnsewered, "TopicAnsewered");
             // 
             // lvConsultsReceived
             // 
+            resources.ApplyResources(this.lvConsultsReceived, "lvConsultsReceived");
             this.lvConsultsReceived.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.IDReceived,
             this.PersonNameReceived,
             this.TopicReceived});
             this.lvConsultsReceived.FullRowSelect = true;
             this.lvConsultsReceived.HideSelection = false;
-            this.lvConsultsReceived.Location = new System.Drawing.Point(396, 30);
             this.lvConsultsReceived.MultiSelect = false;
             this.lvConsultsReceived.Name = "lvConsultsReceived";
-            this.lvConsultsReceived.Size = new System.Drawing.Size(174, 321);
-            this.lvConsultsReceived.TabIndex = 9;
             this.lvConsultsReceived.UseCompatibleStateImageBehavior = false;
             this.lvConsultsReceived.View = System.Windows.Forms.View.Details;
             this.lvConsultsReceived.SelectedIndexChanged += new System.EventHandler(this.lvConsultsReceived_SelectedIndexChanged);
@@ -188,35 +151,27 @@
             // 
             // IDReceived
             // 
-            this.IDReceived.DisplayIndex = 2;
-            this.IDReceived.Text = "ID";
-            this.IDReceived.Width = 0;
+            resources.ApplyResources(this.IDReceived, "IDReceived");
             // 
             // PersonNameReceived
             // 
-            this.PersonNameReceived.DisplayIndex = 0;
-            this.PersonNameReceived.Text = "Person Name";
-            this.PersonNameReceived.Width = 85;
+            resources.ApplyResources(this.PersonNameReceived, "PersonNameReceived");
             // 
             // TopicReceived
             // 
-            this.TopicReceived.DisplayIndex = 1;
-            this.TopicReceived.Text = "Topic";
-            this.TopicReceived.Width = 84;
+            resources.ApplyResources(this.TopicReceived, "TopicReceived");
             // 
             // lvConsultsFiled
             // 
+            resources.ApplyResources(this.lvConsultsFiled, "lvConsultsFiled");
             this.lvConsultsFiled.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.IDFiled,
             this.PersonNameFiled,
             this.TopicFiled});
             this.lvConsultsFiled.FullRowSelect = true;
             this.lvConsultsFiled.HideSelection = false;
-            this.lvConsultsFiled.Location = new System.Drawing.Point(576, 30);
             this.lvConsultsFiled.MultiSelect = false;
             this.lvConsultsFiled.Name = "lvConsultsFiled";
-            this.lvConsultsFiled.Size = new System.Drawing.Size(174, 321);
-            this.lvConsultsFiled.TabIndex = 10;
             this.lvConsultsFiled.UseCompatibleStateImageBehavior = false;
             this.lvConsultsFiled.View = System.Windows.Forms.View.Details;
             this.lvConsultsFiled.SelectedIndexChanged += new System.EventHandler(this.lvConsultsFiled_SelectedIndexChanged);
@@ -224,45 +179,33 @@
             // 
             // IDFiled
             // 
-            this.IDFiled.DisplayIndex = 2;
-            this.IDFiled.Text = "ID";
-            this.IDFiled.Width = 0;
+            resources.ApplyResources(this.IDFiled, "IDFiled");
             // 
             // PersonNameFiled
             // 
-            this.PersonNameFiled.DisplayIndex = 0;
-            this.PersonNameFiled.Text = "Person Name";
-            this.PersonNameFiled.Width = 85;
+            resources.ApplyResources(this.PersonNameFiled, "PersonNameFiled");
             // 
             // TopicFiled
             // 
-            this.TopicFiled.DisplayIndex = 1;
-            this.TopicFiled.Text = "Topic";
-            this.TopicFiled.Width = 84;
+            resources.ApplyResources(this.TopicFiled, "TopicFiled");
             // 
             // btnOpenConsult
             // 
-            this.btnOpenConsult.Location = new System.Drawing.Point(576, 357);
+            resources.ApplyResources(this.btnOpenConsult, "btnOpenConsult");
             this.btnOpenConsult.Name = "btnOpenConsult";
-            this.btnOpenConsult.Size = new System.Drawing.Size(174, 23);
-            this.btnOpenConsult.TabIndex = 11;
-            this.btnOpenConsult.Text = "Open Consult";
             this.btnOpenConsult.UseVisualStyleBackColor = true;
             this.btnOpenConsult.Click += new System.EventHandler(this.btnOpenConsult_Click);
             // 
             // btnReload
             // 
-            this.btnReload.Location = new System.Drawing.Point(36, 357);
+            resources.ApplyResources(this.btnReload, "btnReload");
             this.btnReload.Name = "btnReload";
-            this.btnReload.Size = new System.Drawing.Size(174, 23);
-            this.btnReload.TabIndex = 12;
-            this.btnReload.Text = "Reload Consults";
             this.btnReload.UseVisualStyleBackColor = true;
             this.btnReload.Click += new System.EventHandler(this.btnReload_Click);
             // 
             // UserControlSchedule
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.btnReload);
             this.Controls.Add(this.btnOpenConsult);
@@ -275,7 +218,6 @@
             this.Controls.Add(this.lbMade);
             this.Controls.Add(this.lvConsultsMade);
             this.Name = "UserControlSchedule";
-            this.Size = new System.Drawing.Size(800, 400);
             this.Load += new System.EventHandler(this.UserControlSchedule_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

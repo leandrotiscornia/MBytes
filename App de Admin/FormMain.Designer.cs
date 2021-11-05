@@ -29,95 +29,74 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.ListViewItem listViewItem1 = new System.Windows.Forms.ListViewItem("Management");
-            System.Windows.Forms.ListViewItem listViewItem2 = new System.Windows.Forms.ListViewItem("Authorization");
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMain));
             this.pnlFunction = new System.Windows.Forms.Panel();
             this.lvNavigation = new System.Windows.Forms.ListView();
-            this.Function = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.btnConfiguaration = new System.Windows.Forms.Button();
-            this.btHelp = new System.Windows.Forms.Button();
-            this.btnProfile = new System.Windows.Forms.Button();
+            this.Funcionalidad = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.cbLanguage = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // pnlFunction
             // 
-            this.pnlFunction.Location = new System.Drawing.Point(149, 70);
+            resources.ApplyResources(this.pnlFunction, "pnlFunction");
             this.pnlFunction.Name = "pnlFunction";
-            this.pnlFunction.Size = new System.Drawing.Size(800, 400);
-            this.pnlFunction.TabIndex = 0;
             // 
             // lvNavigation
             // 
+            resources.ApplyResources(this.lvNavigation, "lvNavigation");
             this.lvNavigation.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.Function});
+            this.Funcionalidad});
             this.lvNavigation.HideSelection = false;
             this.lvNavigation.Items.AddRange(new System.Windows.Forms.ListViewItem[] {
-            listViewItem1,
-            listViewItem2});
-            this.lvNavigation.Location = new System.Drawing.Point(12, 70);
+            ((System.Windows.Forms.ListViewItem)(resources.GetObject("lvNavigation.Items"))),
+            ((System.Windows.Forms.ListViewItem)(resources.GetObject("lvNavigation.Items1")))});
             this.lvNavigation.MultiSelect = false;
             this.lvNavigation.Name = "lvNavigation";
-            this.lvNavigation.Size = new System.Drawing.Size(121, 400);
-            this.lvNavigation.TabIndex = 1;
             this.lvNavigation.UseCompatibleStateImageBehavior = false;
             this.lvNavigation.View = System.Windows.Forms.View.Details;
             this.lvNavigation.SelectedIndexChanged += new System.EventHandler(this.lvNavigation_SelectedIndexChanged);
             // 
-            // Function
+            // Funcionalidad
             // 
-            this.Function.Text = "Function";
-            this.Function.Width = 124;
-            // 
-            // btnConfiguaration
-            // 
-            this.btnConfiguaration.Location = new System.Drawing.Point(714, 27);
-            this.btnConfiguaration.Name = "btnConfiguaration";
-            this.btnConfiguaration.Size = new System.Drawing.Size(75, 23);
-            this.btnConfiguaration.TabIndex = 2;
-            this.btnConfiguaration.Text = "Config";
-            this.btnConfiguaration.UseVisualStyleBackColor = true;
-            // 
-            // btHelp
-            // 
-            this.btHelp.Location = new System.Drawing.Point(795, 27);
-            this.btHelp.Name = "btHelp";
-            this.btHelp.Size = new System.Drawing.Size(75, 23);
-            this.btHelp.TabIndex = 3;
-            this.btHelp.Text = "Help";
-            this.btHelp.UseVisualStyleBackColor = true;
-            // 
-            // btnProfile
-            // 
-            this.btnProfile.Location = new System.Drawing.Point(876, 27);
-            this.btnProfile.Name = "btnProfile";
-            this.btnProfile.Size = new System.Drawing.Size(75, 23);
-            this.btnProfile.TabIndex = 4;
-            this.btnProfile.Text = "Modify Data";
-            this.btnProfile.UseVisualStyleBackColor = true;
-            this.btnProfile.Click += new System.EventHandler(this.btnProfile_Click);
+            resources.ApplyResources(this.Funcionalidad, "Funcionalidad");
             // 
             // timer1
             // 
             this.timer1.Interval = 5000;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
+            // cbLanguage
+            // 
+            resources.ApplyResources(this.cbLanguage, "cbLanguage");
+            this.cbLanguage.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbLanguage.FormattingEnabled = true;
+            this.cbLanguage.Items.AddRange(new object[] {
+            resources.GetString("cbLanguage.Items"),
+            resources.GetString("cbLanguage.Items1")});
+            this.cbLanguage.Name = "cbLanguage";
+            this.cbLanguage.SelectedIndexChanged += new System.EventHandler(this.cbLanguage_SelectedIndexChanged);
+            // 
+            // label1
+            // 
+            resources.ApplyResources(this.label1, "label1");
+            this.label1.Name = "label1";
+            // 
             // FormMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(963, 498);
-            this.Controls.Add(this.btnProfile);
-            this.Controls.Add(this.btHelp);
-            this.Controls.Add(this.btnConfiguaration);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.cbLanguage);
             this.Controls.Add(this.lvNavigation);
             this.Controls.Add(this.pnlFunction);
             this.Cursor = System.Windows.Forms.Cursors.Default;
             this.Name = "FormMain";
-            this.Text = "FormMain";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormMain_FormClosed);
             this.Load += new System.EventHandler(this.FormMain_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -125,10 +104,9 @@
 
         private System.Windows.Forms.Panel pnlFunction;
         private System.Windows.Forms.ListView lvNavigation;
-        private System.Windows.Forms.ColumnHeader Function;
-        private System.Windows.Forms.Button btnConfiguaration;
-        private System.Windows.Forms.Button btHelp;
-        private System.Windows.Forms.Button btnProfile;
+        private System.Windows.Forms.ColumnHeader Funcionalidad;
         private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.ComboBox cbLanguage;
+        private System.Windows.Forms.Label label1;
     }
 }

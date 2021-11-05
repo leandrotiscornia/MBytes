@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormOpenConsultation));
             this.rtbMessages = new System.Windows.Forms.RichTextBox();
             this.btnSend = new System.Windows.Forms.Button();
             this.lbMessage = new System.Windows.Forms.Label();
@@ -39,72 +40,47 @@
             // 
             // rtbMessages
             // 
-            this.rtbMessages.Location = new System.Drawing.Point(80, 55);
+            resources.ApplyResources(this.rtbMessages, "rtbMessages");
             this.rtbMessages.Name = "rtbMessages";
             this.rtbMessages.ReadOnly = true;
-            this.rtbMessages.Size = new System.Drawing.Size(293, 162);
-            this.rtbMessages.TabIndex = 23;
-            this.rtbMessages.Text = "";
             // 
             // btnSend
             // 
-            this.btnSend.Location = new System.Drawing.Point(269, 340);
+            resources.ApplyResources(this.btnSend, "btnSend");
             this.btnSend.Name = "btnSend";
-            this.btnSend.Size = new System.Drawing.Size(104, 23);
-            this.btnSend.TabIndex = 21;
-            this.btnSend.Text = "Add Consult";
             this.btnSend.UseVisualStyleBackColor = true;
             this.btnSend.Click += new System.EventHandler(this.btnSend_Click);
             // 
             // lbMessage
             // 
-            this.lbMessage.AutoSize = true;
-            this.lbMessage.Location = new System.Drawing.Point(21, 226);
+            resources.ApplyResources(this.lbMessage, "lbMessage");
             this.lbMessage.Name = "lbMessage";
-            this.lbMessage.Size = new System.Drawing.Size(53, 13);
-            this.lbMessage.TabIndex = 20;
-            this.lbMessage.Text = "Message:";
             // 
             // lbPrevious
             // 
-            this.lbPrevious.AutoSize = true;
-            this.lbPrevious.Location = new System.Drawing.Point(20, 55);
+            resources.ApplyResources(this.lbPrevious, "lbPrevious");
             this.lbPrevious.Name = "lbPrevious";
-            this.lbPrevious.Size = new System.Drawing.Size(48, 13);
-            this.lbPrevious.TabIndex = 19;
-            this.lbPrevious.Text = "Previous";
             // 
             // tbNewMessage
             // 
-            this.tbNewMessage.Location = new System.Drawing.Point(80, 223);
-            this.tbNewMessage.Multiline = true;
+            resources.ApplyResources(this.tbNewMessage, "tbNewMessage");
             this.tbNewMessage.Name = "tbNewMessage";
-            this.tbNewMessage.Size = new System.Drawing.Size(293, 93);
-            this.tbNewMessage.TabIndex = 18;
             // 
             // lbTopic
             // 
-            this.lbTopic.AutoSize = true;
-            this.lbTopic.Location = new System.Drawing.Point(37, 29);
+            resources.ApplyResources(this.lbTopic, "lbTopic");
             this.lbTopic.Name = "lbTopic";
-            this.lbTopic.Size = new System.Drawing.Size(37, 13);
-            this.lbTopic.TabIndex = 17;
-            this.lbTopic.Text = "Topic:";
             // 
             // tbTopic
             // 
-            this.tbTopic.Enabled = false;
-            this.tbTopic.Location = new System.Drawing.Point(80, 26);
+            resources.ApplyResources(this.tbTopic, "tbTopic");
             this.tbTopic.Name = "tbTopic";
             this.tbTopic.ReadOnly = true;
-            this.tbTopic.Size = new System.Drawing.Size(293, 20);
-            this.tbTopic.TabIndex = 16;
             // 
-            // FormOpenConsult
+            // FormOpenConsultation
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(400, 402);
             this.Controls.Add(this.rtbMessages);
             this.Controls.Add(this.btnSend);
             this.Controls.Add(this.lbMessage);
@@ -112,8 +88,7 @@
             this.Controls.Add(this.tbNewMessage);
             this.Controls.Add(this.lbTopic);
             this.Controls.Add(this.tbTopic);
-            this.Name = "FormOpenConsult";
-            this.Text = "FormOpenConsult";
+            this.Name = "FormOpenConsultation";
             this.Load += new System.EventHandler(this.FormOpenConsult_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

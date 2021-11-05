@@ -174,7 +174,10 @@ namespace App_de_Docente
             MessageBox.Show("Feature not added yet", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
- 
+        private void lblNewNickName_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

@@ -81,6 +81,9 @@
     <EmbeddedResource Include="FormLogIn.resx">
       <DependentUpon>FormLogIn.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormMain.es.resx">
+      <DependentUpon>FormMain.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>
@@ -96,8 +99,14 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UserControlProfile.es.resx">
+      <DependentUpon>UserControlProfile.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControlProfile.resx">
       <DependentUpon>UserControlProfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlTeacherInscriptions.es.resx">
+      <DependentUpon>UserControlTeacherInscriptions.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlTeacherInscriptions.resx">
       <DependentUpon>UserControlTeacherInscriptions.cs</DependentUpon>

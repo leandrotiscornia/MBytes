@@ -52,6 +52,9 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="UserControlAuthorization.es.resx">
+      <DependentUpon>UserControlAuthorization.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControlAuthorization.resx">
       <DependentUpon>UserControlAuthorization.cs</DependentUpon>
     </EmbeddedResource>

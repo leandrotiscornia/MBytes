@@ -117,4 +117,111 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="btnRequest.Size" type="System.Drawing.Size, System.Drawing">
+    <value>131, 37</value>
+  </data>
+  <data name="&gt;&gt;dgvGroups.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
+  <data name="&gt;&gt;dgvGroups.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="dgvGroups.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;dgvSubjects.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.UserControl, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="dgvSubjects.Location" type="System.Drawing.Point, System.Drawing">
+    <value>228, 39</value>
+  </data>
+  <data name="&gt;&gt;btnRequest.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;dgvSubjects.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="dgvPending.Size" type="System.Drawing.Size, System.Drawing">
+    <value>271, 251</value>
+  </data>
+  <data name="&gt;&gt;dgvPending.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="btnRequest.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <data name="&gt;&gt;dgvGroups.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dgvSubjects.Name" xml:space="preserve">
+    <value>dgvSubjects</value>
+  </data>
+  <data name="dgvSubjects.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="dgvGroups.Location" type="System.Drawing.Point, System.Drawing">
+    <value>43, 39</value>
+  </data>
+  <data name="&gt;&gt;dgvSubjects.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="btnRequest.Text" xml:space="preserve">
+    <value>Send Request</value>
+  </data>
+  <data name="dgvGroups.Size" type="System.Drawing.Size, System.Drawing">
+    <value>170, 251</value>
+  </data>
+  <data name="&gt;&gt;btnRequest.Name" xml:space="preserve">
+    <value>btnRequest</value>
+  </data>
+  <data name="&gt;&gt;dgvPending.Name" xml:space="preserve">
+    <value>dgvPending</value>
+  </data>
+  <data name="dgvSubjects.Size" type="System.Drawing.Size, System.Drawing">
+    <value>165, 251</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>UserControlTeacherInscriptions</value>
+  </data>
+  <data name="btnRequest.Location" type="System.Drawing.Point, System.Drawing">
+    <value>262, 296</value>
+  </data>
+  <data name="dgvPending.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;btnRequest.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;dgvPending.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;dgvPending.Type" xml:space="preserve">
+    <value>System.Windows.Forms.DataGridView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;dgvGroups.Name" xml:space="preserve">
+    <value>dgvGroups</value>
+  </data>
+  <data name="&gt;&gt;btnRequest.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="dgvPending.Location" type="System.Drawing.Point, System.Drawing">
+    <value>490, 39</value>
+  </data>
+  <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
+    <value>800, 400</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>es</value>
+  </metadata>
 </root>

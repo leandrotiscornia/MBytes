@@ -116,6 +116,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UserControlChatMainPanel.es.resx">
+      <DependentUpon>UserControlChatMainPanel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControlChatMainPanel.resx">
       <DependentUpon>UserControlChatMainPanel.cs</DependentUpon>
     </EmbeddedResource>

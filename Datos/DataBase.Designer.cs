@@ -61,7 +61,7 @@ namespace Datos {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("123")]
+        [global::System.Configuration.DefaultSettingValueAttribute("system")]
         public string dbPassword {
             get {
                 return ((string)(this["dbPassword"]));
@@ -73,7 +73,7 @@ namespace Datos {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("root")]
+        [global::System.Configuration.DefaultSettingValueAttribute("system")]
         public string dbUser {
             get {
                 return ((string)(this["dbUser"]));

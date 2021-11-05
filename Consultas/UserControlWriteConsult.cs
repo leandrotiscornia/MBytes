@@ -47,5 +47,10 @@ namespace Consultas
             Console.WriteLine("" + receiverId);
             ConsultationController.newConsultation(senderId, receiverId, topic, consultationMessage);
         }
+
+        private void lbMessageWriteConsult_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

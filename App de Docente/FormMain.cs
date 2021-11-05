@@ -67,5 +67,24 @@ namespace App_de_Docente
             inscriptions.Dock = DockStyle.Fill;
             pnlFunction.Controls.Add(inscriptions);
         }
+
+        private void cbLanguage_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch (cbLanguage.SelectedIndex)
+            {
+                case 0:
+                    Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("en");
+                    Controls.Clear();
+                    InitializeComponent();
+                    break;
+                case 1:
+                    Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo("es");
+                    Controls.Clear();
+                    InitializeComponent();
+                    break;
+                default:
+                    break;
+            }
+        }
     }
 }

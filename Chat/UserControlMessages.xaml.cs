@@ -222,9 +222,11 @@ namespace Chat
             }
         }
 
-        private void TbMessage_TouchEnter(object sender, TouchEventArgs e)
+       
+
+        private void TbMessage_KeyUp(object sender, KeyEventArgs e)
         {
-            if (tbMessage.Text != "") sendMessage();
+            if (tbMessage.Text != "" && e.Key == Key.Enter) sendMessage();
         }
     }
     

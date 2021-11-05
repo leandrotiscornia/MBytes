@@ -81,5 +81,10 @@ namespace Consultas
         {
             ConsultationController.changeConsultationState(consultationId, "Filed");
         }
+
+        private void lbMessageEditConsult_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
