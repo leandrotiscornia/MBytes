@@ -2,12 +2,11 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Datos" GeneratedClassName="DataBase">
   <Profiles />
   <Settings>
-
     <Setting Name="dbName" Type="System.String" Scope="User">
       <Value Profile="(Default)">mbytes</Value>
     </Setting>
     <Setting Name="dbServer" Type="System.String" Scope="User">
-      <Value Profile="(Default)">127.0.0.1</Value>
+      <Value Profile="(Default)">emebitos.ddns.net</Value>
     </Setting>
     <Setting Name="dbPort" Type="System.String" Scope="User">
       <Value Profile="(Default)">3306</Value>
@@ -17,7 +16,6 @@
     </Setting>
     <Setting Name="dbUser" Type="System.String" Scope="User">
       <Value Profile="(Default)">system</Value>
-
     </Setting>
   </Settings>
 </SettingsFile>

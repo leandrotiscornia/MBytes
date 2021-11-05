@@ -1,0 +1,483 @@
+[33mcommit e7a2372790b670949add50fc483dceafa699a060[m[33m ([m[1;36mHEAD -> [m[1;32mShellScriptOperador[m[33m)[m
+Author: Mathias Melo <melo.mathias01@gmail.com>
+Date:   Mon Aug 23 02:49:47 2021 -0300
+
+    Scripts en proceso de Alta ,Baja y Modificación de Usuarios agregados
+
+[33mcommit 5f0955a4642642c1ef67a80521ebbdceaa407a35[m[33m ([m[1;31morigin/ShellScriptOperador[m[33m)[m
+Author: Mathias Melo <melo.mathias01@gmail.com>
+Date:   Wed Aug 18 12:40:49 2021 -0300
+
+    Operador.sh en proceso
+
+[33mcommit cb8abb8a6ff8abcf0cc7518f44a3006caf435eae[m[33m ([m[1;31morigin/Develop[m[33m, [m[1;32mDevelop[m[33m)[m
+Merge: 5ac6217 731a960
+Author: leandrotiscorniaUTU <75020432+leandrotiscornia@users.noreply.github.com>
+Date:   Wed Aug 11 20:19:27 2021 -0300
+
+    Merge pull request #30 from leandrotiscornia/control-de-excepciones
+    
+    Control de excepciones en capa de datos y en capa visual.
+
+[33mcommit 731a960eb8f1cd8ee06560e3639e725a43346562[m[33m ([m[1;31morigin/modulo-de-chat[m[33m, [m[1;31morigin/control-de-excepciones[m[33m)[m
+Author: leandrotiscornia <leandrotiscornia98@gmail.com>
+Date:   Wed Aug 11 20:17:58 2021 -0300
+
+    Control de excepciones en capa de datos y en capa visual.
+
+[33mcommit 5ac621769d1f1a318e4b508e986c9511791b4a1b[m
+Merge: d312c50 85afc82
+Author: leandrotiscorniaUTU <75020432+leandrotiscornia@users.noreply.github.com>
+Date:   Tue Aug 10 00:15:04 2021 -0300
+
+    Merge pull request #29 from leandrotiscornia/control-de-excepciones
+    
+    Control de excepciones MySql en Datos.ModelConnection, recaptura de e…
+
+[33mcommit 85afc822a8d8a191b5a192bd3cf17ff14fa0cf11[m
+Author: leandrotiscornia <leandrotiscornia98@gmail.com>
+Date:   Tue Aug 10 00:12:34 2021 -0300
+
+    Control de excepciones MySql en Datos.ModelConnection, recaptura de excepciones y generación de mensajes para usuarios en Negocio.ExceptionController
+
+[33mcommit d312c509effcb9315d93442bf80f7dda7d6d5b2c[m
+Merge: cca08c5 7b7c8f3
+Author: leandrotiscorniaUTU <75020432+leandrotiscornia@users.noreply.github.com>
+Date:   Sun Aug 8 13:43:10 2021 -0300
+
+    Merge pull request #28 from leandrotiscornia/limpieza-de-codigo
+    
+    Limpieza de codigo
+
+[33mcommit 7b7c8f363a65a453236f311a5d50ecf47aff1898[m[33m ([m[1;31morigin/limpieza-de-codigo[m[33m)[m
+Merge: f8b6c2d 9537f2d
+Author: leandrotiscornia <leandrotiscornia98@gmail.com>
+Date:   Sun Aug 8 13:37:38 2021 -0300
+
+    Solucionado conflicto de merge
+
+[33mcommit f8b6c2dded8f9ec3554cf91f0904f9bcbf99c728[m
+Author: leandrotiscornia <leandrotiscornia98@gmail.com>
+Date:   Sun Aug 8 13:24:41 2021 -0300
+
+    Las ejecuciones de commandos ahora están en código reutilizable, en ModelConnection
+
+[33mcommit 9537f2dc7963f93ffe9bec7679a4f87d36f52b46[m
+Author: BozinskyNina <bozinskynina@gmail.com>
+Date:   Tue Aug 3 16:08:50 2021 -0300
+
+    creadas las public void
+    executeWithoutReutrn()
+    executeWithParametersClearWhitoutReturn()
+    executeWhitExecuteReaderWhitoutReturn()
+    prepareWhitNonQueryNonReturn()
+    en ModelDatabaseObject
+
+[33mcommit 7ad739a7df3e08c096cc3ca0472e243a4bb777d3[m
+Author: BozinskyNina <bozinskynina@gmail.com>
+Date:   Mon Aug 2 20:15:43 2021 -0300
+
+    cambio de nombres en algunas herramientas como labels y botones, no encontré iteraciones de codigo que necesiten ser encapsulados
+
+[33mcommit cca08c555e20bc4e1e530042fc7580ca62635789[m
+Merge: 8cd8451 50f5aed
+Author: leandrotiscorniaUTU <75020432+leandrotiscornia@users.noreply.github.com>
+Date:   Sun Jul 25 19:23:02 2021 -0300
+
+    Merge pull request #25 from leandrotiscornia/Separación-de-Aplicaciones
+    
+    Separación de aplicaciones
+
+[33mcommit 50f5aed238ce3067e8cb8b38872955bf3c19c131[m[33m ([m[1;31morigin/Separación-de-Aplicaciones[m[33m)[m
+Author: leandrotiscornia <leandrotiscornia98@gmail.com>
+Date:   Sun Jul 25 19:21:27 2021 -0300
+
+    Corregido error en Form register
+
+[33mcommit e2454eb975e20713a7b5eea4baadeb2f5444eecb[m
+Author: leandrotiscornia <leandrotiscornia98@gmail.com>
+Date:   Sun Jul 25 19:18:54 2021 -0300
+
+    Aplicación separada en:
+    -> App de alumno
+    -> App de docente
+    La app unificada se mantiene como obsoleta.
+
+[33mcommit 8cd845186a6e49cfaab51d28ad3f8277919aec1f[m
+Author: leandrotiscornia <leandrotiscornia98@gmail.com>
+Date:   Sun Jul 25 14:32:22 2021 -0300
+
+    Solución de errores
+
+[33mcommit 44b28c2f0cff41602a338362d1d9dfa7c84ade0b[m
+Merge: ea5784b 949538a
+Author: leandrotiscorniaUTU <75020432+leandrotiscornia@users.noreply.github.com>
+Date:   Tue Jul 20 02:55:49 2021 -0300
+
+    Merge pull request #24 from leandrotiscornia/FunciónPerfilDeUsuario
+    
+    Función perfil de usuario
+
+[33mcommit 949538a1649eca9f0def2d6fbc805cc772ab919c[m[33m ([m[1;31morigin/FunciónPerfilDeUsuario[m[33m, [m[1;32mFunciónPerfilDeUsuario[m[33m)[m
+Merge: 4fdb5fc ea5784b
+Author: leandrotiscorniaUTU <75020432+leandrotiscornia@users.noreply.github.com>
+Date:   Tue Jul 20 02:55:40 2021 -0300
+
+    Merge branch 'Develop' into FunciónPerfilDeUsuario
+
+[33mcommit 4fdb5fcdc42ac5f33e0069dd51ec05655dd1ca98[m
+Merge: 9f04384 1fcc23b
+Author: Mathias Melo <melo.mathias01@gmail.com>
+Date:   Tue Jul 20 02:51:51 2021 -0300
+
+    Solucionado conflicto del merge User Control Profile
+
+[33mcommit 9f04384cfe70d47dfc5cd80ff45a9483760b46bb[m
+Author: Mathias Melo <melo.mathias01@gmail.com>
+Date:   Tue Jul 20 02:44:07 2021 -0300
+
+    Funcion cambio de nombre ,apodo e informacion de usuario, user control profile mejorado agregado.
+
+[33mcommit ea5784b3ada9b5e11bce97c89fff840b7c61442f[m
+Merge: f2b629d 1fcc23b
+Author: leandrotiscorniaUTU <75020432+leandrotiscornia@users.noreply.github.com>
+Date:   Mon Jul 19 22:51:03 2021 -0300
+
+    Merge pull request #23 from leandrotiscornia/FunciónPerfilDeUsuario
+    
+    Función perfil de usuario
+
+[33mcommit f2b629d449a613c6ff7c35605625e944f2923e6c[m
+Merge: 3a66de8 2082e18
+Author: leandrotiscorniaUTU <75020432+leandrotiscornia@users.noreply.github.com>
+Date:   Mon Jul 19 22:49:01 2021 -0300
+
+    Merge pull request #22 from leandrotiscornia/Agenda-y-consultas
+    
+    Agenda y consultas
+
+[33mcommit 2082e18f57e9fc37fb3fc5b9402710eee537013f[m[33m ([m[1;31morigin/Agenda-y-consultas[m[33m)[m
+Author: leandrotiscornia <leandrotiscornia98@gmail.com>
+Date:   Mon Jul 19 02:00:07 2021 -0300
+
+    Corregido error en Datos ->ModelPerson -> getUsersByPermissions
+    Eliminada linea "this.reader.Read();"
+
+[33mcommit fef22cb0a7acf841114791e277136e53be5198d6[m
+Author: leandrotiscornia <leandrotiscornia98@gmail.com>
+Date:   Mon Jul 19 01:18:53 2021 -0300
+
+    Añadido cambio de estado de consulta a recibido
+
+[33mcommit f5de8eab0f433e1c744b9f978ba178b412d72a03[m
+Author: leandrotiscornia <leandrotiscornia98@gmail.com>
+Date:   Mon Jul 19 00:33:52 2021 -0300
+
+    Funciones de agenda y consultas terminadas, añadida también función de validación de permisos
+
+[33mcommit 04ea7c213cb5b7c5d33fa636c456ab8ab838de7e[m
+Author: leandrotiscornia <leandrotiscornia98@gmail.com>
+Date:   Thu Jul 15 18:39:35 2021 -0300
+
+    Añadida función de consultas, y acceso a la misma desde usuario.
+    falta por resolver: Pasar Id del tabControl al panel, en el ConsultMainPanel
+
+[33mcommit 1fcc23bba86e80ce8153d76c3b811d3cb658336d[m
+Author: BozinskyNina <bozinskynina@gmail.com>
+Date:   Wed Jul 14 20:27:42 2021 -0300
+
+    Cambio del UserControlPanel a los colores establecidos en el grupo
+
+[33mcommit 72e729ecb8305fad19d7efc102038acfab5c9230[m
+Author: BozinskyNina <bozinskynina@gmail.com>
+Date:   Wed Jul 14 19:30:23 2021 -0300
+
+    cambios en diseño de FormRegisterPerson
+
+[33mcommit 720435336447e4b5f60a12684a426f5fbbd3edef[m
+Author: Mathias Melo <melo.mathias01@gmail.com>
+Date:   Sun Jul 11 01:02:06 2021 -0300
+
+    FormUserProfile cambiado a UserControlProfile con mejoras en el código y detalles por terminar.
+
+[33mcommit eb595f2ecff0e9c7996740d61f2488e439459aeb[m
+Author: Mathias Melo <melo.mathias01@gmail.com>
+Date:   Sat Jul 10 08:32:52 2021 -0300
+
+    FormUserProfile agregado con cambios a mejorar en el código .
+
+[33mcommit 3a66de897439f2ffa0004d10139e9b560b0b5a4d[m[33m ([m[1;31morigin/RegistroDeUsuario[m[33m)[m
+Merge: a442a95 1a5d413
+Author: leandrotiscorniaUTU <75020432+leandrotiscornia@users.noreply.github.com>
+Date:   Fri Jul 9 19:51:03 2021 -0300
+
+    Merge pull request #21 from leandrotiscornia/Registrarse
+    
+    Agregados controles de excepciones en las funciones de registro y de …
+
+[33mcommit 1a5d413d5dceb41d7b25a505d45cce8e1b1d6b2c[m[33m ([m[1;31morigin/Registrarse[m[33m)[m
+Author: leandrotiscornia <leandrotiscornia98@gmail.com>
+Date:   Fri Jul 9 19:45:12 2021 -0300
+
+    Agregados controles de excepciones en las funciones de registro y de logIn
+
+[33mcommit a442a95a0600bbe922aca47e45549583b2a1f459[m
+Merge: 6c1f3cc 3df1ac2
+Author: leandrotiscorniaUTU <75020432+leandrotiscornia@users.noreply.github.com>
+Date:   Wed Jul 7 22:33:46 2021 -0300
+
+    Merge pull request #19 from leandrotiscornia/Registrarse
+    
+    Función de registro de usuario, faltan correcciones y controles
+
+[33mcommit 3df1ac250c750429316fb5333ba60fd9d5e89772[m
+Author: leandrotiscornia <leandrotiscornia98@gmail.com>
+Date:   Wed Jul 7 22:32:25 2021 -0300
+
+    Función de registro de usuario, faltan correcciones y controles
+
+[33mcommit 6c1f3ccda8f6c7f1cd702fccf0df5e438cf58eb0[m
+Merge: 6e3e97e 2091b8c
+Author: leandrotiscorniaUTU <75020432+leandrotiscornia@users.noreply.github.com>
+Date:   Wed Jul 7 01:27:16 2021 -0300
+
+    Merge pull request #16 from leandrotiscornia/LógicaAlta
+    
+    ControllerInsert ,ControllerDelete , ControllerModify y ControllerList
+
+[33mcommit 2091b8c844d0766525883bda41ad43c862e2b9de[m
+Merge: 084a218 6e3e97e
+Author: leandrotiscorniaUTU <75020432+leandrotiscornia@users.noreply.github.com>
+Date:   Wed Jul 7 01:27:10 2021 -0300
+
+    Merge branch 'Develop' into LógicaAlta
+
+[33mcommit 6e3e97ea8222dece3caa74af21c79ee418fb354a[m
+Merge: 6f018c2 2cb3857
+Author: leandrotiscorniaUTU <75020432+leandrotiscornia@users.noreply.github.com>
+Date:   Wed Jul 7 01:24:47 2021 -0300
+
+    Merge pull request #15 from leandrotiscornia/Lógica-LogIn
+    
+    Lógica log in
+
+[33mcommit 2cb385742fafc9040f4ac78a9e95fefe34b2e705[m
+Author: leandrotiscornia <leandrotiscornia98@gmail.com>
+Date:   Wed Jul 7 00:53:31 2021 -0300
+
+    Función de Inicio de Sesión agregada
+    Correcciónes necesarias: Controles, consulta de tabla users, logIn por roles
+
+[33mcommit 084a218f26cdf356cc6144a0bf1c1dc3347420e4[m
+Author: Mathias Melo <melo.mathias01@gmail.com>
+Date:   Tue Jul 6 06:05:10 2021 -0300
+
+    ControllerInsert ,ControllerDelete , ControllerModify y ControllerList
+
+[33mcommit ca0b410bcc88abfc99b67bd3f183f9c03d0144b8[m
+Merge: d0cd057 6f018c2
+Author: leandrotiscorniaUTU <75020432+leandrotiscornia@users.noreply.github.com>
+Date:   Sun Jul 4 23:43:54 2021 -0300
+
+    Merge pull request #14 from leandrotiscornia/Develop
+    
+    Develop
+
+[33mcommit 6f018c2063fccc75c8b54853d93d83faa33fc34f[m
+Author: leandrotiscornia <leandrotiscornia98@gmail.com>
+Date:   Sun Jul 4 23:39:20 2021 -0300
+
+    Declaración de propiedades de modelos corregida (por .Net 2.0)
+
+[33mcommit 0bafb2ef08f1dd54f0a9490cd85fc4a02d8ea4f0[m
+Merge: aed9683 0e1b6ea
+Author: leandrotiscornia <leandrotiscornia98@gmail.com>
+Date:   Sun Jul 4 02:40:51 2021 -0300
+
+    Merge branch 'Develop' of https://github.com/leandrotiscornia/MBytes into Develop
+
+[33mcommit aed96839b9736934b2790e69c71591444edeb4d2[m
+Author: leandrotiscornia <leandrotiscornia98@gmail.com>
+Date:   Sun Jul 4 02:40:43 2021 -0300
+
+    Eliminada Class1.cs
+
+[33mcommit 0e1b6ea7f8dfb1535f64b6ea9c89d234697b93c2[m
+Merge: d0cd057 0f6ce34
+Author: leandrotiscorniaUTU <75020432+leandrotiscornia@users.noreply.github.com>
+Date:   Sun Jul 4 02:25:01 2021 -0300
+
+    Merge pull request #13 from leandrotiscornia/DatosInstitucionales
+    
+    Datos institucionales
+
+[33mcommit 0f6ce349d645efb1546d7f38edb5f4b507d09df4[m[33m ([m[1;31morigin/DatosInstitucionales[m[33m, [m[1;32mDatosInstitucionales[m[33m)[m
+Merge: 1221381 d0cd057
+Author: leandrotiscorniaUTU <75020432+leandrotiscornia@users.noreply.github.com>
+Date:   Sun Jul 4 02:24:32 2021 -0300
+
+    Merge branch 'Develop' into DatosInstitucionales
+
+[33mcommit 1221381eedf2cf39c02b2298b879093a299ad3da[m
+Merge: f46632a 2ab24ff
+Author: Mathias Melo <melo.mathias01@gmail.com>
+Date:   Sat Jul 3 18:20:53 2021 -0300
+
+    Merge branch 'DatosInstitucionales' of https://github.com/leandrotiscornia/MBytes into DatosInstitucionales
+
+[33mcommit f46632a0f78a4cb80dd4c2406643f926acaf2a9e[m
+Author: Mathias Melo <melo.mathias01@gmail.com>
+Date:   Sat Jul 3 18:20:30 2021 -0300
+
+    ModelGrade y ModelWatches realizado.
+
+[33mcommit 2ab24ffce24633729a94b1fc97a07355e8289646[m
+Author: BozinskyNina <bozinskynina@gmail.com>
+Date:   Sat Jul 3 18:00:09 2021 -0300
+
+    Añadido ModelGroup
+
+[33mcommit cd91d58379bcf347b5ef0262f99cc55e3634077a[m
+Author: BozinskyNina <bozinskynina@gmail.com>
+Date:   Sat Jul 3 17:23:48 2021 -0300
+
+    Añadida clase ModelSubject
+
+[33mcommit d0cd0578359ceaea4dc8f4dab8b3db1039bc6188[m
+Merge: 05630e3 ab03bc9
+Author: leandrotiscorniaUTU <75020432+leandrotiscornia@users.noreply.github.com>
+Date:   Sat Jul 3 00:21:55 2021 -0300
+
+    Merge pull request #10 from leandrotiscornia/DatosAgenda
+    
+    Añadidas clases ModelConsult y ModelConsultMessage
+
+[33mcommit ab03bc9e6e20a13c23e984f29902160d2516b339[m
+Merge: 932f85b 05630e3
+Author: leandrotiscorniaUTU <75020432+leandrotiscornia@users.noreply.github.com>
+Date:   Sat Jul 3 00:21:46 2021 -0300
+
+    Merge branch 'Develop' into DatosAgenda
+
+[33mcommit 932f85b294a71c17d979489cd29456f74318e773[m
+Author: leandrotiscornia <leandrotiscornia98@gmail.com>
+Date:   Sat Jul 3 00:17:10 2021 -0300
+
+    Class1.cs eliminada
+
+[33mcommit 7b19a6178b4d3e9f7c712505e5dcf642fe2fb868[m
+Author: Mathias Melo <melo.mathias01@gmail.com>
+Date:   Sat Jul 3 00:16:58 2021 -0300
+
+    Class1.cs eliminado por conflicto
+
+[33mcommit 59849fffa3955c8c9e06c8f69164d4a5a42dda15[m
+Author: Mathias Melo <melo.mathias01@gmail.com>
+Date:   Sat Jul 3 00:06:10 2021 -0300
+
+    ModelCourse Terminado y ModelGrade por terminar de resolver.
+
+[33mcommit 05630e377ab35381284ff2dfa27fff65ffc27177[m
+Merge: 67c26f4 fd33ce1
+Author: leandrotiscorniaUTU <75020432+leandrotiscornia@users.noreply.github.com>
+Date:   Sat Jul 3 00:03:10 2021 -0300
+
+    Merge pull request #9 from leandrotiscornia/NucleoDeDatos
+    
+    Nucleo de datos
+
+[33mcommit f2cbdc5570659b78dfc08631e9c8670c0f0454c2[m
+Author: leandrotiscornia <leandrotiscornia98@gmail.com>
+Date:   Fri Jul 2 08:38:10 2021 -0300
+
+    Añadidas clases ModelConsult y ModelConsultMessage
+
+[33mcommit fd33ce153749e156eec7769e2bd57ed70c3be2cc[m
+Author: leandrotiscornia <leandrotiscornia98@gmail.com>
+Date:   Thu Jul 1 20:21:46 2021 -0300
+
+    Agregadas clases ModelStudent y ModelTeacher
+
+[33mcommit 2de99d76bda57e1c6da23b59272a474c8d5b70e1[m
+Author: leandrotiscornia <leandrotiscornia98@gmail.com>
+Date:   Thu Jul 1 17:08:00 2021 -0300
+
+    Agregada clase ModelPerson.
+
+[33mcommit 046f1088f2946ea4c2a4278c140de9687a1dcd33[m
+Author: leandrotiscornia <leandrotiscornia98@gmail.com>
+Date:   Thu Jul 1 03:31:55 2021 -0300
+
+    Finalizada Clase ModelDataBaseObject
+
+[33mcommit b867f4868c12aac8e2653f709dcc050c6972266c[m
+Author: leandrotiscornia <leandrotiscornia98@gmail.com>
+Date:   Wed Jun 30 23:28:50 2021 -0300
+
+    Finalizada clase ModelConnection
+
+[33mcommit 21aef660b9486d68580280041de3a66e93d994d0[m
+Author: leandrotiscornia <leandrotiscornia98@gmail.com>
+Date:   Wed Jun 30 23:11:10 2021 -0300
+
+    Objeto ModelConnection creado
+
+[33mcommit 06b84636369bd6f39db1a2c3f639d830a9d7a608[m
+Merge: bb7d033 67c26f4
+Author: leandrotiscorniaUTU <75020432+leandrotiscornia@users.noreply.github.com>
+Date:   Wed Jun 30 22:08:58 2021 -0300
+
+    Merge pull request #7 from leandrotiscornia/Develop
+    
+    Develop
+
+[33mcommit 67c26f45e67d2546528f84385212c88ea8c057c2[m
+Merge: bb7d033 7e7f2f2
+Author: leandrotiscorniaUTU <75020432+leandrotiscornia@users.noreply.github.com>
+Date:   Wed Jun 30 22:08:09 2021 -0300
+
+    Merge pull request #5 from leandrotiscornia/Testing
+    
+    Testing
+
+[33mcommit 7e7f2f22191626112810f2d70356714fe0cd55ec[m[33m ([m[1;31morigin/Testing[m[33m)[m
+Merge: bb7d033 997fc7e
+Author: leandrotiscorniaUTU <75020432+leandrotiscornia@users.noreply.github.com>
+Date:   Wed Jun 30 22:07:10 2021 -0300
+
+    Merge pull request #3 from leandrotiscornia/Pre-Producción
+    
+    Pre producción
+
+[33mcommit 997fc7e51f6ec03bfcf250927b10ba60ec4ab994[m[33m ([m[1;31morigin/Pre-Producción[m[33m)[m
+Merge: bb7d033 f4fa619
+Author: leandrotiscorniaUTU <75020432+leandrotiscornia@users.noreply.github.com>
+Date:   Wed Jun 30 21:57:50 2021 -0300
+
+    Merge pull request #1 from leandrotiscornia/Release
+    
+    Agregado plugin MySql a la capa de datos
+
+[33mcommit f4fa6191d5f7271a560da7fa223467833b2bc315[m
+Author: Leandro Tiscornia <leandrotiscornia98@gmail.com>
+Date:   Wed Jun 30 21:25:19 2021 -0300
+
+    Agregado plugin MySql a la capa de datos
+
+[33mcommit bb7d033259162eb68e0571932a8c018deea5102a[m
+Author: Leandro Tiscornia <leandrotiscornia98@gmail.com>
+Date:   Sat Jun 12 15:22:25 2021 -0300
+
+    Añadidas capas Datos, Negocio, Chat y Agenda
+
+[33mcommit b968d95a28093cb7e15267d14ff69f7e12dfc07d[m
+Author: Leandro Tiscornia <leandrotiscornia98@gmail.com>
+Date:   Sat Jun 12 13:13:25 2021 -0300
+
+    Agregar archivos de proyecto.
+
+[33mcommit f6a97eac30d9c84ff8d33fb2041e6ad64ffa64a3[m
+Author: Leandro Tiscornia <leandrotiscornia98@gmail.com>
+Date:   Sat Jun 12 13:13:21 2021 -0300
+
+    Agregar .gitignore y .gitattributes.

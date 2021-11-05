@@ -10,6 +10,7 @@ using Negocio;
 using Gestion;
 using Autorizacion;
 using System.Windows.Forms;
+using System.Threading;
 
 namespace App_de_Admin
 {

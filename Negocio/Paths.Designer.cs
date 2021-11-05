@@ -25,7 +25,7 @@ namespace Negocio {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("C:\\Users\\Spiral\\Desktop\\log")]
+        [global::System.Configuration.DefaultSettingValueAttribute("C:\\Users\\Usuario\\Desktop\\log")]
         public string LogsRoute {
             get {
                 return ((string)(this["LogsRoute"]));
@@ -34,7 +34,7 @@ namespace Negocio {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("C:\\Users\\Spiral\\Documents\\ProfilePictures\\")]
+        [global::System.Configuration.DefaultSettingValueAttribute("C:\\Users\\Usuario\\Desktop\\ProfilePictures\\")]
         public string PictureRoute {
             get {
                 return ((string)(this["PictureRoute"]));
