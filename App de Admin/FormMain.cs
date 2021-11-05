@@ -65,15 +65,13 @@ namespace App_de_Admin
         }
         private void navigate()
         {
-            switch (lvNavigation.SelectedItems[0].Text)
+            switch (lvNavigation.SelectedIndices[0])
             {
-                case "Management":
+                case 0:
                     loadManagement();
                     break;
-                case "Authorization":
+                case 1:
                     loadAuthorization();
-                    break;
-                case "Chat":
                     break;
                 default:
                     break;

@@ -31,13 +31,13 @@ namespace App_De_Alumno
             GC.Collect();
             if (lvNavigation.SelectedIndices.Count > 0)
             {
-                if (lvNavigation.SelectedItems[0].Text == "Consultations")
+                if (lvNavigation.SelectedIndices[0] == 0)
                 {
                     UserControlConsultationsMainPanel consultationsPanel = new UserControlConsultationsMainPanel();
                     consultationsPanel.Dock = DockStyle.Fill;
                     pnlFunction.Controls.Add(consultationsPanel);
                 }
-                else if (lvNavigation.SelectedItems[0].Text == "Chat")
+                else if (lvNavigation.SelectedIndices[0] == 1)
                 {
                     UserControlChatMainPanel chat = new UserControlChatMainPanel();
                     chat.Dock = DockStyle.Fill;

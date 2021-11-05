@@ -2,7 +2,6 @@
 <SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Datos" GeneratedClassName="DataBase">
   <Profiles />
   <Settings>
-
     <Setting Name="dbName" Type="System.String" Scope="User">
       <Value Profile="(Default)">mbytes</Value>
     </Setting>
@@ -17,7 +16,6 @@
     </Setting>
     <Setting Name="dbUser" Type="System.String" Scope="User">
       <Value Profile="(Default)">system</Value>
-
     </Setting>
   </Settings>
 </SettingsFile>

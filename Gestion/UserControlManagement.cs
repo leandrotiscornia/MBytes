@@ -53,29 +53,29 @@ namespace Gestion
         }
         private void deleteElement()
         {
-            switch (lvData.SelectedItems[0].Text)
+            switch (lvData.SelectedIndices[0])
             {
-                case "Teachers":
+                case 0:
                     PersonController.deleteTeacher(getDataId(dgvData));
                     loadData();
                     break;
-                case "Students":
+                case 1:
                     PersonController.deleteStudent(getDataId(dgvData));
                     loadData();
                     break;
-                case "Courses":
+                case 2:
                     CourseController.deleteCourse(getDataId(dgvData));
                     loadData();
                     break;
-                case "Grades":
+                case 3:
                     GradeController.deleteGrade(getDataId(dgvData));
                     loadData();
                     break;
-                case "Groups":
+                case 4:
                     GroupController.deleteGroup(getDataId(dgvData));
                     loadData();
                     break;
-                case "Subjects":
+                case 5:
                     SubjectController.deleteSubject(getDataId(dgvData));
                     loadData();
                     break;
@@ -85,26 +85,27 @@ namespace Gestion
         }
         private void loadData()
         {
-            switch (lvData.SelectedItems[0].Text)
+            switch (lvData.SelectedIndices[0])
             {
-                case "Teachers":
+                case 0:
                     dgvData.DataSource = PersonController.listTeacher();
                     break;
-                case "Students":
+                case 1:
                     dgvData.DataSource = PersonController.listStudent();
                     break;
-                case "Courses":
+                case 2:
                     dgvData.DataSource = CourseController.listCourses();
                     break;
-                case "Grades":
+                case 3:
                     dgvData.DataSource = GradeController.listGrades();
                     break;
-                case "Groups":
-                    dgvData.DataSource = GroupController.listGroupsWithStudents();
-                    break;
-                case "Subjects":
+                case 4:
                     dgvData.DataSource = SubjectController.listSubjects();
                     break;
+                case 5:
+                    dgvData.DataSource = GroupController.listGroupsWithStudents();
+                    break;
+                
                 default:
                     break;
             }
@@ -139,37 +140,38 @@ namespace Gestion
         }
         private void register()
         {
-            switch (lvData.SelectedItems[0].Text)
+            switch (lvData.SelectedIndices[0])
             {
-                case "Teachers":
+                case 0:
                     FormRegisterTeacher registerTeacher = new FormRegisterTeacher();
                     registerTeacher.FormClosing += new FormClosingEventHandler(Form_Closing);
                     registerTeacher.Show();
                     break;
-                case "Students":
+                case 1:
                     FormRegisterStudent registerStudent = new FormRegisterStudent();
                     registerStudent.FormClosing += new FormClosingEventHandler(Form_Closing);
                     registerStudent.Show();
                     break;
-                case "Courses":
+                case 2:
                     FormRegisterCourse registerCourse = new FormRegisterCourse();
                     registerCourse.FormClosing += new FormClosingEventHandler(Form_Closing);
                     registerCourse.Show();
                     break;
-                case "Grades":
+                case 3:
                     FormRegisterGrade registerGrade = new FormRegisterGrade();
                     registerGrade.FormClosing += new FormClosingEventHandler(Form_Closing);
                     registerGrade.Show();
                     break;
-                case "Groups":
-                    FormRegisterGroup registerGroup = new FormRegisterGroup();
-                    registerGroup.FormClosing += new FormClosingEventHandler(Form_Closing);
-                    registerGroup.Show();
-                    break;
-                case "Subjects":
+               
+                case 4:
                     FormRegisterSubject registerSubject = new FormRegisterSubject();
                     registerSubject.FormClosing += new FormClosingEventHandler(Form_Closing);
                     registerSubject.Show();
+                    break;
+                case 5:
+                    FormRegisterGroup registerGroup = new FormRegisterGroup();
+                    registerGroup.FormClosing += new FormClosingEventHandler(Form_Closing);
+                    registerGroup.Show();
                     break;
                 default:
                     break;
@@ -177,37 +179,38 @@ namespace Gestion
         }
         private void modify()
         {
-            switch (lvData.SelectedItems[0].Text)
+            switch (lvData.SelectedIndices[0])
             {
-                case "Teachers":
+                case 0:
                     FormModifyTeacher modifyTeacher = new FormModifyTeacher(getDataId(dgvData));
                     modifyTeacher.FormClosing += new FormClosingEventHandler(Form_Closing);
                     modifyTeacher.Show();
                     break;
-                case "Students":
+                case 1:
                     FormModifyStudent modifyStudent = new FormModifyStudent(getDataId(dgvData));
                     modifyStudent.FormClosing += new FormClosingEventHandler(Form_Closing);
                     modifyStudent.Show();
                     break;
-                case "Courses":
+                case 2:
                     FormModifyCourse modifyCourse = new FormModifyCourse(getDataId(dgvData), getDataName(dgvData));
                     modifyCourse.FormClosing += new FormClosingEventHandler(Form_Closing);
                     modifyCourse.Show();
                     break;
-                case "Grades":
+                case 3:
                     FormModifyGrade modifyGrade = new FormModifyGrade(getDataId(dgvData), getDataName(dgvData));
                     modifyGrade.FormClosing += new FormClosingEventHandler(Form_Closing);
                     modifyGrade.Show();
                     break;
-                case "Groups":
-                    FormModifyGroup modifyGroup = new FormModifyGroup(getDataId(dgvData));
-                    modifyGroup.FormClosing += new FormClosingEventHandler(Form_Closing);
-                    modifyGroup.Show(); 
-                    break;
-                case "Subjects":
+                
+                case 4:
                     FormModifySubject modifySubject = new FormModifySubject(getDataId(dgvData));
                     modifySubject.FormClosing += new FormClosingEventHandler(Form_Closing);
                     modifySubject.Show();
+                    break;
+                case 5:
+                    FormModifyGroup modifyGroup = new FormModifyGroup(getDataId(dgvData));
+                    modifyGroup.FormClosing += new FormClosingEventHandler(Form_Closing);
+                    modifyGroup.Show();
                     break;
                 default:
                     break;

@@ -31,13 +31,13 @@ namespace App_de_Docente
             GC.Collect();
             if (lvNavigation.SelectedIndices.Count > 0)
             {
-                if (lvNavigation.SelectedItems[0].Text == "Schedule")
+                if (lvNavigation.SelectedIndices[0] == 0)
                 {
                     UserControlSchedule schedulePanel = new UserControlSchedule();
                     schedulePanel.Dock = DockStyle.Fill;
                     pnlFunction.Controls.Add(schedulePanel);
                 }
-                else if (lvNavigation.SelectedItems[0].Text == "Chat")
+                else if (lvNavigation.SelectedIndices[0] == 1)
                 {
                     UserControlChatMainPanel chat = new UserControlChatMainPanel();
                     chat.Dock = DockStyle.Fill;

@@ -25,78 +25,62 @@ namespace Datos {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-
         [global::System.Configuration.DefaultSettingValueAttribute("mbytes")]
-
         public string dbName {
             get {
                 return ((string)(this["dbName"]));
             }
-
             set {
                 this["dbName"] = value;
             }
-
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("127.0.0.1")]
         public string dbServer {
             get {
                 return ((string)(this["dbServer"]));
             }
-
             set {
                 this["dbServer"] = value;
             }
-
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("3306")]
         public string dbPort {
             get {
                 return ((string)(this["dbPort"]));
             }
-
             set {
                 this["dbPort"] = value;
             }
-
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-
         [global::System.Configuration.DefaultSettingValueAttribute("system")]
-
         public string dbPassword {
             get {
                 return ((string)(this["dbPassword"]));
             }
-
             set {
                 this["dbPassword"] = value;
             }
-
         }
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-
         [global::System.Configuration.DefaultSettingValueAttribute("system")]
-
         public string dbUser {
             get {
                 return ((string)(this["dbUser"]));
             }
-
             set {
                 this["dbUser"] = value;
             }
-
         }
     }
 }

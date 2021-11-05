@@ -1,8 +1,8 @@
-﻿CREATE DATABASE  IF NOT EXISTS `sistema_de_chat_institucional` /*!40100 DEFAULT CHARACTER SET latin1 */;
-USE `sistema_de_chat_institucional`;
+CREATE DATABASE  IF NOT EXISTS `testingdb` /*!40100 DEFAULT CHARACTER SET latin1 */;
+USE `testingdb`;
 -- MySQL dump 10.13  Distrib 8.0.25, for Win64 (x86_64)
 --
--- Host: localhost    Database: sistema_de_chat_institucional
+-- Host: localhost    Database: testingdb
 -- ------------------------------------------------------
 -- Server version	5.7.34-log
 
@@ -37,6 +37,7 @@ CREATE TABLE `administrator` (
 
 LOCK TABLES `administrator` WRITE;
 /*!40000 ALTER TABLE `administrator` DISABLE KEYS */;
+INSERT INTO `administrator` VALUES (0);
 /*!40000 ALTER TABLE `administrator` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -74,18 +75,17 @@ DROP TABLE IF EXISTS `chatmessages`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `chatmessages` (
-  `Chat_ID` int(11) NOT NULL,
-  `Register_ID` int(11) NOT NULL,
-  `Sender_ID` int(11) NOT NULL,
-  `Time` datetime NOT NULL,
-  `Text` varchar(255) NOT NULL,
-  PRIMARY KEY (`Chat_ID`,`Register_ID`),
-  KEY `chatmessages_ibfk_3_idx` (`Sender_ID`),
-  KEY `chatmessages_ibfk_2` (`Register_ID`),
+  `ID` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `Chat_ID` int(11) DEFAULT NULL,
+  `Sender_ID` int(11) DEFAULT NULL,
+  `Time` datetime DEFAULT NULL,
+  `Text` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`ID`),
+  KEY `Chat_ID` (`Chat_ID`),
+  KEY `Sender_ID` (`Sender_ID`),
   CONSTRAINT `chatmessages_ibfk_1` FOREIGN KEY (`Chat_ID`) REFERENCES `chatsessions` (`ID`),
-  CONSTRAINT `chatmessages_ibfk_2` FOREIGN KEY (`Register_ID`) REFERENCES `chatregisters` (`ID`),
-  CONSTRAINT `chatmessages_ibfk_3` FOREIGN KEY (`Sender_ID`) REFERENCES `users` (`ID`) ON DELETE NO ACTION ON UPDATE NO ACTION
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  CONSTRAINT `chatmessages_ibfk_2` FOREIGN KEY (`Sender_ID`) REFERENCES `users` (`ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=68 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -94,34 +94,36 @@ CREATE TABLE `chatmessages` (
 
 LOCK TABLES `chatmessages` WRITE;
 /*!40000 ALTER TABLE `chatmessages` DISABLE KEYS */;
+INSERT INTO `chatmessages` VALUES (46,45,71,'2021-11-04 14:28:12','testMessage1'),(47,45,70,'2021-11-04 14:28:12','testMessage2'),(48,46,71,'2021-11-04 14:29:07','testMessage1'),(49,46,70,'2021-11-04 14:29:07','testMessage2'),(50,47,71,'2021-11-04 14:29:46','testMessage1'),(51,47,70,'2021-11-04 14:29:46','testMessage2'),(52,48,71,'2021-11-04 14:34:50','testMessage1'),(53,48,70,'2021-11-04 14:34:50','testMessage2'),(54,49,71,'2021-11-04 14:43:20','testMessage1'),(55,49,70,'2021-11-04 14:43:20','testMessage2'),(56,50,71,'2021-11-04 14:43:33','testMessage1'),(57,50,70,'2021-11-04 14:43:33','testMessage2'),(58,51,71,'2021-11-04 14:44:52','testMessage1'),(59,51,70,'2021-11-04 14:44:52','testMessage2'),(60,52,71,'2021-11-04 14:50:06','testMessage1'),(61,52,70,'2021-11-04 14:50:06','testMessage2'),(62,53,71,'2021-11-04 14:51:19','testMessage1'),(63,53,70,'2021-11-04 14:51:19','testMessage2'),(64,54,71,'2021-11-04 15:05:52','testMessage1'),(65,54,70,'2021-11-04 15:05:52','testMessage2'),(66,55,71,'2021-11-04 15:41:14','testMessage1'),(67,55,70,'2021-11-04 15:41:14','testMessage2');
 /*!40000 ALTER TABLE `chatmessages` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
--- Table structure for table `chatregisters`
+-- Table structure for table `chatparticipants`
 --
 
-DROP TABLE IF EXISTS `chatregisters`;
+DROP TABLE IF EXISTS `chatparticipants`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `chatregisters` (
-  `ID` int(11) NOT NULL,
-  `Start_Time` datetime NOT NULL,
-  `End_Time` datetime NOT NULL,
-  `Host_ID` int(11) NOT NULL,
-  PRIMARY KEY (`ID`),
-  KEY `chatregisters_ibfk_1` (`Host_ID`),
-  CONSTRAINT `chatregisters_ibfk_1` FOREIGN KEY (`Host_ID`) REFERENCES `users` (`ID`)
+CREATE TABLE `chatparticipants` (
+  `Chat_ID` int(11) NOT NULL,
+  `User_ID` int(11) NOT NULL,
+  `Status` varchar(8) DEFAULT NULL,
+  PRIMARY KEY (`Chat_ID`,`User_ID`),
+  KEY `User_ID` (`User_ID`),
+  CONSTRAINT `chatparticipants_ibfk_1` FOREIGN KEY (`Chat_ID`) REFERENCES `chatsessions` (`ID`),
+  CONSTRAINT `chatparticipants_ibfk_3` FOREIGN KEY (`User_ID`) REFERENCES `users` (`ID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
--- Dumping data for table `chatregisters`
+-- Dumping data for table `chatparticipants`
 --
 
-LOCK TABLES `chatregisters` WRITE;
-/*!40000 ALTER TABLE `chatregisters` DISABLE KEYS */;
-/*!40000 ALTER TABLE `chatregisters` ENABLE KEYS */;
+LOCK TABLES `chatparticipants` WRITE;
+/*!40000 ALTER TABLE `chatparticipants` DISABLE KEYS */;
+INSERT INTO `chatparticipants` VALUES (48,70,'Online'),(49,70,'Online'),(50,70,'Online'),(51,70,'Online'),(52,70,'Online'),(53,70,'Online'),(54,70,'Online'),(55,70,'Online');
+/*!40000 ALTER TABLE `chatparticipants` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -133,15 +135,14 @@ DROP TABLE IF EXISTS `chatsessions`;
 /*!50503 SET character_set_client = utf8mb4 */;
 CREATE TABLE `chatsessions` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
-  `Start_Time` datetime NOT NULL,
+  `Name` varchar(30) DEFAULT NULL,
   `Host_ID` int(11) DEFAULT NULL,
-  `Register_ID` int(11) DEFAULT NULL,
+  `Start_Time` datetime NOT NULL,
+  `End_Time` datetime DEFAULT NULL,
   PRIMARY KEY (`ID`),
   KEY `Host_ID` (`Host_ID`),
-  KEY `Register_ID` (`Register_ID`),
-  CONSTRAINT `chatsessions_ibfk_1` FOREIGN KEY (`Host_ID`) REFERENCES `users` (`ID`),
-  CONSTRAINT `chatsessions_ibfk_2` FOREIGN KEY (`Register_ID`) REFERENCES `chatregisters` (`ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+  CONSTRAINT `chatsessions_ibfk_1` FOREIGN KEY (`Host_ID`) REFERENCES `users` (`ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=56 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -150,36 +151,8 @@ CREATE TABLE `chatsessions` (
 
 LOCK TABLES `chatsessions` WRITE;
 /*!40000 ALTER TABLE `chatsessions` DISABLE KEYS */;
+INSERT INTO `chatsessions` VALUES (44,'testSession',71,'2021-11-04 14:26:35',NULL),(45,'testSession',71,'2021-11-04 14:28:12','2021-11-04 14:28:12'),(46,'testSession',71,'2021-11-04 14:29:07','2021-11-04 14:29:07'),(47,'testSession',71,'2021-11-04 14:29:46','2021-11-04 14:29:46'),(48,'testSession',71,'2021-11-04 14:34:50','2021-11-04 14:34:51'),(49,'testSession',71,'2021-11-04 14:43:21','2021-11-04 14:43:21'),(50,'testSession',71,'2021-11-04 14:43:33','2021-11-04 14:43:34'),(51,'testSession',71,'2021-11-04 14:44:52','2021-11-04 14:44:53'),(52,'testSession',71,'2021-11-04 14:50:07','2021-11-04 14:50:07'),(53,'testSession',71,'2021-11-04 14:51:20','2021-11-04 14:51:20'),(54,'testSession',71,'2021-11-04 15:05:52','2021-11-04 15:05:53'),(55,'testSession',71,'2021-11-04 15:41:14','2021-11-04 15:41:15');
 /*!40000 ALTER TABLE `chatsessions` ENABLE KEYS */;
-UNLOCK TABLES;
-
---
--- Table structure for table `chatsparticipants`
---
-
-DROP TABLE IF EXISTS `chatsparticipants`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!50503 SET character_set_client = utf8mb4 */;
-CREATE TABLE `chatsparticipants` (
-  `Chat_ID` int(11) NOT NULL,
-  `Register_ID` int(11) NOT NULL,
-  `User_ID` int(11) NOT NULL,
-  PRIMARY KEY (`Chat_ID`,`Register_ID`,`User_ID`),
-  KEY `Register_ID` (`Register_ID`),
-  KEY `User_ID` (`User_ID`),
-  CONSTRAINT `chatsparticipants_ibfk_1` FOREIGN KEY (`Chat_ID`) REFERENCES `chatsessions` (`ID`),
-  CONSTRAINT `chatsparticipants_ibfk_2` FOREIGN KEY (`Register_ID`) REFERENCES `chatregisters` (`ID`),
-  CONSTRAINT `chatsparticipants_ibfk_3` FOREIGN KEY (`User_ID`) REFERENCES `users` (`ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
-
---
--- Dumping data for table `chatsparticipants`
---
-
-LOCK TABLES `chatsparticipants` WRITE;
-/*!40000 ALTER TABLE `chatsparticipants` DISABLE KEYS */;
-/*!40000 ALTER TABLE `chatsparticipants` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -193,6 +166,7 @@ CREATE TABLE `classes` (
   `Group_ID` int(11) NOT NULL,
   `Subject_ID` int(11) NOT NULL,
   `Teacher_CI` varchar(8) NOT NULL,
+  `Status` varchar(9) DEFAULT NULL,
   PRIMARY KEY (`Group_ID`,`Subject_ID`,`Teacher_CI`),
   KEY `Subject_ID` (`Subject_ID`),
   KEY `Teacher_CI` (`Teacher_CI`),
@@ -208,6 +182,7 @@ CREATE TABLE `classes` (
 
 LOCK TABLES `classes` WRITE;
 /*!40000 ALTER TABLE `classes` DISABLE KEYS */;
+INSERT INTO `classes` VALUES (25,17,'12345678','Accepted');
 /*!40000 ALTER TABLE `classes` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -229,7 +204,7 @@ CREATE TABLE `consultmessages` (
   KEY `Sender_ID` (`Sender_ID`),
   CONSTRAINT `consultmessages_ibfk_1` FOREIGN KEY (`Consult_ID`) REFERENCES `consults` (`ID`),
   CONSTRAINT `consultmessages_ibfk_2` FOREIGN KEY (`Sender_ID`) REFERENCES `users` (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=46 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -238,6 +213,7 @@ CREATE TABLE `consultmessages` (
 
 LOCK TABLES `consultmessages` WRITE;
 /*!40000 ALTER TABLE `consultmessages` DISABLE KEYS */;
+INSERT INTO `consultmessages` VALUES (1,1,71,'testDoubt','2021-10-28 17:42:11'),(2,1,70,'testAnswer','2021-10-28 17:42:12'),(3,2,71,'testDoubt','2021-10-28 17:44:34'),(4,2,70,'testAnswer','2021-10-28 17:44:34'),(5,3,71,'testDoubt','2021-10-28 17:50:25'),(6,3,70,'testAnswer','2021-10-28 17:50:25'),(7,4,71,'testDoubt','2021-10-28 17:52:21'),(8,4,70,'testAnswer','2021-10-28 17:52:21'),(9,5,71,'testDoubt','2021-10-28 17:53:48'),(10,5,70,'testAnswer','2021-10-28 17:53:48'),(12,7,71,'testDoubt','2021-11-04 14:08:20'),(13,7,70,'testAnswer','2021-11-04 14:08:20'),(14,8,71,'testDoubt','2021-11-04 14:16:07'),(15,8,70,'testAnswer','2021-11-04 14:16:08'),(16,9,71,'testDoubt','2021-11-04 14:17:05'),(17,9,70,'testAnswer','2021-11-04 14:17:05'),(18,10,71,'testDoubt','2021-11-04 14:18:35'),(19,10,70,'testAnswer','2021-11-04 14:18:35'),(20,11,71,'testDoubt','2021-11-04 14:18:59'),(21,11,70,'testAnswer','2021-11-04 14:18:59'),(22,12,71,'testDoubt','2021-11-04 14:23:37'),(23,12,70,'testAnswer','2021-11-04 14:23:37'),(24,13,71,'testDoubt','2021-11-04 14:28:11'),(25,13,70,'testAnswer','2021-11-04 14:28:11'),(26,14,71,'testDoubt','2021-11-04 14:29:06'),(27,14,70,'testAnswer','2021-11-04 14:29:06'),(28,15,71,'testDoubt','2021-11-04 14:29:45'),(29,15,70,'testAnswer','2021-11-04 14:29:45'),(30,16,71,'testDoubt','2021-11-04 14:34:50'),(31,16,70,'testAnswer','2021-11-04 14:34:50'),(32,17,71,'testDoubt','2021-11-04 14:43:20'),(33,17,70,'testAnswer','2021-11-04 14:43:20'),(34,18,71,'testDoubt','2021-11-04 14:43:33'),(35,18,70,'testAnswer','2021-11-04 14:43:33'),(36,19,71,'testDoubt','2021-11-04 14:44:51'),(37,19,70,'testAnswer','2021-11-04 14:44:51'),(38,20,71,'testDoubt','2021-11-04 14:50:06'),(39,20,70,'testAnswer','2021-11-04 14:50:06'),(40,21,71,'testDoubt','2021-11-04 14:51:19'),(41,21,70,'testAnswer','2021-11-04 14:51:19'),(42,22,71,'testDoubt','2021-11-04 15:05:52'),(43,22,70,'testAnswer','2021-11-04 15:05:52'),(44,23,71,'testDoubt','2021-11-04 15:41:13'),(45,23,70,'testAnswer','2021-11-04 15:41:13');
 /*!40000 ALTER TABLE `consultmessages` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -259,7 +235,7 @@ CREATE TABLE `consults` (
   KEY `Receiver_ID` (`Receiver_ID`),
   CONSTRAINT `consults_ibfk_1` FOREIGN KEY (`Sender_ID`) REFERENCES `users` (`ID`),
   CONSTRAINT `consults_ibfk_2` FOREIGN KEY (`Receiver_ID`) REFERENCES `users` (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -268,6 +244,7 @@ CREATE TABLE `consults` (
 
 LOCK TABLES `consults` WRITE;
 /*!40000 ALTER TABLE `consults` DISABLE KEYS */;
+INSERT INTO `consults` VALUES (1,71,70,'testTopic','Filed'),(2,71,70,'testTopic','Filed'),(3,71,70,'testTopic','Filed'),(4,71,70,'testTopic','Filed'),(5,71,70,'testTopic','Filed'),(7,71,70,'testTopic','Filed'),(8,71,70,'testTopic','Filed'),(9,71,70,'testTopic','Filed'),(10,71,70,'testTopic','Filed'),(11,71,70,'testTopic','Filed'),(12,71,70,'testTopic','Filed'),(13,71,70,'testTopic','Filed'),(14,71,70,'testTopic','Filed'),(15,71,70,'testTopic','Filed'),(16,71,70,'testTopic','Filed'),(17,71,70,'testTopic','Filed'),(18,71,70,'testTopic','Filed'),(19,71,70,'testTopic','Filed'),(20,71,70,'testTopic','Filed'),(21,71,70,'testTopic','Filed'),(22,71,70,'testTopic','Filed'),(23,71,70,'testTopic','Filed');
 /*!40000 ALTER TABLE `consults` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -282,7 +259,7 @@ CREATE TABLE `courses` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
   `Name` varchar(20) NOT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=33 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -291,6 +268,7 @@ CREATE TABLE `courses` (
 
 LOCK TABLES `courses` WRITE;
 /*!40000 ALTER TABLE `courses` DISABLE KEYS */;
+INSERT INTO `courses` VALUES (31,'testC'),(32,'course1');
 /*!40000 ALTER TABLE `courses` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -341,6 +319,7 @@ CREATE TABLE `grade_subjects` (
 
 LOCK TABLES `grade_subjects` WRITE;
 /*!40000 ALTER TABLE `grade_subjects` DISABLE KEYS */;
+INSERT INTO `grade_subjects` VALUES (17,123),(18,123),(21,123),(22,124),(23,124),(24,125),(25,126);
 /*!40000 ALTER TABLE `grade_subjects` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -358,7 +337,7 @@ CREATE TABLE `grades` (
   PRIMARY KEY (`ID`),
   KEY `Course_ID` (`Course_ID`),
   CONSTRAINT `grades_ibfk_1` FOREIGN KEY (`Course_ID`) REFERENCES `courses` (`ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=217 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -367,6 +346,7 @@ CREATE TABLE `grades` (
 
 LOCK TABLES `grades` WRITE;
 /*!40000 ALTER TABLE `grades` DISABLE KEYS */;
+INSERT INTO `grades` VALUES (123,'testEstEst',31),(124,'1ºcourse1',32),(125,'2ºcourse1',32),(126,'3ºcourse1',32),(216,'2ºtestC',31);
 /*!40000 ALTER TABLE `grades` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -381,11 +361,11 @@ CREATE TABLE `groups` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
   `Name` varchar(20) NOT NULL,
   `Grade_ID` int(11) DEFAULT NULL,
-  `Shift` varchar(7) NOT NULL,
+  `Shift` varchar(9) DEFAULT NULL,
   PRIMARY KEY (`ID`),
   KEY `Grade_ID` (`Grade_ID`),
   CONSTRAINT `groups_ibfk_1` FOREIGN KEY (`Grade_ID`) REFERENCES `grades` (`ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -394,7 +374,35 @@ CREATE TABLE `groups` (
 
 LOCK TABLES `groups` WRITE;
 /*!40000 ALTER TABLE `groups` DISABLE KEYS */;
+INSERT INTO `groups` VALUES (25,'testGroup',123,'Mourning'),(26,'group1',124,'Mourning'),(27,'group2',125,'Afternoon'),(28,'group3',126,'Night');
 /*!40000 ALTER TABLE `groups` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `messagestatus`
+--
+
+DROP TABLE IF EXISTS `messagestatus`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `messagestatus` (
+  `Reader_ID` int(11) NOT NULL,
+  `Message_ID` int(11) unsigned NOT NULL,
+  `Status` varchar(9) NOT NULL,
+  PRIMARY KEY (`Reader_ID`,`Message_ID`),
+  KEY `Message_ID` (`Message_ID`),
+  CONSTRAINT `messagestatus_ibfk_1` FOREIGN KEY (`Reader_ID`) REFERENCES `users` (`ID`),
+  CONSTRAINT `messagestatus_ibfk_2` FOREIGN KEY (`Message_ID`) REFERENCES `chatmessages` (`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `messagestatus`
+--
+
+LOCK TABLES `messagestatus` WRITE;
+/*!40000 ALTER TABLE `messagestatus` DISABLE KEYS */;
+/*!40000 ALTER TABLE `messagestatus` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -447,7 +455,7 @@ CREATE TABLE `personis` (
 
 LOCK TABLES `personis` WRITE;
 /*!40000 ALTER TABLE `personis` DISABLE KEYS */;
-INSERT INTO `personis` VALUES (1,'32859236'),(1,'37378231'),(2,'48035576'),(2,'54388733');
+INSERT INTO `personis` VALUES (1,'12345678'),(2,'54321678'),(2,'student1'),(2,'student2'),(2,'student3'),(2,'student4'),(1,'teacher1'),(1,'teacher2'),(1,'teacher3'),(1,'teacher4');
 /*!40000 ALTER TABLE `personis` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -479,8 +487,34 @@ CREATE TABLE `persons` (
 
 LOCK TABLES `persons` WRITE;
 /*!40000 ALTER TABLE `persons` DISABLE KEYS */;
-INSERT INTO `persons` VALUES ('32859236',13,'Gonzalo','Gabriel','Martínez','Riveiro',NULL,NULL),('37378231',12,'Elina','Lara','Vallés','Gongorra',NULL,NULL),('48035576',15,'Nina','María','Bozinsky','Noriega',NULL,NULL),('54388733',14,'Leandro','Antonio','Tiscornia','González',NULL,NULL);
+INSERT INTO `persons` VALUES ('12345678',70,'teacher','teacher','teacher','teacher',NULL,NULL),('54321678',71,'student','student','student','student',NULL,NULL),('student1',76,'student1','student1','student1','student1',NULL,NULL),('student2',77,'student2','student2','student2','student2',NULL,NULL),('student3',78,'student3','student3','student3','student3',NULL,NULL),('student4',79,'student4','student4','student4','student4',NULL,NULL),('teacher1',72,'teacher1','teacher1','teacher1','teacher1',NULL,NULL),('teacher2',73,'teacher2','teacher2','teacher2','teacher2',NULL,NULL),('teacher3',74,'teacher3','teacher3','teacher3','teacher3',NULL,NULL),('teacher4',75,'teacher4','teacher4','teacher4','teacher4',NULL,NULL);
 /*!40000 ALTER TABLE `persons` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `presenteeism`
+--
+
+DROP TABLE IF EXISTS `presenteeism`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!50503 SET character_set_client = utf8mb4 */;
+CREATE TABLE `presenteeism` (
+  `teacher_ID` int(11) NOT NULL,
+  `presenteeism` varchar(20) DEFAULT NULL,
+  `date` datetime DEFAULT NULL,
+  `timeDifference` datetime DEFAULT NULL,
+  PRIMARY KEY (`teacher_ID`),
+  CONSTRAINT `presenteeism_ibfk_1` FOREIGN KEY (`teacher_ID`) REFERENCES `persons` (`ID`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `presenteeism`
+--
+
+LOCK TABLES `presenteeism` WRITE;
+/*!40000 ALTER TABLE `presenteeism` DISABLE KEYS */;
+/*!40000 ALTER TABLE `presenteeism` ENABLE KEYS */;
 UNLOCK TABLES;
 
 --
@@ -518,6 +552,7 @@ CREATE TABLE `student_take_subjects` (
   `Student_CI` varchar(8) NOT NULL,
   `Group_ID` int(11) NOT NULL,
   `Subject_ID` int(11) NOT NULL,
+  `Status` varchar(9) DEFAULT NULL,
   PRIMARY KEY (`Student_CI`,`Group_ID`,`Subject_ID`),
   KEY `Group_ID` (`Group_ID`),
   KEY `Subject_ID` (`Subject_ID`),
@@ -546,8 +581,9 @@ DROP TABLE IF EXISTS `subjects`;
 CREATE TABLE `subjects` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
   `Name` varchar(20) NOT NULL,
+  `Description` varchar(50) DEFAULT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -556,6 +592,7 @@ CREATE TABLE `subjects` (
 
 LOCK TABLES `subjects` WRITE;
 /*!40000 ALTER TABLE `subjects` DISABLE KEYS */;
+INSERT INTO `subjects` VALUES (17,'test1','testest'),(18,'test2','testest'),(19,'test3','testest'),(20,'test4','testest'),(21,'asd','asd'),(22,'subject1','subject1'),(23,'subject2','subject2'),(24,'subject3','subject3'),(25,'subject4','subject4');
 /*!40000 ALTER TABLE `subjects` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -570,8 +607,9 @@ CREATE TABLE `users` (
   `ID` int(11) NOT NULL AUTO_INCREMENT,
   `User_Login` varchar(20) NOT NULL,
   `User_Password` varchar(200) DEFAULT NULL,
+  `state` varchar(8) DEFAULT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=80 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -580,7 +618,7 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (12,'elina','elinux26721'),(13,'gonzalo','masterofwind26721'),(14,'leandro','leadro26721'),(15,'nina','nina26721');
+INSERT INTO `users` VALUES (0,'admin','MQAyADMA',NULL),(70,'teacher','dABlAGEAYwBoAGUAcgA=',NULL),(71,'student','cwB0AHUAZABlAG4AdAA=',NULL),(72,'teacher1','dABlAGEAYwBoAGUAcgAxAA==',NULL),(73,'teacher2','dABlAGEAYwBoAGUAcgAyAA==',NULL),(74,'teacher3','dABlAGEAYwBoAGUAcgAzAA==',NULL),(75,'teacher4','dABlAGEAYwBoAGUAcgA0AA==',NULL),(76,'student1','cwB0AHUAZABlAG4AdAAxAA==',NULL),(77,'student2','cwB0AHUAZABlAG4AdAAyAA==',NULL),(78,'student3','cwB0AHUAZABlAG4AdAAzAA==',NULL),(79,'student4','cwB0AHUAZABlAG4AdAA0AA==',NULL);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -621,4 +659,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2021-07-26  7:40:47
+-- Dump completed on 2021-11-05 13:07:10

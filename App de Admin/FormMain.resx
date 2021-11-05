@@ -134,6 +134,9 @@
   <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
     <value>6, 13</value>
   </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>FormMain</value>
+  </data>
   <data name="&gt;&gt;Function.Name" xml:space="preserve">
     <value>Function</value>
   </data>
@@ -164,14 +167,14 @@
         CAMAAAADAAAACw==
 </value>
   </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>963, 498</value>
+  </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>FormMain</value>
   </data>
   <data name="&gt;&gt;cbLanguage.ZOrder" xml:space="preserve">
     <value>1</value>
-  </data>
-  <data name="&gt;&gt;pnlFunction.Type" xml:space="preserve">
-    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="cbLanguage.TabIndex" type="System.Int32, mscorlib">
     <value>7</value>
@@ -185,17 +188,20 @@
   <data name="cbLanguage.Items" xml:space="preserve">
     <value>English</value>
   </data>
-  <data name="&gt;&gt;Funcionalidad.Name" xml:space="preserve">
-    <value>Funcionalidad</value>
-  </data>
   <data name="&gt;&gt;lvNavigation.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
   <data name="&gt;&gt;lvNavigation.Name" xml:space="preserve">
     <value>lvNavigation</value>
   </data>
-  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
-    <value>963, 498</value>
+  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>58, 13</value>
+  </data>
+  <data name="lvNavigation.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="Function.Text" xml:space="preserve">
+    <value>Function</value>
   </data>
   <data name="pnlFunction.Size" type="System.Drawing.Size, System.Drawing">
     <value>800, 400</value>
@@ -209,14 +215,11 @@
   <data name="&gt;&gt;cbLanguage.Name" xml:space="preserve">
     <value>cbLanguage</value>
   </data>
-  <data name="Function.Text" xml:space="preserve">
-    <value>Function</value>
-  </data>
   <data name="&gt;&gt;label1.Name" xml:space="preserve">
     <value>label1</value>
   </data>
-  <data name="lvNavigation.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
+  <data name="&gt;&gt;pnlFunction.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Panel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="cbLanguage.Items1" xml:space="preserve">
     <value>Spanish</value>
@@ -243,8 +246,8 @@
   <data name="cbLanguage.Location" type="System.Drawing.Point, System.Drawing">
     <value>830, 21</value>
   </data>
-  <data name="label1.Size" type="System.Drawing.Size, System.Drawing">
-    <value>58, 13</value>
+  <data name="&gt;&gt;Funcionalidad.Name" xml:space="preserve">
+    <value>Funcionalidad</value>
   </data>
   <data name="&gt;&gt;label1.Type" xml:space="preserve">
     <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -254,9 +257,6 @@
   </data>
   <data name="label1.Text" xml:space="preserve">
     <value>Language:</value>
-  </data>
-  <data name="&gt;&gt;cbLanguage.Parent" xml:space="preserve">
-    <value>$this</value>
   </data>
   <data name="lvNavigation.Items1" mimetype="application/x-microsoft.net.object.binary.base64">
     <value>
@@ -288,8 +288,8 @@
   <data name="&gt;&gt;Funcionalidad.Type" xml:space="preserve">
     <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="$this.Text" xml:space="preserve">
-    <value>FormMain</value>
+  <data name="&gt;&gt;cbLanguage.Parent" xml:space="preserve">
+    <value>$this</value>
   </data>
   <data name="&gt;&gt;label1.Parent" xml:space="preserve">
     <value>$this</value>
@@ -299,8 +299,5 @@
   </metadata>
   <metadata name="timer1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
-  </metadata>
-  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>es</value>
   </metadata>
 </root>
