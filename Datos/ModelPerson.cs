@@ -12,15 +12,16 @@ namespace Datos
     {
         public int personId { get; set; }
         public string userName { get; set; }
+        public string userPassword { get; set; }
         public string ci { get; set; }
         public string firstName { get; set; }
         public string secondName { get; set; }
         public string firstSurname { get; set; }
         public string secondSurname { get; set; }
         public string nickName { get; set; }
-        public string avatarPicture { get; set; }
+        public int userRole { get; set; }
 
-        public void registerUser(string userName, string userPassword)
+        public void registerUser()
         {
             string commandString =
                 "INSERT INTO users " +
@@ -29,13 +30,10 @@ namespace Datos
             command.CommandText = commandString;
             command.Parameters.AddWithValue("@userName", userName);
             command.Parameters.AddWithValue("@userPassword", userPassword);
-            openConnection();
-            command.Prepare();
-            command.ExecuteNonQuery();
-            command.Parameters.Clear();
-            closeConnection();
+            executeVoid();
+            Console.WriteLine(commandString);
         }
-        public void createObjectPerson()
+        public void createPersonObject()
         {
             objectKey = personId.ToString();
             tableName = "persons";
@@ -48,7 +46,6 @@ namespace Datos
                 "First_Surname",
                 "Second_Surname",
                 "Nick_Name",
-                "Avatar_Picture"
             };
             objectValues = new string[]
             {
@@ -59,10 +56,19 @@ namespace Datos
                 firstSurname,
                 secondSurname,
                 nickName,
-                avatarPicture
             };
         }
-        public void createObjectPersonToModify()
+        public void getUserRole()
+        {
+            string commandString;
+            commandString = 
+                "SELECT Role_ID FROM personis WHERE Person_CI = @ci;";
+            command.CommandText = commandString;
+            command.Parameters.AddWithValue("@ci", ci);
+            executeAndRead();
+            userRole = readInt(0);
+        }
+        public void createPersonObjectToModify()
         {
             objectKey = personId.ToString();
             tableName = "persons";
@@ -81,25 +87,30 @@ namespace Datos
                 secondSurname,
             };
         }
-
-            public int getUserId(string userName)
+        public void getUserCI()
+        {
+            string commandString;
+            commandString =
+                "SELECT CI " +
+                "FROM persons " +
+                "WHERE ID = @userId";
+            command.CommandText = commandString;
+            command.Parameters.AddWithValue("userId", personId);
+            executeAndRead();
+            ci = readString(0);
+        }
+        public void getUserId()
         {
             string commandString;
             commandString =
                 "SELECT ID " +
                 "FROM users " +
                 "WHERE User_Login = @userName";
-            this.command.CommandText = commandString;
-            this.command.Parameters.AddWithValue("@userName", userName);
-            this.openConnection();
-            this.command.Prepare();
-            this.reader = this.command.ExecuteReader();
-
-            reader.Read();
-            this.personId = this.reader.GetInt32(0);
-            command.Parameters.Clear();
-            this.closeConnection();
-            return this.personId;
+            command.CommandText = commandString;
+            command.Parameters.AddWithValue("@userName", userName);
+            executeAndRead();
+            personId = readInt(0);
+            reader.Close();
         }
         public List<int> getPermissions() 
         {
@@ -110,15 +121,30 @@ namespace Datos
                 "JOIN Role ON Permissions.Role_ID = Role.ID" +
                 "JOIN PersonRoles ON Role.ID = PersonRoles.Role_ID" +
                 "WHERE Person_ID = @userId";
-            this.command.CommandText = commandString;
-            this.command.Parameters.AddWithValue("@userId", this.personId);
-            this.command.Prepare();
-            this.openConnection();
-            this.reader = this.command.ExecuteReader();
-            this.closeConnection();
-            while (this.reader.Read())
+            command.CommandText = commandString;
+            command.Parameters.AddWithValue("@userId", personId);
+            command.Prepare();
+            reader = command.ExecuteReader();
+            while (reader.Read())
                 permissions.Add(reader.GetInt32(0));
             return permissions;
+        }
+        public int checkUserRole()
+        {
+            int role;
+            string commandString;
+            commandString =
+                "SELECT Role_ID " +
+                "FROM PersonIs " +
+                "JOIN Persons ON Person_CI = Persons.CI " +
+                "JOIN Users ON Persons.ID = Users.ID " +
+                "WHERE Users.User_Login = @myUserName";
+            command.CommandText = commandString;
+            command.Parameters.AddWithValue("@myUserName", userName);
+            executeAndRead();
+            role = readInt(0);
+            reader.Close();
+            return role;
         }
         public void assignUserRole(int roleId)
         {
@@ -130,68 +156,37 @@ namespace Datos
             command.CommandText = commandString;
             command.Parameters.AddWithValue("@ci", ci);
             command.Parameters.AddWithValue("@roleId", roleId);
-            openConnection();
-            command.ExecuteNonQuery();
-            command.Parameters.Clear();
-            closeConnection();
+            executeVoid();
 
         }
-        public string getUserName(string userName)
+        public string getUserName()
         {
             string commandString = 
                 "SELECT User_Login " +
                 "FROM users " +
                 "WHERE User_Login = @userLogin;";
-            this.command.CommandText = commandString;
-            this.command.Parameters.AddWithValue("@userLogin", userName);
-            
-
-            
-            this.openConnection();
-            this.command.Prepare();
-            try
-            {
-                this.reader = command.ExecuteReader();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("" + ex);
-            }
-            reader.Read();
-            if (!(reader.HasRows && reader.GetValue(0).ToString() == userName))
+            command.CommandText = commandString;
+            command.Parameters.AddWithValue("@userLogin", userName);
+            executeAndRead();
+            if (!(readString(0) == userName))
                 userName = null;
-            this.command.Parameters.Clear();
-            this.closeConnection();
+            reader.Close();
             return userName;
         }
-        public string getUserPassword(string userPassword)
+        public string checkUserPassword()
         {
             string commandString =
                 "SELECT User_Password " +
                 "FROM users " +
                 "WHERE User_Password = @userPassword;";
-            this.command.CommandText = commandString;
-            this.command.Parameters.AddWithValue("@userPassword", userPassword);
-
-
-
-            this.openConnection();
-            this.command.Prepare();
-            try
-            {
-                this.reader = command.ExecuteReader();
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine("" + ex);
-            }
-            reader.Read();
-            if (!(reader.HasRows && reader.GetValue(0).ToString() == userPassword))
+            command.CommandText = commandString;
+            command.Parameters.AddWithValue("@userPassword", userPassword);
+            executeAndRead();
+            Console.WriteLine("CONTRASEÑA: " + readString(0));
+            if (!(readString(0) == userPassword))
                 userPassword = null;
-            this.command.Parameters.Clear();
-            this.closeConnection();
+            reader.Close();
             return userPassword;
-
         }
 
         public void updateUserName(string updateUserName, int userID)
@@ -199,18 +194,10 @@ namespace Datos
             string commandString = "UPDATE users" +
             " SET User_Login = @userLogin " +
             "WHERE ID = @userID;";
-
-
-              this.command.CommandText = commandString;
-            this.command.Parameters.AddWithValue("@userID", userID);
-            this.command.Parameters.AddWithValue("@userLogin", updateUserName);
-            this.openConnection();
-            this.command.Prepare();
-            this.command.ExecuteNonQuery();
-            this.command.Parameters.Clear();
-            this.closeConnection();
-
-
+            command.CommandText = commandString;
+            command.Parameters.AddWithValue("@userID", userID);
+            command.Parameters.AddWithValue("@userLogin", updateUserName);
+            executeVoid();
         }
         public void updateNickName()
         {
@@ -219,39 +206,38 @@ namespace Datos
                 "SET Nick_Name = @nickName " +
                 "WHERE ID = @personId;";
 
-            this.command.CommandText = commandString;
-            this.command.Parameters.AddWithValue("@personId", personId);
-            this.command.Parameters.AddWithValue("@nickName", nickName);
-            this.openConnection();
-            this.command.Prepare();
-            this.command.ExecuteNonQuery();
-            this.command.Parameters.Clear();
-            this.closeConnection();
+            command.CommandText = commandString;
+            command.Parameters.AddWithValue("@personId", personId);
+            command.Parameters.AddWithValue("@nickName", nickName);
+            executeVoid();
         }
+        public void updatePassword()
+        {
+            string commandString =
+                "UPDATE users " +
+                "SET User_Password = @userPassword" +
+                "WHERE ID = @personId;";
 
-
-
+            command.CommandText = commandString;
+            command.Parameters.AddWithValue("@personId", personId);
+            command.Parameters.AddWithValue("@userPassword", userPassword);
+            executeVoid();
+        }
         public DataTable getUsersByPermission(int featureId)
         {
             DataTable users = new DataTable();
             string commandString;
             commandString =
-                "SELECT persons.ID, CI, First_Name, Second_Name, First_Surname, Second_Surname, Nick_Name, Avatar_Picture " +
+                "SELECT persons.ID, CI, First_Name, Second_Name, First_Surname, Second_Surname, Nick_Name " +
                 "FROM persons " +
                 "JOIN personis ON persons.CI = personis.Person_CI " +
                 "JOIN roles ON roles.ID = personis.Role_ID " +
                 "JOIN permissions ON roles.ID = permissions.Role_ID " +
                 "WHERE permissions.Feature_ID = @featureId;";
-            this.command.CommandText = commandString;
-            this.command.Parameters.AddWithValue("@featureId", featureId);
-            this.openConnection();
-            this.command.Prepare();
-            this.reader = command.ExecuteReader();
-            if (reader.HasRows)
-                users.Load(reader);
-            this.command.Parameters.Clear();
-            this.closeConnection();
-            return users;
+            command.CommandText = commandString;
+            command.Parameters.AddWithValue("@featureId", featureId);
+            executeAndRead();
+            return readTable(); 
         }
 
         public string getPersonName()
@@ -262,18 +248,12 @@ namespace Datos
                 "SELECT First_Name, First_Surname " +
                 "FROM persons " +
                 "WHERE ID = @userId";
-            this.command.CommandText = commandString;
-            this.command.Parameters.AddWithValue("@userId", personId);
-            this.openConnection();
-            this.command.Prepare();
-            this.reader = command.ExecuteReader();
-            this.reader.Read();
-            if (!reader.IsDBNull(0))
-                personName = reader.GetString(0) + " " + reader.GetString(1);
-            else
-                personName = null;
-            this.command.Parameters.Clear();
-            this.closeConnection();
+            command.CommandText = commandString;
+            command.Parameters.AddWithValue("@userId", personId);
+            executeAndRead();
+            personName = readString(0) + " " + readString(1);
+            Console.WriteLine("EL NOMBRE ES: " + personName);
+            connection.Close();
             return personName;
         }
         public string getPersonNick()
@@ -284,18 +264,11 @@ namespace Datos
                 "SELECT Nick_Name " +
                 "FROM persons " +
                 "WHERE ID = @userId";
-            this.command.CommandText = commandString;
-            this.command.Parameters.AddWithValue("@userId", personId);
-            this.openConnection();
-            this.command.Prepare();
-            this.reader = command.ExecuteReader();
-            this.reader.Read();
-            if (!reader.IsDBNull(0))
-                personNickName = reader.GetString(0);
-            else
-                personNickName = null;
-            this.command.Parameters.Clear();
-            this.closeConnection();
+            command.CommandText = commandString;
+            command.Parameters.AddWithValue("@userId", personId);
+            executeAndRead();
+            personNickName = readString(0);
+            reader.Close();
             return personNickName;
         }
         public List<string> getFeatures()
@@ -310,15 +283,14 @@ namespace Datos
                 "JOIN personis ON roles.ID = personis.Role_ID " +
                 "JOIN persons ON persons.CI = personis.Person_CI " +
                 "WHERE persons.ID = @myId;";
-            this.command.CommandText = commandString;
-            this.command.Parameters.AddWithValue("@myId", personId);
-            this.openConnection();
-            this.command.Prepare();
-            this.reader = command.ExecuteReader();
-            while (this.reader.Read())
+            command.CommandText = commandString;
+            command.Parameters.AddWithValue("@myId", personId);
+            command.Prepare();
+            reader = command.ExecuteReader();
+            while (reader.Read())
                 features.Add(reader.GetString(0));
-            this.command.Parameters.Clear();
-            this.closeConnection();
+            command.Parameters.Clear();
+            reader.Close();
             return features;
         }
         public void getProfileData()
@@ -329,26 +301,120 @@ namespace Datos
                 "FROM persons " +
                 "JOIN users ON persons.ID = users.ID " +
                 "WHERE users.ID = @myId";
-            this.command.CommandText = commandString;
-            this.command.Parameters.AddWithValue("@myId", personId);
-            this.openConnection();
-            this.command.Prepare();
-            this.reader = command.ExecuteReader();
-            while (this.reader.Read())
-            {
-                this.userName = reader.GetString(0);
-                this.ci = reader.GetString(1);
-                this.firstName = reader.GetString(2);
-                if(!reader.IsDBNull(6)) // TODO -> getSafeString();
-                    this.secondName = reader.GetString(3);
-                this.firstSurname = reader.GetString(4);
-                if(!reader.IsDBNull(6))
-                    this.secondSurname = reader.GetString(5);
-                if (!reader.IsDBNull(6))
-                    this.nickName = reader.GetString(6);
-            }
-            this.command.Parameters.Clear();
-            this.closeConnection();
+            command.CommandText = commandString;
+            command.Parameters.AddWithValue("@myId", personId);
+            executeAndRead();
+            userName = readString(0);
+            ci = readString(1);
+            firstName = readString(2);
+            secondName = readString(3);
+            firstSurname = readString(4);
+            secondSurname = readString(5);
+            nickName = readString(6);
+            command.Parameters.Clear();
+            reader.Close();
+        }
+        public DataTable getUsersByRole(int roleId)
+        {
+            string commandString;
+            commandString =
+                "SELECT ID, CI, First_Name, Second_Name, First_Surname, Second_Surname, Nick_Name " +
+                "FROM persons " +
+                "JOIN personis ON persons.CI = personis.Person_CI " +
+                "WHERE personis.Role_ID = @roleId;";
+            command.CommandText = commandString;
+            command.Parameters.AddWithValue("@roleId", roleId);
+            executeAndRead();
+            return readTable();
+        }
+        public void deleteStudent()
+        {
+            string commandString;
+            commandString =
+                "DELETE personis, consultmessages, " +
+                "chatmessages, student_take_subjects " +
+                "FROM users " +
+                "LEFT JOIN persons ON users.ID = persons.ID " +
+                "LEFT JOIN personis ON personis.Person_CI = persons.CI " +
+                "LEFT JOIN chatmessages ON chatmessages.Sender_ID = users.ID " +
+                "LEFT JOIN consultmessages ON consultmessages.Sender_ID = users.ID " +
+                "LEFT JOIN student_take_subjects ON student_take_subjects.Student_CI = persons.CI " +
+                "WHERE users.ID = @myId;";
+            command.CommandText = commandString;
+            command.Parameters.AddWithValue("@myId", personId);
+            executeVoid();
+            commandString =
+                "DELETE FROM persons " +
+                "WHERE ID = @myId";
+            command.CommandText = commandString;
+            command.Parameters.AddWithValue("@myId", personId);
+            executeVoid();
+            commandString =
+                "DELETE FROM users " +
+                "WHERE ID = @myId";
+            command.CommandText = commandString;
+            command.Parameters.AddWithValue("@myId", personId);
+            executeVoid();
+        }
+        public void deleteTeacher()
+        {
+            string commandString;
+            commandString =
+                "Delete personis, consultmessages, chatmessages, watches, " +
+                "classes, available_subjects " +
+                "FROM users " +
+                "LEFT JOIN persons ON users.ID = persons.ID " +
+                "LEFT JOIN personis ON personis.Person_CI = persons.CI " +
+                "LEFT JOIN chatmessages ON chatmessages.Sender_ID = users.ID " +
+                "LEFT JOIN consultmessages ON consultmessages.Sender_ID = users.ID " +
+                "LEFT JOIN watches ON watches.User_ID = users.ID " +
+                "LEFT JOIN classes ON classes.Teacher_CI = persons.CI " +
+                "LEFT JOIN available_subjects ON available_subjects.Person_CI = persons.CI " +
+                "WHERE users.ID = @myId;";
+            command.CommandText = commandString;
+            command.Parameters.AddWithValue("@myId", personId);
+            executeVoid();
+            commandString =
+                 "DELETE FROM persons " +
+                 "WHERE ID = @myId";
+            command.CommandText = commandString;
+            command.Parameters.AddWithValue("@myId", personId);
+            executeVoid();
+            commandString =
+                "DELETE FROM users " +
+                "WHERE ID = @myId";
+            command.CommandText = commandString;
+            command.Parameters.AddWithValue("@myId", personId);
+            executeVoid();
+        }
+        public bool isAdmin()
+        {
+            string commandString;
+            commandString =
+                "SELECT ID " +
+                "FROM users " +
+                "WHERE User_Login = @userName AND EXISTS ( SELECT Admin_ID " +
+                                              "FROM administrator " +
+                                              "WHERE administrator.Admin_ID = users.ID);";
+            command.CommandText = commandString;
+            command.Parameters.AddWithValue("@userName", userName);
+            executeAndRead();
+            command.Parameters.Clear();
+            if (readString(0) != null) { reader.Close(); return true; }
+            else { reader.Close(); return false; }
+        }
+        public void getUserPassword()
+        {
+            string commandString;
+            commandString =
+                "Select User_Password " +
+                "FROM users " +
+                "WHERE ID = @myId;";
+            command.CommandText = commandString;
+            command.Parameters.AddWithValue("@myId", personId);
+            executeAndRead();
+            userPassword = readString(0);
+            reader.Close();
         }
     }
 }

@@ -6,6 +6,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 using System.Windows.Forms;
 using Negocio;
 
@@ -37,22 +38,25 @@ namespace Consultas
         {
             if (lvNewConsults.SelectedIndices.Count > 0)
                 this.userId = Int32.Parse(lvNewConsults.SelectedItems[0].SubItems[2].Text);
+            else
+                this.userId = -1;
             this.SelectedIndexChanged?.Invoke(this, e);
         }
         
         public void loadPersons()
         {
             DataTable personsTable = new DataTable();
-            personsTable = ControllerGetScheduleUsers.GetScheduleUsers();
+            personsTable = PersonController.GetScheduleUsers();
             ListViewItem item;
             lvNewConsults.Items.Clear();
-            string xd = "";
+            ImageList images = new ImageList();
+            images.ImageSize = new Size(40 , 40);
+            images.ColorDepth = ColorDepth.Depth32Bit;
+
             if(personsTable.Rows.Count > 0)
             {
                 foreach (DataRow person in personsTable.Rows)
                 {
-                    xd = xd + person[2].ToString() + " ";
-                    Console.WriteLine("" + person[0].ToString());
                     item = new ListViewItem(person[1].ToString());
                     item.SubItems.Add(person[2].ToString() + " " + person[4].ToString());
                     item.SubItems.Add(person[0].ToString());
@@ -60,6 +64,15 @@ namespace Consultas
                     lvNewConsults.Items.Add(item);
                 }
             }
+            foreach(ListViewItem itemm in lvNewConsults.Items)
+            {
+                if (File.Exists(Path.Combine(PictureController.getPicturePath(), itemm.Text + ".jpg")))
+                    images.Images.Add(Image.FromFile(PictureController.getPicturePath() + itemm.Text + ".jpg"));
+                else
+                    images.Images.Add(new Bitmap(40, 40));
+                itemm.ImageIndex = images.Images.Count - 1;
+            }
+            lvNewConsults.LargeImageList = images;
         }
         
     }

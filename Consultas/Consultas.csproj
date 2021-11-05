@@ -107,8 +107,14 @@
     <EmbeddedResource Include="UserControlConsultsMade.resx">
       <DependentUpon>UserControlConsultsMade.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControlConsultsMainPanel.es.resx">
+      <DependentUpon>UserControlConsultsMainPanel.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControlConsultsMainPanel.resx">
       <DependentUpon>UserControlConsultsMainPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlEditConsult.es.resx">
+      <DependentUpon>UserControlEditConsult.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlEditConsult.resx">
       <DependentUpon>UserControlEditConsult.cs</DependentUpon>
@@ -116,8 +122,17 @@
     <EmbeddedResource Include="UserControlNewConsult.resx">
       <DependentUpon>UserControlNewConsult.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="UserControlReadFiledConsult.en.resx">
+      <DependentUpon>UserControlReadFiledConsult.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlReadFiledConsult.es.resx">
+      <DependentUpon>UserControlReadFiledConsult.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControlReadFiledConsult.resx">
       <DependentUpon>UserControlReadFiledConsult.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlWriteConsult.es.resx">
+      <DependentUpon>UserControlWriteConsult.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UserControlWriteConsult.resx">
       <DependentUpon>UserControlWriteConsult.cs</DependentUpon>

@@ -77,7 +77,7 @@ namespace Agenda
         private void loadConsults()
         {
             DataTable consults = new DataTable();
-            consults = ControllerGetConsults.getConsultsReceived(Session.userId);
+            consults = ConsultationController.getConsultationsReceived(Session.userId);
             ListViewItem item;
             clearLists();
             foreach (DataRow consult in consults.Rows)
@@ -110,7 +110,7 @@ namespace Agenda
                 MessageBox.Show("You need to select a consult to open", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
             {
-                FormOpenConsult openConsult = new FormOpenConsult(_consultId,_topic, _state);
+                FormOpenConsultation openConsult = new FormOpenConsultation(_consultId,_topic, _state);
                 openConsult.Show();
             }
         }

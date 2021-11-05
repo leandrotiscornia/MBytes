@@ -62,6 +62,9 @@
     <Compile Include="UserControlSchedule.Designer.cs">
       <DependentUpon>UserControlSchedule.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="FormOpenConsult.es.resx">
+      <DependentUpon>FormOpenConsult.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormOpenConsult.resx">
       <DependentUpon>FormOpenConsult.cs</DependentUpon>
     </EmbeddedResource>
@@ -74,6 +77,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UserControlSchedule.es.resx">
+      <DependentUpon>UserControlSchedule.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControlSchedule.resx">
       <DependentUpon>UserControlSchedule.cs</DependentUpon>
     </EmbeddedResource>

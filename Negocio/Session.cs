@@ -8,13 +8,8 @@ namespace Negocio
 {
     public class Session
     {
-        public static string userPassword, userLogIn;
         public static int userId;
         public static string ci;
-
-
-        
-
-
+        public static string userName;
     }
 }

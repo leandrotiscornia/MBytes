@@ -41,43 +41,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ControllerChangeConsultState.cs" />
-    <Compile Include="ControllerGetConsultMessages.cs" />
-    <Compile Include="ControllerGetConsults.cs" />
-    <Compile Include="ControllerCheckExistence.cs" />
-    <Compile Include="ControllerGetScheduleUsers.cs" />
-    <Compile Include="ControllerDeleteCourse.cs" />
-    <Compile Include="ControllerDeleteGrade.cs" />
-    <Compile Include="ControllerDeleteGroup.cs" />
-    <Compile Include="ControllerDeleteStudent.cs" />
-    <Compile Include="ControllerDeleteSubject.cs" />
-    <Compile Include="ControllerDeleteTeacher.cs" />
-    <Compile Include="ControllerGetPermissions.cs" />
-    <Compile Include="ControllerGetPerson.cs" />
-    <Compile Include="ControllerGetProfileData.cs" />
-    <Compile Include="ControllerGetUserRole.cs" />
-    <Compile Include="ControllerInsertCourse.cs" />
-    <Compile Include="ControllerInsertGrade.cs" />
-    <Compile Include="ControllerInsertGroup.cs" />
-    <Compile Include="ControllerInsertStudent.cs" />
-    <Compile Include="ControllerInsertSubject.cs" />
-    <Compile Include="ControllerInsertTeacher.cs" />
-    <Compile Include="ControllerListCourse.cs" />
-    <Compile Include="ControllerListGrade.cs" />
-    <Compile Include="ControllerListGroup.cs" />
-    <Compile Include="ControllerListStudent.cs" />
-    <Compile Include="ControllerListSubject.cs" />
-    <Compile Include="ControllerListTeacher.cs" />
-    <Compile Include="ControllerLogIn.cs" />
-    <Compile Include="ControllerModifyCourse.cs" />
-    <Compile Include="ControllerModifyGrade.cs" />
-    <Compile Include="ControllerModifyGroup.cs" />
-    <Compile Include="ControllerModifyNickName.cs" />
-    <Compile Include="ControllerModifyPerson.cs" />
-    <Compile Include="ControllerModifySubject.cs" />
-    <Compile Include="ControllerModifyUserName.cs" />
-    <Compile Include="ControllerNewConsult.cs" />
-    <Compile Include="ControllerSendConsultMessage.cs" />
+    <Compile Include="ChatMessageController.cs" />
+    <Compile Include="ChatSessionController.cs" />
+    <Compile Include="ConsultationController.cs" />
+    <Compile Include="ConsultationMessageController.cs" />
+    <Compile Include="CourseController.cs" />
+    <Compile Include="DataBaseController.cs" />
+    <Compile Include="ExceptionController.cs" />
+    <Compile Include="GradeController.cs" />
+    <Compile Include="GroupController.cs" />
+    <Compile Include="LogController.cs" />
+    <Compile Include="Paths.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Paths.settings</DependentUpon>
+    </Compile>
+    <Compile Include="PersonController.cs" />
+    <Compile Include="PictureController.cs" />
+    <Compile Include="SubjectController.cs" />
+    <Compile Include="WatchController.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Session.cs" />
   </ItemGroup>
@@ -92,6 +74,13 @@
       <Project>{e7a25795-9c3c-449a-8ee9-2ae252fa5fc4}</Project>
       <Name>Datos</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Paths.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Paths.Designer.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

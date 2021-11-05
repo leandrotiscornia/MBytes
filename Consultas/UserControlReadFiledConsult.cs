@@ -13,13 +13,13 @@ namespace Consultas
 {
     public partial class UserControlReadFiledConsult : UserControl
     {
-        public int consultId { get; set; }
+        public int consultationId { get; set; }
 
         public string topic { get; set; }
 
-        public UserControlReadFiledConsult(int consultId)
+        public UserControlReadFiledConsult(int consultationId)
         {
-            this.consultId = consultId;
+            this.consultationId = consultationId;
         }
 
         public UserControlReadFiledConsult()
@@ -35,13 +35,13 @@ namespace Consultas
         public void loadMessages()
         {
             DataTable consultMessages = new DataTable();
-            consultMessages = ControllerGetConsultMessages.getConsultMessages(consultId);
+            consultMessages = ConsultationMessageController.getConsultationMessages(consultationId);
             rtbMessages.Clear();
             foreach (DataRow message in consultMessages.Rows)
             {
 
                 string personName;
-                personName = ControllerGetPerson.getPersonNick(Int32.Parse(message[0].ToString()));
+                personName = PersonController.getPersonNick(Int32.Parse(message[0].ToString()));
                 //MessageBox.Show(message[0].ToString());
 
 

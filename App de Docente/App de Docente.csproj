@@ -58,11 +58,11 @@
     <Compile Include="FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormRegisterPerson.cs">
+    <Compile Include="FormRegisterTeacher.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormRegisterPerson.Designer.cs">
-      <DependentUpon>FormRegisterPerson.cs</DependentUpon>
+    <Compile Include="FormRegisterTeacher.Designer.cs">
+      <DependentUpon>FormRegisterTeacher.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -72,14 +72,23 @@
     <Compile Include="UserControlProfile.Designer.cs">
       <DependentUpon>UserControlProfile.cs</DependentUpon>
     </Compile>
+    <Compile Include="UserControlTeacherInscriptions.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlTeacherInscriptions.Designer.cs">
+      <DependentUpon>UserControlTeacherInscriptions.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="FormLogIn.resx">
       <DependentUpon>FormLogIn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMain.es.resx">
+      <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormRegisterPerson.resx">
-      <DependentUpon>FormRegisterPerson.cs</DependentUpon>
+    <EmbeddedResource Include="FormRegisterTeacher.resx">
+      <DependentUpon>FormRegisterTeacher.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -90,8 +99,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UserControlProfile.es.resx">
+      <DependentUpon>UserControlProfile.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserControlProfile.resx">
       <DependentUpon>UserControlProfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlTeacherInscriptions.es.resx">
+      <DependentUpon>UserControlTeacherInscriptions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlTeacherInscriptions.resx">
+      <DependentUpon>UserControlTeacherInscriptions.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

@@ -28,58 +28,52 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserControlReadFiledConsult));
+            this.lbPreviousFiled = new System.Windows.Forms.Label();
             this.lbTopic = new System.Windows.Forms.Label();
             this.tbTopic = new System.Windows.Forms.TextBox();
             this.rtbMessages = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
-            // label1
+            // lbPreviousFiled
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(10, 59);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(48, 13);
-            this.label1.TabIndex = 11;
-            this.label1.Text = "Previous";
+            resources.ApplyResources(this.lbPreviousFiled, "lbPreviousFiled");
+            this.lbPreviousFiled.Name = "lbPreviousFiled";
             // 
             // lbTopic
             // 
-            this.lbTopic.AutoSize = true;
-            this.lbTopic.Location = new System.Drawing.Point(27, 33);
+            resources.ApplyResources(this.lbTopic, "lbTopic");
             this.lbTopic.Name = "lbTopic";
-            this.lbTopic.Size = new System.Drawing.Size(37, 13);
-            this.lbTopic.TabIndex = 8;
-            this.lbTopic.Text = "Topic:";
             // 
             // tbTopic
             // 
-            this.tbTopic.Enabled = false;
-            this.tbTopic.Location = new System.Drawing.Point(70, 30);
+            resources.ApplyResources(this.tbTopic, "tbTopic");
+            this.tbTopic.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.tbTopic.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbTopic.ForeColor = System.Drawing.SystemColors.ScrollBar;
             this.tbTopic.Name = "tbTopic";
             this.tbTopic.ReadOnly = true;
-            this.tbTopic.Size = new System.Drawing.Size(293, 20);
-            this.tbTopic.TabIndex = 7;
             // 
             // rtbMessages
             // 
-            this.rtbMessages.Location = new System.Drawing.Point(70, 59);
+            resources.ApplyResources(this.rtbMessages, "rtbMessages");
+            this.rtbMessages.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.rtbMessages.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.rtbMessages.ForeColor = System.Drawing.SystemColors.ScrollBar;
             this.rtbMessages.Name = "rtbMessages";
             this.rtbMessages.ReadOnly = true;
-            this.rtbMessages.Size = new System.Drawing.Size(293, 293);
-            this.rtbMessages.TabIndex = 12;
-            this.rtbMessages.Text = "";
             // 
             // UserControlReadFiledConsult
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.Controls.Add(this.rtbMessages);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lbPreviousFiled);
             this.Controls.Add(this.lbTopic);
             this.Controls.Add(this.tbTopic);
+            this.ForeColor = System.Drawing.SystemColors.ScrollBar;
             this.Name = "UserControlReadFiledConsult";
-            this.Size = new System.Drawing.Size(400, 400);
             this.Load += new System.EventHandler(this.UserControlReadFiledConsult_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -87,7 +81,7 @@
         }
 
         #endregion
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbPreviousFiled;
         private System.Windows.Forms.Label lbTopic;
         private System.Windows.Forms.TextBox tbTopic;
         private System.Windows.Forms.RichTextBox rtbMessages;

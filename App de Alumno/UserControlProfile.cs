@@ -6,10 +6,11 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 using System.Windows.Forms;
 using Negocio;
 
-namespace App_De_Alumo
+namespace App_De_Alumno
 {
 
     public partial class UserControlProfile : UserControl
@@ -17,19 +18,20 @@ namespace App_De_Alumo
         public UserControlProfile()
         {
             InitializeComponent();
+            pictureSelector.InitialDirectory = PictureController.getPicturePath();
+            pictureSelector.Filter = "Image files(*.jpg, *.jpeg, *.jpe, *.jfif, *.png) | *.jpg; *.jpeg; *.jpe; *.jfif; *.png";
         }
         private void UserControlProfile_Load(object sender, EventArgs e)
         {
             hideModifyProfileInfo();
             loadUserData();
         }
-        //TODO Save user picture, file in a folde, directory stored in Database
-        //TODO Load user picture, using directory stored in Database
+        
         private void loadUserData()
         {
-            List<string> profileData = ControllerGetProfileData.getProfileData();
+            List<string> profileData = PersonController.getProfileData(Session.userId);
             lblActualUserName.Text = profileData[0];
-            lblCI.Text = profileData[1];
+            lblShowCI.Text = profileData[1];
             lblActualFirstName.Text = profileData[2];
             lblActualSecondName.Text = profileData[3];
             lblActualFirstSurname.Text = profileData[4];
@@ -41,6 +43,7 @@ namespace App_De_Alumo
             txtNewSecondName.Text = profileData[3];
             txtNewFirstSurname.Text = profileData[4];
             txtNewSecondSurname.Text = profileData[5];
+            loadPicture();
         }
 
         private void btnChangeUserName_Click(object sender, EventArgs e)
@@ -84,22 +87,23 @@ namespace App_De_Alumo
         {
             string[] personInfo = new string[6];
             personInfo[0] = Session.userId.ToString();
-            personInfo[1] = lblCI.Text;
+            personInfo[1] = lblShowCI.Text;
             personInfo[2] = txtNewFirstName.Text;
             personInfo[3] = txtNewSecondName.Text;
             personInfo[4] = txtNewFirstSurname.Text;
             personInfo[5] = txtNewSecondSurname.Text;
-            ControllerModifyPerson.modifyPerson(personInfo);
+            PersonController.modifyPerson(personInfo);
             hideModifyProfileInfo();
         }
         public void modifyUserName()
         {
-            ControllerModifyUserName.modifyUserName(txtNewUserName.Text, Session.userId);
+            PersonController.modifyUserName(txtNewUserName.Text, Session.userId);
+            Session.userName = txtNewUserName.Text;
         }
 
         public void modifyNickName()
         {
-            ControllerModifyNickName.modifyNickName(txtNewNickName.Text);
+            PersonController.modifyNickName(txtNewNickName.Text);
         }
         private void btnConfirmNickName_Click(object sender, EventArgs e)
         {
@@ -112,7 +116,20 @@ namespace App_De_Alumo
             else
                 MessageBox.Show("You need to set a nickname", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
-
+        private void savePicture()
+        {
+            if (pictureSelector.ShowDialog() == DialogResult.OK)
+            {
+                pbUserPicture.Image.Dispose();
+                File.Copy(pictureSelector.FileName, Path.Combine(PictureController.getPicturePath(), Session.ci + ".jpg"), true);
+                loadPicture();
+            }
+        }
+        private void loadPicture()
+        {
+            if(File.Exists(Path.Combine(PictureController.getPicturePath(),Session.ci + ".jpg")))
+                pbUserPicture.Image = Image.FromFile(Path.Combine(PictureController.getPicturePath(), Session.ci + ".jpg"));
+        }
         private void btnConfirmUserName_Click(object sender, EventArgs e)
         {
             if (txtNewUserName != null)
@@ -150,13 +167,22 @@ namespace App_De_Alumo
         }
         private void btnChangePicture_Click_1(object sender, EventArgs e)
         {
-            MessageBox.Show("Feature not added yet", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            savePicture();
         }
         private void btnChangePassword_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Feature not added yet", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
+        private void gbChangeNickName_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblModifyUserProfile_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

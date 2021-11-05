@@ -1,0 +1,176 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Datos.ModelChatMessage">
+    <Position X="23" Y="14.25" Width="1.5" />
+    <InheritanceLine Type="Datos.ModelDataBaseObject" ManuallyRouted="true" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="27" Y="9.938" />
+        <Point X="25.621" Y="9.938" />
+        <Point X="25.621" Y="15.5" />
+        <Point X="24.5" Y="15.5" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAABABAAAEAAAAAAAAAAAAEgAAAAAAAIAAAABAAQAAA=</HashCode>
+      <FileName>ModelChatMessage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Datos.ModelChatSession">
+    <Position X="20.5" Y="12" Width="2.25" />
+    <InheritanceLine Type="Datos.ModelDataBaseObject" ManuallyRouted="true" FixedFromPoint="true">
+      <Path>
+        <Point X="27" Y="9.438" />
+        <Point X="25.355" Y="9.438" />
+        <Point X="25.355" Y="11.7" />
+        <Point X="21.625" Y="11.7" />
+        <Point X="21.625" Y="12" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>gAgAAIAgAACBAIAAAAggAKADgAAAEAAAAAAAAAAAA4g=</HashCode>
+      <FileName>ModelChatSession.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Datos.ModelConnection">
+    <Position X="26.25" Y="2.75" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAEAAABAAAAJgABAABAASAgAQAAAAAAAEAEAAYAAQ=</HashCode>
+      <FileName>ModelConnection.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Datos.ModelConsultation">
+    <Position X="20.25" Y="5" Width="2.5" />
+    <InheritanceLine Type="Datos.ModelDataBaseObject" FixedFromPoint="true">
+      <Path>
+        <Point X="27" Y="8.375" />
+        <Point X="21.5" Y="8.375" />
+        <Point X="21.5" Y="8.223" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAEAQAAAAFAAABAAAAAACBAAACAAIQ=</HashCode>
+      <FileName>ModelConsultation.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Datos.ModelConsultationMessage">
+    <Position X="20.5" Y="8.75" Width="2.25" />
+    <InheritanceLine Type="Datos.ModelDataBaseObject" ManuallyRouted="true" FixedFromPoint="true">
+      <Path>
+        <Point X="27" Y="9" />
+        <Point X="22.75" Y="9" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAQAAEAAQAAAAAACABAAQAAACA=</HashCode>
+      <FileName>ModelConsultationMessage.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Datos.ModelCourse">
+    <Position X="31" Y="13" Width="1.5" />
+    <InheritanceLine Type="Datos.ModelDataBaseObject" FixedFromPoint="true">
+      <Path>
+        <Point X="28.5" Y="11.375" />
+        <Point X="31.75" Y="11.375" />
+        <Point X="31.75" Y="13" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>ACBAAAAAACAAAAAAAAAAAAMAAAAAgAAAAAAAAAAAhAA=</HashCode>
+      <FileName>ModelCourse.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Datos.ModelDataBaseObject">
+    <Position X="27" Y="8.25" Width="1.5" />
+    <InheritanceLine Type="Datos.ModelConnection" FixedFromPoint="true">
+      <Path>
+        <Point X="27.75" Y="7.382" />
+        <Point X="27.75" Y="8.25" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AIIAAAAAAAABAAAAAAAAAAAAEAADEAABAAAAACAQAAA=</HashCode>
+      <FileName>ModelDatabaseObject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Datos.ModelGrade">
+    <Position X="33.5" Y="7" Width="1.5" />
+    <InheritanceLine Type="Datos.ModelDataBaseObject" FixedFromPoint="true">
+      <Path>
+        <Point X="28.5" Y="9.438" />
+        <Point X="33.5" Y="9.438" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAEAQAAAAAAFAIAAAQAAAQAAAAAAAAAABAAgAA=</HashCode>
+      <FileName>ModelGrade.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Datos.ModelGroup">
+    <Position X="31.5" Y="4.75" Width="1.5" />
+    <InheritanceLine Type="Datos.ModelDataBaseObject" FixedFromPoint="true">
+      <Path>
+        <Point X="28.5" Y="8.625" />
+        <Point X="31.5" Y="8.625" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAQAQCAEABgACAAAgAAAAAFQAASAAAIAABAAQAAA=</HashCode>
+      <FileName>ModelGroup.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Datos.ModelPerson">
+    <Position X="26" Y="12.5" Width="3.75" />
+    <InheritanceLine Type="Datos.ModelDataBaseObject" FixedToPoint="true">
+      <Path>
+        <Point X="27.75" Y="11.665" />
+        <Point X="27.75" Y="12.5" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>AoDAAAgJBABeAQCAAQAACAkgCSAAAAgUiAAAABEAIQA=</HashCode>
+      <FileName>ModelPerson.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Datos.ModelStudent">
+    <Position X="30.75" Y="16.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAABAAAAAAQAAAAAAAAAAAIAAAAAAAAIAAAAAAAAA=</HashCode>
+      <FileName>ModelStudent.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Datos.ModelSubject">
+    <Position X="33.75" Y="12" Width="1.5" />
+    <InheritanceLine Type="Datos.ModelDataBaseObject" FixedFromPoint="true">
+      <Path>
+        <Point X="28.5" Y="11.062" />
+        <Point X="34.5" Y="11.062" />
+        <Point X="34.5" Y="12" />
+      </Path>
+    </InheritanceLine>
+    <TypeIdentifier>
+      <HashCode>EAAYIAAAABAAAAAAAAEAAAAAABAAAAAAIIAAAAAAAIA=</HashCode>
+      <FileName>ModelSubject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Datos.ModelTeacher">
+    <Position X="30.75" Y="19.25" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAgAAAAAAAAgQAAAAABAAAAAAQIQAAAAAAAAAgA=</HashCode>
+      <FileName>ModelTeacher.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Datos.ModelWatches">
+    <Position X="35.75" Y="9.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAAAAIAAAAAAAgACAABAgAgAAAAgAAAAAAAAI=</HashCode>
+      <FileName>ModelWatches.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Datos.Settings1">
+    <Position X="17.5" Y="15.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

@@ -11,17 +11,17 @@ using Negocio;
 
 namespace Agenda
 {
-    public partial class FormOpenConsult : Form
+    public partial class FormOpenConsultation : Form
     {
 
 
-        private int _consultId;
+        private int _consultationId;
         private string _topic;
         private string _state;
-        public FormOpenConsult(int consultId, string topic, string state)
+        public FormOpenConsultation(int consultationId, string topic, string state)
         {
             InitializeComponent();
-            this._consultId = consultId;
+            this._consultationId = consultationId;
             this._topic = topic;
             this._state = state;
         }
@@ -29,12 +29,12 @@ namespace Agenda
         private void loadMessages()
         {
             DataTable consultMessages = new DataTable();
-            consultMessages = ControllerGetConsultMessages.getConsultMessages(_consultId);
+            consultMessages = ConsultationMessageController.getConsultationMessages(_consultationId);
             rtbMessages.Clear();
             foreach (DataRow message in consultMessages.Rows)
             {
                 string personName;
-                personName = ControllerGetPerson.getPersonNick(Int32.Parse(message[0].ToString()));
+                personName = PersonController.getPersonNick(Int32.Parse(message[0].ToString()));
                 rtbMessages.AppendText(personName + "\n");
                 rtbMessages.AppendText(message[1].ToString() + "\n");
                 rtbMessages.AppendText(message[2].ToString() + "\n \n \n");
@@ -61,8 +61,8 @@ namespace Agenda
         private void btnSend_Click(object sender, EventArgs e)
         {
             string message = tbNewMessage.Text;
-            ControllerSendConsultMessage.sendConsultMessage(_consultId, Session.userId, message);
-            ControllerChangeConsultState.changeConsultState(_consultId, "Answered");
+            ConsultationMessageController.sendConsultationMessage(_consultationId, Session.userId, message);
+            ConsultationController.changeConsultationState(_consultationId, "Answered");
             this.Close();
         }
 

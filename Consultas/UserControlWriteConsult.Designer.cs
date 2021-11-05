@@ -28,67 +28,61 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserControlWriteConsult));
             this.tbTopic = new System.Windows.Forms.TextBox();
             this.lbTopic = new System.Windows.Forms.Label();
             this.tbNewMessage = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
+            this.lbMessageWriteConsult = new System.Windows.Forms.Label();
             this.btnSend = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // tbTopic
             // 
-            this.tbTopic.Location = new System.Drawing.Point(71, 38);
+            resources.ApplyResources(this.tbTopic, "tbTopic");
+            this.tbTopic.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.tbTopic.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbTopic.ForeColor = System.Drawing.SystemColors.ScrollBar;
             this.tbTopic.Name = "tbTopic";
-            this.tbTopic.Size = new System.Drawing.Size(293, 20);
-            this.tbTopic.TabIndex = 0;
             // 
             // lbTopic
             // 
-            this.lbTopic.AutoSize = true;
-            this.lbTopic.Location = new System.Drawing.Point(28, 41);
+            resources.ApplyResources(this.lbTopic, "lbTopic");
             this.lbTopic.Name = "lbTopic";
-            this.lbTopic.Size = new System.Drawing.Size(37, 13);
-            this.lbTopic.TabIndex = 1;
-            this.lbTopic.Text = "Topic:";
             // 
             // tbNewMessage
             // 
-            this.tbNewMessage.Location = new System.Drawing.Point(71, 75);
-            this.tbNewMessage.Multiline = true;
+            resources.ApplyResources(this.tbNewMessage, "tbNewMessage");
+            this.tbNewMessage.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.tbNewMessage.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbNewMessage.ForeColor = System.Drawing.SystemColors.ScrollBar;
             this.tbNewMessage.Name = "tbNewMessage";
-            this.tbNewMessage.Size = new System.Drawing.Size(293, 271);
-            this.tbNewMessage.TabIndex = 3;
             // 
-            // label2
+            // lbMessageWriteConsult
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 78);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(53, 13);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Message:";
+            resources.ApplyResources(this.lbMessageWriteConsult, "lbMessageWriteConsult");
+            this.lbMessageWriteConsult.Name = "lbMessageWriteConsult";
+            this.lbMessageWriteConsult.Click += new System.EventHandler(this.lbMessageWriteConsult_Click);
             // 
             // btnSend
             // 
-            this.btnSend.Location = new System.Drawing.Point(260, 352);
+            resources.ApplyResources(this.btnSend, "btnSend");
+            this.btnSend.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.btnSend.Name = "btnSend";
-            this.btnSend.Size = new System.Drawing.Size(104, 23);
-            this.btnSend.TabIndex = 6;
-            this.btnSend.Text = "Send Consult";
-            this.btnSend.UseVisualStyleBackColor = true;
+            this.btnSend.UseVisualStyleBackColor = false;
             this.btnSend.Click += new System.EventHandler(this.btnSend_Click);
             // 
             // UserControlWriteConsult
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.Controls.Add(this.btnSend);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.lbMessageWriteConsult);
             this.Controls.Add(this.tbNewMessage);
             this.Controls.Add(this.lbTopic);
             this.Controls.Add(this.tbTopic);
+            this.ForeColor = System.Drawing.SystemColors.ScrollBar;
             this.Name = "UserControlWriteConsult";
-            this.Size = new System.Drawing.Size(400, 400);
             this.Load += new System.EventHandler(this.UserControlWriteConsult_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -100,7 +94,7 @@
         private System.Windows.Forms.TextBox tbTopic;
         private System.Windows.Forms.Label lbTopic;
         private System.Windows.Forms.TextBox tbNewMessage;
-        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Label lbMessageWriteConsult;
         private System.Windows.Forms.Button btnSend;
     }
 }

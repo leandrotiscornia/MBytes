@@ -28,17 +28,29 @@ namespace Consultas
 
         private void btnSend_Click(object sender, EventArgs e)
         {
-            int senderId = Session.userId;
-            string topic = tbTopic.Text;
-            string consultMessage = tbNewMessage.Text;
-            Console.WriteLine("" + receiverId);
-            ControllerNewConsult.newConsult(senderId, receiverId, topic);
-            ControllerSendConsultMessage.sendConsultMessage(senderId, consultMessage);
+            if (receiverId > -1)
+                sendConsultation();
+            else
+                MessageBox.Show("You need to select a teacher", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void UserControlWriteConsult_Load(object sender, EventArgs e)
         {
-            
+            receiverId = -1;
+        }
+        private void sendConsultation()
+        {
+            int senderId = Session.userId;
+            MessageBox.Show("" + senderId);
+            string topic = tbTopic.Text;
+            string consultationMessage = tbNewMessage.Text;
+            Console.WriteLine("" + receiverId);
+            ConsultationController.newConsultation(senderId, receiverId, topic, consultationMessage);
+        }
+
+        private void lbMessageWriteConsult_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

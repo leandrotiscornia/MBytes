@@ -1,6 +1,6 @@
 ﻿namespace Consultas
 {
-    partial class UserControlConsultsFiled
+    partial class UserControlConsultationsFiled
     {
         /// <summary> 
         /// Variable del diseñador necesaria.
@@ -33,16 +33,20 @@
             this.Person_Name = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.Topic = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.State = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.CI = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.SuspendLayout();
             // 
             // lvFiledConsults
             // 
+            this.lvFiledConsults.BackColor = System.Drawing.SystemColors.WindowFrame;
             this.lvFiledConsults.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.ID,
             this.Person_Name,
             this.Topic,
-            this.State});
+            this.State,
+            this.CI});
             this.lvFiledConsults.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.lvFiledConsults.ForeColor = System.Drawing.SystemColors.ScrollBar;
             this.lvFiledConsults.HideSelection = false;
             this.lvFiledConsults.Location = new System.Drawing.Point(0, 0);
             this.lvFiledConsults.Name = "lvFiledConsults";
@@ -68,12 +72,12 @@
             // 
             this.State.Text = "State";
             // 
-            // UserControlConsultsFiled
+            // UserControlConsultationsFiled
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.lvFiledConsults);
-            this.Name = "UserControlConsultsFiled";
+            this.Name = "UserControlConsultationsFiled";
             this.Size = new System.Drawing.Size(400, 400);
             this.Load += new System.EventHandler(this.UserControlConsultsFiled_Load);
             this.ResumeLayout(false);
@@ -87,5 +91,6 @@
         private System.Windows.Forms.ColumnHeader Person_Name;
         private System.Windows.Forms.ColumnHeader Topic;
         private System.Windows.Forms.ColumnHeader State;
+        private System.Windows.Forms.ColumnHeader CI;
     }
 }

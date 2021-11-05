@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
 using System.Data;
 
 namespace Datos
@@ -14,14 +15,6 @@ namespace Datos
         public string objectKeyValue { get; set; }
         public string[] columnNames { get; set; }
         public string[] objectValues { get; set; }
-        
-
-
-
-
-        
-
-
         public void insertObject()
         {
             string commandString;
@@ -43,13 +36,7 @@ namespace Datos
             Console.WriteLine(""+commandString);
             foreach (string value in objectValues)
                 Console.WriteLine("" + value);
-            
-            openConnection();
-            command.Prepare();
-            
-            command.ExecuteNonQuery();
-            command.Parameters.Clear();
-            closeConnection();
+            executeVoid();
         }
         public void deleteObject()
         {
@@ -57,8 +44,7 @@ namespace Datos
             commandString = "DELETE FROM " + tableName + " WHERE ID=@objectId;";
             command.CommandText = commandString;
             command.Parameters.AddWithValue("@objectId", objectKey);
-            command.Prepare();
-            command.ExecuteNonQuery();
+            executeVoid();
         }
         public void modifyObject()
         {
@@ -73,14 +59,7 @@ namespace Datos
             foreach (var index in columnsAndValues)
                 command.Parameters.AddWithValue("@"+index.Column ,index.Value);
             command.Parameters.AddWithValue("objectId", objectKey);
-            Console.WriteLine(commandString);
-            openConnection();
-            command.Prepare();
-            command.ExecuteNonQuery();
-            command.Parameters.Clear();
-            closeConnection();
-            
-
+            executeVoid();
         }
         public DataTable listObjects ()
         {
@@ -94,16 +73,12 @@ namespace Datos
             commandString += " FROM " + tableName +";";
             //saves SQL command result in DataTable
             command.CommandText = commandString;
-            openConnection();
-            reader = command.ExecuteReader();
-            objectsData.Load(reader);
-            closeConnection();
-            return objectsData;
+            executeAndRead();
+            return readTable();
         }
 
         public string checkObjectExistence()
         {
-            string result;
             string commandString;
             commandString = 
                 "SELECT "+ this.objectKey+ " "+ 
@@ -111,18 +86,18 @@ namespace Datos
                 "WHERE " +this.objectKey +"=@objectKeyValue";
             command.CommandText = commandString;
             command.Parameters.AddWithValue("objectKeyValue", objectKeyValue);
-            openConnection();
-            reader = command.ExecuteReader();
-            reader.Read();
-            if (reader.HasRows)
-                result = reader.GetString(0);
-            else
-                result = null;
-            command.Parameters.Clear();
-            closeConnection();
-            return result;
+            executeAndRead();
+            return readString(0);
+        }
+        public int getLastInsertId()
+        {
+            string commandString;
+            commandString =
+                "SELECT LAST_INSERT_ID();";
+            command.CommandText = commandString;
+            executeAndRead();
+            return readInt(0);
         }
 
-        
     }
 }

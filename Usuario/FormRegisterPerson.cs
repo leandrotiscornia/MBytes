@@ -37,9 +37,9 @@ namespace Usuario
         }
         private string checkUserExistence()
         {
-            if (ControllerCheckExistence.checkExistence("users", "User_Login", tbUserName.Text) == tbUserName.Text)
+            if (DataBaseController.checkExistence("users", "User_Login", tbUserName.Text) == tbUserName.Text)
                 return "That user already exist";
-            else if (ControllerCheckExistence.checkExistence("persons", "CI", tbCI.Text) == tbCI.Text)
+            else if (DataBaseController.checkExistence("persons", "CI", tbCI.Text) == tbCI.Text)
                 return "That person already exist";
             else
                 return null;
@@ -60,10 +60,10 @@ namespace Usuario
             {
                 if (cbRole.SelectedItem.ToString() == "Student")
                 {
-                    ControllerInsertStudent.insertStudent(personData, userName, password);
+                    PersonController.insertStudent(personData, userName, password);
                 }
                 else if (cbRole.SelectedItem.ToString() == "Teacher")
-                    ControllerInsertTeacher.insertTeacher(personData, userName, password);
+                    PersonController.insertTeacher(personData, userName, password);
             }
             else
                 errorMessage("Passwords does not match");

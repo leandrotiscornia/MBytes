@@ -36,8 +36,36 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="JB.Common, Version=0.8.114.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\JB.Common.0.8.114\lib\net46\JB.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="JB.Common.Collections, Version=0.8.114.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\JB.Common.Collections.0.8.114\lib\net46\JB.Common.Collections.dll</HintPath>
+    </Reference>
+    <Reference Include="JB.Common.Collections.Reactive, Version=0.8.114.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\JB.Common.Collections.Reactive.0.8.114\lib\net46\JB.Common.Collections.Reactive.dll</HintPath>
+    </Reference>
+    <Reference Include="JB.Common.Reactive, Version=0.8.114.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\JB.Common.Reactive.0.8.114\lib\net46\JB.Common.Reactive.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Reactive, Version=4.1.0.0, Culture=neutral, PublicKeyToken=94bc3704cddfc263, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Reactive.4.1.0\lib\net46\System.Reactive.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=4.0.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.CompilerServices.Unsafe.4.5.0\lib\netstandard2.0\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Threading.Tasks.Extensions.4.5.1\lib\netstandard2.0\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.2.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.ValueTuple.4.4.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows" />
+    <Reference Include="System.Xaml" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -47,16 +75,38 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="ChatMessage.cs" />
+    <Compile Include="ConnectedUser.cs" />
+    <Compile Include="FormChatSession.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="FormChatSession.Designer.cs">
+      <DependentUpon>FormChatSession.cs</DependentUpon>
     </Compile>
-    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TemplateTest.xaml.cs">
+      <DependentUpon>TemplateTest.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControl1.xaml.cs">
+      <DependentUpon>UserControl1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlChatMainPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UserControlChatMainPanel.Designer.cs">
+      <DependentUpon>UserControlChatMainPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UserControlMessages.xaml.cs">
+      <DependentUpon>UserControlMessages.xaml</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="FormChatSession.resx">
+      <DependentUpon>FormChatSession.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -66,6 +116,13 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="UserControlChatMainPanel.es.resx">
+      <DependentUpon>UserControlChatMainPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserControlChatMainPanel.resx">
+      <DependentUpon>UserControlChatMainPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -78,6 +135,26 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Negocio\Negocio.csproj">
+      <Project>{DF697E70-B8CB-4948-9F51-204F4AC48BAD}</Project>
+      <Name>Negocio</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="TemplateTest.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControl1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UserControlMessages.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
