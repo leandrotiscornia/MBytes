@@ -35,6 +35,7 @@ namespace Datos
             dbPassword = DataBase.Default.dbPassword;
             openConnection();
         }
+
         public void setConnectionData(string dbUser, string dbPort, string dbPassword)
         {
             DataBase.Default.dbUser = dbUser;
@@ -49,6 +50,7 @@ namespace Datos
         {
             DataBase.Default.Reset();
         }
+
 
         public void openConnection()
         {
