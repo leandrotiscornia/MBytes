@@ -20,7 +20,7 @@ namespace App_de_Docente
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Close();
         }
 
         private void btnRegister_Click(object sender, EventArgs e)
