@@ -30,6 +30,7 @@ namespace Negocio
                 {
                     user.getUserId();
                     Session.userId = user.personId;
+                    Session.userName = user.userName;
                     result = "";
                 }
                 else result = "Access Denied For This User";
@@ -41,6 +42,7 @@ namespace Negocio
                 user.getUserId();
                 user.getUserCI();
                 Session.userId = user.personId;
+                Session.userName = user.userName;
                 Session.ci = user.ci;
                 result = "";
             }

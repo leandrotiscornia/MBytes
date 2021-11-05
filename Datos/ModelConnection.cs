@@ -54,10 +54,10 @@ namespace Datos
         {
             command.Connection = connection;
             connection.ConnectionString =
-                "server=" + dbServer + "; " +
-                "port=" + dbPort + "; " +
-                "userid=" + dbUser + "; " +
-                "password=" + dbPassword + "; " +
+                "server=" + dbServer + ";" +
+                "port=" + dbPort + ";" +
+                "userid=" + dbUser + ";" +
+                "password=" + dbPassword + ";" +
                 "database=" + dbName + ";";
             try
             {

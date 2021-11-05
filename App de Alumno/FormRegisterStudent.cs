@@ -59,6 +59,7 @@ namespace App_De_Alumno
             if (password == tbConfirmPassword.Text)
             {
                 PersonController.insertStudent(personData, userName, password);
+                LogController.writeInLog("Register user", "Success", "System");
             }
             else
                 errorMessage("Passwords does not match");
@@ -80,6 +81,7 @@ namespace App_De_Alumno
         }
         private void errorMessage(string message)
         {
+            LogController.writeInLog("Register user", "Failed", "System");
             MessageBox.Show(message, "Error!", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 

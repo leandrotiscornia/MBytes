@@ -25,7 +25,7 @@ namespace Negocio {
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("C:\\Users\\Spiral\\Desktop\\log")]
         public string LogsRoute {
             get {
                 return ((string)(this["LogsRoute"]));

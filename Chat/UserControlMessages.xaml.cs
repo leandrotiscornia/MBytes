@@ -148,7 +148,10 @@ namespace Chat
         }
         public void loadTeachers()
         {
-            DataRow teacherRow = ChatSessionController.getTeacher(_chatId).Rows[0];
+            DataTable teachers = ChatSessionController.getTeacher(_chatId);
+            if (teachers.Rows.Count == 0)
+                return;
+            DataRow teacherRow = teachers.Rows[0];
             if (!teacherDictionary.ContainsKey(int.Parse(teacherRow["ID"].ToString())))
             {
                 teacherDictionary.Add(int.Parse(teacherRow["ID"].ToString()), new ConnectedUser(

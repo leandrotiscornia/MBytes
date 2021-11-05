@@ -12,9 +12,13 @@ namespace Negocio
         public static void setConnection(string dbUser, string dbPassword, string dbPort)
         {
             ModelConnection connection = new ModelConnection();
-            connection.setConnectionData(dbUser, dbPassword, dbPort);
+            connection.setConnectionData(dbUser, dbPort, dbPassword);
         }
-
+        public static void setDefaultConnection()
+        {
+            ModelConnection connection = new ModelConnection();
+            connection.setDefaultConnection();
+        }
         public static string checkExistence(string tableName, string objectKey, string objectKeyValue)
         {
             string result;

@@ -10,10 +10,6 @@ namespace Negocio
     {
         public static int userId;
         public static string ci;
-
-
-        
-
-
+        public static string userName;
     }
 }

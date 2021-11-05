@@ -12,13 +12,13 @@ namespace PruebasUnitarias
         [TestMethod]
         public void AnewConsultation()
         {
-            Globals.consultationId = ConsultationController.newConsultation(71, 70, "testTopic", "testDoubt");
+            Globals.consultationId = ConsultationController.newConsultation(57, 58, "testTopic", "testDoubt");
             Assert.IsTrue(true);
         }
         [TestMethod]
         public void BgetConsultationsDone()
         {
-            DataTable consultations = ConsultationController.getConsultationsDone(71);
+            DataTable consultations = ConsultationController.getConsultationsDone(57);
             DataRow consultation = consultations.Rows[consultations.Rows.Count - 1];
             foreach (DataColumn column in consultations.Columns)
                 Console.WriteLine(column.ColumnName + ": "+ consultation[column].ToString());
@@ -33,14 +33,14 @@ namespace PruebasUnitarias
         [TestMethod]
         public void CanswerConsultation()
         {
-            ConsultationMessageController.sendConsultationMessage(Globals.consultationId, 70, "testAnswer");
+            ConsultationMessageController.sendConsultationMessage(Globals.consultationId, 58, "testAnswer");
             ConsultationController.changeConsultationState(Globals.consultationId, "Answered");
             Assert.IsTrue(true);
         }
         [TestMethod]
         public void DgetConsultationsAnswered()
         {
-            DataTable consultations = ConsultationController.getConsultationsDone(71);
+            DataTable consultations = ConsultationController.getConsultationsDone(57);
             DataRow consultation = consultations.Rows[consultations.Rows.Count - 1];
             Assert.IsTrue(
                 consultation[1].ToString() == "teacher" &&
@@ -58,7 +58,7 @@ namespace PruebasUnitarias
         [TestMethod]
         public void FgetConsultationsReaded()
         {
-            DataTable consultations = ConsultationController.getConsultationsDone(71);
+            DataTable consultations = ConsultationController.getConsultationsDone(57);
             DataRow consultation = consultations.Rows[consultations.Rows.Count - 1];
             Assert.IsTrue(
                 consultation[1].ToString() == "teacher" &&
@@ -76,7 +76,7 @@ namespace PruebasUnitarias
         [TestMethod]
         public void HgetConsultationsFiled()
         {
-            DataTable consultations = ConsultationController.getConsultationsDone(71);
+            DataTable consultations = ConsultationController.getConsultationsDone(57);
             DataRow consultation = consultations.Rows[consultations.Rows.Count - 1];
             Assert.IsTrue(
                 consultation[1].ToString() == "teacher" &&
@@ -90,8 +90,8 @@ namespace PruebasUnitarias
         {
             DataTable messages = ConsultationMessageController.getConsultationMessages(Globals.consultationId);
             Assert.IsTrue(
-                messages.Rows[0][0].ToString() == "71" &&
-                messages.Rows[1][0].ToString() == "70" &&
+                messages.Rows[0][0].ToString() == "57" &&
+                messages.Rows[1][0].ToString() == "58" &&
                 messages.Rows[0][1].ToString() == "testDoubt" &&
                 messages.Rows[1][1].ToString() == "testAnswer"
                 );

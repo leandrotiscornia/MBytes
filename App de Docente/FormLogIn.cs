@@ -16,6 +16,7 @@ namespace App_de_Docente
         public FormLogIn()
         {
             InitializeComponent();
+            DataBaseController.setDefaultConnection();
         }
 
        
@@ -25,7 +26,11 @@ namespace App_de_Docente
             if (message != "")
                 MessageBox.Show("" + message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
+            {
+                LogController.writeInLog("Log In", "Success", tbUser.Text);
                 goToMain();
+            }
+                
         }
         private void btnRegister_Click(object sender, EventArgs e)
         {
@@ -40,6 +45,7 @@ namespace App_de_Docente
 
         private void goToMain()
         {
+            DataBaseController.setConnection("teacher", "teacher", "3306");
             FormMain mainForm = new FormMain();
             mainForm.Show();
             this.Hide();
@@ -53,6 +59,7 @@ namespace App_de_Docente
             }
             catch (Exception ex)
             {
+                LogController.writeInLog("Log In", "Failed", tbUser.Text);
                 return ExceptionController.handleException(ex);
             }
         }

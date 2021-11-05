@@ -16,6 +16,7 @@ namespace App_De_Alumno
         public FormLogIn()
         {
             InitializeComponent();
+            DataBaseController.setDefaultConnection();
         }
        
         private void btnLogIn_Click(object sender, EventArgs e)
@@ -24,7 +25,11 @@ namespace App_De_Alumno
             if (message != "") 
                 MessageBox.Show("" + message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             else
+            {
+                LogController.writeInLog("Log In", "Success", Session.userName);
                 goToMain();
+            }
+                
         }
 
         private void btnRegister_Click(object sender, EventArgs e)
@@ -40,6 +45,7 @@ namespace App_De_Alumno
 
         private void goToMain()
         {
+            DataBaseController.setConnection("student", "student", "3306");
             FormMain mainForm = new FormMain();
             mainForm.Show();
             Hide();
@@ -50,10 +56,13 @@ namespace App_De_Alumno
             {
                 string message = PersonController.login(tbUser.Text, tbPassword.Text, 2);
                 return message;
+                
             }
             catch (Exception ex)
             {
+                LogController.writeInLog("Log In", "Failed", tbUser.Text);
                 return ExceptionController.handleException(ex);
+
             }
         }
 

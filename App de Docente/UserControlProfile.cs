@@ -98,6 +98,7 @@ namespace App_de_Docente
         public void modifyUserName()
         {
             PersonController.modifyUserName(txtNewUserName.Text, Session.userId);
+            Session.userName = txtNewUserName.Text;
         }
 
         public void modifyNickName()
