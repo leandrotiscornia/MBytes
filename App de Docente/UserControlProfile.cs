@@ -142,7 +142,7 @@ namespace App_de_Docente
         {
             if (pictureSelector.ShowDialog() == DialogResult.OK)
             {
-                pbUserPicture.Image.Dispose();
+                if (pbUserPicture.Image != null) pbUserPicture.Image.Dispose();
                 File.Copy(pictureSelector.FileName, Path.Combine(PictureController.getPicturePath(), Session.ci + ".jpg"), true);
                 loadPicture();
             }

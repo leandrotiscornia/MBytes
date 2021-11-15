@@ -189,6 +189,9 @@
   <data name="cbGroups.Location" type="System.Drawing.Point, System.Drawing">
     <value>107, 24</value>
   </data>
+  <data name="tpRegisters.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
   <data name="&gt;&gt;label1.Name" xml:space="preserve">
     <value>label1</value>
   </data>
@@ -200,6 +203,9 @@
   </data>
   <data name="&gt;&gt;btnJoin.ZOrder" xml:space="preserve">
     <value>6</value>
+  </data>
+  <data name="&gt;&gt;sessionName.Name" xml:space="preserve">
+    <value>sessionName</value>
   </data>
   <data name="&gt;&gt;label3.Parent" xml:space="preserve">
     <value>groupBox1</value>
@@ -255,6 +261,9 @@
   <data name="groupBox1.TabIndex" type="System.Int32, mscorlib">
     <value>2</value>
   </data>
+  <data name="registerHostID.DisplayIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
   <data name="&gt;&gt;registerName.Name" xml:space="preserve">
     <value>registerName</value>
   </data>
@@ -282,14 +291,20 @@
   <data name="tpRegisters.Location" type="System.Drawing.Point, System.Drawing">
     <value>4, 22</value>
   </data>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 13</value>
+  </data>
   <data name="&gt;&gt;registerHostID.Name" xml:space="preserve">
     <value>registerHostID</value>
+  </data>
+  <data name="&gt;&gt;HostCI.Name" xml:space="preserve">
+    <value>HostCI</value>
   </data>
   <data name="registerName.DisplayIndex" type="System.Int32, mscorlib">
     <value>0</value>
   </data>
-  <data name="&gt;&gt;registerID.Name" xml:space="preserve">
-    <value>registerID</value>
+  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>509, 85</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>UserControlChatMainPanel</value>
@@ -342,17 +357,23 @@
   <data name="tpSessions.Text" xml:space="preserve">
     <value>Sessions</value>
   </data>
+  <data name="&gt;&gt;HostCI.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="&gt;&gt;cbGroups.ZOrder" xml:space="preserve">
     <value>2</value>
   </data>
-  <data name="&gt;&gt;btnCreate.Name" xml:space="preserve">
-    <value>btnCreate</value>
+  <data name="&gt;&gt;cbSubjects.ZOrder" xml:space="preserve">
+    <value>1</value>
   </data>
   <data name="&gt;&gt;lvRegisters.Type" xml:space="preserve">
     <value>System.Windows.Forms.ListView, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
     <value>800, 400</value>
+  </data>
+  <data name="&gt;&gt;registerID.Name" xml:space="preserve">
+    <value>registerID</value>
   </data>
   <data name="&gt;&gt;tpRegisters.Type" xml:space="preserve">
     <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
@@ -462,8 +483,8 @@
   <data name="&gt;&gt;tpSessions.Type" xml:space="preserve">
     <value>System.Windows.Forms.TabPage, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
-    <value>6, 13</value>
+  <data name="&gt;&gt;CI.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="tcChat.Size" type="System.Drawing.Size, System.Drawing">
     <value>382, 328</value>
@@ -498,9 +519,6 @@
   <data name="tpRegisters.Text" xml:space="preserve">
     <value>Registers</value>
   </data>
-  <data name="lvRegisters.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
   <data name="label2.Location" type="System.Drawing.Point, System.Drawing">
     <value>28, 24</value>
   </data>
@@ -519,8 +537,8 @@
   <data name="&gt;&gt;cbSubjects.Name" xml:space="preserve">
     <value>cbSubjects</value>
   </data>
-  <data name="&gt;&gt;lvRegisters.ZOrder" xml:space="preserve">
-    <value>0</value>
+  <data name="&gt;&gt;sessionName.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ColumnHeader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="lvSessions.Location" type="System.Drawing.Point, System.Drawing">
     <value>3, 3</value>
@@ -528,11 +546,8 @@
   <data name="&gt;&gt;label3.ZOrder" xml:space="preserve">
     <value>0</value>
   </data>
-  <data name="tpRegisters.TabIndex" type="System.Int32, mscorlib">
-    <value>1</value>
-  </data>
-  <data name="&gt;&gt;cbSubjects.ZOrder" xml:space="preserve">
-    <value>1</value>
+  <data name="&gt;&gt;btnCreate.Name" xml:space="preserve">
+    <value>btnCreate</value>
   </data>
   <data name="&gt;&gt;tpRegisters.Name" xml:space="preserve">
     <value>tpRegisters</value>
@@ -540,17 +555,26 @@
   <data name="&gt;&gt;btnJoin.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
+  <data name="sessionName.DisplayIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="&gt;&gt;CI.Name" xml:space="preserve">
+    <value>CI</value>
+  </data>
   <data name="&gt;&gt;tcChat.Parent" xml:space="preserve">
     <value>$this</value>
   </data>
   <data name="&gt;&gt;sessionHostName.Name" xml:space="preserve">
     <value>sessionHostName</value>
   </data>
+  <data name="&gt;&gt;lvRegisters.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
   <data name="groupBox1.Location" type="System.Drawing.Point, System.Drawing">
     <value>512, 144</value>
   </data>
-  <data name="label1.Location" type="System.Drawing.Point, System.Drawing">
-    <value>509, 85</value>
+  <data name="lvRegisters.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
   </data>
   <data name="label1.AutoSize" type="System.Boolean, mscorlib">
     <value>True</value>

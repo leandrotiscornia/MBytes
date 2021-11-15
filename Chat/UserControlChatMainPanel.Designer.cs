@@ -32,10 +32,11 @@ namespace Chat
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UserControlChatMainPanel));
             this.lvSessions = new System.Windows.Forms.ListView();
+            this.sessionHostName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.sessionId = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.sessionHostID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.sessionHostName = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.sessionStartTime = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.HostCI = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.btnJoin = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -55,6 +56,7 @@ namespace Chat
             this.registerHostID = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.registerStartTime = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.registerEndTime = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.CI = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbProfilePicture)).BeginInit();
             this.tcChat.SuspendLayout();
@@ -66,14 +68,19 @@ namespace Chat
             // 
             resources.ApplyResources(this.lvSessions, "lvSessions");
             this.lvSessions.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.sessionHostName,
             this.sessionId,
             this.sessionHostID,
-            this.sessionHostName,
-            this.sessionStartTime});
+            this.sessionStartTime,
+            this.HostCI});
             this.lvSessions.HideSelection = false;
             this.lvSessions.Name = "lvSessions";
             this.lvSessions.UseCompatibleStateImageBehavior = false;
             this.lvSessions.View = System.Windows.Forms.View.Tile;
+            // 
+            // sessionHostName
+            // 
+            resources.ApplyResources(this.sessionHostName, "sessionHostName");
             // 
             // sessionId
             // 
@@ -83,13 +90,13 @@ namespace Chat
             // 
             resources.ApplyResources(this.sessionHostID, "sessionHostID");
             // 
-            // sessionHostName
-            // 
-            resources.ApplyResources(this.sessionHostName, "sessionHostName");
-            // 
             // sessionStartTime
             // 
             resources.ApplyResources(this.sessionStartTime, "sessionStartTime");
+            // 
+            // HostCI
+            // 
+            resources.ApplyResources(this.HostCI, "HostCI");
             // 
             // btnJoin
             // 
@@ -116,12 +123,14 @@ namespace Chat
             // cbSubjects
             // 
             resources.ApplyResources(this.cbSubjects, "cbSubjects");
+            this.cbSubjects.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbSubjects.FormattingEnabled = true;
             this.cbSubjects.Name = "cbSubjects";
             // 
             // cbGroups
             // 
             resources.ApplyResources(this.cbGroups, "cbGroups");
+            this.cbGroups.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbGroups.FormattingEnabled = true;
             this.cbGroups.Name = "cbGroups";
             this.cbGroups.SelectedIndexChanged += new System.EventHandler(this.cbGroups_SelectedIndexChanged);
@@ -185,11 +194,11 @@ namespace Chat
             this.registerName,
             this.registerHostID,
             this.registerStartTime,
-            this.registerEndTime});
+            this.registerEndTime,
+            this.CI});
             this.lvRegisters.HideSelection = false;
             this.lvRegisters.Name = "lvRegisters";
             this.lvRegisters.UseCompatibleStateImageBehavior = false;
-            this.lvRegisters.View = System.Windows.Forms.View.Tile;
             // 
             // registerID
             // 
@@ -210,6 +219,10 @@ namespace Chat
             // registerEndTime
             // 
             resources.ApplyResources(this.registerEndTime, "registerEndTime");
+            // 
+            // CI
+            // 
+            resources.ApplyResources(this.CI, "CI");
             // 
             // UserControlChatMainPanel
             // 
@@ -261,5 +274,7 @@ namespace Chat
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cbSubjects;
         private System.Windows.Forms.ComboBox cbGroups;
+        private System.Windows.Forms.ColumnHeader HostCI;
+        private System.Windows.Forms.ColumnHeader CI;
     }
 }

@@ -25,7 +25,7 @@ namespace Chat
             _userNick = userNick;
             _personalName = personalName;
             _userRole = userRole;
-            picture = PictureController.getPicturePath() + userCI;
+            picture = PictureController.getPicturePath() + userCI + ".jpg";
             opacity = "1";
             _status = status;
             switch (status)

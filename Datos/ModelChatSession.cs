@@ -62,8 +62,10 @@ namespace Datos
         public DataTable listSessions(int userId)
         {
             string commandString =
-                "SELECT ID, Host_ID, Name, Start_Time " +
+                "SELECT chatsessions.ID, Host_ID, Name, Start_Time, persons.CI " +
                 "FROM chatsessions " +
+                "JOIN users ON users.ID = chatsessions.Host_ID " +
+                "JOIN persons ON users.ID = persons.ID " +
                 "WHERE End_Time IS NULL AND EXISTS" +
                 "(SELECT * " +
                 "FROM chatparticipants " +
@@ -76,8 +78,10 @@ namespace Datos
         public DataTable listRegisters(int userId)
         {
             string commandString =
-                "SELECT ID, Host_ID, Name, Start_Time, End_Time " +
+                "SELECT chatsessions.ID, Host_ID, Name, Start_Time, End_Time, persons.CI " +
                 "FROM chatsessions " +
+                "JOIN users ON users.ID = chatsessions.Host_ID " +
+                "JOIN persons ON users.ID = persons.ID " +
                 "WHERE End_Time IS NOT NULL AND EXISTS" +
                 "(SELECT * " +
                 "FROM chatparticipants " +

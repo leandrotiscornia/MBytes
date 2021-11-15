@@ -13,6 +13,7 @@ namespace Datos
         public string groupName { get; set; }
         public string shift { get; set; }
 
+
         public DataTable listGroups()
         {
             string commandString =
@@ -23,6 +24,25 @@ namespace Datos
             executeAndRead();
             return readTable();
         }
+        public DataTable listInscriptedGroups(string userCI)
+        {
+            string commandString =
+                "SELECT groups.ID, grades.Name AS 'Grade Name', groups.Name AS 'Group Name', Shift " +
+                "FROM groups " +
+                "JOIN grades ON grades.ID = groups.Grade_ID " +
+                "WHERE EXISTS" +
+                "(SELECT Group_ID FROM classes " +
+                "WHERE classes.Group_ID = groups.ID AND " +
+                "classes.Teacher_CI = @userCI) OR EXISTS" +
+                "(SELECT Group_ID FROM student_take_subjects " +
+                "WHERE student_take_subjects.Group_ID = groups.ID AND " +
+                "student_take_subjects.Student_CI = @userCI);";
+            command.CommandText = commandString;
+            command.Parameters.AddWithValue("@userCI", userCI);
+            executeAndRead();
+            return readTable();
+        }
+
         public List<string> getStudents()
         {
             List<string> students = new List<string>();

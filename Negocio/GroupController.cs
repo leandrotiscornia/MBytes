@@ -53,6 +53,25 @@ namespace Negocio
             }
             return result;
         }
+        public static DataTable listInscriptedGroups(string userCI)
+        {
+            DataTable result = new DataTable("students");
+            ModelGroup groupToList = new ModelGroup();
+            result.Columns.Add("ID", System.Type.GetType("System.Int32"));
+            result.Columns.Add("Group Name");
+            result.Columns.Add("Shift");
+            foreach (DataRow group in groupToList.listInscriptedGroups(userCI).Rows)
+            {
+                groupToList.groupId = int.Parse(group["ID"].ToString());
+                DataRow resultRow = result.NewRow();
+                resultRow[0] = groupToList.groupId;
+                resultRow[1] = group["Grade Name"].ToString().Substring(0, 2) + group["Group Name"].ToString();
+                resultRow[2] = group["Shift"].ToString();
+                result.Rows.Add(resultRow);
+            }
+            return result;
+        }
+
         public static DataTable listGroups()
         {
             DataTable result = new DataTable("students");

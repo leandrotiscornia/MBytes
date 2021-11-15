@@ -23,7 +23,10 @@ namespace Datos
      
 
         
-
+        ~ModelConnection()
+        {
+            Console.WriteLine("Conexión cerrada");
+        }
         public ModelConnection()
         {
             command = new MySqlCommand();
@@ -35,7 +38,7 @@ namespace Datos
             dbPassword = DataBase.Default.dbPassword;
             openConnection();
         }
-
+        // En el servidor de la UTU no podemos crear usuarios
         public void setConnectionData(string dbUser, string dbPort, string dbPassword)
         {
             DataBase.Default.dbUser = dbUser;

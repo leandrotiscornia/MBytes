@@ -6,6 +6,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 using System.Windows.Forms;
 using Negocio;
 
@@ -26,12 +27,20 @@ namespace Chat
             InitializeComponent();
             groupsId = new List<int>();
             subjectsId = new List<int>();
+            loadPicture();
+
         }
-        
+        public void loadPicture()
+        {
+            Console.WriteLine(Session.ci);
+            Console.WriteLine(Path.Combine(PictureController.getPicturePath(), Session.ci + ".jpg"));
+            if (File.Exists(Path.Combine(PictureController.getPicturePath(), Session.ci + ".jpg")))
+                pbProfilePicture.Image = Image.FromFile(Path.Combine(PictureController.getPicturePath(), Session.ci + ".jpg"));
+        }
        
         private void loadGroups()
         {
-            DataTable groups = GroupController.listGroups();
+            DataTable groups = GroupController.listInscriptedGroups(Session.ci);
             foreach(DataRow group in groups.Rows)
             {
                 cbGroups.Items.Add(group[1]);
@@ -55,23 +64,53 @@ namespace Chat
             ListViewItem registerView;
             lvSessions.Clear();
             lvRegisters.Clear();
-            foreach(DataRow session in sessions.Rows)
+            ImageList sessionImages = new ImageList();
+            sessionImages.ImageSize = new Size(40, 40);
+            sessionImages.ColorDepth = ColorDepth.Depth32Bit;
+            foreach (DataRow session in sessions.Rows)
             {
-                sessionView = new ListViewItem(session[0].ToString());
+                sessionView = new ListViewItem(session[2].ToString());
                 sessionView.SubItems.Add(session[1].ToString());
-                sessionView.SubItems.Add(session[2].ToString());
+                sessionView.SubItems.Add(session[0].ToString());
                 sessionView.SubItems.Add(session[3].ToString());
+                sessionView.SubItems.Add(session[4].ToString());
                 lvSessions.Items.Add(sessionView);
             }
-            foreach(DataRow register in registers.Rows)
+            foreach (ListViewItem item in lvSessions.Items)
             {
-                Console.WriteLine("" + register[0] + register[1] + register[2]);
-                registerView = new ListViewItem(register[0].ToString());
-                registerView.SubItems.Add(register[1].ToString());
-                registerView.SubItems.Add(register[2].ToString());
-                registerView.SubItems.Add(register[3].ToString());
-                lvRegisters.Items.Add(registerView);
+                if (File.Exists(Path.Combine(PictureController.getPicturePath(), item.SubItems[3].Text + ".jpg")))
+                    sessionImages.Images.Add(Image.FromFile(PictureController.getPicturePath() + item.SubItems[3].Text + ".jpg"));
+                else
+                    sessionImages.Images.Add(new Bitmap(40, 40));
+                item.ImageIndex = sessionImages.Images.Count - 1;
             }
+            lvSessions.LargeImageList = sessionImages;
+
+            ImageList registerImages = new ImageList();
+            registerImages.ImageSize = new Size(40, 40);
+            registerImages.ColorDepth = ColorDepth.Depth32Bit;
+            foreach (DataRow register in registers.Rows)
+            {
+                
+                registerView = new ListViewItem(register[2].ToString());
+                registerView.SubItems.Add(register[1].ToString());
+                registerView.SubItems.Add(register[0].ToString());
+                registerView.SubItems.Add(register[3].ToString());
+                registerView.SubItems.Add(register[4].ToString());
+                registerView.SubItems.Add(register[5].ToString());
+                lvRegisters.Items.Add(registerView);
+                
+            }
+            foreach (ListViewItem item in lvRegisters.Items)
+            {
+                if (File.Exists(Path.Combine(PictureController.getPicturePath(), item.SubItems[5].Text + ".jpg")))
+                    registerImages.Images.Add(Image.FromFile(PictureController.getPicturePath() + item.SubItems[5].Text + ".jpg"));
+                else
+                    registerImages.Images.Add(new Bitmap(40, 40));
+                item.ImageIndex = registerImages.Images.Count - 1;
+            }
+            lvRegisters.LargeImageList = registerImages;
+
         }
         private void createSession(int groupId, int subjectId)
         {
@@ -110,18 +149,21 @@ namespace Chat
         {
             loadSessions();
             loadGroups();
+            loadPicture();
         }
 
         private void tcChat_SelectedIndexChanged(object sender, EventArgs e)
         {
             loadSessions();
+            
         }
 
         private void cbGroups_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cbGroups.SelectedIndex > 0)
-                loadSubjects(groupsId[cbGroups.SelectedIndex]);
+            loadSubjects(groupsId[cbGroups.SelectedIndex]);
         }
+
+        
     }
 
 

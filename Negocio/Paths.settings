@@ -3,10 +3,10 @@
   <Profiles />
   <Settings>
     <Setting Name="LogsRoute" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">C:\Users\Usuario\Desktop\log</Value>
+      <Value Profile="(Default)">C:\Users\Spiral\Desktop\log\</Value>
     </Setting>
     <Setting Name="PictureRoute" Type="System.String" Scope="User">
-      <Value Profile="(Default)">C:\Users\Usuario\Desktop\ProfilePictures\</Value>
+      <Value Profile="(Default)">C:\Users\Spiral\Desktop\pics\</Value>
     </Setting>
   </Settings>
 </SettingsFile>

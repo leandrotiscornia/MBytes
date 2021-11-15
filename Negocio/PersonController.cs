@@ -44,6 +44,7 @@ namespace Negocio
                 Session.userId = user.personId;
                 Session.userName = user.userName;
                 Session.ci = user.ci;
+                Console.WriteLine(Session.ci);
                 result = "";
             }
             return result;

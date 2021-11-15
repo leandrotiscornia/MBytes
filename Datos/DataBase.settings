@@ -6,7 +6,7 @@
       <Value Profile="(Default)">mbytes</Value>
     </Setting>
     <Setting Name="dbServer" Type="System.String" Scope="User">
-      <Value Profile="(Default)">emebitos.ddns.net</Value>
+      <Value Profile="(Default)">127.0.0.1</Value>
     </Setting>
     <Setting Name="dbPort" Type="System.String" Scope="User">
       <Value Profile="(Default)">3306</Value>
