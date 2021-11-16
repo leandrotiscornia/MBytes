@@ -31,7 +31,7 @@ namespace App_De_Alumno
             GC.Collect();
             if (lvNavigation.SelectedIndices.Count > 0)
             {
-                if (lvNavigation.SelectedItems[0].Text == "Consultations")
+                if (lvNavigation.SelectedItems[0].Text == "Consultations" || lvNavigation.SelectedItems[0].Text == "Consultas")
                 {
                     UserControlConsultationsMainPanel consultationsPanel = new UserControlConsultationsMainPanel();
                     consultationsPanel.Dock = DockStyle.Fill;

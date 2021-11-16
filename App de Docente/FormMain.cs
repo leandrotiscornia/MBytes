@@ -31,7 +31,7 @@ namespace App_de_Docente
             GC.Collect();
             if (lvNavigation.SelectedIndices.Count > 0)
             {
-                if (lvNavigation.SelectedItems[0].Text == "Schedule")
+                if (lvNavigation.SelectedItems[0].Text == "Schedule" || lvNavigation.SelectedItems[0].Text == "Agenda")
                 {
                     UserControlSchedule schedulePanel = new UserControlSchedule();
                     schedulePanel.Dock = DockStyle.Fill;

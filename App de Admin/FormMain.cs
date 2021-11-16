@@ -21,13 +21,14 @@ namespace App_de_Admin
         {
             
             InitializeComponent();
+            
         }
 
         private void FormMain_Load(object sender, EventArgs e)
         {
-
+            
         }
-
+        
         private void lvNavigation_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (lvNavigation.SelectedIndices.Count > 0)
@@ -70,7 +71,13 @@ namespace App_de_Admin
                 case "Management":
                     loadManagement();
                     break;
+                case "Gestión":
+                    loadManagement();
+                    break;
                 case "Authorization":
+                    loadAuthorization();
+                    break;
+                case "Autorización":
                     loadAuthorization();
                     break;
                 case "Chat":
